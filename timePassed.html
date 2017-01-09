@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click on "Try it". </p>
+<p id="demo"> I will display seconds have passed.</p>
+<button onclick="timedText()">Try it</button>
+
+<p>Click on "Stop it". It will stop.</p>
+<button onclick="timerStop()">Stop it</button>
+
+<script>
+function timedText() {
+    myVar = setInterval(myTimeout1, 1000);
+}
+function timerStop() { 
+    clearInterval(myVar); 
+}
+
+var countOn = (function() {
+    var tc = 0;
+    return function() { return ++tc; };
+})();
+
+function myTimeout1() {
+    document.getElementById("demo").innerHTML = countOn() + " seconds";
+}
+</script>
+
+</body>
+</html>
