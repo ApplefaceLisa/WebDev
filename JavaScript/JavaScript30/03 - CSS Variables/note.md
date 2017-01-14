@@ -1,5 +1,5 @@
 # html
-- <input type="color">  (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color)
+- '<input type="color">'  (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color)
   - it is used to create an input field which allow user to select color and enter color code. 
   - A color picker's UI has no required features other than accepting simple colors as text.
 
@@ -9,10 +9,10 @@
 
   - :root can be useful to declare global CSS Variables:
   
-      :root {
+      ':root {
         --main-color: hotpink;
         --pane-padding: 5px 42px;
-      }
+      }'
     
 - filter     (https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
   - The filter property provides graphical effects like blurring, sharpening, or color shifting an element. 
