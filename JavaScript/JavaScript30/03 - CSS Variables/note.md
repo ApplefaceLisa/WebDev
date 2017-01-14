@@ -1,5 +1,5 @@
 # html
-- 'input type="color"'  (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color)
+- '<'input type="color"'>'  (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color)
   - it is used to create an input field which allow user to select color and enter color code. 
   - A color picker's UI has no required features other than accepting simple colors as text.
 
