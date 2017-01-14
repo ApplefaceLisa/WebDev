@@ -18,7 +18,7 @@ CSS transitions provide a way to control animation speed when changing CSS prope
 3-a) transition-timing-function (https://css-tricks.com/almanac/properties/t/transition-timing-function/) 
 
 
-2. JavaScript
+1. JavaScript
 
 1) document.querySelector  (https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
 
