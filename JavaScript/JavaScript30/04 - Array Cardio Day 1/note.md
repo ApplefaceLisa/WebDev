@@ -32,8 +32,11 @@
   - The reduce() method applies a function against an accumulator and each value of the array (from left-to-right) to reduce it to a single value.
     - arr.reduce(callback, [initialValue])
 
+## Debug Methods
+- console.log()
+- console.table()
 
-### Articles
+## Articles
 - map() vs. forEach() vs. for()
   - https://ryanpcmcquen.org/javascript/2015/10/25/map-vs-foreach-vs-for.html
   
