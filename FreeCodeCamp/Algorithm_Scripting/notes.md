@@ -1,0 +1,12 @@
+- spread operator (...)
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator
+  - The spread syntax allows an expression to be expanded in places where multiple arguments (for function calls) or multiple elements (for array literals) or multiple variables  (for destructuring assignment) are expected.
+    - example
+       - var parts = ['shoulders', 'knees'];
+       - var lyrics = ['head', ...parts, 'and', 'toes']; // ["head", "shoulders", "knees", "and", "toes"]
+        
+    - using spread operator in Math.max()
+      - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
+      - example
+        - var arr = [1, 4, 3, 2, 5];
+        - var max = Math.max(...arr);    // max = 5
