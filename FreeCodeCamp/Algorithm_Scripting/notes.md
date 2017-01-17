@@ -13,6 +13,15 @@
         - var arr = [1, 4, 3, 2, 5];
         - var max = Math.max(...arr);    // max = 5
 
+## Arguments object
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
+- The arguments object is not an Array. It is similar to an Array, but does not have any Array properties except length.
+- it can be converted to a real Array:
+  - var args = Array.prototype.slice.call(arguments);
+  - var args = [].slice.call(arguments);
+  - var args = Array.from(arguments);
+  - var args = [...arguments];
+
 ## Array methods
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 
@@ -68,8 +77,12 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
       - Object.keys(buz);    // return ['fog']
  
 ## String Methods
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
  
+## Set object
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+- The Set object lets you store unique values of any type, whether primitive values or object references.
+- Syntax : new Set([iterable]);
     
 # Algorithm
 
