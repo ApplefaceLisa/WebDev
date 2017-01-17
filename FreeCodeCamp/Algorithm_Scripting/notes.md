@@ -14,6 +14,8 @@
         - var max = Math.max(...arr);    // max = 5
 
 ## Array methods
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
   - Array.prototype.filter()
     - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
     - var new_array = arr.filter(callback[, thisArg])
@@ -43,6 +45,8 @@
       - var arr = Array.from(num.toString());    // arr = ['3','6']
     
 ## Object methods
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+
   - Object.prototype.hasOwnProperty()
     - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
     - The hasOwnProperty() method returns a boolean indicating whether the object has the specified property.
@@ -62,10 +66,18 @@
       -   fog: 'stack'
       - };
       - Object.keys(buz);    // return ['fog']
-      
+ 
+## String Methods
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+ 
     
 # Algorithm
 
 ### Roman Numeral Converter
   - http://stackoverflow.com/questions/12967896/converting-integers-to-roman-numerals-java
   - https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Algorithm-Roman-Numeral-Converter
+
+
+# Challenge Guide
+- https://forum.freecodecamp.com/c/wiki
+- https://github.com/freeCodeCamp/freeCodeCamp/wiki
