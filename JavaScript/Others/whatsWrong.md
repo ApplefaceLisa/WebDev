@@ -51,5 +51,8 @@ We can solve this by wrapping our anonymous function in another anonymous functi
 ```
 
 ***
-- Reference:
-https://www.interviewcake.com/question/java/js-whats-wrong?utm_source=weekly_email&utm_campaign=weekly_email&utm_medium=email
+# Reference:
+- Problem source 
+  - https://www.interviewcake.com/question/java/js-whats-wrong?utm_source=weekly_email&utm_campaign=weekly_email&utm_medium=email
+- You Don't Know JS: Scope & Closures
+  - https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20&%20closures/README.md#you-dont-know-js-scope--closures
