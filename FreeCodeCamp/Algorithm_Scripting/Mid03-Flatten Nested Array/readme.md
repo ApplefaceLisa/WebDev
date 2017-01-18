@@ -51,4 +51,4 @@ steamrollArray([1, [2], [3, [[4]]]]);   ====> should return [1,2,3,4].
 
 
 ***
-**[Reference]**(https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Algorithm-Steamroller)
+**[Reference](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Algorithm-Steamroller)**
