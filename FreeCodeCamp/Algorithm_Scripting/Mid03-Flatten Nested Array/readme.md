@@ -28,7 +28,9 @@ steamrollArray([1, [2], [3, [[4]]]]);   ====> should return [1,2,3,4].
   // testcase
   steamrollArray([1, [2], [3, [[4]]]]);
   ```
-  - use [Array.isArray()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
+  - use methods
+    - [Array.isArray()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
+    - [Array.prototype.push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
 
 - Intermediate
   - Code
