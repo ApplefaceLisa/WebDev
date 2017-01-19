@@ -25,3 +25,8 @@ Other examples:
 - [Arguments object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments)
 - [typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof)
 - [Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
+
+
+
+### Solution Reference
+[Algorithm Arguments Optional](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Algorithm-Arguments-Optional)
