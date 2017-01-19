@@ -44,6 +44,17 @@ steamrollArray([1, [2], [3, [[4]]]]);   ====> should return [1,2,3,4].
   // testcase
   steamrollArray([1, [2], [3, [[4]]]]);
   ```
+  
+  In ES6, you can write it as:
+  ```Javascript
+  function steamrollArray(arr) {
+    const flatten = arr => arr.reduce((a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []);
+    return flatten(arr);
+}
+
+steamrollArray([1, [2], [3, [[4]]]]);
+  ```
+  
 
   - use methods
     - [Array.prototype.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
