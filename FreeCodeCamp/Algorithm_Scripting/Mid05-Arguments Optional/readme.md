@@ -1,5 +1,5 @@
 # Arguments Optional
-## Question Description
+### Question Description
 
 Create a function that sums two arguments together. If only one argument is provided, then return a function that expects one argument and returns the sum.
 
@@ -20,6 +20,40 @@ Other examples:
 - addTogether(2, "3") should return undefined.
 - addTogether(2)([3]) should return undefined.
 
+### Solution
+```Javascript
+function addTogether() {
+  var args = Array.from(arguments); 
+  if (args.length === 2) {
+    if (typeof args[0] === 'number' && typeof args[1] === 'number') {
+      return args[0]+args[1];
+    } else {
+      return undefined;
+    }
+  }
+  
+  if (args.length === 1) {
+    if (typeof args[0] === 'number') {
+      return function(arg) {
+        if (typeof arg === 'number') {
+          return args[0]+arg;
+        } else {
+          return undefined;
+        }
+      };
+    } else {
+      return undefined;
+    }
+  }
+  
+  // only consider 1 or 2 arguments case. ignore others.
+  return [];
+}
+
+addTogether(2,3);
+```
+- **Note**
+  - typeof undefined is undefined.
 
 ### Related Knowledge
 - [Arguments object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments)
