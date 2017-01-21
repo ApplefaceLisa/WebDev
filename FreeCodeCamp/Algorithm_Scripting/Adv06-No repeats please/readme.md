@@ -30,16 +30,20 @@ For example, aab should return 2 because it has 6 total permutations (aab, aab, 
     array.splice(start, deleteCount, item1, item2, ...)
     ```
   - Combination usage of splice() and slice() example:
-  ```
-  var arr = ['a', 'b', 'c'];
-  for (var i = 0; i <= arr.length; i++) {
-      arr.splice(i, 0, "d");
-      console.log(arr);
-      arr.splice(i, 1);
-  }
-  
-  the log output will be: ['d', 'a', 'b', 'c'], ['a', 'd', 'b', 'c'], ['a', 'b', 'd', 'c'], ['a', 'b', 'c', 'd'].
-  ```
+    ```
+    var arr = ['a', 'b', 'c'];
+    for (var i = 0; i <= arr.length; i++) {
+        arr.splice(i, 0, "d");
+        console.log(arr);
+        arr.splice(i, 1);
+    }
+
+    the log output will be: 
+      ['d', 'a', 'b', 'c'] 
+      ['a', 'd', 'b', 'c'] 
+      ['a', 'b', 'd', 'c'] 
+      ['a', 'b', 'c', 'd']
+    ```
 
 # Reference solution
 - FCC [Algorithm No Repeats Please](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Algorithm-No-Repeats-Please)
