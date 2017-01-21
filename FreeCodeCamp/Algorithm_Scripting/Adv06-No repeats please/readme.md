@@ -22,3 +22,6 @@ For example, aab should return 2 because it has 6 total permutations (aab, aab, 
     arr.slice(begin, end)     // up to end, but not including it.
     ```
   - [Array.prototype.splice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+
+# Reference solution
+- FCC [Algorithm No Repeats Please](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Algorithm-No-Repeats-Please)
