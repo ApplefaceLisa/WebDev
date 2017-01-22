@@ -71,6 +71,50 @@ permAlone('abc');  //[['c','b','a'],['b','c','a'],['b','a','c'],['c','a','b'],['
 ### Heap's algorithm
 
 
+## Solution Code
+### Straight forward one
+```Javascript
+function permAlone(str) {
+  // Create a regex to match repeated consecutive characters.
+  var regex = /(.)\1+/g;
+  
+  // Return 0 if str contains all the same character.
+  if (str.match(regex) !== null && str.match(regex)[0] === str) return 0;
+  
+  var strArr = str.split('');  
+  
+  var permute = function(char, arr) {
+    var perm, dest = [];
+    for (var i = 0; i <= arr.length; i++) {
+      perm = arr.slice(0);
+      perm.splice(i,0,char);
+      dest.push(perm);
+    }
+    return dest;
+  };
+  
+  var perm = strArr.reduce(function(acc, char) {
+    var result = [];
+    for (var i in acc) {
+      Array.prototype.push.apply(result, permute(char, acc[i]));
+    }
+    return result;
+  }, [[]]);
+  
+  var num = perm.reduce(function(rst, arr) {
+    if (arr.join('').match(regex) === null) {
+      rst++;
+    }
+    return rst;
+  }, 0);
+
+  return num;
+}
+
+// test case
+permAlone('aab');   // 2
+```
+
 # Related Knowledge
 - [Definition of Permutations](https://www.mathsisfun.com/combinatorics/combinations-permutations.html)
 - permutation-generating algorithm, [Heap's algorithm](https://en.wikipedia.org/wiki/Heap%27s_algorithm)
