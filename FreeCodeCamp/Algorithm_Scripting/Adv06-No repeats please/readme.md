@@ -9,6 +9,37 @@ For example, aab should return 2 because it has 6 total permutations (aab, aab, 
 Here's a diagram illustrating the idea:
 ![idea](permutationAlg01.png)
 
+Code for this idea:
+```JavaScript
+var permute = function(char, str) {
+  var perm = [];
+  var strArr = str.split('');
+  for (var i = 0; i <= strArr.length; i++) {
+    strArr.splice(i,0,char);
+    perm.push(strArr.join(''));
+    strArr.splice(i,1);
+  }
+  return perm;
+}
+
+function permAlone(str) {
+  var strArr = str.split('');  
+  var perm = strArr.reduce(function(acc, char) {
+    var result = [];
+    for (var i in acc) {
+      Array.prototype.push.apply(result, permute(char, acc[i]));
+    }
+    return result;
+  }, ['']);
+  
+  return perm;
+}
+
+// test case
+permAlone('abc');     //['cba','bca','bac','cab','acb','abc']
+```
+
+#### Heap's algorithm
 
 
 # Related Knowledge
