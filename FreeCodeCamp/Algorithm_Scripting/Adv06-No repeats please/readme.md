@@ -5,7 +5,7 @@ Return the number of total permutations of the provided string that don't have r
 For example, aab should return 2 because it has 6 total permutations (aab, aab, aba, aba, baa, baa), but only 2 of them (aba and aba) don't have the same letter (in this case a) repeating.
 
 ## permutation-generating algorithm
-#### Straight Forward Method
+### Straight Forward Method
 Here's a diagram illustrating the idea:
 ![idea](permutationAlg01.png)
 
@@ -38,8 +38,37 @@ function permAlone(str) {
 // test case
 permAlone('abc');     //['cba','bca','bac','cab','acb','abc']
 ```
+#### Or in two-dimension array:
+```Javascript
+var permute = function(char, arr) {
+  var perm, dest = [];
+  for (var i = 0; i <= arr.length; i++) {
+    perm = arr.slice(0);
+    perm.splice(i,0,char);
+    dest.push(perm);
+  }
+  return dest;
+}
 
-#### Heap's algorithm
+function permAlone(str) {
+  var strArr = str.split('');  
+  var perm = strArr.reduce(function(acc, char) {
+    var result = [];
+    for (var i in acc) {
+      Array.prototype.push.apply(result, permute(char, acc[i]));
+    }
+    return result;
+  }, [[]]);
+  
+  return perm;
+}
+
+// test case
+permAlone('abc');  //[['c','b','a'],['b','c','a'],['b','a','c'],['c','a','b'],['a','c','b'],['a','b','c']]
+```
+
+
+### Heap's algorithm
 
 
 # Related Knowledge
