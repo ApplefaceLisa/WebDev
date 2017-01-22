@@ -4,7 +4,10 @@ Return the number of total permutations of the provided string that don't have r
 
 For example, aab should return 2 because it has 6 total permutations (aab, aab, aba, aba, baa, baa), but only 2 of them (aba and aba) don't have the same letter (in this case a) repeating.
 
-
+## permutation-generating algorithm
+#### Straight Forward Method
+Here's a diagram illustrating the idea:
+![idea](permutationAlg01.png)
 
 
 
