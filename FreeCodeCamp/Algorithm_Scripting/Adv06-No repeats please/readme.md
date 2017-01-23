@@ -118,6 +118,8 @@ permAlone('aab');   // 2
 # Related Knowledge
 - [Definition of Permutations](https://www.mathsisfun.com/combinatorics/combinations-permutations.html)
 - permutation-generating algorithm, [Heap's algorithm](https://en.wikipedia.org/wiki/Heap%27s_algorithm)
+  - [Heap’s Algorithm for generating permutations](http://www.geeksforgeeks.org/heaps-algorithm-for-generating-permutations/)
+  - **[Why does Heap's algorithm work?](http://ruslanledesma.com/2016/06/17/why-does-heap-work.html)**
 - Regular Expression
 - Array methods
   - [Array.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
