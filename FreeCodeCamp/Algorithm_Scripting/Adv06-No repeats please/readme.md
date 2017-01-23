@@ -71,6 +71,8 @@ permAlone('abc');  //[['c','b','a'],['b','c','a'],['b','a','c'],['c','a','b'],['
 ### Heap's algorithm
 Heap’s algorithm is used to generate all permutations of n objects. The idea is to generate each permutation from the previous permutation by choosing a pair of elements to interchange, without disturbing the other n-2 elements.
 
+The algorithm is basically going to swap elements based on the iteration k we are in for the current size n. If this iteration k is even then we will swap the kth element with the last element, and else we will swap the last element with the first element.
+
 Example:
 ```
 Input    1 2 3                  1 2 3 4
@@ -102,17 +104,17 @@ Output   1 2 3                  1 2 3 4
 ```
 Pseudo Code:
 ```
-procedure generate(n : integer, A : array of any):
-    if n = 1 then
-        output(A)
+generate (n, arr)
+    if n = 1
+        output arr
     else
-        for i := 1; i ≤ n; i += 1 do
-            generate(n - 1, A)
-            if n is odd then
-                j ← 1
+        for i = 0; i < n; i += 1
+            generate (n - 1, arr)
+
+            if n is even
+                swap(arr[i], arr[n - 1])
             else
-                j ← i
-            swap(A[j], A[n])
+                swap(arr[0], arr[n - 1])
 ```
 
 ## Solution Code
