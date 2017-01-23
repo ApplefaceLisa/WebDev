@@ -69,6 +69,37 @@ permAlone('abc');  //[['c','b','a'],['b','c','a'],['b','a','c'],['c','a','b'],['
 
 
 ### Heap's algorithm
+Heap’s algorithm is used to generate all permutations of n objects. The idea is to generate each permutation from the previous permutation by choosing a pair of elements to interchange, without disturbing the other n-2 elements.
+
+Example:
+```
+Input    1 2 3                  1 2 3 4
+Output   1 2 3                  1 2 3 4 
+         2 1 3                  2 1 3 4 
+         3 1 2                  3 1 2 4 
+         1 3 2                  1 3 2 4 
+         2 3 1                  2 3 1 4 
+                                3 2 1 4 
+                                4 2 3 1 
+                                2 4 3 1 
+                                3 4 2 1 
+                                4 3 2 1 
+                                2 3 4 1 
+                                3 2 4 1 
+                                4 1 3 2 
+                                1 4 3 2 
+                                3 4 1 2 
+                                4 3 1 2 
+                                1 3 4 2 
+                                3 1 4 2 
+                                4 1 2 3 
+                                1 4 2 3 
+                                2 4 1 3 
+                                4 2 1 3 
+                                1 2 4 3 
+                                2 1 4 3 
+
+```
 
 
 ## Solution Code
@@ -115,12 +146,62 @@ function permAlone(str) {
 permAlone('aab');   // 2
 ```
 
+### Heap's algorithm
+
+``` Javascript
+// Heap's algorithm
+function permAlone(str) {
+  // Create a regex to match repeated consecutive characters.
+  var regex = /(.)\1+/g;
+
+  // Return 0 if str contains same character.
+  if (str.match(regex) !== null && str.match(regex)[0] === str) return 0;
+
+  // Split the string into an array of characters.
+  var arr = str.split('');
+  var permutations = [];
+  var tmp;
+  
+  // Function to swap variables' content.
+  function swap(index1, index2) {
+    tmp = arr[index1];
+    arr[index1] = arr[index2];
+    arr[index2] = tmp;
+  }
+
+  // Generate arrays of permutations using the algorithm.
+  function generate(int) {
+    if (int === 1) {
+      // Make sure to join the characters as we create  the permutation arrays
+      permutations.push(arr.join(''));
+    } else {
+      for (var i = 0; i != int; ++i) {
+        generate(int - 1);
+        swap(int % 2 ? 0 : i, int - 1);
+      }
+    }
+  }
+
+  generate(arr.length);
+
+  // Filter the array of repeated permutations.
+  var filtered = permutations.filter(function(string) {
+    return !string.match(regex);
+  });
+
+  // Return how many have no repetitions.
+  return filtered.length;
+}
+
+permAlone('aab');
+```
+
 # Related Knowledge
 - [Definition of Permutations](https://www.mathsisfun.com/combinatorics/combinations-permutations.html)
 - permutation-generating algorithm, [Heap's algorithm](https://en.wikipedia.org/wiki/Heap%27s_algorithm)
-  - [Heap’s Algorithm for generating permutations](http://www.geeksforgeeks.org/heaps-algorithm-for-generating-permutations/)
+  - **[Heap’s Algorithm for generating permutations](http://www.geeksforgeeks.org/heaps-algorithm-for-generating-permutations/)**
   - **[Why does Heap's algorithm work?](http://ruslanledesma.com/2016/06/17/why-does-heap-work.html)**
-- Regular Expression
+- [Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 - Array methods
   - [Array.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
     - The slice() method returns **a shallow copy** of a portion of an array into a new array object selected from begin to end (end not included). The original array will not be modified.
