@@ -100,7 +100,20 @@ Output   1 2 3                  1 2 3 4
                                 2 1 4 3 
 
 ```
-
+Pseudo Code:
+```
+procedure generate(n : integer, A : array of any):
+    if n = 1 then
+        output(A)
+    else
+        for i := 1; i ≤ n; i += 1 do
+            generate(n - 1, A)
+            if n is odd then
+                j ← 1
+            else
+                j ← i
+            swap(A[j], A[n])
+```
 
 ## Solution Code
 ### Straight forward one
