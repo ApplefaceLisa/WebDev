@@ -66,7 +66,9 @@ function permAlone(str) {
 // test case
 permAlone('abc');  //[['c','b','a'],['b','c','a'],['b','a','c'],['c','a','b'],['a','c','b'],['a','b','c']]
 ```
-
+### Another Method
+Here's a diagram illustrating the idea:
+![idea](recursiveTree4PermutationString.jpg)
 
 ### Heap's algorithm
 Heap’s algorithm is used to generate all permutations of n objects. The idea is to generate each permutation from the previous permutation by choosing a pair of elements to interchange, without disturbing the other n-2 elements.
