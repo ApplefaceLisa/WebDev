@@ -68,7 +68,7 @@ permAlone('abc');  //[['c','b','a'],['b','c','a'],['b','a','c'],['c','a','b'],['
 ```
 ### In-place Swapping Method
 Here's a diagram illustrating the idea:
-![inplace](WebDev/FreeCodeCamp/Algorithm_Scripting/Adv06-No repeats please/permutationAlg01.png)
+![inplace](recursiveTree.PNG)
 
 Code:
 ```Javascript
