@@ -66,9 +66,45 @@ function permAlone(str) {
 // test case
 permAlone('abc');  //[['c','b','a'],['b','c','a'],['b','a','c'],['c','a','b'],['a','c','b'],['a','b','c']]
 ```
-### Another Method
+### In-place Swapping Method
 Here's a diagram illustrating the idea:
-![idea](recursiveTree4PermutationString.jpg)
+![idea](recursiveTree.png)
+
+Code:
+```Javascript
+function permAlone(str) {
+  var strArr = str.split('');
+  var result = [];
+  
+  function swap(arr, i, j) {
+    var tmp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = tmp;
+  }  
+  
+  function permutation(arr, start, end) {
+    if (start >= end) {
+      result.push(arr);
+      return;
+    }
+
+    for (var i = start; i <= end; i++) {
+      var temp = arr.slice();
+      swap(temp, start, i);
+      permutation(temp, start+1, end);
+    }
+  };
+    
+  permutation(strArr, 0, strArr.length-1);
+  return result;
+}
+
+var p = permAlone('abc')
+        .reduce(function(acc, el) {
+          acc.push(el.join(''));
+          return acc;
+        }, []);
+```
 
 ### Heap's algorithm
 Heap’s algorithm is used to generate all permutations of n objects. The idea is to generate each permutation from the previous permutation by choosing a pair of elements to interchange, without disturbing the other n-2 elements.
