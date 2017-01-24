@@ -2,3 +2,7 @@
 - https://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage
 
 Objective: Build a CodePen.io app that is functionally similar to this: https://codepen.io/FreeCodeCamp/full/YqLyXB/.
+
+
+## References
+- [20 Useful CSS Snippets for Responsive Menus](https://envato.com/blog/css-snippets-responsive-menus/)
