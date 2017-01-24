@@ -2,3 +2,7 @@
 - https://www.freecodecamp.com/challenges/build-a-tribute-page
 
 Objective: Build a CodePen.io app that is functionally similar to this: https://codepen.io/FreeCodeCamp/full/NNvBQW/.
+
+
+## Codepen
+- [pure css version](http://codepen.io/ApplefaceLisa/pen/LxLrVQ)
