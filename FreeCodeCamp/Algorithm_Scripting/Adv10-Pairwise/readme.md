@@ -43,7 +43,7 @@ pairwise([1,4,2,3,0,5], 7);
 ```
 
 ## Problem met
-Use for...in loop for an array will incur problems. Example:
+#### Use for...in loop for an array will incur problems. Example:
 ```
 var a = ["zero", "one", "two", "three"];
 for (var i in a) {
@@ -58,6 +58,17 @@ The [reason](http://stackoverflow.com/questions/41821005/javascript-use-array-sl
 the 'i' in 'for...in' is String, not number. So i is '0','1','2','3', and i+1 will be '01','11','21','31'. When i be used as an index, it be coerced to number. That's why only first output looks correct.
 
 For array iteration, should use for(var i = a; i < b; i++) loop.
+
+#### NaN !== NaN
+When compare NaN with NaN, we get false. 
+```
+console.log(Boolean(NaN == NaN));   // false
+```
+So,
+```
+var arr = [1,2,NaN, 3, NaN, 4, 5, 6, NaN];
+var index = arr.indexOf(NaN);     // index === -1
+```
 
 ## Related Knowledge
 - Array.slice()
