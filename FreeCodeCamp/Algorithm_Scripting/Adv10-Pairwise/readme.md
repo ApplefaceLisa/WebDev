@@ -68,6 +68,13 @@ So,
 ```
 var arr = [1,2,NaN, 3, NaN, 4, 5, 6, NaN];
 var index = arr.indexOf(NaN);     // index === -1
+
+// extend
+var arr = [1,2,null, 3, undefined, 4, 5, 6, NaN];
+var index = arr.indexOf(undefined); // index === 4
+
+var arr = [1,2,null, 3, undefined, 4, 5, 6, NaN];
+var index = arr.indexOf(null);    // index === 2
 ```
 
 ## Related Knowledge
