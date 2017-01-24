@@ -103,7 +103,7 @@ var p = permAlone('abc')
         .reduce(function(acc, el) {
           acc.push(el.join(''));
           return acc;
-        }, []);
+        }, []);   // p is ['abc','acb','bac','bca','cba','cab']
 ```
 
 ### Heap's algorithm
@@ -254,7 +254,10 @@ permAlone('aab');
 - permutation-generating algorithm, [Heap's algorithm](https://en.wikipedia.org/wiki/Heap%27s_algorithm)
   - **[Heap’s Algorithm for generating permutations](http://www.geeksforgeeks.org/heaps-algorithm-for-generating-permutations/)**
   - **[Why does Heap's algorithm work?](http://ruslanledesma.com/2016/06/17/why-does-heap-work.html)**
+  
 - [Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+  - **[other resources](https://forum.freecodecamp.com/t/regular-expressions-resources/15931)**
+  
 - Array methods
   - [Array.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
     - The slice() method returns **a shallow copy** of a portion of an array into a new array object selected from begin to end (end not included). The original array will not be modified.
