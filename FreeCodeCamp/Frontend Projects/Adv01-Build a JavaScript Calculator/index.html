@@ -41,5 +41,84 @@
         <p>FreeCodeCamp <a href="https://www.freecodecamp.com/challenges/build-a-javascript-calculator">Build a JavaScript Calculator</a>, coded by Yajing Li</p>
     </div>
   </div>
+
+  <script type="text/javascript">
+    var curVal = '';
+    var hisVal = '';
+
+    function setEntry(val) {
+        document.getElementById('entry').innerHTML = val;
+    }
+
+    function setHistory(val) {
+        document.getElementById('history').innerHTML = val;
+    }
+
+    function clearEntry() {
+        curVal = '';
+        document.getElementById('entry').innerHTML = 0;
+    }
+
+    function clearHistory() {
+        hisVal = '';
+        document.getElementById('history').innerHTML = 0;
+    }
+
+    function startProcess(e) {
+      let value = e.target.value;
+      switch (value) {
+        case 'ac':
+          clearEntry();
+          clearHistory();
+          break;
+
+        case 'ce':
+          hisVal = hisVal.slice(0, hisVal.lastIndexOf(curVal));
+          clearEntry();
+          setHistory(hisVal);
+          break;
+
+        case '0':
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':
+        case '.':
+          curVal += value;
+          setEntry(curVal);
+          hisVal += value;
+          setHistory(hisVal);
+          break;
+
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+          curVal = '';
+          hisVal += value;
+          setHistory(hisVal);
+          break;
+
+        case '=':
+          curVal = eval(hisVal).toFixed(6);
+          setEntry(curVal);
+          hisVal += value + curVal;
+          setHistory(hisVal);
+          break;
+
+        default:
+          break;
+      }
+    }
+
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(btn => btn.addEventListener('click', startProcess));
+
+  </script>
 </body>
 </html>
