@@ -9,3 +9,5 @@ Objective: Build a CodePen.io app that is functionally similar to this: https://
 - [HTML Character Entity Reference Chart](https://dev.w3.org/html5/html-author/charref)
 - [Font awesome icons](http://fontawesome.io/icons/)
 - [w3school icons tutorial](http://www.w3schools.com/icons/fontawesome_icons_intro.asp)
+- [Vertical align anything with just 3 lines of CSS](http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/)
+- 
