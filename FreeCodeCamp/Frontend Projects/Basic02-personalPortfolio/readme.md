@@ -6,3 +6,4 @@ Objective: Build a CodePen.io app that is functionally similar to this: https://
 
 ## References
 - [20 Useful CSS Snippets for Responsive Menus](https://envato.com/blog/css-snippets-responsive-menus/)
+- [HTML entities list](https://dev.w3.org/html5/html-author/charref)
