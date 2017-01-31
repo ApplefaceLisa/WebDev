@@ -73,9 +73,14 @@
           break;
 
         case 'ce':
-          hisVal = hisVal.slice(0, hisVal.lastIndexOf(curVal));
-          clearEntry();
-          setHistory(hisVal);
+          if (hisVal.indexOf('=') !== -1) {
+            clearEntry();
+            clearHistory();
+          } else {
+            hisVal = hisVal.slice(0, hisVal.lastIndexOf(curVal));
+            clearEntry();
+            setHistory(hisVal);
+          }
           break;
 
         case '0':
