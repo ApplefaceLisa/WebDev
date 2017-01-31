@@ -8,3 +8,4 @@ Objective: Build a CodePen.io app that is functionally similar to this: https://
 - [20 Useful CSS Snippets for Responsive Menus](https://envato.com/blog/css-snippets-responsive-menus/)
 - [HTML Character Entity Reference Chart](https://dev.w3.org/html5/html-author/charref)
 - [Font awesome icons](http://fontawesome.io/icons/)
+- [w3school icons tutorial](http://www.w3schools.com/icons/fontawesome_icons_intro.asp)
