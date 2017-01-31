@@ -56,11 +56,12 @@ div {
 #history {
     /* transform: translate(-13px, -17px); */
     position: relative;
-    height: 10px;
+    height: 20px;
     bottom: 8px;
     margin-right: 14px;
     color: #8b8b7b;
     font-size: 12px;
+    overflow: hidden;
 }
 #buttons {
     font-size: 16px;
