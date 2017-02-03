@@ -109,15 +109,14 @@ ul {
     overflow: hidden;
     background-color: #333333;
 }
-
+    /* horizontal */                 /* vertical */                   /* vertical */
 li {
-    /*float: left;*/
-    display: inline;
+                                                                      float: left;
+    display: inline;                 display: inline;
 }
 
 li a {
-    display: inline-block;   /* horizontal */
-    display: block;          /* vertical */
+    display: inline-block;           display: block;                  display: block or inline-block;
     color: white;
     text-align: center;
     padding: 16px;
