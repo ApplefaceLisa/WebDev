@@ -81,3 +81,12 @@
     <q>                 <script>            <span>                <sub>               <sup>               <button>
     <input>             <label>             <select>              <textarea>
 ```
+
+### Articles
+#### [Styling HTML Lists with CSS: Techniques and Resources](https://www.smashingmagazine.com/2009/12/styling-html-lists-with-css-techniques-and-resources/)
+- ADDING “FLOAT: LEFT” TO LIST ITEMS LINK
+In Internet Explorer 6 and 7, adding **_float: left_** to the list items (with no other styles present) will align the list items horizontally and the list bullets (or list numbers) will disappear. In IE8 and all other browsers, the list items will align horizontally, but the list bullets (or list numbers) will still be visible.
+
+Another factor to keep in mind when the list items are floated is that the list container (the <ul> element) will collapse when it contains only floated elements. This occurs the same way in all browsers. Adding **_overflow: hidden_** to the <ul> or <ol> element is one way to resolve this issue.
+
+To achieve virtually the same effect as float: left in all browsers, the best solution is to use **_display: inline_**.
