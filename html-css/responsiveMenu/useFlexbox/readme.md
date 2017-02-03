@@ -10,3 +10,4 @@
   - Example2: Using hidden *radioboxes* in order to store some CSS boolean values
 - CSS-Tricks [:checked](https://css-tricks.com/almanac/selectors/c/checked/)
 - CSS-Tricks [Stuff you can do with the “Checkbox Hack”](https://css-tricks.com/the-checkbox-hack/)
+- MDN [linear-gradient()](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)
