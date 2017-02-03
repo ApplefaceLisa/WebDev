@@ -74,37 +74,10 @@
 #### [Inline elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements)
 ###### An inline element occupies only the space bounded by the tags that define the inline element.
 ```
-    <a>
-    <b>
-    <big>
-    <i>
-    <small>
-    <tt>
-    <abbr>
-    <acronym>
-    <cite>
-    <code>
-    <dfn>
-    <em>
-    <kbd>
-    <strong>
-    <samp>
-    <time>
-    <var>
-    <a>
-    <bdo>
-    <br>
-    <img>
-    <map>
-    <object>
-    <q>
-    <script>
-    <span>
-    <sub>
-    <sup>
-    <button>
-    <input>
-    <label>
-    <select>
-    <textarea>
+    <a>                 <b>                 <big>                 <i>                 <small>             <tt>
+    <abbr>              <acronym>           <cite>                <code>              <dfn>               <em>
+    <kbd>               <strong>            <samp>                <time>              <var>
+    <a>                 <bdo>               <br>                  <img>               <map>               <object>
+    <q>                 <script>            <span>                <sub>               <sup>               <button>
+    <input>             <label>             <select>              <textarea>
 ```
