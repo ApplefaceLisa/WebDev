@@ -1,7 +1,9 @@
 # Pure CSS Responsive Flex Menu
 ### Making a pure CSS responsive menu using flexbox.
+- index.html / style.css : use linear-gradient generate hamburger icon.
+- index2.html / style2.css : use Unicode generate hamburger icon.
 
-###### [Article](http://blog.christopherianmurphy.com/2016/01/responsive-pure-css-menu.html)
+###### [original Article](http://blog.christopherianmurphy.com/2016/01/responsive-pure-css-menu.html)
 
 
 ### Other resources
