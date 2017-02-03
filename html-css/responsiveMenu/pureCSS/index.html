@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Different Navbar using pure CSS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Example 1: Basic horizontal responsive navbar</h1>
+    <ul class="topnav1" id="myTopnav1">
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+      <li class="icon">
+        <a href="javascript:void(0);" style="font-size:15px;" onclick="menuFunc01()">&#9776;</a>
+      </li>
+    </ul>
+
+    <div style="padding-left:16px">
+      <h2>Responsive Topnav Example</h2>
+      <p>Resize the browser window to see how it works.</p>
+    </div>
+
+    <!-- Example 2: move menu to right-->
+    <h1>Example 2: set menu on middle right and dropdown on right hand</h1>
+    <ul class="topnav2" id="myTopnav2">
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+      <li class="icon">
+        <a href="javascript:void(0);" style="font-size:15px;" onclick="menuFunc02()">&#9776;</a>
+      </li>
+    </ul>
+
+    <div style="padding-left:16px">
+      <h2>Responsive Topnav Example</h2>
+      <p>Resize the browser window to see how it works.</p>
+    </div>
+
+    <script type="text/javascript">
+    function menuFunc01() {
+        var x = document.getElementById("myTopnav1");
+        if (x.className === "topnav1") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav1";
+        }
+    }
+    function menuFunc02() {
+        var x = document.getElementById("myTopnav2");
+        if (x.className === "topnav2") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav2";
+        }
+    }
+    </script>
+</body>
+</html>
