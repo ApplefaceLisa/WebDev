@@ -86,9 +86,59 @@
 #### [Styling HTML Lists with CSS: Techniques and Resources](https://www.smashingmagazine.com/2009/12/styling-html-lists-with-css-techniques-and-resources/)
 - ADDING “FLOAT: LEFT” TO LIST ITEMS LINK
 ```
-In Internet Explorer 6 and 7, adding **_float: left_** to the list items (with no other styles present) will align the list items horizontally and the list bullets (or list numbers) will disappear. In IE8 and all other browsers, the list items will align horizontally, but the list bullets (or list numbers) will still be visible.
+In Internet Explorer 6 and 7, adding **_float: left_** to the list items (with no other styles present) will align the list items
+horizontally and the list bullets (or list numbers) will disappear. In IE8 and all other browsers, the list items will align
+horizontally, but the list bullets (or list numbers) will still be visible.
 
-Another factor to keep in mind when the list items are floated is that the list container (the <ul> element) will collapse when it contains only floated elements. This occurs the same way in all browsers. Adding **_overflow: hidden_** to the <ul> or <ol> element is one way to resolve this issue.
+Another factor to keep in mind when the list items are floated is that the list container (the <ul> element) will collapse when it
+contains only floated elements. This occurs the same way in all browsers. Adding **_overflow: hidden_** to the <ul> or <ol> element is
+one way to resolve this issue.
 
 To achieve virtually the same effect as float: left in all browsers, the best solution is to use **_display: inline_**.
+```
+Example code:
+```
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+li {
+    /*float: left;*/
+    display: inline;
+}
+
+li a {
+    display: inline-block;   /* horizontal */
+    display: block;          /* vertical */
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111111;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+</body>
+</html>
+
 ```
