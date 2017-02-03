@@ -1,0 +1,108 @@
+body {margin:0;}
+
+/* Example 1 styling */
+ul.topnav1 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav1 li {float: left;}
+
+ul.topnav1 li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+ul.topnav1 li a:hover {background-color: #555;}
+
+ul.topnav1 li.icon {display: none;}
+
+@media screen and (max-width:680px) {
+  ul.topnav1 li:not(:first-child) {display: none;}
+  ul.topnav1 li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:680px) {
+  ul.topnav1.responsive {position: relative;}
+  ul.topnav1.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav1.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav1.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+/*******************************************************************/
+/* Example 2 styling */
+ul.topnav2 {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 50%;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav2 li {
+  float: left;
+}
+
+ul.topnav2 li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+ul.topnav2 li a:hover {background-color: #555;}
+
+ul.topnav2 li.icon {display: none;}
+
+@media screen and (max-width:680px) {
+  ul.topnav2 li {display: none;}
+  ul.topnav2 li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:680px) {
+  ul.topnav2.responsive {position: relative;}
+  ul.topnav2.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  ul.topnav2.responsive li {
+    float: none;
+    display: inline;
+  }
+
+  ul.topnav2.responsive li a {
+    display: block;
+    text-align: right;
+  }
+  ul.topnav2.responsive li:first-child a {
+    padding-top: 80px;
+  }
+}
