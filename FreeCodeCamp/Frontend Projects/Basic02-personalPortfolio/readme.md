@@ -10,6 +10,8 @@ Objective: Build a CodePen.io app that is functionally similar to this: https://
 - [How TO - Responsive Top Navigation](http://www.w3schools.com/howto/howto_js_topnav.asp)
 - [Making a pure CSS responsive menu using flexbox](http://blog.christopherianmurphy.com/2016/01/responsive-pure-css-menu.html)
 
+#### [How TO - Social Media Buttons](http://www.w3schools.com/howto/howto_css_social_media_buttons.asp)
+
 #### Basic knowledge
 - [CSS Selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors)
   - [Combinators and multiple selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Combinators_and_multiple_selectors)
