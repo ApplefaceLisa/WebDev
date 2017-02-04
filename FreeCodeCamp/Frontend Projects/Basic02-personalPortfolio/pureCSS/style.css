@@ -148,7 +148,7 @@ main {
 #portfolio, #contact {
     background-color: #f2f2f2;
     margin: 0;
-    padding: 20px;
+    padding: 60px;
     border-bottom: 1px solid #cccccc;
 }
 #footer {
@@ -271,33 +271,21 @@ hr.middle-star:after{
     color: #fff;
     margin-bottom: 40px;
 }
-div.social {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.social .fa {
+  box-sizing: content-box;   /* must be content-box */
+  padding: 20px;
+  font-size: 20px;
+  width: 20px;               /* must be same as font-size */
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+  border: 2px solid white;
 }
-div.social {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-a.iwrapper {
-    display: block;
-    width: 50px;
-    height: 50px;
-    border: 2px solid white;
-    border-radius: 50%;
-    text-align: center;
-    margin: 5px;
-    line-height: 50px;
-}
-a {
-    text-decoration: none;
-}
-a.iwrapper:link, a.iwrapper:visited {
+a.fa:link, a.fa:visited {
     color: white;
 }
-a.iwrapper:hover, a.iwrapper:active {
+a.fa:hover, a.fa:active {
     color: #722872;
     background-color: white;
 }
