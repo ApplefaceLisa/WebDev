@@ -9,10 +9,15 @@ body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: normal;
     font-size: 16px;
+    line-height: 1.42857;
 }
-h1 {
+header h1, main h1, footer h1 {
+    font-size: 1.5em;
     text-align: center;
     text-transform: uppercase;
+}
+header p, main p, footer p {
+    font-size: 20px;
 }
 #navbar {
     width: 100%;
@@ -253,4 +258,52 @@ hr.middle-star:after{
 #usrform>input, #usrform>textarea {
     display: block;
     border: 0px 0px 2px 0px solid #a6a6a6;
+}
+/* styling footer */
+#extraInfo {
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+}
+#page, #web {
+    width: 40%;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 40px;
+}
+div.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a.iwrapper {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 50%;
+    text-align: center;
+    margin: 5px;
+    line-height: 50px;
+}
+a {
+    text-decoration: none;
+}
+a.iwrapper:link, a.iwrapper:visited {
+    color: white;
+}
+a.iwrapper:hover, a.iwrapper:active {
+    color: #722872;
+    background-color: white;
+}
+#copyright a:link, #copyright a:visited {
+    color: #bfbfbf;
+}
+#copyright a:hover, #copyright a:active {
+    color: blue;
 }
