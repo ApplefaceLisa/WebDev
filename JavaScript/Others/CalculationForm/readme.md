@@ -3,3 +3,6 @@ Write a function that returns the total cost of any number of buckets of paint. 
 
 ## Reference
 - [Doing real-time calculations in a form using JavaScript](http://www.javascript-coder.com/javascript-form/javascript-calculator-script.phtml)
+- [How to set the value of a form element using Javascript PartI](http://www.javascript-coder.com/javascript-form/javascript-form-value.phtml)
+- [How to set the value of a form element using Javascript PartII](http://www.javascript-coder.com/javascript-form/javascript-set-form-field.phtml)
+- [How to set the value of a form element using Javascript PartIII](http://www.javascript-coder.com/javascript-form/javascript-form-value-select.phtml)
