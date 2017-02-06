@@ -5,15 +5,15 @@ Write a function that returns the total cost of any number of buckets of paint. 
 #### How to access form elements
 - [Best Practice: Access form elements by HTML id or name attribute?](http://stackoverflow.com/questions/2435525/best-practice-access-form-elements-by-html-id-or-name-attribute)
 
-Give your form an id only, and your input a name only:
-```
+  - Give your form an id only, and your input a name only:
+  ```
     <form id="myform">
       <input type="text" name="foo">
-```   
-Then the most standards-compliant and least problematic way to access your input element is via:
-```
+  ```   
+  Then the most standards-compliant and least problematic way to access your input element is via:
+  ```
     document.getElementById("myform").elements["foo"]
-``` 
+  ``` 
 
 ## Reference
 - [Doing real-time calculations in a form using JavaScript](http://www.javascript-coder.com/javascript-form/javascript-calculator-script.phtml)
