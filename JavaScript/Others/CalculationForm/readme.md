@@ -33,6 +33,42 @@ Write a function that returns the total cost of any number of buckets of paint. 
   
 - [How to get the value of a form element : text and textarea](http://www.javascript-coder.com/javascript-form/javascript-get-form.phtml)
   - use element.value
+  - code example
+  ```
+  <!DOCTYPE html>
+  <html>
+  <body>
+
+  <form id="nameForm">
+  First name: <input type="text" name="FirstName" value="Mickey" onchange="getName()" onkeypress="this.onchange()" onpaste="this.onchange();" oninput="this.onchange();"><br>
+  Last name: <input type="text" name="LastName" value="Mouse" onchange="getName()" onkeypress="this.onchange()" onpaste="this.onchange();" oninput="this.onchange();"><br>
+  <input type="submit" value="Submit">
+  </form>
+  <br>
+  <textarea form="nameForm" name="comment" rows="4" cols="50" onchange="getComment()" onkeypress="this.onchange()" onpaste="this.onchange();" oninput="this.onchange();">
+  At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
+  </textarea>
+
+  <p>Click the "Submit" button and the form-data will be sent to a page on the server called "demo_form.asp".</p>
+
+  <script>
+  function getName() {
+    var nameform = document.forms["nameForm"];
+    var fname = nameform.elements["FirstName"].value;
+    var lname = nameform.elements["LastName"].value;
+    var name = fname + " " + lname;
+    console.log(name);
+  }  
+  function getComment() {
+    var nameform = document.forms["nameForm"];
+    var cele = nameform.elements["comment"];
+    var comment = cele.value;
+    console.log(comment);
+  }
+  </script>
+  </body>
+  </html>
+  ```
   
 - [How to get the value of a form element : check box and radio button](http://www.javascript-coder.com/javascript-form/javascript-get-check.phtml)  
   - use element.checked to test if radio/checkbox is selected/checked. For example:
