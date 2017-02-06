@@ -13,7 +13,15 @@ Write a function that returns the total cost of any number of buckets of paint. 
   Then the most standards-compliant and least problematic way to access your input element is via:
   ```
     document.getElementById("myform").elements["foo"]
+    i.e.
+    document.getElementById("form_id").elements["input_name"]
   ``` 
+  or
+  ```
+    document.forms["myform"].elements["foo"]
+    i.e.
+    document.forms["form_id"].elements["input_name"]
+  ```
   
 - [How to get the elements in a form](http://www.javascript-coder.com/javascript-form/getelementbyid-form.phtml)
   - use document.getElementById()
