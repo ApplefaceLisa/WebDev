@@ -14,8 +14,17 @@ Write a function that returns the total cost of any number of buckets of paint. 
   ```
     document.getElementById("myform").elements["foo"]
   ``` 
+  
+- [How to get the elements in a form](http://www.javascript-coder.com/javascript-form/getelementbyid-form.phtml)
+  - use document.getElementById()
+  - use document.getElementsByTagName()
+  - use document.getElementsByName()
+  
+- [How to get the value of a form element](http://www.javascript-coder.com/javascript-form/javascript-get-form.phtml)
+
 
 ## Reference
+- **[Javascript Form Handling](http://www.javascript-coder.com/category/javascript-form)**
 - [Doing real-time calculations in a form using JavaScript](http://www.javascript-coder.com/javascript-form/javascript-calculator-script.phtml)
 - [How to set the value of a form element using Javascript PartI](http://www.javascript-coder.com/javascript-form/javascript-form-value.phtml)
 - [How to set the value of a form element using Javascript PartII](http://www.javascript-coder.com/javascript-form/javascript-set-form-field.phtml)
