@@ -217,6 +217,9 @@ Write a function that returns the total cost of any number of buckets of paint. 
 - [How to set the value of a form element using Javascript PartI](http://www.javascript-coder.com/javascript-form/javascript-form-value.phtml)
 - [How to set the value of a form element using Javascript PartII](http://www.javascript-coder.com/javascript-form/javascript-set-form-field.phtml)
 - [How to set the value of a form element using Javascript PartIII](http://www.javascript-coder.com/javascript-form/javascript-form-value-select.phtml)  
+- [Using JavaScript to access form objects when there are multiple forms](http://www.javascript-coder.com/javascript-form/javascript-get-all-form-objects.phtml)
+  - Accessing the form object through JavaScript using the **this.form** property
+  - Accessing multiple Forms using the document object’s **forms** collection
 
 ## Reference
 - **[Javascript Form Handling](http://www.javascript-coder.com/category/javascript-form)**
