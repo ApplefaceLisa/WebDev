@@ -223,4 +223,20 @@ Write a function that returns the total cost of any number of buckets of paint. 
 
 ## Reference
 - **[Javascript Form Handling](http://www.javascript-coder.com/category/javascript-form)**
+  - [How to Submit a Form Using JavaScript](http://www.javascript-coder.com/javascript-form/javascript-form-submit.phtml)
+    **document.forms["form-id"].submit();**
+    ```
+    <script type="text/javascript">
+    function submitform()
+    {
+        document.forms["myform"].submit();
+    }
+    </script>
+    
+    <form id="myform" action="submit-form.php">
+        Search: <input type='text' name='query'>
+        <a href="javascript: submitform()">Submit</a>
+    </form>
+    ```
 - [Doing real-time calculations in a form using JavaScript](http://www.javascript-coder.com/javascript-form/javascript-calculator-script.phtml)
+
