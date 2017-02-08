@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header id="navbar">
+    <div class="logo"><img src="http://qlip.in/images/qlip.png" alt="my logo"></div>
+    <ul class="topnav" id="myTopnav">
+      <li class="active"><a href="#about">about</a></li>
+      <li><a href="#portfolio">portfolio</a></li>
+      <li><a href="#contact">contact</a></li>
+      <li class="icon">
+        <a href="javascript:void(0);" onclick="menuIcon()">&#9776;</a>
+      </li>
+    </ul>
+  </header>
+  <main>
+      <section id="about">
+        <div class="left">
+          <p>
+            Front-End Developer and UX/UI designer, with practical experience in project management, branding strategy, and creative direction; devoted to functional programming and information architecture.
+          </p>
+          <hr class="end-star">
+          <p>Web Developer - User Experience Designer - Graphic Artist</p>
+        </div>
+        <div class="right">
+          <img src="http://qlip.in/images/avatar.jpg" alt="A picture of Justin looking at San Francisco from across the Golden Gate Bridge." title="A picture of Justin looking at San Francisco from across the Golden Gate Bridge.">
+        </div>
+      </section>
+      <section id="portfolio">
+        <h1>PORTFOLIO</h1>
+        <hr class="middle-star">
+        <div>
+          <img src="http://qlip.in/images/YMCA-Realtor-Donation-3.jpg">
+          <img src="http://qlip.in/images/webcaballero.jpg">
+          <img src="http://qlip.in/images/webmarqas.jpg">
+          <img src="http://qlip.in/images/webbrandaxis.jpg">
+          <img src="http://qlip.in/images/panacea1.jpg">
+          <img src="http://qlip.in/images/webgatomalo.jpg">
+        </div>
+      </section>
+      <section id="contact">
+        <h1>CONTACT ME</h1>
+        <hr class="middle-star">
+        <div class="wrapper">
+          <div class="left">
+            <form id="usrform">
+              <input type="text" name="name" placeholder="Name"><br>
+              <input type="email" name="email" placeholder="Email Address"><br>
+              <input type="tel" name="phone" placeholder="Phone Number"><br>
+              <textarea rows="6" cols="50" name="comment" form="usrform" placeholder="Leave A Message"></textarea><br>
+              <input type="submit" value="Send" class="different">
+            </form>
+          </div>
+          <div class="right">
+            <p>Want to get in touch with me? Be it to request more info about myself or my experience, to ask for my resume, tips on how to solve your sudoku, random questions about the universe and the meaning of life, or even if only for some nice Fika here in stunning Toronto... just feel free to drop me a line anytime.</p>
+            <p>I promise to reply A.S.A.P.</p>
+            <p>Note: No spam/soliciting pour moi, merci :)</p>
+          </div>
+        </div>
+      </section>
+  </main>
+  <footer id="footer">
+    <div id="extraInfo">
+        <div id="page" class="left">
+          <h1>ABOUT THIS PAGE</h1>
+          <p>Made with
+          <i class="fa fa-coffee" aria-hidden="true"></i> and
+          <i class="fa fa-music" aria-hidden="true"></i> by <span style="color: #722872;">Lisa Li</span>.
+          </p>
+        </div>
+        <div id="web" class="right">
+          <h1>AROUND THE WEB</h1>
+          <div class="social">
+            <a href="#" class="fa fa-linkedin" aria-hidden="true"></a>
+            <a href="#" class="fa fa-github" aria-hidden="true"></a>
+            <a href="#" class="fa fa-twitter" aria-hidden="true"></a>
+            <a href="#" class="fa fa-facebook" aria-hidden="true"></a>
+          </div>
+        </div>
+    </div>
+    <div id="copyright">
+      <p>Mockup <a href="https://codepen.io/freeCodeCamp/full/YqLyXB" target="_blank">this page</a>. &copy;2017 All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="text/javascript">
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+    function menuIcon() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+  </script>
+  <script src="menuspy.js"></script>
+  <script>
+    var elm = document.querySelector('#navbar');
+    var ms = new MenuSpy(elm);
+  </script>
+</body>
+</html>
