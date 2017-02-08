@@ -19,3 +19,6 @@
   - Question #1: Event delegation
   - Question #2: Using a closure within a loop
   - Question #3: Debouncing
+  
+- [JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/)
+    
