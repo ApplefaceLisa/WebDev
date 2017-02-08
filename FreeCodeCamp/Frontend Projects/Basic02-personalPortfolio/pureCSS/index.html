@@ -10,9 +10,9 @@
   <header id="navbar">
     <div class="logo"><img src="images/logo.jpg" alt="my logo"></div>
     <ul class="topnav" id="myTopnav">
-      <li><a href="#">about</a></li>
-      <li><a href="#">portfolio</a></li>
-      <li><a href="#">contact</a></li>
+      <li class="active"><a href="#about">about</a></li>
+      <li><a href="#portfolio">portfolio</a></li>
+      <li><a href="#contact">contact</a></li>
       <li class="icon">
         <a href="javascript:void(0);" onclick="menuIcon()">&#9776;</a>
       </li>
@@ -98,6 +98,11 @@
             x.className = "topnav";
         }
     }
+  </script>
+  <script src="menuspy.js"></script>
+  <script>
+    var elm = document.querySelector('#navbar');
+    var ms = new MenuSpy(elm);
   </script>
 </body>
 </html>
