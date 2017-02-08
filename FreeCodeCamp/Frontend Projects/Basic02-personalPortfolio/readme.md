@@ -19,6 +19,12 @@ Objective: Build a CodePen.io app that is functionally similar to this: https://
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)  
 - [How to remove the border highlight on an input text element](http://stackoverflow.com/questions/1457849/how-to-remove-the-border-highlight-on-an-input-text-element)
 - [CSS: z-index](https://css-tricks.com/almanac/properties/z/z-index/)
+- [CSS Combinators](http://www.w3schools.com/css/css_combinators.asp)
+  There are four different combinators in CSS3:
+  - descendant selector (space)
+  - child selector (>) : immediate children
+  - adjacent sibling selector (+) : "adjacent" means "immediately following"
+  - general sibling selector (~) : all siblings
   
 #### Characters and Icons  
 - [HTML Character Entity Reference Chart](https://dev.w3.org/html5/html-author/charref)
@@ -28,6 +34,8 @@ Objective: Build a CodePen.io app that is functionally similar to this: https://
 #### Alignment(vertical / horizontal)
 - [Vertical align anything with just 3 lines of CSS](http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/)
 
-
+#### Scrollspy
+- [JAVASCRIPT & CSS SCROLLSPY](http://www.cssscript.com/tag/scrollspy/)
+  - Highlight Active Menu Item On Page Scroll – MenuSpy.js
 
 
