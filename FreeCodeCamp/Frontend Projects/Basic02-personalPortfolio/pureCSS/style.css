@@ -30,6 +30,7 @@ header p, main p, footer p {
     box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
     border-color: #592059;
     display: flex;
+    z-index: 1;
 }
 #navbar div.logo {
     width: 40%;
@@ -184,7 +185,6 @@ main {
     height: auto;
     border-radius: 50%;
 }
-
 hr.end-star, hr.middle-star{
     margin: 40px auto 30px;
     padding: 0;
@@ -229,6 +229,7 @@ hr.middle-star:after{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-content: flex-start;
 }
 #portfolio>div {
     justify-content: space-between;
@@ -244,20 +245,36 @@ hr.middle-star:after{
     margin: 0;
     padding: 30px;
 }
-#contact div.left, #contact div.right {
+#contact>div.wrapper>div.left, #contact>div.wrapper>div.right {
     width: 40%;
-    margin: 0;
+    margin: 0 auto;
 }
-
+@media screen and (max-width:768px) {
+    #contact>div.wrapper>div.left, #contact>div.wrapper>div.right {
+    width: 100%;
+}
+}
 #usrform {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    width: 100%;
 }
-#usrform>input, #usrform>textarea {
-    display: block;
-    border: 0px 0px 2px 0px solid #a6a6a6;
+#usrform>input:not(.different), #usrform>textarea {
+    width: 98%;
+    background-color: #f2f2f2;
+    font-size: 2em;
+    margin-bottom: 1em;
+    border: 0;
+    border-bottom: 1px solid #bbb;
+}
+#usrform>input.different {
+    font-size: 1.4em;
+    color: grey;
+    padding: 10px;
+}
+#usrform>input:not(.different):focus, #usrform>textarea:focus {
+    outline: none;
+}
+#contact>div.wrapper>div.right>p:last-child {
+    margin-top: 200px;
 }
 /* styling footer */
 #extraInfo {
@@ -282,6 +299,9 @@ hr.middle-star:after{
   border-radius: 50%;
   border: 2px solid white;
 }
+a {
+    text-decoration: none;
+}
 a.fa:link, a.fa:visited {
     color: white;
 }
@@ -293,5 +313,5 @@ a.fa:hover, a.fa:active {
     color: #bfbfbf;
 }
 #copyright a:hover, #copyright a:active {
-    color: blue;
+    color: yellow;
 }
