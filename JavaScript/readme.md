@@ -48,3 +48,5 @@
   ```
   
 - What are the advantages of IIFEs(Immediately Invoked Functon Expressions)?
+- Factory Functions vs Constructor Functions vs Classes
+  - [JavaScript Factory Functions vs Constructor Functions vs Classes](https://medium.com/javascript-scene/javascript-factory-functions-vs-constructor-functions-vs-classes-2f22ceddf33e#.893p2krj8)
