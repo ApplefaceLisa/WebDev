@@ -26,3 +26,25 @@
 - Event Loop
   - [MDN Concurrency model and Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
   - [Philip Roberts: What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
+
+- use function to implement module
+  ```
+      function moduleA() {
+          var secretValue = 21;
+          return {
+              getSecretValue : function () {
+                  return secretValue;
+              },
+              setSecretValue : function (val) {
+                  secretValue = val;
+              }
+          }
+      }
+
+      var someObj = moduleA();
+      console.log(someObj.getSecretValue());
+      someObj.setSecretValue(43);
+      console.log(someObj.getSecretValue());
+  ```
+  
+- What are the advantages of IIFEs(Immediately Invoked Functon Expressions)?
