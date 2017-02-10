@@ -23,6 +23,7 @@
 - [JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/)
     
 # Basic Knowledge
+### Functions
 - Understanding _arguments_ Object
 
 - Understanding _this_ object
@@ -36,6 +37,8 @@
     
     
   - [apply()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
+  
+    The apply() method calls a function with a given this value and arguments provided as an array (or an array-like object).
   
     func.apply(thisObj[, arg_arr])
     
@@ -53,28 +56,32 @@
   
   - compare
   
-  Use **.bind()** when you want that function to **later be called** with a certain context, useful in events. Use **.call() or .apply()** when you want to invoke the funciton **immediately**, and modify the context.
+    Use **.bind()** when you want that function to **later be called** with a certain context, useful in events. Use **.call() or .apply()** when you want to invoke the funciton **immediately**, and modify the context.
 
-  Call/apply call the function immediately, whereas bind returns a function that when later executed will have the correct context set for calling the original function. This way you can maintain context in async callbacks, and events.
+    Call/apply call the function immediately, whereas bind returns a function that when later executed will have the correct context set for calling the original function. This way you can maintain context in async callbacks, and events.
   
-  for [example](http://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind)
-  ```
-  function MyObject(element) {
-    this.elm = element;
+    for [example](http://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind)
+    ```
+    function MyObject(element) {
+      this.elm = element;
 
-    element.addEventListener('click', this.onClick.bind(this), false);
-  };
+      element.addEventListener('click', this.onClick.bind(this), false);
+    };
 
-  MyObject.prototype.onClick = function(e) {
-       var t=this;  //do something with [t]...
-      //without bind the context of this function wouldn't be a MyObject
-      //instance as you would normally expect.
-  };
-  ```
+    MyObject.prototype.onClick = function(e) {
+         var t=this;  //do something with [t]...
+        //without bind the context of this function wouldn't be a MyObject
+        //instance as you would normally expect.
+    };
+    ```
+
+- Closure
+
+  a closure is simply an outer function that returns an inner function. Doing this creates a mechanism to return an enclosed scope on demand.
   
-- Event Loop
-  - [MDN Concurrency model and Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
-  - [Philip Roberts: What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
+  Closures have access to the outer function’s variable even after the outer function returns.
+  
+  Closures store references to the outer function’s variables; they do not store the actual value.
 
 - use function to implement module
   ```
@@ -97,5 +104,10 @@
   ```
   
 - What are the advantages of IIFEs(Immediately Invoked Functon Expressions)?
+
 - Factory Functions vs Constructor Functions vs Classes
   - [JavaScript Factory Functions vs Constructor Functions vs Classes](https://medium.com/javascript-scene/javascript-factory-functions-vs-constructor-functions-vs-classes-2f22ceddf33e#.893p2krj8)
+   
+- Event Loop
+  - [MDN Concurrency model and Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
+  - [Philip Roberts: What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ)  
