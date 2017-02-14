@@ -11,5 +11,5 @@
 - [CSS Font Stack](http://www.cssfontstack.com/)
 - [Google fonts](https://fonts.google.com/)
 - hr style
-  - [Simple Styles for <hr>'s](https://css-tricks.com/examples/hrs/)
+  - [Simple Styles for ```<hr>```'s](https://css-tricks.com/examples/hrs/)
   - [18 Simple Styles for Horizontal Rules (hr CSS Design)](https://codepen.io/ibrahimjabbari/pen/ozinB)
