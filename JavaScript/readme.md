@@ -107,6 +107,13 @@
   ```
   
 - What are the advantages of IIFEs(Immediately Invoked Functon Expressions)?
+  - [Immediately-Invoked Function Expression (IIFE)](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
+  - [Quora Answer](https://www.quora.com/What-are-the-advantages-of-using-an-immediately-invoked-function-expression)
+    - Module pattern can  be implemented with the help of IIFE.
+    - One of the most common ways in which immediate functions are used: as simple, self-contained wrappers for functionality. The variables needed for the unit of functionality are trapped in the closure, but they aren’t visible anywhere else.
+    - Enforcing the use of a name within an enclosed scope. 
+    - Keeping code readable with shorter names.
+    - Using an immediate function to handle the iterator properly.
 
 - [Demystifying JavaScript Closures, Callbacks and IIFEs](https://www.sitepoint.com/demystifying-javascript-closures-callbacks-iifes/)
   - In Javascript, a **closure** is any function that keeps **_reference_** to variables from its _parent’s scope even after the parent has returned_. Closures keep references to outer variables, and thus, they _return the most recent/updated values_.
