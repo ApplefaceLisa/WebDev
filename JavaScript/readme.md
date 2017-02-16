@@ -23,6 +23,9 @@
 - [JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/)
     
 # Basic Knowledge
+### Variable scope and hoisting
+- [Demystifying JavaScript Variable Scope and Hoisting](https://www.sitepoint.com/demystifying-javascript-variable-scope-hoisting/)
+
 ### Functions
 - Understanding _arguments_ Object
 
@@ -104,6 +107,117 @@
   ```
   
 - What are the advantages of IIFEs(Immediately Invoked Functon Expressions)?
+
+- [Demystifying JavaScript Closures, Callbacks and IIFEs](https://www.sitepoint.com/demystifying-javascript-closures-callbacks-iifes/)
+  - In Javascript, a **closure** is any function that keeps **_reference_** to variables from its _parent’s scope even after the parent has returned_. Closures keep references to outer variables, and thus, they _return the most recent/updated values_.
+  
+    So, what do you think is going to be the output of the following example?
+    ```javascript
+    function printFruits(fruits){
+      for (var i = 0; i &lt; fruits.length; i++) {
+        setTimeout( function(){
+          console.log( fruits[i] );
+        }, i * 1000 );
+      }
+    }
+
+    printFruits(["Lemon", "Orange", "Mango", "Banana"]);
+    ```
+    
+    the output is four times “undefined”.
+    
+    How to fix it? (See IIFE).
+  
+  - In JavaScript, functions are first-class objects. One of the consequences of this fact is that functions can be passed as arguments to other functions and can also be returned by other functions.
+  
+    A function that takes other functions as arguments or returns functions as its result is called a _higher-order function_, and the function that is passed as an argument is called a **callback function**. It’s named “callback” because at some point in time it is “called back” by the higher-order function.
+    
+    Callbacks are heavily used in JavaScript libraries to provide generalization and reusability. They allow the library methods to be easily customized and/or extended. Also, the code is easier to maintain, and much more concise and readable. Every time you need to transform your unnecessary repeated code pattern into more abstract/generic function, callbacks come to the rescue.
+    
+    Put the repeated code pattern into _higher-order function_,  and leave only the specific data inside _callback functions_.
+    
+    Example:    
+    - setTimeout() and setInterval()
+    ```javascript
+    function showMessage(message){
+      setTimeout(function(){
+        alert(message);
+      }, 3000);  
+    }
+
+    showMessage('Function called 3 seconds ago');
+    ```
+    - Another example is when we attach an event listener to an element on a page.
+    ```html
+    <button id='btn'>Click me</button>
+    ```
+    ```javascript
+    function showMessage(){
+      alert('Woohoo!');
+    }
+
+    var el = document.getElementById("btn");
+    el.addEventListener("click", showMessage);
+    ```
+    
+    The callback can be an existing function as shown in the preceding example, or it can be an anonymous function, which we create when we call the higher-order function.
+    ```javascript
+    function fullName(firstName, lastName, callback){
+      console.log("My name is " + firstName + " " + lastName);
+      callback(lastName);
+    }
+
+    fullName("Jackie", "Chan", function(ln){console.log('Welcome Mr. ' + ln);});
+    ```
+    
+  - An Immediately-invoked function expression, or **IIFE** (pronounced “iffy”), is a function expression (named or anonymous) that is executed right away after its creation.
+  
+    An IIFE is often used to create scope to encapsulate modules. Within the module there is a private scope that is self-contained and safe from unwanted or accidental modification. This technique, called the module pattern, is a powerful example of using closures to manage scope, and it’s heavily used in many of the modern JavaScript libraries (jQuery and Underscore, for example).
+  
+    There are two slightly different syntax variations of this pattern:
+    ```javascript
+    // variant 1
+
+    (function () {
+      alert('Woohoo!');
+    })();
+
+    // variant 2
+
+    (function () {
+      alert('Woohoo!');
+    }());
+    ```
+    
+    The problem of closure can be fixed by closing the setTimeout() method in an IIFE, and defining a private variable to hold the current copy of i.
+    ```javascript
+    function printFruits(fruits){
+      for (var i = 0; i &lt; fruits.length; i++) {
+        (function(){
+          var current = i;                    // define new variable that will hold the current value of "i"
+          setTimeout( function(){
+            console.log( fruits[current] );   // this time the value of "current" will be different for each iteration
+          }, current * 1000 );
+        })();
+      }
+    }
+
+    printFruits(["Lemon", "Orange", "Mango", "Banana"]);
+    ```
+    Or
+    ```javascript
+    function printFruits(fruits){
+      for (var i = 0; i &lt; fruits.length; i++) {
+        (function(current){
+          setTimeout( function(){
+            console.log( fruits[current] );
+          }, current * 1000 );
+        })( i );
+      }
+    }
+
+    printFruits(["Lemon", "Orange", "Mango", "Banana"]);
+    ```
 
 - Factory Functions vs Constructor Functions vs Classes
   - [JavaScript Factory Functions vs Constructor Functions vs Classes](https://medium.com/javascript-scene/javascript-factory-functions-vs-constructor-functions-vs-classes-2f22ceddf33e#.893p2krj8)
