@@ -27,6 +27,20 @@
 - [Demystifying JavaScript Variable Scope and Hoisting](https://www.sitepoint.com/demystifying-javascript-variable-scope-hoisting/)
 
 ### Functions
+- function declaration vs. function expression
+  they are two ways of defining equivalent functions.
+  ```javascript
+  // function declaration
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+  
+  // function expression
+  var capitalize = function(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+  ```
+
 - Understanding _arguments_ Object
 
 - Understanding _this_ object
