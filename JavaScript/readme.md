@@ -247,6 +247,12 @@
   - [MDN Concurrency model and Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
   - [Philip Roberts: What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ)  
 
+### Objects
+- [object literal notation vs constructor](http://stackoverflow.com/questions/4859800/should-i-be-using-object-literals-or-constructor-functions)
+  - Object literals are basically singletons with variables/methods that are all public.
+  - Object defined with a constructor lets you have multiple instances of that object.
+  - Prototype lets you attach each function once and only once: they'll be inherited by the instances through prototypal inheritance.
+
 # Recommended Reference
 - http://javascriptissexy.com/how-to-learn-javascript-properly/
 - http://eloquentjavascript.net/
