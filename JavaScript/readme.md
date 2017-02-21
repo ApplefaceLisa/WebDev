@@ -249,9 +249,32 @@
 
 ### Objects
 - [object literal notation vs constructor](http://stackoverflow.com/questions/4859800/should-i-be-using-object-literals-or-constructor-functions)
-  - Object literals are basically singletons with variables/methods that are all public.
-  - Object defined with a constructor lets you have multiple instances of that object.
+  - If you don't have behaviour associated with an object (i.e. if the object is just a container for data/state), use an object literal. Furthermore, Object literals are basically singletons with variables/methods that are all public.
+  ```
+  var data = {
+      foo: 42,
+      bar: 43
+  };
+  data.foo = 12;
+  data.bar = 99;
+  ```
+  - Object defined with a constructor lets you have multiple instances of that object. If you want to use (semi-)private variables or functions in you object, a constructor function is the way to do it.
+  ```
+  function MyData(foo, bar) {
+      var _foo = foo;   // private
+      this.bar = bar;   // public
+
+      this.verify = function () {
+          return _foo === this.bar;   // _foo doesn't need this
+      };
+  }
+  ```
   - Prototype lets you attach each function once and only once: they'll be inherited by the instances through prototypal inheritance.
+  ```
+  MyData.prototype.verify = function () {
+      return this.foo === this.bar;
+  };
+  ```
 
 # Recommended Reference
 - http://javascriptissexy.com/how-to-learn-javascript-properly/
