@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>gallery of the pictures</title>
+    <style type="text/css">
+        body {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        div {
+            width: 900px;
+            height: 500px;
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+  <div>
+    <img id="photo-gallery"></img>
+  </div>
+
+<script type="text/javascript">
+    /* Begin: using the object literal notation */
+    var Gallery = {
+        Images: ['kitten01.jpg', 'kitten02.jpg', 'kitten03.jpg',
+                 'kitten04.jpg', 'kitten05.jpg', 'kitten06.jpg'],
+        CurrentIndex: 0,
+
+        Next: function()
+        {
+            if(Gallery.CurrentIndex < (Gallery.Images.length-1))
+            {
+                Gallery.CurrentIndex++;
+            }
+            else
+            {
+                Gallery.CurrentIndex = 0;
+            }
+            Gallery.Display();
+        },
+
+        Prev: function()
+        {
+            if(Gallery.CurrentIndex > 0)
+            {
+                Gallery.CurrentIndex--;
+            }
+            else
+            {
+                Gallery.CurrentIndex = (Gallery.Images.length-1);
+            }
+            Gallery.Display();
+        },
+
+        Display: function()
+        {
+            var photoGallery = document.getElementById('photo-gallery');
+            var currentImage = Gallery.Images[Gallery.CurrentIndex];
+            photoGallery.src = "img/"+ currentImage;
+        }
+    };
+
+    window.onload = function()
+    {
+        var _loopInterval = setInterval(Gallery.Next, 2500);
+    };
+    /* End: using the object literal notation */
+</script>
+</body>
+</html>
