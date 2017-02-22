@@ -25,6 +25,9 @@
 # Basic Knowledge
 ### Variable scope and hoisting
 - [Demystifying JavaScript Variable Scope and Hoisting](https://www.sitepoint.com/demystifying-javascript-variable-scope-hoisting/)
+- scope problem of setInterval() / setTimeout()
+  - [Referencing “this” inside setInterval/setTimeout within object prototype methods
+](http://stackoverflow.com/questions/7890685/referencing-this-inside-setinterval-settimeout-within-object-prototype-methods)
 
 ### Functions
 - function declaration vs. function expression
@@ -249,7 +252,7 @@
 
 ### Objects
 - [object literal notation vs constructor](http://stackoverflow.com/questions/4859800/should-i-be-using-object-literals-or-constructor-functions)
-  - If you don't have behaviour associated with an object (i.e. if the object is just a container for data/state), use an object literal. Furthermore, Object literals are basically singletons with variables/methods that are all public.
+  - If you **don't have behaviour** associated with an object (i.e. if the object is just a container for data/state), use an object literal. Furthermore, Object literals are basically singletons with variables/methods that are all public.
   ```
   var data = {
       foo: 42,
@@ -258,7 +261,7 @@
   data.foo = 12;
   data.bar = 99;
   ```
-  - Object defined with a constructor lets you have multiple instances of that object. If you want to use (semi-)private variables or functions in you object, a constructor function is the way to do it.
+  - Object defined with a constructor lets you have multiple instances of that object. If you want to use **(semi-)private variables or functions** in you object, a constructor function is the way to do it.
   ```
   function MyData(foo, bar) {
       var _foo = foo;   // private
