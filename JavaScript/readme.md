@@ -278,6 +278,8 @@
       return this.foo === this.bar;
   };
   ```
+- Basic class, subclass and inheritance
+  - MDN [Details of the object model](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model)
 
 # Recommended Reference
 - http://javascriptissexy.com/how-to-learn-javascript-properly/
