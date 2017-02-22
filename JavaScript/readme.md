@@ -280,6 +280,10 @@
   ```
 - Basic class, subclass and inheritance
   - MDN [Details of the object model](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model)
+  
+- Quora [Object vs Class vs Function](http://stackoverflow.com/questions/17525450/object-vs-class-vs-function)
+
+- Quora [Benefits of prototypal inheritance over classical?](http://stackoverflow.com/questions/2800964/benefits-of-prototypal-inheritance-over-classical)
 
 # Recommended Reference
 - http://javascriptissexy.com/how-to-learn-javascript-properly/
