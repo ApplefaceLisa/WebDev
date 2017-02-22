@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>gallery of the pictures</title>
+    <style type="text/css">
+        body {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        .gallery {
+            width: 400px;
+            height: 300px;
+            margin: 100px auto;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+        button {
+            width: 100px;
+            background-color: lightblue;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+  <div class="gallery">
+    <img id="photo-gallery"></img>
+  </div>
+  <div>
+      <button type="button" onclick="slide()">Start</button>
+      <button type="button" onclick="stop()">Stop</button>
+  </div>
+
+
+<script type="text/javascript">
+    function Gallery(eleId, imgPath, imgArr) {
+        this.Images = imgArr;
+        this.CurrentIndex = 0;
+        this.eleId = eleId;
+        this.imgPath = imgPath;
+    }
+
+    Gallery.prototype = {
+        Display : function(eleId, imgPath) {
+            var photoGallery = document.getElementById(eleId);
+            var currentImage = this.Images[this.CurrentIndex];
+            photoGallery.src = imgPath + currentImage;
+        },
+
+        Next : function() {
+            if(this.CurrentIndex < (this.Images.length-1))
+            {
+                this.CurrentIndex++;
+            }
+            else
+            {
+                this.CurrentIndex = 0;
+            }
+            this.Display(this.eleId, this.imgPath);
+        },
+
+        Prev : function() {
+            if(this.CurrentIndex > 0)
+            {
+                this.CurrentIndex--;
+            }
+            else
+            {
+                this.CurrentIndex = (this.Images.length-1);
+            }
+            this.Display(this.eleId, this.imgPath);
+        }
+    };
+
+    var gallery = new Gallery("photo-gallery", "img/", ['kitten01.jpg', 'kitten02.jpg', 'kitten03.jpg','kitten04.jpg', 'kitten05.jpg', 'kitten06.jpg']);
+
+    window.onload = slide();
+
+    function slide() {
+        interval = setInterval(function() { gallery.Next(); }, 1000);
+    };
+
+    function stop() {
+        clearInterval(interval);
+    }
+</script>
+</body>
+</html>
