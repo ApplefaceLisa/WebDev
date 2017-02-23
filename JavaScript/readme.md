@@ -251,6 +251,8 @@
   - [Philip Roberts: What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ)  
 
 ### Objects
+- [JavaScript Objects in Detail](http://javascriptissexy.com/javascript-objects-in-detail/)
+
 - [object literal notation vs constructor](http://stackoverflow.com/questions/4859800/should-i-be-using-object-literals-or-constructor-functions)
   - If you **don't have behaviour** associated with an object (i.e. if the object is just a container for data/state), use an object literal. Furthermore, Object literals are basically singletons with variables/methods that are all public.
   ```
@@ -278,6 +280,7 @@
       return this.foo === this.bar;
   };
   ```
+  
 - Basic class, subclass and inheritance
   - MDN [Details of the object model](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model)
   
