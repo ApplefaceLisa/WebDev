@@ -291,6 +291,7 @@
   
 - Basic class, subclass and inheritance
   - MDN [Details of the object model](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model)
+    **Prototypal Inheritance**
   
 - Quora [Object vs Class vs Function](http://stackoverflow.com/questions/17525450/object-vs-class-vs-function)
   - prototypal pattern vs. constructor pattern
@@ -298,6 +299,24 @@
 - Quora [Benefits of prototypal inheritance over classical?](http://stackoverflow.com/questions/2800964/benefits-of-prototypal-inheritance-over-classical)
   - Quora [Understanding the difference between Object.create() and new SomeFunction()](http://stackoverflow.com/questions/4166616/understanding-the-difference-between-object-create-and-new-somefunction)
   - [Why Prototypal Inheritance Matters](http://aaditmshah.github.io/why-prototypal-inheritance-matters/#constructors_vs_prototypes)
+
+### Array
+Array methods
+```html
+Method                What It Does
+concat()              Concatenates elements from one array to another array.
+join()                Joins the elements of an array by a separator to form a string.
+pop()                 Removes and returns the last element of an array.
+push()                Adds elements to the end of an array.
+reverse()             Reverses the order of the elements in an array.
+shift()               Removes and returns the first element of an array.
+slice()               Creates a new array from elements of an existing array.
+sort()                Sorts an array alphabetically or numerically.
+splice()              Removes and/or replaces elements of an array.
+toLocaleString()      Returns a string representation of the array in local format.
+toString()            Returns a string representation of the array.
+unshift()             Adds elements to the beginning of an array.
+```
 
 # Recommended Reference
 - http://javascriptissexy.com/how-to-learn-javascript-properly/
