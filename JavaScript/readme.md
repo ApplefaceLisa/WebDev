@@ -355,16 +355,100 @@ Math.toString(Number) | Converts Number to string
 
 ### Wrapper Objects
 #### String Object
-- [JavaScript : String.slice() vs String.substring() vs String.substr() - See more at: http://www.tothenew.com/blog/javascript-slice-vs-substring-vs-substr/#sthash.wsuUQmk4.dpuf](http://www.tothenew.com/blog/javascript-slice-vs-substring-vs-substr/)
-  - MDN [substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
-  - MDN [substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-  - MDN [slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- properties
 
+Property | What It Does
+-------- | ------------------------------------------------------------------------
+length | Returns the length of the string in characters.
+constructor | Returns the function that created the String object.
+prototype | Extends the definition of the string by adding properties and methods.
 
+- HTML methods
+
+Method | Formats as HTML
+------ | -----------------------------------------
+String.anchor(Name) | ```<a name="Name">String</a>```
+String.big() | ```<big>String</big>```
+String.blink() | ```<blink>String</blink>```
+String.bold() | ```<b>String</b>```
+String.fixed() | ```<tt>String</tt>```
+String.fontcolor(color) | ```<font color="color">String</font> e.g., <font color="blue">String</font>```
+String.fontsize(size) | ```<font size="size">String</font> e.g., <font size="+2">String</font>```
+String.italics() | ```<i>String</i>```
+String.link(URL) | ```<a href="URL">String</a> e.g., <a href="http://www.ellieq.com">String</a>```
+String.small() | ```<small>String</small>```
+String.strike() | ```<strike>String</strike> (puts a line through the text)```
+String.sub() | ```<sub>String</sub> (creates a subscript)```
+String.sup() | ```<sup>String</sup> (creates a superscript)```
+
+- methods for manipulation
+
+Method | What It Does
+------ | -------------------------------------------------------------------------------
+charAt(index) | Returns the character at a specified index position.
+charCodeAt(index) | Returns the Unicode encoding of the character at a specified index position.
+**concat(string1, ..., stringn)** | Concatenates string arguments to the string on which the method was invoked.
+fromCharCode(codes) | Creates a string from a comma-separated sequence of character codes.
+**indexOf(substr, startpos)** | Searches for the **first occurrence** of substr starting at startpos and returns the startpos(index value) of substr.
+**lastIndexOf(substr, startpos)** | Searches for the **last occurrence** of substr starting at startpos and returns the startpos (index value) of substr.
+replace(searchValue, replaceValue) | Replaces searchValue with replaceValue.
+search(regexp) | Searches for the regular expression and returns the index of where it was found.
+**slice(startpos[, endpos])** | Returns string containing the part of the string from startpos to endpos.
+**split(delimiter)** | Splits a string into an array of words based on delimiter.
+**substr(startIdx[,length])** | returns the characters in a string beginning at the startIdx through the specified number of characters.
+**substring(startpos, endpos)** | Returns a subset of string starting at startpos up to, but not including, endpos.
+toLocaleLowerCase() | Returns a **copy** of the string converted to lowercase.
+toLocaleUpperCase() | Returns a **copy** of the string converted to uppercase.
+**toLowerCase()** | Converts all characters in a string to lowercase letters.
+toString() | Returns the same string as the source string.
+**toUpperCase()** | Converts all characters in a string to uppercase letters.
+valueOf | Returns the string value of the object.
+
+  - [JavaScript : String.slice() vs String.substring() vs String.substr() - See more at: http://www.tothenew.com/blog/javascript-slice-vs-substring-vs-substr/#sthash.wsuUQmk4.dpuf](http://www.tothenew.com/blog/javascript-slice-vs-substring-vs-substr/)
+    - MDN [substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
+    - MDN [substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+    - MDN [slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+    - **[Summary of comparation with example]**(https://docs.google.com/spreadsheets/d/1nBhkxBIs7KWecbTa69zBkRd8Q8yptvz9dWLux4LMeNE/edit#gid=0)
 
 #### Number Object
+- properties
+
+Property | What It Describes
+-------- | --------------------------------------------------------------
+MAX_VALUE | The largest representable number, 1.7976931348623157e+308
+MIN_VALUE | The smallest representable number, 5e–324
+NaN | Not-a-number value
+NEGATIVE_INFINITY | Negative infinite value; returned on overflow
+POSITIVE_INFINITY | Infinite value; returned on overflow
+prototype | Used to customize the Number object by adding new properties and methods
+
+- methods
+
+Method | What It Does
+------ | ---------------------------
+toString() | Converts a number to a string using a specified base (radix)
+toLocaleString() | Converts a number to a string using local number conventions
+toFixed() | Converts a number to a string with a specified number of places after the decimal point
+toExponential() | Converts a number to a string using exponential notation and a specified number of places after the decimal point
+toPrecision() | Converts a number to a string in either exponential or fixed notation containing the specified number of places after the decimal point
+
 #### Boolean Object
+The Boolean object was included in JavaScript 1.1. It is used to convert a non-Boolean value to a Boolean value, either true or false. There is **one property**, the **prototype property**, and **one method**, the **toString() method**, which converts a Boolean value to a string; thus, true is converted to “true” and false is converted to “false”.
+
 #### Function Object
+- properties
+
+Property | What It Does
+-------- | --------------
+length | Returns the number of arguments that are expected to be passed (read only).
+prototype | Allows the object to be customized by adding new properties and methods.
+
+- methods
+
+Property | What It Does
+-------- | --------------------
+apply() | Allows you to apply a method from one function to another.
+call() | Allows you to call a method from another object.
 
 # Recommended Reference
 - http://javascriptissexy.com/how-to-learn-javascript-properly/
