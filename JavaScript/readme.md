@@ -18,6 +18,9 @@
 - [Douglas Crockford: An Inconvenient API - The Theory of the DOM](https://www.youtube.com/watch?v=Y2Y0U-2qJMs)
 - and more...
 
+# Tools
+- [JSLint](http://www.jslint.com/)
+
 # Articles
 - [3 JavaScript questions to watch out for during coding interviews](https://medium.freecodecamp.com/3-questions-to-watch-out-for-in-a-javascript-interview-725012834ccb#.mfc6xdg3d)
 
