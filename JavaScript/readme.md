@@ -304,17 +304,29 @@
 Array methods
 ```html
 Method                What It Does
+
 concat()              Concatenates elements from one array to another array.
+
 join()                Joins the elements of an array by a separator to form a string.
+
 pop()                 Removes and returns the last element of an array.
+
 push()                Adds elements to the end of an array.
+
 reverse()             Reverses the order of the elements in an array.
+
 shift()               Removes and returns the first element of an array.
+
 slice()               Creates a new array from elements of an existing array.
+
 sort()                Sorts an array alphabetically or numerically.
+
 splice()              Removes and/or replaces elements of an array.
+
 toLocaleString()      Returns a string representation of the array in local format.
+
 toString()            Returns a string representation of the array.
+
 unshift()             Adds elements to the beginning of an array.
 ```
 
