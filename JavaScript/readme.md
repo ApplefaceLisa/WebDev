@@ -37,7 +37,7 @@
   - [Referencing “this” inside setInterval/setTimeout within object prototype methods
 ](http://stackoverflow.com/questions/7890685/referencing-this-inside-setinterval-settimeout-within-object-prototype-methods)
 
-### Functions
+## Functions
 - function declaration vs. function expression
   they are two ways of defining equivalent functions.
   ```javascript
@@ -258,7 +258,8 @@
   - [MDN Concurrency model and Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
   - [Philip Roberts: What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ)  
 
-### Objects
+## Objects
+### User Defined Objects
 - [JavaScript Objects in Detail](http://javascriptissexy.com/javascript-objects-in-detail/)
 
 - [object literal notation vs constructor](http://stackoverflow.com/questions/4859800/should-i-be-using-object-literals-or-constructor-functions)
@@ -300,41 +301,70 @@
   - Quora [Understanding the difference between Object.create() and new SomeFunction()](http://stackoverflow.com/questions/4166616/understanding-the-difference-between-object-create-and-new-somefunction)
   - [Why Prototypal Inheritance Matters](http://aaditmshah.github.io/why-prototypal-inheritance-matters/#constructors_vs_prototypes)
 
-### Array
-Array methods
-```html
-Method                What It Does
+### Core Objects
+#### Array Object
+- Array methods
 
-concat()              Concatenates elements from one array to another array.
+Method | What It Does
+------ | ----------------------------------------------------------------
+concat() | Concatenates elements from one array to another array.
+join() | Joins the elements of an array by a separator to form a string.
+pop() | Removes and returns the last element of an array.
+push() | Adds elements to the end of an array.
+reverse() | Reverses the order of the elements in an array.
+shift() | Removes and returns the first element of an array.
+slice() | Creates a new array from elements of an existing array.
+sort() | Sorts an array alphabetically or numerically.
+splice() | Removes and/or replaces elements of an array.
+toLocaleString() | Returns a string representation of the array in local format.
+toString() | Returns a string representation of the array.
+unshift() | Adds elements to the beginning of an array.
 
-join()                Joins the elements of an array by a separator to form a string.
+#### Date Object
+- methods
+  - [methods list] (https://www.tutorialspoint.com/javascript/javascript_date_object.htm)
+  - [methods detail](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
-pop()                 Removes and returns the last element of an array.
+#### Math Object
+- properties
 
-push()                Adds elements to the end of an array.
+Property | Value | Description
+-------- | ----- | -----------------------------------------------------------------------
+Math.E | 2.718281828459045091 | Euler’s constant, the base of natural logarithms
+Math.LN2 | 0.6931471805599452862 | Natural log of 2
+Math.LN10 | 2.302585092994045901 | Natural log of 10
+Math.LOG2E | 1.442695040888963387 | Log base-2 of E
+Math.Log10E | 0.4342944819032518167 | Log base-10 of E
+Math.PI | 3.14592653589793116 | Pi, ratio of the circumference of a circle to its diameter
+Math.SQRT1_2 | 0.7071067811865475727 | 1 divided by the square root of 2
+Math.SQRT2 | 1.414213562373985145 | Square root of 2
 
-reverse()             Reverses the order of the elements in an array.
 
-shift()               Removes and returns the first element of an array.
+- methods (mostly used)
 
-slice()               Creates a new array from elements of an existing array.
+Method | Functionality
+------ | ------------------------------------------------------------------
+Math.abs(Number) | Returns the absolute (unsigned) value of Number
+Math.ceil(Number) | Rounds Number up to the next closest integer
+Math.floor(Number) Rounds | Number down to the next closest integer
+Math.max(Number1, Number2) | Returns larger value of Number1 and Number2
+Math.min(Number1, Number2) | Returns smaller value of Number1 and Number2
+Math.random() | Generates pseudorandom number between 0.0 and 1.0
+Math.round(Number) | Rounds Number to the closest integer
+Math.toString(Number) | Converts Number to string
 
-sort()                Sorts an array alphabetically or numerically.
-
-splice()              Removes and/or replaces elements of an array.
-
-toLocaleString()      Returns a string representation of the array in local format.
-
-toString()            Returns a string representation of the array.
-
-unshift()             Adds elements to the beginning of an array.
-```
-
-### String
+### Wrapper Objects
+#### String Object
 - [JavaScript : String.slice() vs String.substring() vs String.substr() - See more at: http://www.tothenew.com/blog/javascript-slice-vs-substring-vs-substr/#sthash.wsuUQmk4.dpuf](http://www.tothenew.com/blog/javascript-slice-vs-substring-vs-substr/)
   - MDN [substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
   - MDN [substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
   - MDN [slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+
+
+
+#### Number Object
+#### Boolean Object
+#### Function Object
 
 # Recommended Reference
 - http://javascriptissexy.com/how-to-learn-javascript-properly/
