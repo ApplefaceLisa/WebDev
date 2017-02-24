@@ -330,6 +330,12 @@ toString()            Returns a string representation of the array.
 unshift()             Adds elements to the beginning of an array.
 ```
 
+### String
+- [JavaScript : String.slice() vs String.substring() vs String.substr() - See more at: http://www.tothenew.com/blog/javascript-slice-vs-substring-vs-substr/#sthash.wsuUQmk4.dpuf](http://www.tothenew.com/blog/javascript-slice-vs-substring-vs-substr/)
+  - MDN [substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
+  - MDN [substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+  - MDN [slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+
 # Recommended Reference
 - http://javascriptissexy.com/how-to-learn-javascript-properly/
 - http://eloquentjavascript.net/
