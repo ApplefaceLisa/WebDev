@@ -594,6 +594,20 @@ forward() | Goes to the next URL entry in the history list; like the browser’s
 go() | The browser will go forward or back (if the value is negative) the number of specified pages in the history object.
 
 #### screen object
+The screen object is a property of the window object and is automatically created when a user loads a Web page. It gives you access to the various properties of the user’s screen such as its height, width, color depth, and so on. This can be helpful when designing pages that will require specific dimensions.
+
+- properties
+
+Property | What It Describes
+-------- | -----------------
+height | The pixel height of the screen.
+width | The pixel width of the screen.
+availHeight | The pixel height of the screen, minus toolbars, and so on.
+availWidth | The pixel width of the screen, minus toolbars, and so on.
+availLeft | The x coordinate of the first pixel, minus toolbars, and so on.
+availTop | The y coordinate of the first pixel, minus toolbars, and so on.
+colorDepth | The maximum amount of colors that the screen can display.
+pixelDepth | The number of bits per pixel of the screen.
 
 
 # Recommended Reference
