@@ -91,7 +91,7 @@
     Call/apply call the function immediately, whereas bind returns a function that when later executed will have the correct context set for calling the original function. This way you can maintain context in async callbacks, and events.
   
     for [example](http://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind)
-    ```
+    ```javascript
     function MyObject(element) {
       this.elm = element;
 
@@ -114,7 +114,7 @@
   Closures store references to the outer function’s variables; they do not store the actual value.
 
 - use function to implement module
-  ```
+  ```javascript
       function moduleA() {
           var secretValue = 21;
           return {
@@ -223,10 +223,10 @@
     }());
     ```
     
-    The problem of closure can be fixed by closing the setTimeout() method in an IIFE, and defining a private variable to hold the current copy of i.
+    The problem of closure can be fixed by closing the setTimeout() method in an IIFE, and defining a private variable to hold the current copy of i.    
     ```javascript
     function printFruits(fruits){
-      for (var i = 0; i &lt; fruits.length; i++) {
+      for (var i = 0; i < fruits.length; i++) {
         (function(){
           var current = i;                    // define new variable that will hold the current value of "i"
           setTimeout( function(){
@@ -241,7 +241,7 @@
     Or
     ```javascript
     function printFruits(fruits){
-      for (var i = 0; i &lt; fruits.length; i++) {
+      for (var i = 0; i < fruits.length; i++) {
         (function(current){
           setTimeout( function(){
             console.log( fruits[current] );
@@ -266,7 +266,7 @@
 
 - [object literal notation vs constructor](http://stackoverflow.com/questions/4859800/should-i-be-using-object-literals-or-constructor-functions)
   - If you **don't have behaviour** associated with an object (i.e. if the object is just a container for data/state), use an object literal. Furthermore, Object literals are basically singletons with variables/methods that are all public.
-  ```
+  ```javascript
   var data = {
       foo: 42,
       bar: 43
@@ -275,7 +275,7 @@
   data.bar = 99;
   ```
   - Object defined with a constructor lets you have multiple instances of that object. If you want to use **(semi-)private variables or functions** in you object, a constructor function is the way to do it.
-  ```
+  ```javascript
   function MyData(foo, bar) {
       var _foo = foo;   // private
       this.bar = bar;   // public
@@ -286,7 +286,7 @@
   }
   ```
   - Prototype lets you attach each function once and only once: they'll be inherited by the instances through prototypal inheritance.
-  ```
+  ```javascript
   MyData.prototype.verify = function () {
       return this.foo === this.bar;
   };
