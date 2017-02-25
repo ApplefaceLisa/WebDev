@@ -450,6 +450,152 @@ Property | What It Does
 apply() | Allows you to apply a method from one function to another.
 call() | Allows you to call a method from another object.
 
+## BOM
+### Hierarchy of the browser object model and document object model.
+
+![Image of BOM hierarchy](BOM-DOM.JPG)
+
+In the browser object model, sometimes called BOM, the window is at the top of the tree, and below it are objects: _**window, navigator, frames[], document, history, location**_, and _**screen**_.
+
+#### navigator object
+- The navigator object can be used for platform-specific checking to determine the version of the browser being used, whether Java is enabled, what plug-ins are available, and so on.
+
+- properties of navigator object
+
+Property | What It Describes
+-------- | ----------------------------
+appCodeName | Code name for the browser.
+appName | Name of the browser.
+appVersion | Version of the browser.
+mimeTypes | An array of MIME types supported by the browser.
+platform | The operating system where the browser resides.
+userAgent | HTTP user-agent header sent from the browser to the server.
+plugins[] | plugin object array, include all plugins installed for the browser.
+mimeTypes[] | list of MIME types.
+
+  - plug-ins
+  - ActiveX
+  - MIME
+  
+#### window object
+The window object is where all the action happens in a browser. It’s at the top of the Java-Script hierarchy, and is automatically defined for each window that you open. 
+
+The window object comes with a number of properties and methods. Because it is the basis of all objects, the name of the window object can be excluded when applying methods to it.
+
+- properties
+- methods
+
+Method | What It Does
+------ | ------------------
+open(url, name, [options]) | Opens a new window and returns a new window object. **options**
+close() | Closes a window.
+alert(text) | Creates a triangular dialog box with a message in it.
+prompt(text, defaultInput) | Creates a dialog prompt box to ask for user input.
+confirm() | Creates a dialog box for user confirmation.
+setInterval(expression, milliseconds) | After a specified interval, evaluates an expression.
+setInterval(function, milliseconds, [arguments]) | After a specified interval, evaluates a function.
+setTimeout(expression, milliseconds) | After a timeout period has elapsed, evaluates an expression.
+setTimeout(function, milliseconds, [arguments]) | After a timeout period has elapsed, evaluates a function.
+clearInterval(interval) | Clears a previously set interval timer.
+clearTimeOut(timer) | Clears a previously set timeout.   
+blur() | Removes focus from the window.
+focus() | Gives the focus to a window.
+scroll(x, y) | Scrolls to a pixel position in a window.
+moveBy() | e.g, moveBy(20,20), Moves the window relatively by 20 pixels.
+moveTo() | e.g, moveTo(0,0), Moves to the top, left corner of the screen.
+resizeBy() | e.g, resizeBy(15,10), Resizes the window relatively by 15 × 10 pixels.
+resizeTo() | e.g, resizeTo(450,350), Resizes the window absolutely to 450 × 350 pixels.
+
+#### frame object
+Frames allow you to display more than one Web page in the same window.
+
+When a page is divided into frames, the visitor cannot bookmark the page if the browser is not pointing to the top frameset. The _location object_ can be used to make sure the topmost window is the one currently viewed in the browser.
+
+- Use ```<frameset>``` instead of ```<body>``` tag to build frames in a web page. 
+- Use cols and rows attribute to specify how much room the frame will need within the window.
+- Example
+```html
+<html>
+<head><title>Frame Me!</title></head>
+<!-- Creating the framesets for two files -->
+<!-- This file is named: framesets.html -->
+  <frameset cols="25%,75%">
+  <frame src="leftframe.html" >
+  <frame src="rightframe.html" >
+  </frameset>
+</html>
+----------------------------------------------------------------------
+<html>
+<head><title>Left Frame</title></head>
+<!--This file is named: leftframe.html -->
+  <body bgColor="yellow">
+<h2>
+  Just to show you that this is the left frame
+</h2>
+</body>
+</html>
+----------------------------------------------------------------------
+<html>
+<head><title>Right Frame</title></head>
+  <!--This file is named: rightframe.html -->
+  <body bgColor="lightgreen">
+<h2>
+Just to show you that this is the right frame
+</h2>
+</body>
+</html>
+```
+
+#### location object
+The location object is a property of the window object and is used to access the URL of the document currently loaded in the window.
+- properties
+
+Property | What It Describes in the URL
+-------- | ------------------------------
+hash | If it exists, the anchor part.
+host | The hostname:port.
+hostname | The hostname.
+_**href**_ | The entire URL. href puts the new page at the top of the history list.
+pathname | The pathname.
+port | The port number.
+protocol | The protocol and colon.
+search | The query string.
+
+- methods
+
+Method | What It Does
+------ | -------------
+**assign()** | Load and display the document at the URL specified.
+**replace()** | Replaces the current page with a new one. cannot go back to the prev page. It removes the current page from the history list and replaces it with the new page.
+reload() | Reloads the current URL.
+unwatch() | Removes a watch point on the location property.
+watch() | Sets a watch point on the location property; that is, calls a function if the property changes.
+
+#### history object
+The history object is a property of the window object. It keeps track of the pages (in a stack) that the user has visited. The history object is most commonly used in JavaScript to move back or forward on a page, similar to the back button and forward button supported
+by your browser. The history object can reference only those pages that have been visited; that is, those pages on its stack.
+
+- properties
+
+Property | What It Describes in the URL
+-------- | -------------------------------
+length | The number of entries in the history object.
+current | The current document URL.
+next | The URL of the next document in the history object.
+previous | The URL of the previous document in the history object.
+search | The query string.
+
+- methods
+
+Method | What It Does
+------ | ----------------
+back() | Goes to the previous URL entry in the history list; like the browser’s back button.
+forward() | Goes to the next URL entry in the history list; like the browser’s forward button.
+go() | The browser will go forward or back (if the value is negative) the number of specified pages in the history object.
+
+#### screen object
+
+
 # Recommended Reference
 - http://javascriptissexy.com/how-to-learn-javascript-properly/
 - http://eloquentjavascript.net/
