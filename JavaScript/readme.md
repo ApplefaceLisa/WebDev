@@ -22,6 +22,10 @@
 
 # Tools
 - [JSLint](http://www.jslint.com/)
+- [Can I Use](http://caniuse.com)
+- [cordova](https://cordova.apache.org/)   hybrid apps
+- Google map api
+- [Sencha Ext JS](https://www.sencha.com/products/extjs/#overview)
 
 # Articles
 - [3 JavaScript questions to watch out for during coding interviews](https://medium.freecodecamp.com/3-questions-to-watch-out-for-in-a-javascript-interview-725012834ccb#.mfc6xdg3d)
@@ -475,6 +479,12 @@ userAgent | HTTP user-agent header sent from the browser to the server.
 plugins[] | plugin object array, include all plugins installed for the browser.
 mimeTypes[] | list of MIME types.
 
+- geolocation object (https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation)
+  - getCurrentPosition()
+  - watchPosition()
+  - clearWatch() : stop watching the user's location.
+
+- others
   - plug-ins
   
   Plug-ins are special software programs that can be downloaded to add the ability to listen to audio, watch videos and movie clips, display animation, and create special image viewing files. Some examples of plug-ins are Macromedia Shockwave or Flash player, Adobe Acrobat Reader, and RealNetworks RealPlayer. Plugins can be platform dependent and their MIME types can vary as well.
