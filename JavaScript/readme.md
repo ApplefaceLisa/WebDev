@@ -476,8 +476,16 @@ plugins[] | plugin object array, include all plugins installed for the browser.
 mimeTypes[] | list of MIME types.
 
   - plug-ins
+  
+  Plug-ins are special software programs that can be downloaded to add the ability to listen to audio, watch videos and movie clips, display animation, and create special image viewing files. Some examples of plug-ins are Macromedia Shockwave or Flash player, Adobe Acrobat Reader, and RealNetworks RealPlayer. Plugins can be platform dependent and their MIME types can vary as well.
+  
   - ActiveX
-  - MIME
+  
+  ActiveX controls are used as a means to embed objects or components into a Web page. Online spreadsheets, security updates, word processors, patches, and timers are examples of such components. You can add ActiveX controls to your Web pages by using the standard HTML <object> tag. The <object> tag takes a set of parameters that specify which data the control should use and defines its appearance and behavior.
+  
+  - MIME : Multipurpose Internet mail extensions. 
+  
+  It is a standard format for sending mail messages across the Internet. Now it is used to exchange all kinds of file types across the Internet, such as audio, video, and image files. All browsers have a list of MIME types.
   
 #### window object
 The window object is where all the action happens in a browser. It’s at the top of the Java-Script hierarchy, and is automatically defined for each window that you open. 
@@ -596,7 +604,7 @@ forward() | Goes to the next URL entry in the history list; like the browser’s
 go() | The browser will go forward or back (if the value is negative) the number of specified pages in the history object.
 
 #### screen object
-The screen object is a property of the window object and is automatically created when a user loads a Web page. It gives you access to the various properties of the user’s screen such as its height, width, color depth, and so on. This can be helpful when designing pages that will require specific dimensions.
+The screen object is a property of the window object and is automatically created when a user loads a Web page. It gives you access to the various properties of the user’s screen such as its height, width, color depth, and so on. This can be helpful when designing pages that will require specific dimensions. There are no event handlers for this object.
 
 - properties
 
