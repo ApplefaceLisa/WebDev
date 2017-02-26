@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>geolocation with google map example</title>
+    <style>
+        #geolocation {
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+  <p>
+      <button type="button" onclick="getGeolocation()"> Get Geolocation</button>
+  </p>
+  <div id="out"></div>
+  <div id="geolocation"></div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGUrQiyc0nEZ7afQOC94o1iIMlIhH3n8o" async defer></script>
+  <script>
+      var output = document.getElementById("out");
+      function success(position) {
+          var lat = position.coords.latitude;
+          var lgt = position.coords.longitude;
+          var myPosition = {
+              lat: lat,
+              lng: lgt
+          };
+          var myMap = new google.maps.Map(document.getElementById('geolocation'), {
+              zoom: 10,
+              center: myPosition
+          });
+          var marker = new google.maps.Marker({
+              position: myPosition,
+              map: myMap
+              }
+          );
+          var inHtml = "<p> The latitude is: "+lat+" and the longitude is: "+lgt+"</p>";
+          output.innerHTML = inHtml;
+      }
+
+      function err(error) {
+          var inHtml = "<p> Could not get the locataion because "+error.message+"</p>";
+          output.innerHTML = inHtml;
+      }
+
+      function getGeolocation() {
+          if (!navigator.geolocation) {
+              output.innerHTML = "<p> Geolocation not supported</p>";
+          } else {
+              navigator.geolocation.getCurrentPosition(success, err);
+          }
+      }
+  </script>
+</body>
+</html>
