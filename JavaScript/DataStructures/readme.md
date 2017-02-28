@@ -4,6 +4,91 @@
   ### Array
   - native to Javascript
   
+  - A JavaScript array is actually a specialized type of JavaScript object, with the _**indices being property names**_ that can be integers used to represent offsets. However, when integers are used for indices, they are _**converted to strings**_ internally in order to conform to the requirements for JavaScript objects.
+  
+  - shallow copy vs. deep copy
+  When you assign one array to another array, you are assigning a reference to the assigned array. When you make a change to the original array, that change is reflected in the other array as well. It's called _**shallow copy**_. Example:
+    ```
+    var nums = [];
+    for (var i = 0; i < 100; ++i) {
+    nums[i] = i+1;
+    }
+    var samenums = nums;
+    nums[0] = 400;
+    print(samenums[0]); // displays 400
+    ```
+    _**Deep copy**_: each of the original array’s elements is actually copied to the new array’s elements.
+    ```
+    function copy(arr1, arr2) {
+    for (var i = 0; i < arr1.length; ++i) {
+        arr2[i] = arr1[i];
+      }
+    }
+    ```
+  
+  - Searching for a Value : indexOf() , lastIndexOf()
+    ```Javascript
+    arr.indexOf(element);
+    arr.lastIndexOf(element);
+    ```
+  
+  - String Representations of Arrays : join() , toString()
+    ```Javascript
+    arr.join();
+    arr.toString();
+    ```
+    Both functions return a string containing the elements of the array delimited by commas.
+    When you do ```console.log(arr)```, it automatically calls the toString() function for that array.
+    
+  - Creating New Arrays from Existing Arrays : concat() , splice().
+    - concat() allows you to put together two or more arrays to create a new array.
+    ```Javascript
+    var cis = ["Mike", "Clayton", "Terrill", "Danny", "Jennifer"];
+    var dmp = ["Raymond", "Cynthia", "Bryan"];
+    var itDiv1 = cis.concat(dmp);      // ["Mike", "Clayton", "Terrill", "Danny", "Jennifer", "Raymond", "Cynthia", "Bryan"]
+    var itDiv2 = dmp.concat(cisDept);  // ["Raymond", "Cynthia", "Bryan", "Mike", "Clayton", "Terrill", "Danny", "Jennifer"]
+    ```
+    - splice() allows you to create a new array from a subset of an existing array.
+    ```Javascript
+    arr.splice(startIndex, length);
+    
+    var itDiv = ["Mike","Clayton","Terrill","Raymond","Cynthia","Danny","Jennifer"];
+    var dmpDept = itDiv.splice(3,3);
+    console.log(dmpDept);  // ["Raymond", "Cynthia", "Danny"]
+    console.log(itDiv);    // ["Mike", "Clayton", "Terrill", "Jennifer"]
+    ```
+    
+  - Mutator Functions
+  
+    JavaScript has a set of mutator functions that allow you to modify the contents of an array without referencing the individual elements.  
+    - Adding Elements to an Array from end or beginning : push() / shift()
+    - Removing Elements from an Array from end or beginning : pop() / unshift()
+    - Adding and Removing Elements from the Middle of an Array : splice().
+      ```Javascript
+      array.splice(start, deleteCount, item1, item2, ...)
+      ```
+      
+    - Putting Array Elements in Order : reverse() , sort()
+    
+  - Iterator Functions
+  
+    - Non–Array-Generating Iterator Functions : they do not generate a new array, they either perform an operation on each element of an array or generate a single value from an array.
+    
+      - forEach() : it takes a function as an argument and applies the called function to each element of an array.
+        ```
+        arr.forEach(func);
+        ```
+      - every() : applies a Boolean function to an array and returns true if _**all**_ of the elements in the array meets the criterion of the Boolean function.
+      
+      - some() : takes a Boolean function and return true if _**at least one**_ of the elements in the array meets the criterion of the Boolean function.
+      
+      - reduce() : applies a function to an _**accumulator**_ and the successive elements of an array until the end of the array is reached, yielding a single value.
+      
+      - reduceRight() :  works similarly to reduce(), only working _**from the righthand side of the array to the left**_, instead of from left to right.
+      
+    - Iterator Functions That Return a New Array
+    
+  
   ### List
   
 
