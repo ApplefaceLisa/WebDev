@@ -82,7 +82,16 @@
       
       - some() : takes a Boolean function and return true if _**at least one**_ of the elements in the array meets the criterion of the Boolean function.
       
-      - reduce() : applies a function to an _**accumulator**_ and the successive elements of an array until the end of the array is reached, yielding a single value.
+      - reduce() : applies a function to an _**accumulator**_ and the successive elements of an array until the end of the array is reached, yielding a single value. for example:
+      ```javascript
+      function flatten(array) {
+        return array.reduce(function(memo, el) {
+          var items = Array.isArray(el) ? flatten(el) : el;
+          return memo.concat(items);
+        }, []);
+      }      
+      flatten([0, [1,2,3], ["a","b","c"], [4,5], 6]);   // [0, 1, 2, 3, "a", "b", "c", 4, 5, 6]
+      ```
       
       - reduceRight() :  works similarly to reduce(), only working _**from the righthand side of the array to the left**_, instead of from left to right.
       
