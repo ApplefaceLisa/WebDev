@@ -87,6 +87,44 @@
       - reduceRight() :  works similarly to reduce(), only working _**from the righthand side of the array to the left**_, instead of from left to right.
       
     - Iterator Functions That Return a New Array
+      - map() : applying a function to each element of an array, and returns a new array with the results of the function application.
+      
+      - filter() : applies a Boolean function to an array and returns a new array consisting of those elements that satisfy the Boolean function.
+      
+  - Two-Dimensional and Multidimensional Arrays
+    - Processing Two-Dimensional Array Elements : two patterns
+      - one pattern emphasizes accessing array elements by columns, columnar processing. The outer loop moves through the rows, and the inner loop processes the columns.
+      ```javascript
+      var grades = [[89, 77, 78],[76, 82, 81],[91, 94, 89]];
+      var total = 0;
+      var average = 0.0;
+      for (var row = 0; row < grades.length; ++row) {
+        for (var col = 0; col < grades[row].length; ++col) {
+          console.log(grades[row][col]);  // 89, 77, 78, 76, 82, 81, 91, 94, 89
+        }
+      }  
+      ```
+      This pattern has no problem with jagged arrays.
+      
+      - the other pattern emphasizes accessing array elements by rows. The outer loop moves through the columns, and the inner loop processes the rows.
+      ```javascript
+      var grades = [[89, 77, 78],[76, 82, 81],[91, 94, 89]];
+      var total = 0;
+      var average = 0.0;
+      for (var col = 0; col < grades.length; ++col) {
+        for (var row = 0; row < grades[col].length; ++row) {
+          console.log(grades[row][col]);   // 89, 76, 91, 77, 82, 94, 78, 81, 89
+        }
+      }  
+      ```
+      **Note**: this pattern may have problem with _**jagged arrays**_.
+      
+    - Jagged Arrays
+    
+      A jagged array is an array where the rows in the array may have a different number of elements. for example:
+      ```javascript
+      arr = [[1,2,3], [4,5], [6,7,8,9,10]];
+      ```
     
   
   ### List
