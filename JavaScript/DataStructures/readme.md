@@ -134,9 +134,9 @@
       ```javascript
       arr = [[1,2,3], [4,5], [6,7,8,9,10]];
       ```
-    
-  
+
   ### List
+  Lists are especially useful if we _**don’t**_ have to perform searches on the items in the list or put them into some type of sorted order.
   
 
 - ## Stacks and Queues: more complex list-like data structures
