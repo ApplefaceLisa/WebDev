@@ -313,8 +313,62 @@
     Iterators are used _**only**_ to move through a list and should not be combined with any functions for adding or removing items from a list.
 
 - ## Stacks and Queues: more complex list-like data structures
-   ### Stack
-   - used throughout computer science in both _**compiler and operating system implementations**_.
+  ### Stack
+  - A stack is a list of elements that are accessible only from one end of the list. One area where stacks are used is in implementing recursion.
+  - used throughout computer science in both _**compiler and operating system implementations**_.
+  - Operations
+   
+    properties | what does it describe
+    ---------- | ----------------------
+    top | keep track of where the top element is.
+   
+    methods | what does it describe
+    ------- | ----------------------
+    push | add an element
+    pop | take off an element
+    peek | returns the value stored at the top of a stack without removing it from the stack.
+    clear | removes all the elements from a stack.
+    length | holds the number of elements contained in a stack.
+    empty | to let us know if a stack has no elements in it.
+   
+  - implementation : the Stack class
+  ``` javascript
+  function Stack() {
+    this.dataStore = [];
+    this.top = -1;
+    
+    this.push = push;
+    this.pop = pop;
+    this.peek = peek;
+    this.clear = clear;
+    this.length = length;
+    this.empty = empty;
+  }
+   
+  function push(element) {
+    this.dataStore[++this.top] = element;
+  }
+  
+  function pop() {
+    return this.dataStore[this.top--];
+  }
+  
+  function peek() {
+    return this.dataStore[this.top];
+  }
+  
+  function clear() {
+    this.top = 0;
+  }
+  
+  function length() {
+    return (this.top + 1);
+  }
+  
+  function empty() {
+    return this.top < 0;
+  }
+  ```
   
   
   ### Queue
