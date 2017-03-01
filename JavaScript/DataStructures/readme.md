@@ -137,7 +137,180 @@
 
   ### List
   Lists are especially useful if we _**don’t**_ have to perform searches on the items in the list or put them into some type of sorted order.
+  - A List ADT
+ 
+  properties | what it describes
+  ---------- | ------------------
+  listSize | Number of elements in list
+  pos | Current position in list
+  length | Returns the number of elements in list
+ 
+  methods | what it describes
+  ------- | ------------------
+  clear | Clears all elements from list
+  toString | Returns string representation of list
+  getElement | Returns element at current position
+  insert | Inserts new element after existing element
+  append | Adds new element to end of list
+  remove | Removes element from list
+  front | Sets current position to first element of list
+  end | Sets current position to last element of list
+  prev | Moves current position back one element
+  next | Moves current position forward one element
+  currPos | Returns the current position in list
+  moveTo | Moves the current position to specified position
   
+  - A List Class Implementation
+    ```javascript
+    function List() {
+      this.listSize = 0;
+      this.pos = 0;
+      this.dataStore = []; // initializes an empty array to store list elements
+      
+      this.clear = clear;
+      this.find = find;
+      this.toString = toString;
+      this.insert = insert;
+      this.append = append;
+      this.remove = remove;
+      this.front = front;
+      this.end = end;
+      this.prev = prev;
+      this.next = next;
+      this.length = length;
+      this.currPos = currPos;
+      this.moveTo = moveTo;
+      this.getElement = getElement;
+      this.length = length;
+      this.contains = contains;
+    }
+    ```
+    
+    - Append: Adding an Element to a List
+    ```javascript
+    function append(element) {
+      this.dataStore[this.listSize++] = element;
+    }
+    ```
+    - Find: Finding an Element in a List
+    ```javascript
+    function find(element) {
+      for (var i = 0; i < this.dataStore.length; ++i) {
+        if (this.dataStore[i] == element) {
+          return i;
+        }
+      }
+      return -1;
+    }
+    ```
+    - Remove: Removing an Element from a List
+    ```javascript
+    function remove(element) {
+      var foundAt = this.find(element);
+      if (foundAt > -1) {
+        this.dataStore.splice(foundAt,1);
+        --this.listSize;
+        return true;
+      }
+      return false;
+    }
+    ```
+    - Length: Determining the Number of Elements in a List
+    ```javascript
+    function length() {
+      return this.listSize;
+    }
+    ```
+    - toString: Retrieving a List’s Elements
+    ```javascript
+    function toString() {
+      return this.dataStore;
+    }
+    ```
+    - Insert: Inserting an Element into a List    
+      to insert an element after a specified element already in the list.
+    ```javascript
+    function insert(element, after) {
+      var insertPos = this.find(after);
+      if (insertPos > -1) {
+        this.dataStore.splice(insertPos+1, 0, element);
+        ++this.listSize;
+        return true;
+      }
+      return false;
+    }
+    ```
+    - Clear: Removing All Elements from a List
+    ```javascript
+    function clear() {
+      this.dataStore = [];
+      this.listSize = this.pos = 0;
+    }
+    ```
+    - Contains: Determining if a Given Value Is in a List
+    ```javascript
+    function contains(element) {
+      for (var i = 0; i < this.dataStore.length; ++i) {
+        if (this.dataStore[i] == element) {
+          return true;
+        }
+      }
+      return false;
+    }
+    ```
+    - Traversing a List
+    ```javascript
+    function front() {
+      this.pos = 0;
+    }
+    
+    function end() {
+      this.pos = this.listSize-1;
+    }
+    
+    function prev() {
+      if (this.pos > 0) {
+        --this.pos;
+      }
+    }
+    
+    function next() {
+      if (this.pos < this.listSize-1) {
+        ++this.pos;
+      }
+    }
+    
+    function currPos() {
+      return this.pos;
+    }
+    
+    function moveTo(position) {
+      this.pos = position;
+    }
+    
+    function getElement() {
+      return this.dataStore[this.pos];
+    }
+    ```
+  - Iterating Through a List  
+    An iterator allows us to traverse a list without referencing the internal storage mechanism of the List class. Some advantages to using iterators over using array indexing include:
+    - Not having to worry about the underlying data storage structure when accessing list elements.
+    - Being able to update the list and not having to update the iterator, where an index becomes invalid when a new element is added to the list.
+    - Providing a uniform means of accessing elements for different types of data stores used in the implemenation of a List class.
+    
+    here is how to use an iterator to traverse through a list:    
+    ```javascript
+    for(names.front(); names.currPos() < names.length(); names.next()) {
+      print(names.getElement());
+    }
+    ```
+    We can also traverse a list backward using an iterator:
+    ```javascript
+    for(names.end(); names.currPos() >= 0; names.prev()) {
+      print(names.getElement());
+    }
+    ```
+    Iterators are used _**only**_ to move through a list and should not be combined with any functions for adding or removing items from a list.
 
 - ## Stacks and Queues: more complex list-like data structures
    ### Stack
