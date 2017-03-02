@@ -3,6 +3,7 @@
 - ## Arrays and Lists: the most common data structures
   ### Array
   - native to Javascript
+  - good for _**random access**_
   
   - A JavaScript array is actually a specialized type of JavaScript object, with the _**indices being property names**_ that can be integers used to represent offsets. However, when integers are used for indices, they are _**converted to strings**_ internally in order to conform to the requirements for JavaScript objects.
   
@@ -427,11 +428,85 @@
   ```
   
   - Sorting Data with Queues
-  
+    - radix sort
+    
+  - Priority Queues
+    - A priority queue is one where elements are removed from the queue based on a priority constraint.
+    - Each element has a "priority" number.  
 
 - ## Linked lists: how they overcome the shortcomings of arrays
   - A linked list is a modification of the list data structure, where each element is a separate object linked to the objects on either side of it.
+  
   - Linked lists are efficient when you need to perform _**multiple insertions and deletions**_ in your program.
+  
+  - A linked list is a collection of objects called _**nodes**_. Each node is linked to a successor node in the list using an object reference. The reference to another node is called a _**link**_.
+  
+  - While array elements are referenced by their position, linked list elements are referenced by their relationship to the other elements of the linked list.
+  
+  - Linked Li
+    - Node
+      data stores a value.
+      next points to the next node in the list.
+    
+  
+  - Implementation
+  ```javascript
+  // Node class
+  function Node(element) {
+    this.element = element;
+    this.next = null;
+  }
+  
+  // LinkedList class
+  function LList() {
+    this.head = new Node("head");
+    this.find = find;            
+    this.insert = insert;
+    this.findPrev = findPrev;    
+    this.remove = remove;
+    this.display = display;
+  }
+  // find node whose element equals to item
+  function find(item) {
+    var currNode = this.head;
+    while (currNode != null && currNode.element != item) {
+      currNode = currNode.next;
+    }
+    return currNode;
+  }
+  // insert new element after item node
+  function insert(newElement, item) {
+    var newNode = new Node(newElement);
+    var currNode = find(item);
+    if (currNode != null) {
+      newNode.next = currNode.next;
+      currNode.next = newNode;
+    }
+  }
+  // find the previous node of item node
+  function findPrev(item) {
+    var currNode = this.head;
+    while (currNode.next != null && currNode.next.element !== item) {
+      currNode = currNode.next;
+    }
+    if (currNode.next == null) { return null; }
+    return currNode;
+  }
+  // remove item node
+  function remove(item) {
+    var prevNode = findPrev(item);
+    if (prevNode == null) { return; }
+    prevNode.next = prevNode.next.next;
+  }
+  // display all elements
+  function display() {
+    var currNode = this.head;
+    while (currNode != null) {
+      console.log(currNode.element);
+      currNode = currNode.next;
+    }
+  }
+  ```
 
 - ## Dictionaries: storing data as key-value pairs
   - store data as key-value pairs.
