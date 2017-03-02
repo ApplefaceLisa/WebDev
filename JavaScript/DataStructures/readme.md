@@ -314,13 +314,9 @@
 
 - ## Stacks and Queues: more complex list-like data structures
   ### Stack
-  - A stack is a list of elements that are accessible only from one end of the list. One area where stacks are used is in implementing recursion.
+  - A stack is a list of elements that are accessible only from one end of the list. One area where stacks are used is in implementing recursion. LIFO.
   - used throughout computer science in both _**compiler and operating system implementations**_.
   - Operations
-   
-    properties | what does it describe
-    ---------- | ----------------------
-    top | keep track of where the top element is.
    
     methods | what does it describe
     ------- | ----------------------
@@ -331,12 +327,10 @@
     length | holds the number of elements contained in a stack.
     empty | to let us know if a stack has no elements in it.
    
-  - implementation : the Stack class
+  - Array-based implementation : the Stack class
   ``` javascript
   function Stack() {
     this.dataStore = [];
-    this.top = -1;
-    
     this.push = push;
     this.pop = pop;
     this.peek = peek;
@@ -346,33 +340,94 @@
   }
    
   function push(element) {
-    this.dataStore[++this.top] = element;
+    this.dataStore.push(element);
   }
   
   function pop() {
-    return this.dataStore[this.top--];
+    return this.dataStore.pop();
   }
   
   function peek() {
-    return this.dataStore[this.top];
+    return this.dataStore[this.dataStore.length - 1];
   }
   
   function clear() {
-    this.top = 0;
+    this.dataStore = [];
   }
   
   function length() {
-    return (this.top + 1);
+    return this.dataStore.length;
   }
   
   function empty() {
-    return this.top < 0;
+    return this.dataStore.length <= 0;
   }
   ```
   
-  
   ### Queue
-  - Queues are used extensively in simulation software where data has to be _**lined up**_ before it is processed.
+  - A queue is a type of list where data are inserted at the end and are removed from the front. FIFO.
+  - Queues are used extensively in simulation software where data has to be _**lined up**_ before it is processed. 
+  - Queues are used to order processes submitted to an operating system or a print spooler, and simulation applications use queues to model scenarios such as customers standing in the line at a bank or a grocery store.
+  - Operations
+   
+    methods | what does it describe
+    ------- | ----------------------
+    enqueue | adds a new element at the end of a queue.
+    dequeue | removes an element from the front of a queue.
+    clear | remove all the elements from a queue.
+    front | returns the element stored at the front of a queue without removing it from the queue.
+    back | returns the element stored at the end of a queue without removing it from the queue.
+    toString | to display all the elements in a queue.
+    empty | if a queue is empty.
+    
+  - array-based implementation
+  ```javascript
+  function Queue() {
+    this.dataStore = [];
+    this.enqueue = enqueue;
+    this.dequeue = dequeue;
+    this.front = front;
+    this.back = back;
+    this.toString = toString;
+    this.empty = empty;
+  }
+  
+  function enqueue(element) {
+    this.dataStore.push(element);
+  }
+  
+  function dequeue() {
+    return this.dataStore.shift();
+  }
+  
+  function front() {
+    return this.dataStore[0];
+  }
+  
+  function back() {
+    return this.dataStore[this.dataStore.length-1];
+  }
+  
+  function toString() {
+    var retStr = "";
+    for (var i = 0; i < this.dataStore.length; ++i) {
+      retStr += this.dataStore[i] + "\n";
+    }
+    return retStr;
+  }
+  
+  function empty() {
+    if (this.dataStore.length == 0) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+  ```
+  
+  - Sorting Data with Queues
+  
 
 - ## Linked lists: how they overcome the shortcomings of arrays
   - A linked list is a modification of the list data structure, where each element is a separate object linked to the objects on either side of it.
