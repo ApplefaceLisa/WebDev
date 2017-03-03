@@ -443,69 +443,25 @@
   
   - While array elements are referenced by their position, linked list elements are referenced by their relationship to the other elements of the linked list.
   
-  - Linked Li
-    - Node
-      data stores a value.
-      next points to the next node in the list.
+  - Linked List ADT
+    - Node Object
     
+      property | what does it describe
+      -------- | ---------------------------------
+      data | stores a value.
+      next | points to the next node in the list.
+    
+    - 
   
   - Implementation
   ```javascript
   // Node class
   function Node(element) {
-    this.element = element;
+    this.data = element;
     this.next = null;
   }
   
-  // LinkedList class
-  function LList() {
-    this.head = new Node("head");
-    this.find = find;            
-    this.insert = insert;
-    this.findPrev = findPrev;    
-    this.remove = remove;
-    this.display = display;
-  }
-  // find node whose element equals to item
-  function find(item) {
-    var currNode = this.head;
-    while (currNode != null && currNode.element != item) {
-      currNode = currNode.next;
-    }
-    return currNode;
-  }
-  // insert new element after item node
-  function insert(newElement, item) {
-    var newNode = new Node(newElement);
-    var currNode = find(item);
-    if (currNode != null) {
-      newNode.next = currNode.next;
-      currNode.next = newNode;
-    }
-  }
-  // find the previous node of item node
-  function findPrev(item) {
-    var currNode = this.head;
-    while (currNode.next != null && currNode.next.element !== item) {
-      currNode = currNode.next;
-    }
-    if (currNode.next == null) { return null; }
-    return currNode;
-  }
-  // remove item node
-  function remove(item) {
-    var prevNode = findPrev(item);
-    if (prevNode == null) { return; }
-    prevNode.next = prevNode.next.next;
-  }
-  // display all elements
-  function display() {
-    var currNode = this.head;
-    while (currNode != null) {
-      console.log(currNode.element);
-      currNode = currNode.next;
-    }
-  }
+  
   ```
 
 - ## Dictionaries: storing data as key-value pairs
