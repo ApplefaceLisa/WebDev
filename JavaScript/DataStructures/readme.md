@@ -496,6 +496,3 @@
   
   ### greedy algorithms
 
-
-- ## Code Examples
-  https://github.com/oreillymedia/data_structures_and_algorithms_using_javascript
