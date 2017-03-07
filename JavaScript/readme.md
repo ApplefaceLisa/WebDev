@@ -629,11 +629,68 @@ availTop | The y coordinate of the first pixel, minus toolbars, and so on.
 colorDepth | The maximum amount of colors that the screen can display.
 pixelDepth | The number of bits per pixel of the screen.
 
-### Working with forms and input devices
+### Working with forms and input devices ([reference](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data))
 - Attributes of the ```<form>``` tag
-  - action : assigned the URL of the server program that will process the form data. The URL can be relative or absolute. If it's assigned the empty string or simply be omitted, the form data will not be sent.
+  - action : This attribute defines where the data gets sent. Its value must be a valid URL. If this attribute isn't provided, the data will be sent to the URL of the page containing the form. The URL can be relative or absolute.
+  ```javascript
+  <form action="http://foo.com">       // the data is sent to an absolute URL — http://foo.com
+  <form action="/somewhere_else">      // relative URL
+  <form>   or <form action="#">        // the form data is sent to the same page that the form is present on
+  ```
   
   - method : indicates **how** the form data will be sent to the server. For pure queries which will not affect the state of the server, the **GET** method is normally used, and for submitting form data, the **POST** method is used.
+  
+    - example of GET method:
+    ```html
+    <form action="http://foo.com" method="get">
+      <div>
+        <label for="say">What greeting do you want to say?</label>
+        <input name="say" id="say" value="Hi">
+      </div>
+      <div>
+        <label for="to">Who do you want to say it to?</label>
+        <input name="to" value="Mom">
+      </div>
+      <div>
+        <button>Send my greetings</button>
+      </div>
+    </form>
+    ```
+    you'll see the URL ```www.foo.com/?say=Hi&to=Mom``` appear in the browser address bar when you submit the form. The data is appended to the URL as a series of **name/value pairs** and the browser sends an empty body to server. The HTTP request looks like this:
+    ```
+    GET /?say=Hi&to=Mom HTTP/1.1
+    Host: foo.com
+    ```
+
+    - example of POST method:
+    ```html
+    <form action="http://foo.com" method="post">
+      <div>
+        <label for="say">What greeting do you want to say?</label>
+        <input name="say" id="say" value="Hi">
+      </div>
+      <div>
+        <label for="to">Who do you want to say it to?</label>
+        <input name="to" value="Mom">
+      </div>
+      <div>
+        <button>Send my greetings</button>
+      </div>
+    </form>
+    ```
+    When the form is submitted using the POST method, you get no data appended to the URL, and the HTTP request looks like so, with the data included in the request body instead:
+    ```
+    POST / HTTP/1.1
+    Host: foo.com
+    Content-Type: application/x-www-form-urlencoded
+    Content-Length: 13
+
+    say=Hi&to=Mom
+    ```
+    The Content-Length header indicates the size of the body, and the Content-Type header indicates the type of resource sent to the server.
+    
+    - If you need to send a _**password**_ (or any other sensitive piece of data), **never use the GET method** or you risk displaying it in the URL bar, which would be very insecure.
+    - If you need to send a _**large amount of data**_, the **POST** method is preferred because some browsers limit the sizes of URLs. In addition, many servers limit the length of URLs they accept.
   
   - name : is used by server to extract the values associated with it. If form data will be used in a server script (such as PHP ASP.NET, or CGI), the _name_ attribute is **required**. _Name_ attributes do not have to be unique.
   
@@ -654,8 +711,16 @@ pixelDepth | The number of bits per pixel of the screen.
   
 - the elements[] array
 
-  The javascript _form_ object consists of a property called elements. This is a JavaScript array that parallels all of the HTML fields within the form. Each of the input types in the elements[] array is also an object in its own right. ```document.forms[i].elements[j]``` or ```document.forms["form_name"].elements["ele_name"]``` or ```document.form_name.ele_name``` or ```document["form_name"]["ele_name"]```. example:
+  The javascript _form_ object consists of a property called elements. This is a JavaScript array that parallels all of the HTML fields within the form. Each of the input types in the elements[] array is also an object in its own right.
+  
+  Different ways to access form elements:
   ```javascript
+  document.forms[i].elements[j]
+  document.forms["form_name"].elements["ele_name"]
+  document.form_name.ele_name
+  document["form_name"]["ele_name"]
+  
+  // example:
   <form name="form1" id=”first_form”>
     Enter your name:
     <input type="text"
