@@ -629,6 +629,56 @@ availTop | The y coordinate of the first pixel, minus toolbars, and so on.
 colorDepth | The maximum amount of colors that the screen can display.
 pixelDepth | The number of bits per pixel of the screen.
 
+### Working with forms and input devices
+- Attributes of the ```<form>``` tag
+  - action : assigned the URL of the server program that will process the form data. The URL can be relative or absolute. If it's assigned the empty string or simply be omitted, the form data will not be sent.
+  
+  - method : indicates **how** the form data will be sent to the server. For pure queries which will not affect the state of the server, the **GET** method is normally used, and for submitting form data, the **POST** method is used.
+  
+  - name : is used by server to extract the values associated with it. If form data will be used in a server script (such as PHP ASP.NET, or CGI), the _name_ attribute is **required**. _Name_ attributes do not have to be unique.
+  
+  - value : after click submit button, the _name/value_ paires from the form are collected by the browser and sent to the server-side program. If the method attribute is GET, the name/value pairs will be assigned to a query string and if the method attribute is assigned POST, the pars will be sent in an HTTP message body.
+  
+  - id : used by javascript to identify a element. The _id_ attribute values are not sent to the server.
+  
+- the _document.forms[]_ array
+
+  The forms can be accessed in two ways: by name or by number(index).
+  - If you name the form with the _name_ attribute of the HTML ```<form>``` tag, you can use that name to reference the _forms_ object. for example:
+  ```javascript
+  <form name = 'myform1'>...</form>
+  
+  var myform = document.forms['myform1'];  will return the form object.
+  ```
+  - the index value of the array, starting at 0, corresponds to the order in which the form occurs in the document. For example,  _document.forms[0]_ is the first form to appear in the page.
+  
+- the elements[] array
+
+  The javascript _form_ object consists of a property called elements. This is a JavaScript array that parallels all of the HTML fields within the form. Each of the input types in the elements[] array is also an object in its own right. ```document.forms[i].elements[j]``` or ```document.forms["form_name"].elements["ele_name"]``` or ```document.form_name.ele_name``` or ```document["form_name"]["ele_name"]```. example:
+  ```javascript
+  <form name="form1" id=”first_form”>
+    Enter your name:
+    <input type="text"
+      id="namefield"
+      name="namefield"
+      value="Name: " />
+  </form>
+  <form name="form2" id="second_form">
+    <input type="button" value="Press here">
+  </form>
+  <form name="myform">
+    <input type="button" name="button1" id="button1" value="red" />
+    <input type="button" name="button2" id="button2" value="blue" />
+  </form>  
+  <script>
+    console.log(document.myform.button1.value);  // red
+    console.log(document.form1.name);            // form1
+    console.log(document["myform"]["button2"].type); // button
+  </script>
+  ```
+  
+- 
+
 
 # Recommended Reference
 - http://javascriptissexy.com/how-to-learn-javascript-properly/
