@@ -742,8 +742,113 @@ pixelDepth | The number of bits per pixel of the screen.
   </script>
   ```
   
-- 
+- Different ways to submit fillout forms ([reference](http://www.javascript-coder.com/javascript-form/javascript-form-submit.phtml))
+  - use _submit_ input type
+  - use _image_ input type
+  
+    Input | Type | Attribute Description
+    ----- | ---- | ----------------------
+    submit | name, id, value | When clicked, executes the form; launches cgi.
+    image | src, name, id, value, align | Same as submit button, but displays an image instead of text. The image is in a file found at src.
+    
+  - with Javascript (event handlers), see below.
+  
+- Two important form event handlers
+  - onClick
+  
+  The onClick event handler is an attribute of the HTML _**submit**_ or _**button**_ _input type_. When the user clicks the button, the event is triggered, and _if the handler function returns true, the form will be submitted; otherwise, it will be rejected_.
+  ```html
+  <html>
+    <head><title>onClick Event Handler and Forms</title>
+    <script type="text/javascript">
+      function readySubmit(){
+        if(confirm("Are you ready to submit your form? ")){
+          return true;
+        }
+        else{
+          return false;
+        }
+      }
+    </script>
+    </head>
+    
+    <body>
+      <form action="http://cgi-bin/testform.cgi" method="post">
+        Enter your user id:
+        <input type="text" name="textbox" value="" />
+        <br />
+        Type your password:
+        <input type="password" name="secret" />
+        <p></p>
+        <input type="submit" onClick="readySubmit();" />       ************************
+      </form>
+    </body>
+  </html>
+  ```
 
+  - onSubmit
+  
+  The onSubmit event handler is added as an attribute of the ```<form>``` tag (and _**only the ```<form>``` tag**_), to control what happens when the user clicks the submit button.
+  
+  When a function is assigned to the onSubmit event handler, if the value returned by the function is true, the form will be submitted to the server, but if it returns false, the form will be stopped and the user will be given a chance to reenter data in the form.
+  ```html
+  <html>
+    <head><title>onSubmit Event Handler and Forms</title>
+      <script type="test/JavaScript">
+        function readySubmit(){
+          if(confirm("Are you ready to submit your form? ")){
+            return true;
+          }
+          else{
+            return false;
+          }
+        }
+      </script>
+    </head>
+    <body>
+      <form action="cgi-bin/testform.cgi" method="post" onSubmit="return(readySubmit());" >   *****************
+        Enter your user id:
+        <input type="text" name="textbox" value="" />
+        <br />
+        Type your password: <input type="password" name="secret" />
+        <br />
+        <input type="submit" />
+      </form>
+    </body>
+  </html>
+  ```
+  
+  - onReset
+  
+  It's an attribute of the ```<form>``` tag. This event handler can be used to make sure that clearing an entire form is really what you want to do, when you click on the _reset_ button (the HTML reset button allows the user to clear the form fields and set them back to their default values).
+  ```html
+  <html>
+  <head><title>The onReset Event</title>
+    <script type="text/javascript">
+      function resetAll(){
+        if(confirm("Do you want to reset the form to its default " + " values? ")){
+          return true;
+        }
+        else{
+          return false;
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <form action="http://cgi-bin/testform.cgi" method="post" onReset="return resetAll();">
+    Enter your user id: <input type="text" name="textbox" value="Name?" id="textbox">
+    <p>Type your password: <input type="password" name="secret" id="secret"></p>
+    <p>
+      <input type="submit"/>
+      <input type="reset" value="Reset Form"/>
+    </p>
+    </form>
+  </body>
+  </html>
+  ```
+  
 
 # Recommended Reference
 - http://javascriptissexy.com/how-to-learn-javascript-properly/
