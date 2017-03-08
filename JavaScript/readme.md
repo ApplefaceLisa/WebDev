@@ -713,7 +713,7 @@ pixelDepth | The number of bits per pixel of the screen.
 
   The javascript _form_ object consists of a property called elements. This is a JavaScript array that parallels all of the HTML fields within the form. Each of the input types in the elements[] array is also an object in its own right.
   
-  Different ways to access form elements:
+  _**Different ways to access form elements**_:
   ```javascript
   document.forms[i].elements[j]
   document.forms["form_name"].elements["ele_name"]
@@ -752,8 +752,27 @@ pixelDepth | The number of bits per pixel of the screen.
     image | src, name, id, value, align | Same as submit button, but displays an image instead of text. The image is in a file found at src.
     
   - with Javascript (event handlers), see below.
-  
-- Two important form event handlers
+
+- use _**button**_ input type if the form is **not** going to submit data to a server.
+  ```html
+  <html>
+  <head><title>button input type</title>
+  <script type="text/javascript">
+    function greetme(){
+      alert("Why did you click me like that? ");
+    }
+  </script>
+  </head>
+  <body>
+    <form name="form1">
+    <!-- event handler for a button is an attribute for its input type -->
+    <input type="button" value="Click me!" onClick="greetme()" />     ****************
+    </form>
+  </body>
+  </html>
+  ```
+
+- Three important form event handlers
   - onClick
   
   The onClick event handler is an attribute of the HTML _**submit**_ or _**button**_ _input type_. When the user clicks the button, the event is triggered, and _if the handler function returns true, the form will be submitted; otherwise, it will be rejected_.
@@ -837,7 +856,7 @@ pixelDepth | The number of bits per pixel of the screen.
   </head>
 
   <body>
-    <form action="http://cgi-bin/testform.cgi" method="post" onReset="return resetAll();">
+    <form action="http://cgi-bin/testform.cgi" method="post" onReset="return resetAll();">        *************
     Enter your user id: <input type="text" name="textbox" value="Name?" id="textbox">
     <p>Type your password: <input type="password" name="secret" id="secret"></p>
     <p>
@@ -848,6 +867,27 @@ pixelDepth | The number of bits per pixel of the screen.
   </body>
   </html>
   ```
+  
+- the _this_ keyword
+
+  When using an event handler, the this keyword always refers to the object that triggered the event. 
+  - If the event is triggered from within the <form> tag, this refers to the current form, 
+  - but if it is triggered by an element within the form, such as an input device, then it references that element. 
+  - Each element has a _**form property**_ that references the form in which it was created.
+  ```html
+  <form>                                 <-- The JavaScript form object
+    <input type="button"                 <-- This a JavaScript element
+    value="Print Form Stuff"
+    onClick="display_formval(this.form);"> <-- this keyword references the form object by using the element’s form property
+    <input type="button"
+    value="Print Button Stuff"
+    onClick="display_buttonval(this);">  <-- this keyword references the current object, the button
+  </form>
+  ```
+  
+- submit() and reset() methods
+  
+  These methods emulate the event handlers of the same name: The submit() method submits the form just as though the user had clicked the submit button, and the reset() method resets the form elements to their defaults just as if the user had clicked the reset button.
   
 
 # Recommended Reference
