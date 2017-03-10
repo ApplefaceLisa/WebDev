@@ -17,8 +17,9 @@
 
 
 # Reference
-- [example code](http://codereview.stackexchange.com/questions/136705/random-quote-generator-from-api)
+- example code : [Random quote generator from API](http://codereview.stackexchange.com/questions/136705/random-quote-generator-from-api)
 - [Submitted Code](http://codepen.io/ApplefaceLisa/pen/mWWrbd)
+- [jQuery UI animation](https://jqueryui.com/animate/)
 
 - [Free API for Random Quote Machine](https://www.reddit.com/r/FreeCodeCamp/comments/4b1fox/free_api_for_random_quote_machine/)
   - [quote API](https://quotesondesign.com/api-v4-0/)
