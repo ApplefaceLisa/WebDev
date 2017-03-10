@@ -37,6 +37,7 @@
       "name":"Shuzenji",
       "cod":200}
     ```
+    - [weather icons](https://openweathermap.org/weather-conditions)
     
 - [Show the Local Weather Project: Free Code Camp](https://www.youtube.com/watch?v=eLK28VPJvCE)
 
