@@ -52,3 +52,4 @@
 - [Chrome 50 Geo Location Fix](https://www.youtube.com/watch?v=aLKJhOmBjBw&t=0s)
   - [IP Geolocation API](http://ip-api.com/docs/)
 
+# [Submitted Code](http://codepen.io/ApplefaceLisa/pen/Wpjexy)
