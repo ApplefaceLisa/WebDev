@@ -1,0 +1,23 @@
+body {
+  font-family: 'Roboto';
+  color: #fff;
+  background-color: #161616;
+  text-align: center;
+  font-size: 18px;
+}
+
+.container h1 {
+    font-size: 4em;
+}
+.container p {
+    font-size: 1.8em;
+}
+.container .row {
+    margin: 40px auto;
+}
+#uint {
+    color: blue;
+}
+.footer {
+    font-size: 0.8em;
+}
