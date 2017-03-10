@@ -16,3 +16,7 @@
 - When you are finished, click the "I've completed this challenge" button and include a link to your CodePen.
 
 - You can get feedback on your project by sharing it with your friends on Facebook.
+
+# Reference
+- [OpenWeatherMap](http://openweathermap.org/api)
+- [Show the Local Weather Project: Free Code Camp](https://www.youtube.com/watch?v=eLK28VPJvCE)
