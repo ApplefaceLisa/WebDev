@@ -19,4 +19,14 @@
 
 # Reference
 - [OpenWeatherMap](http://openweathermap.org/api)
+  - current weather
+  
+    http://api.openweathermap.org/data/2.5/weather?q=London&APPID=8a933ba984244ede4e8df3b37fc3a634
+    
 - [Show the Local Weather Project: Free Code Camp](https://www.youtube.com/watch?v=eLK28VPJvCE)
+
+- [jQuery CDN](https://code.jquery.com/)
+
+- [Chrome 50 Geo Location Fix](https://www.youtube.com/watch?v=aLKJhOmBjBw&t=0s)
+  - [IP Geolocation API](http://ip-api.com/docs/)
+
