@@ -37,6 +37,12 @@
       "name":"Shuzenji",
       "cod":200}
     ```
+    Note: the temp unit is kelvin. 
+    ```
+    T(°C) = T(K) - 273.15
+    T(°F) = T(K) × 9/5 - 459.67
+    ```
+    
     - [weather icons](https://openweathermap.org/weather-conditions)
     
 - [Show the Local Weather Project: Free Code Camp](https://www.youtube.com/watch?v=eLK28VPJvCE)
