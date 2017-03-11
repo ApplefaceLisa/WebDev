@@ -954,12 +954,13 @@ pixelDepth | The number of bits per pixel of the screen.
         alert('There was a problem with the request.');
       }
     } // End callback function
-  }
+  
   // Initialize the object
   ajaxRequest.open('GET', url, true); 
   // Deal with the cache
   ajaxRequest.setRequestHeader('If-Modified-Since', 'Sat, 03 Jan 2010 00:00:00GMT');
   ajaxRequest.send(null); // Send the request
+}  // End getText() function
 ```
 
 # Recommended Reference
