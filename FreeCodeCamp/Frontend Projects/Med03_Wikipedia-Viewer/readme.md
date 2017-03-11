@@ -19,3 +19,5 @@
 - [Building a Wikipedia Search App](https://medium.freecodecamp.com/building-a-wikipedia-search-engine-project-4d84de3841d2#.pnmjfpk4e)
 
 - [Build a Wikipedia Viewer](https://www.youtube.com/watch?v=PFrzq01h4m0)
+
+# [Submitted Code](http://codepen.io/ApplefaceLisa/pen/xqdbdQ)
