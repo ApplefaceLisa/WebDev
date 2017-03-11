@@ -890,6 +890,78 @@ pixelDepth | The number of bits per pixel of the screen.
   These methods emulate the event handlers of the same name: The submit() method submits the form just as though the user had clicked the submit button, and the reset() method resets the form elements to their defaults just as if the user had clicked the reset button.
   
 
+## AJAX
+#### The steps for creating AJAX communication
+```javascript
+1. ajaxRequest = new XMLHttpRequest();
+2. // use GET
+   ajaxRequest.open("GET", url, true/false);     // true: async, false: sync
+   ajaxRequest.send(null);
+   
+   // use POST
+   ajaxRequest.open("POST", url, true/false);    // true: async, false: sync
+   ajaxRequest.setRequestHeader("Content-type", ".....");
+   ajaxRequest.send(query string);    // query string example: "firstname=John&lastname=Doe"
+   
+3. // monitoring state of server response
+   ajaxRequest.onreadystatechange = function() {
+     if (ajaxRequest.status == 200 && ajaxRequest.readyState == 4) {
+       // data received completely, do something.
+     }
+   }
+```
+
+#### Example code
+```javascript
+  // Step1 : 
+  /* Check browser type and create ajax request object
+     Put this function in an external .js file and use it for your
+     Ajax programs 
+  */
+  function CreateRequestObject(){
+    var ajaxRequest; // The variable that makes Ajax possible!
+    try{
+      // Opera 8.0+, Firefox, Safari
+      ajaxRequest = new XMLHttpRequest(); // Create the object
+    }
+    catch (e){
+      // Internet Explorer Browsers
+      try{
+        ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+      }
+      catch (e) {
+        try{
+          ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        catch (e){
+          return false;
+        }
+      }
+    }
+    return ajaxRequest;
+  } //End function
+  
+  // Step 2: retrieve text from a file
+  function getText(url){
+    var ajaxRequest=createRequest(); /* Cross-browser check; Get a new XMLHttpRequest object */
+    if( ajaxRequest != false){ /* If we got back a request object create callback function to check state of the request*/
+    ajaxRequest.onreadystatechange = function() {
+      if (ajaxRequest.readyState == 4 && ajaxRequest.status == 200) {
+        document.getElementById('data').innerHTML=
+        ajaxRequest.responseText;
+      }
+      else {
+        alert('There was a problem with the request.');
+      }
+    } // End callback function
+  }
+  // Initialize the object
+  ajaxRequest.open('GET', url, true); 
+  // Deal with the cache
+  ajaxRequest.setRequestHeader('If-Modified-Since', 'Sat, 03 Jan 2010 00:00:00GMT');
+  ajaxRequest.send(null); // Send the request
+```
+
 # Recommended Reference
 - http://javascriptissexy.com/how-to-learn-javascript-properly/
 - http://eloquentjavascript.net/
