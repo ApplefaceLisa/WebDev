@@ -14,3 +14,8 @@
   - Use this link to experiment with Wikipedia's API.
 
 # Reference
+- Wikipidia [API:Main page](https://www.mediawiki.org/wiki/API:Main_page)
+
+- [Building a Wikipedia Search App](https://medium.freecodecamp.com/building-a-wikipedia-search-engine-project-4d84de3841d2#.pnmjfpk4e)
+
+- [Build a Wikipedia Viewer](https://www.youtube.com/watch?v=PFrzq01h4m0)
