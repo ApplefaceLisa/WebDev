@@ -127,6 +127,9 @@
       
       - filter() : applies a Boolean function to an array and returns a new array consisting of those elements that satisfy the Boolean function.
       
+  - Sorting : sort() and reverse()
+
+      
   ##### Two-Dimensional and Multidimensional Arrays
   - Processing Two-Dimensional Array Elements : two patterns
     - one pattern emphasizes accessing array elements by columns, columnar processing. The outer loop moves through the rows, and the inner loop processes the columns.
