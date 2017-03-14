@@ -456,7 +456,39 @@
     
   - Priority Queues
     - A priority queue is one where elements are removed from the queue based on a priority constraint.
-    - Each element has a "priority" number.  
+    - Each element has a "priority" number.
+    
+    ```Javascript
+    function PriorityQueue() {
+      var items = [];
+      function QueueElement (element, priority){
+        this.element = element;
+        this.priority = priority;
+      }
+      
+      // enqueue()
+      this.enqueue = function(element, priority){
+        var queueElement = new QueueElement(element, priority);
+        if (this.isEmpty()){
+          items.push(queueElement);
+        } else {
+          var added = false;
+          for (var i=0; i<items.length; i++){
+            if (queueElement.priority < items[i].priority){   // the smaller the priority number, the higher priority is.
+              items.splice(i,0,queueElement);
+              added = true;
+              break;
+            }
+          }
+          if (!added){ //{5}
+           items.push(queueElement);
+          }
+        }
+      };
+      
+      //other methods - same as default Queue implementation
+    }
+    ```
 
 - ## Linked lists: how they overcome the shortcomings of arrays
   - A linked list is a modification of the list data structure, where each element is a separate object linked to the objects on either side of it.
