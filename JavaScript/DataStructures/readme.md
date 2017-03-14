@@ -26,7 +26,32 @@
       }
     }
     ```
+  #### References for JavaScript array methods
   
+  Method | Description
+  ------ | ------------
+  push  | add new elements to the end of the array
+  pop | remove an elements from the end of the array
+  shift | add new elements to the beginning of the array
+  unshift | remove an elements from the beginning of the array
+  indexOf | Searches the array for specific elements and returns its position
+  lastIndexOf | Returns the last item in the array that matches the search criteria and returns its position
+  join | Joins all the array elements into a string
+  toString | Returns the array as a string
+  concat | Joins multiple arrays and returns a copy of the joined arrays
+  splice | add or remove elements from any particular position of array
+  slice | Returns a new array from the specified index  
+  forEach | Executes a specific function on each element of the array  
+  every | Calls a function for every element of the array until false is returned
+  some | Passes each element through the supplied function until true is returned
+  reduce | reduces the array to a single value
+  map | Creates a new array with the result of calling the specified function on each element of the array  
+  filter | Creates an array with each element that evaluates to true in the function provided
+  sort | Sorts the array alphabetically or by the supplied function
+  reverse | Reverses the array so the last items become the first and vice versa  
+  valueOf | Like the method toString, this returns the array as a string
+  
+  ##### Methods detail
   - Searching for a Value : indexOf() , lastIndexOf()
     ```Javascript
     arr.indexOf(element);
