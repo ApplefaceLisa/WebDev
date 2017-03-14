@@ -358,41 +358,41 @@
     empty | to let us know if a stack has no elements in it.
    
   - Array-based implementation : the Stack class
-  ``` javascript
-  function Stack() {
-    this.dataStore = [];
-    this.push = push;
-    this.pop = pop;
-    this.peek = peek;
-    this.clear = clear;
-    this.length = length;
-    this.empty = empty;
-  }
-   
-  function push(element) {
-    this.dataStore.push(element);
-  }
-  
-  function pop() {
-    return this.dataStore.pop();
-  }
-  
-  function peek() {
-    return this.dataStore[this.dataStore.length - 1];
-  }
-  
-  function clear() {
-    this.dataStore = [];
-  }
-  
-  function length() {
-    return this.dataStore.length;
-  }
-  
-  function empty() {
-    return this.dataStore.length <= 0;
-  }
-  ```
+    ``` javascript
+    function Stack() {
+      this.dataStore = [];
+      this.push = push;
+      this.pop = pop;
+      this.peek = peek;
+      this.clear = clear;
+      this.length = length;
+      this.empty = empty;
+    }
+
+    function push(element) {
+      this.dataStore.push(element);
+    }
+
+    function pop() {
+      return this.dataStore.pop();
+    }
+
+    function peek() {
+      return this.dataStore[this.dataStore.length - 1];
+    }
+
+    function clear() {
+      this.dataStore = [];
+    }
+
+    function length() {
+      return this.dataStore.length;
+    }
+
+    function empty() {
+      return this.dataStore.length <= 0;
+    }
+    ```
   
   ### Queue
   - A queue is a type of list where data are inserted at the end and are removed from the front. FIFO.
@@ -419,37 +419,37 @@
     this.front = front;
     this.back = back;
     this.toString = toString;
-    this.empty = empty;
-  }
-  
-  function enqueue(element) {
-    this.dataStore.push(element);
-  }
-  
-  function dequeue() {
-    return this.dataStore.shift();
-  }
-  
-  function front() {
-    return this.dataStore[0];
-  }
-  
-  function back() {
-    return this.dataStore[this.dataStore.length-1];
-  }
-  
-  function toString() {
-    var retStr = "";
-    for (var i = 0; i < this.dataStore.length; ++i) {
-      retStr += this.dataStore[i] + "\n";
+      this.empty = empty;
     }
-    return retStr;
-  }
-  
-  function empty() {
-    return (this.dataStore.length == 0);
-  }
-  ```
+
+    function enqueue(element) {
+      this.dataStore.push(element);
+    }
+
+    function dequeue() {
+      return this.dataStore.shift();
+    }
+
+    function front() {
+      return this.dataStore[0];
+    }
+
+    function back() {
+      return this.dataStore[this.dataStore.length-1];
+    }
+
+    function toString() {
+      var retStr = "";
+      for (var i = 0; i < this.dataStore.length; ++i) {
+        retStr += this.dataStore[i] + "\n";
+      }
+      return retStr;
+    }
+
+    function empty() {
+      return (this.dataStore.length == 0);
+    }
+    ```
   
   - Sorting Data with Queues
     - radix sort
