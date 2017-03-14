@@ -26,32 +26,33 @@
       }
     }
     ```
+
   #### References for JavaScript array methods
   
-  Method | Description
-  ------ | ------------
-  push  | add new elements to the end of the array
-  pop | remove an elements from the end of the array
-  shift | add new elements to the beginning of the array
-  unshift | remove an elements from the beginning of the array
-  indexOf | Searches the array for specific elements and returns its position
-  lastIndexOf | Returns the last item in the array that matches the search criteria and returns its position
-  join | Joins all the array elements into a string
-  toString | Returns the array as a string
-  concat | Joins multiple arrays and returns a copy of the joined arrays
-  splice | add or remove elements from any particular position of array
-  slice | Returns a new array from the specified index  
-  forEach | Executes a specific function on each element of the array  
-  every | Calls a function for every element of the array until false is returned
-  some | Passes each element through the supplied function until true is returned
-  reduce | reduces the array to a single value
-  map | Creates a new array with the result of calling the specified function on each element of the array  
-  filter | Creates an array with each element that evaluates to true in the function provided
-  sort | Sorts the array alphabetically or by the supplied function
-  reverse | Reverses the array so the last items become the first and vice versa  
-  valueOf | Like the method toString, this returns the array as a string
+    Method | Description
+    ------ | ------------
+    push  | add new elements to the end of the array
+    pop | remove an elements from the end of the array
+    shift | add new elements to the beginning of the array
+    unshift | remove an elements from the beginning of the array
+    indexOf | Searches the array for specific elements and returns its position
+    lastIndexOf | Returns the last item in the array that matches the search criteria and returns its position
+    join | Joins all the array elements into a string
+    toString | Returns the array as a string
+    concat | Joins multiple arrays and returns a copy of the joined arrays
+    splice | add or remove elements from any particular position of array
+    slice | Returns a new array from the specified index  
+    forEach | Executes a specific function on each element of the array  
+    every | Calls a function for every element of the array until false is returned
+    some | Passes each element through the supplied function until true is returned
+    reduce | reduces the array to a single value
+    map | Creates a new array with the result of calling the specified function on each element of the array  
+    filter | Creates an array with each element that evaluates to true in the function provided
+    sort | Sorts the array alphabetically or by the supplied function
+    reverse | Reverses the array so the last items become the first and vice versa  
+    valueOf | Like the method toString, this returns the array as a string
   
-  ##### Methods detail
+  ##### Methods details
   - Searching for a Value : indexOf() , lastIndexOf()
     ```Javascript
     arr.indexOf(element);
@@ -126,9 +127,9 @@
       
       - filter() : applies a Boolean function to an array and returns a new array consisting of those elements that satisfy the Boolean function.
       
-  - Two-Dimensional and Multidimensional Arrays
-    - Processing Two-Dimensional Array Elements : two patterns
-      - one pattern emphasizes accessing array elements by columns, columnar processing. The outer loop moves through the rows, and the inner loop processes the columns.
+  ##### Two-Dimensional and Multidimensional Arrays
+  - Processing Two-Dimensional Array Elements : two patterns
+    - one pattern emphasizes accessing array elements by columns, columnar processing. The outer loop moves through the rows, and the inner loop processes the columns.
       ```javascript
       var grades = [[89, 77, 78],[76, 82, 81],[91, 94, 89]];
       var total = 0;
@@ -141,7 +142,7 @@
       ```
       This pattern has no problem with jagged arrays.
       
-      - the other pattern emphasizes accessing array elements by rows. The outer loop moves through the columns, and the inner loop processes the rows.
+    - the other pattern emphasizes accessing array elements by rows. The outer loop moves through the columns, and the inner loop processes the rows.
       ```javascript
       var grades = [[89, 77, 78],[76, 82, 81],[91, 94, 89]];
       var total = 0;
@@ -154,9 +155,9 @@
       ```
       **Note**: this pattern may have problem with _**jagged arrays**_.
       
-    - Jagged Arrays
+  - Jagged Arrays
     
-      A jagged array is an array where the rows in the array may have a different number of elements. for example:
+    A jagged array is an array where the rows in the array may have a different number of elements. for example:
       ```javascript
       arr = [[1,2,3], [4,5], [6,7,8,9,10]];
       ```
