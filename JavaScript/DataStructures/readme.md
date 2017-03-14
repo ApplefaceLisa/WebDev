@@ -490,6 +490,27 @@
     }
     ```
 
+  - circular queue – Hot Potato
+    ```Javascript
+    function hotPotato (nameList, num){
+      var queue = new Queue();
+      for (var i=0; i<nameList.length; i++){
+        queue.enqueue(nameList[i]);
+      }
+        var eliminated = '';
+        while (queue.size() > 1){
+        for (var i=0; i<num; i++){
+        queue.enqueue(queue.dequeue());
+      }
+      eliminated = queue.dequeue();
+        console.log(eliminated + ' was eliminated from the Hot Potato
+        game.');
+      }
+      return queue.dequeue();
+    }
+    ```
+  
+  
 - ## Linked lists: how they overcome the shortcomings of arrays
   - A linked list is a modification of the list data structure, where each element is a separate object linked to the objects on either side of it.
   
