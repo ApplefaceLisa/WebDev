@@ -498,3 +498,6 @@
 
 # Example Code
 https://github.com/loiane/javascript-datastructures-algorithms
+
+# Reference
+- [how to use Google Developer Tools to debug JavaScript](https://developers.google.com/web/tools/chrome-devtools/?utm_source=dcc&utm_medium=redirect&utm_campaign=2016q3)
