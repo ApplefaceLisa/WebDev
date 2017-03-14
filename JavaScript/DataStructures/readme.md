@@ -447,12 +447,7 @@
   }
   
   function empty() {
-    if (this.dataStore.length == 0) {
-      return true;
-    }
-    else {
-      return false;
-    }
+    return (this.dataStore.length == 0);
   }
   ```
   
