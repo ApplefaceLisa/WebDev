@@ -253,7 +253,7 @@
   }
   ```
 
-- Maximum subarray sum
+- [Maximum subarray sum](https://www.codewars.com/kata/maximum-subarray-sum/javascript)
 
   The maximum sum subarray problem consists in finding the maximum sum of a contiguous subsequence in an array or list of integers:
   ```
