@@ -71,4 +71,20 @@
   }
   ```
   
--   
+- Shortest Word
+
+  x Simple, given a string of words, return the **length** of the shortest word(s).
+  String will never be empty and you do not need to account for different data types.
+
+  solution:
+  ```Javascript
+  function findShort(s){
+    return s.split(" ").reduce(function(rst,value) {
+      return Math.min(rst, value.length);
+    }, Number.MAX_VALUE);
+  }
+  
+  function findShort(s){
+    return Math.min.apply(null, s.split(' ').map(w => w.length));
+  }  
+  ```
