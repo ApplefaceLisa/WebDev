@@ -21,4 +21,8 @@
 
 - [Build a Wikipedia Viewer](https://www.youtube.com/watch?v=PFrzq01h4m0)
 
-# [Submitted Code](http://codepen.io/ApplefaceLisa/pen/xqdbdQ)
+# [Submitted Code](http://codepen.io/ApplefaceLisa/pen/zZPZQz)
+
+# Reference
+- [free code camp Mockup](https://codepen.io/freeCodeCamp/pen/wGqEga)
+- [wiki search](http://codepen.io/jasonchan/pen/JXwONj)
