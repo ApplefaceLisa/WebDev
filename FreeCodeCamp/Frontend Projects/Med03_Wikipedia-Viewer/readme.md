@@ -26,3 +26,6 @@
 # Reference
 - [free code camp Mockup](https://codepen.io/freeCodeCamp/pen/wGqEga)
 - [wiki search](http://codepen.io/jasonchan/pen/JXwONj)
+- Wikipedia Search API Javascript AJAX call GET
+  - https://www.youtube.com/watch?v=O4yAHlE3HNs
+  - https://www.youtube.com/watch?v=pn5eOoJF8bw&feature=youtu.be
