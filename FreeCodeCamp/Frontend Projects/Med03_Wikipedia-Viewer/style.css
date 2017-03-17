@@ -1,14 +1,31 @@
 body {
   font-family: 'Roboto';
-  color: #fff;
-  background-color: #161616;
   text-align: center;
   font-size: 18px;
+  width: 100%;
 }
-.container h1 {
-    font-size: 3em;
+h1 {
+  font-size: 3em;
 }
-
-div .row {
-  margin-top: 20px;
+h2 {
+  font-size: 1.5em;
+  text-align: left;
 }
+div.row {
+  border-radius:25px;
+  width: 80%;
+  margin: 20px auto;
+}
+p {
+  font-size:1em;
+  line-height: 1.5em;
+  text-align: left;
+}
+input {
+  width: 60%;
+}
+/*
+#output {
+  margin-top:1%;
+  border-radius:25px;
+}*/
