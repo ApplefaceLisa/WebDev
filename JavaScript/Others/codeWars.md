@@ -315,3 +315,25 @@
     return Math.max(Number(digits.substr(0, 5)), solution(digits.substr(1)));
   }
   ```
+
+- [RGB To Hex Conversion](https://www.codewars.com/kata/rgb-to-hex-conversion/javascript)
+
+  The rgb() method is incomplete. Complete the method so that passing in RGB decimal values will result in a hexadecimal representation being returned. The valid decimal values for RGB are 0 - 255. Any (r,g,b) argument values that fall out of that range should be rounded to the closest valid value.
+
+  The following are examples of expected output values:
+  ```
+  rgb(255, 255, 255) // returns FFFFFF
+  rgb(255, 255, 300) // returns FFFFFF
+  rgb(0,0,-20) // returns 000000
+  rgb(148, 0, 211) // returns 9400D3
+  ```
+  Solution:
+  ```javascript
+  function rgb(r, g, b){
+    return [r,g,b].map(function(x) {
+      return ('0' + Math.max(0, Math.min(255, x)).toString(16)).slice(-2);
+    }).join('').toUpperCase();
+  }
+  ```
+  Note [String.slice(beginIndex[, endIndex])](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice), if beginIndex < 0, then beginIndex = str.length + beginIndex.
+  
