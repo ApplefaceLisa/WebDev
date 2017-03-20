@@ -358,6 +358,12 @@
   }
   
   // another solution
+  // n      1      2        3            4              5
+  // arr   [1, | 1, 1, | 1, 2, 1, | 1, 3, 3, 1, | 1, 3, 6, 3, 1 ]
+  // for n = 5, prev array is n = 4; etc...
+  // n      1      2        3            4
+  // arr   [1, | 1, 1, | 1, 2, 1, | 1, 3, 3, 1]
+  
   function pascalsTriangle(n) {
     //return a flat array representing the values of Pascal's Triangle to the n-th level
     if (n === 1) {
