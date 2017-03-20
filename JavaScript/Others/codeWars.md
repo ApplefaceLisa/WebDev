@@ -337,3 +337,57 @@
   ```
   Note [String.slice(beginIndex[, endIndex])](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice), if beginIndex < 0, then beginIndex = str.length + beginIndex.
   
+- [Pascal's Triangle](https://www.codewars.com/kata/pascals-triangle/javascript)
+  ```Javascript
+  function pascalsTriangle(n){
+    var arr = [];
+    arr[0] = [1];
+    var tmp;
+    for(var i=1;i<n;i++){
+      //Each element in array is in turn an array
+      // The index is the row number and the array values are the row values
+      arr[i]=[];
+      for(var j=0; j<=i; j++){
+        //The following line adds up the two numbers directly above this element.
+        tmp = (!!arr[i-1][j-1] ? arr[i-1][j-1] : 0)
+            + (!!arr[i-1][j] ? arr[i-1][j] : 0);
+        arr[i].push(tmp);
+      }
+    }
+    return [].concat(...arr);
+  }
+  
+  // another solution
+  function pascalsTriangle(n) {
+    //return a flat array representing the values of Pascal's Triangle to the n-th level
+    if (n === 1) {
+      return [1];
+    }
+    var prev = pascalsTriangle(n - 1), len = prev.length;
+    prev.push(1);
+    for (var i = len - n + 1; i < len - 1; i ++) {
+      prev.push(prev[i] + prev[i + 1]);
+    }
+    prev.push(1);
+    return prev;
+  }  
+  ```
+  Note: [Flattening multidimensional Arrays in JavaScript](http://www.jstips.co/en/javascript/flattening-multidimensional-arrays-in-javascript/)
+  
+  given ```var myArray = [[1, 2],[3, 4, 5], [6, 7, 8, 9]];```, we want to get ```[1, 2, 3, 4, 5, 6, 7, 8, 9]```.
+  - solution 1: Using concat() and apply()
+  ```Javascript
+  var myNewArray = [].concat.apply([], myArray);
+  ```
+  - solution 2: Using reduce()
+  ```Javascript
+  var myNewArray = myArray.reduce(function(prev, curr) {
+    return prev.concat(curr);
+  });  
+  ```
+  - solution 3: Using spread operator in ES6
+  ```Javascript
+  var myNewArray3 = [].concat(...myArray);
+  console.log(myNewArray3);
+  // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  ```
