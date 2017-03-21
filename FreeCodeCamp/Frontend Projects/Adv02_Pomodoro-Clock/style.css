@@ -1,0 +1,52 @@
+body {
+    width: 60%;
+    text-align: center;
+    font-size: 18px;
+    background-color: #333333;
+    color: white;
+}
+input[type="text"] {
+    background-color: #333333;
+}
+div.container {
+    width: 80%;
+}
+div.row {
+    margin-top: 30px;
+}
+div.setup {
+    width: 40%;
+    text-transform: uppercase;
+    display: inline-block;
+}
+span.adjust {
+    cursor: default;
+}
+#break, #session {
+    width: 20%;
+    margin: 5px auto;
+    border-style: none;
+    text-align: center;
+}
+input:focus{
+    outline: none;
+}
+#timer{
+  color:#f00;
+  font-size:50px;
+  text-transform: uppercase;
+  text-align: center;
+  margin:10px auto;
+  border: 2px solid #99CC00;
+  border-radius:50%;
+  width:200px;
+  height:200px;
+  overflow:hidden;
+  position:relative;
+  z-index: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
