@@ -1,4 +1,40 @@
 # Beginner
+- [Pete, the baker](https://www.codewars.com/kata/pete-the-baker/javascript)
+
+  Pete likes to bake some cakes. He has some recipes and ingredients. Unfortunately he is not good in maths. Can you help him to find out, how many cakes he could bake considering his recipes?
+
+  Write a function cakes(), which takes the recipe (object) and the available ingredients (also an object) and returns the maximum number of cakes Pete can bake (integer). For simplicity there are no units for the amounts (e.g. 1 lb of flour or 200 g of sugar are simply 1 or 200). Ingredients that are not present in the objects, can be considered as 0.
+
+  Examples:
+  ```
+  // must return 2
+  cakes({flour: 500, sugar: 200, eggs: 1}, {flour: 1200, sugar: 1200, eggs: 5, milk: 200}); 
+  // must return 0
+  cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar: 500, flour: 2000, milk: 2000});
+  ```
+  Solution:
+  ```Javascript
+  function cakes(recipe, available) {
+    return Object.keys(recipe).reduce(function(val, ingredient) {
+      return Math.min(Math.floor(available[ingredient] / recipe[ingredient] || 0), val)
+    }, Infinity)  
+  }
+  ```
+  Note:
+  - [Object.keys(obj)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
+  
+    returns an array of a given object's own enumerable properties, in the same order as that provided by a for...in loop (the difference being that a for-in loop enumerates properties in the prototype chain as well).
+    
+  - [Array.prototype.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+  
+    applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value. example:
+    ```Javascript
+    var sum = [0, 1, 2, 3].reduce(function(acc, val) {
+      return acc + val;
+    }, 0);
+    // sum is 6    
+    ```  
+
 - [Get the Middle Character](https://www.codewars.com/kata/get-the-middle-character/javascript)
 
   You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
