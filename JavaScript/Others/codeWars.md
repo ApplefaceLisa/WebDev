@@ -433,3 +433,5 @@
   console.log(myNewArray3);
   // [1, 2, 3, 4, 5, 6, 7, 8, 9]
   ```
+
+- [Double Cola](https://www.codewars.com/kata/double-cola/solutions/javascript)
