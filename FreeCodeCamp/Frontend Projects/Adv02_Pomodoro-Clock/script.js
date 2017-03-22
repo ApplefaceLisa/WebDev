@@ -25,6 +25,7 @@ var pomodoro = {
     fillerIncrement: 0,
     interval: null,
 
+    timerDom: null,
     hoursDom: null,
     minutesDom: null,
     secondsDom: null,
@@ -42,30 +43,75 @@ var pomodoro = {
       self[vn].addDom = document.getElementById(vn+"Add");
     },
 
-    timerDisplay: function(vn) {
-      if (this.status === vn) {
-        var obj = this[this.status];
-        this.hoursDom.textContent = (obj.hrs > 0 ? (this.format(obj.hrs)+":") : "");
-        this.minutesDom.textContent = this.format(obj.mins);
-        this.secondsDom.textContent = this.format(obj.secs);
-      }
+    updateDom: function(vn) {
+        if (this.status === vn) {
+          var obj = this[this.status];
+          this.statusDom.textContent = vn.toUpperCase();
+          this.hoursDom.textContent = (obj.hrs > 0 ? (this.format(obj.hrs)+":") : "");
+          this.minutesDom.textContent = this.format(obj.mins);
+          this.secondsDom.textContent = this.format(obj.secs);
+        }
     },
 
-    resetTimer: function(vn) {
+    len2hms: function() {
+      var len = this.len;
+      var h = Math.floor(len / 60);
+      this.hrs = h > 0 ? h : 0;
+      this.mins = len % 60;
+      this.secs = 0;
+    },
+
+    resetTimer: function(vn, step) {
       if (!this.started) {
         var obj = this[vn];
+        obj.len += step;
         var len = obj.len;
         obj.displayDom.value = len;
-
+/*
         var h = Math.floor(len / 60);
         obj.hrs = h > 0 ? h : 0;
         obj.mins = len % 60;
         obj.secs = 0;
+*/
+        this.len2hms.call(obj);
+        this.updateDom.call(this, vn);
       }
+    },
+
+    switchStatus: function() {
+      this.status = (this.status === "session") ? "break" : "session";
+    },
+
+    timerCountDown: function() {
+      /*
+      hrs: 0,
+      mins: 5,
+      secs: 0,
+      */
+      var obj = this[this.status];
+      if (obj.secs == 0) {
+        if (obj.mins == 0) {
+          if (obj.hrs == 0) {
+            this.switchStatus();
+            this.len2hms.call(obj);
+          } else {
+            --obj.hrs;
+            obj.mins = 59;
+            obj.secs = 59;
+          }
+        } else {
+          --obj.mins;
+          obj.secs = 59;
+        }
+      } else {
+        --obj.secs;
+      }
+      this.updateDom(this.status);
     },
 
     init: function() {
       var self = this;
+      this.timerDom = document.getElementById("timer");
       this.hoursDom = document.getElementById("hours");
       this.minutesDom = document.getElementById('minutes');
       this.secondsDom = document.getElementById('seconds');
@@ -77,34 +123,39 @@ var pomodoro = {
 
       this.break.minusDom.onclick = function() {
         if (self.break.len > 1) {
-          --self.break.len;
-          self.resetTimer.call(self, "break");
+          self.resetTimer.call(self, "break", -1);
         }
-        self.timerDisplay.call(self, "break");
       }
 
       this.break.addDom.onclick = function() {
         if (self.break.len < 1440) {
-          ++self.break.len;
-          self.resetTimer.call(self, "break");
+          self.resetTimer.call(self, "break", 1);
         }
-        self.timerDisplay.call(self, "break");
       }
 
       this.session.minusDom.onclick = function() {
         if (self.session.len > 1) {
-          --self.session.len;
-          self.resetTimer.call(self, "session");
+          self.resetTimer.call(self, "session", -1);
         }
-        self.timerDisplay.call(self, "session");
       }
 
       this.session.addDom.onclick = function() {
         if (self.session.len < 1440) {
-          ++self.session.len;
-          self.resetTimer.call(self, "session");
+          self.resetTimer.call(self, "session", 1);
         }
-        self.timerDisplay.call(self, "session");
+      }
+
+      this.timerDom.onclick = function() {
+        this.started = !this.started;
+        if (!this.started) {
+          if (!this.interval) return;
+          clearInterval(this.interval);
+          this.interval = null;
+        } else {
+          this.interval = setInterval(function() {
+            self.timerCountDown.apply(self);
+          }, 1000);
+        }
       }
 
 /*
