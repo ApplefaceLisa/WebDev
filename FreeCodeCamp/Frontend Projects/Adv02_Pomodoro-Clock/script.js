@@ -50,6 +50,9 @@ var pomodoro = {
           this.hoursDom.textContent = (obj.hrs > 0 ? (this.format(obj.hrs)+":") : "");
           this.minutesDom.textContent = this.format(obj.mins);
           this.secondsDom.textContent = this.format(obj.secs);
+          // update filler
+          this.fillerHeight = this.fillerHeight + this.fillerIncrement;
+          this.fillerDom.style.height = this.fillerHeight + 'px';
         }
     },
 
@@ -61,39 +64,42 @@ var pomodoro = {
       this.secs = 0;
     },
 
+    resetFiller: function() {
+      this.fillerIncrement = 200/(this[this.status].len*60);
+      this.fillerHeight = 0;
+    },
+
     resetTimer: function(vn, step) {
       if (!this.started) {
         var obj = this[vn];
         obj.len += step;
         var len = obj.len;
         obj.displayDom.value = len;
-/*
-        var h = Math.floor(len / 60);
-        obj.hrs = h > 0 ? h : 0;
-        obj.mins = len % 60;
-        obj.secs = 0;
-*/
+
         this.len2hms.call(obj);
+        this.resetFiller();
         this.updateDom.call(this, vn);
       }
     },
 
     switchStatus: function() {
-      this.status = (this.status === "session") ? "break" : "session";
+      if (this.status === "session") {
+        this.status = "break";
+        this.fillerDom.style.backgroundColor = "#f4d341";
+      } else {
+        this.status = "session";
+        this.fillerDom.style.backgroundColor = "#99CC00";
+      }
     },
 
     timerCountDown: function() {
-      /*
-      hrs: 0,
-      mins: 5,
-      secs: 0,
-      */
       var obj = this[this.status];
       if (obj.secs == 0) {
         if (obj.mins == 0) {
           if (obj.hrs == 0) {
             this.switchStatus();
             this.len2hms.call(obj);
+            this.resetFiller();
           } else {
             --obj.hrs;
             obj.mins = 59;
@@ -120,6 +126,7 @@ var pomodoro = {
 
       this.initBS(self, "break");
       this.initBS(self, "session");
+      this.resetFiller();
 
       this.break.minusDom.onclick = function() {
         if (self.break.len > 1) {
@@ -157,12 +164,6 @@ var pomodoro = {
           }, 1000);
         }
       }
-
-/*
-      this.interval = setInterval(function() {
-        self.intervalCallback.apply(self);
-      }, 1000);
-*/
     }
 }
 
