@@ -43,10 +43,19 @@ input:focus{
   height:200px;
   overflow:hidden;
   position:relative;
-  z-index: 1;
+  z-index: 3;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
+}
+#filler{
+  background-color: #99CC00;
+  height: 0px;
+  width: 200px;
+  position:absolute;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.6;
 }
