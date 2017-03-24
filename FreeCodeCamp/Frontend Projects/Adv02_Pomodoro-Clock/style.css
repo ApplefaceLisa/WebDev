@@ -14,13 +14,10 @@ div.container {
 div.row {
     margin-top: 30px;
 }
-div.setup {
+div.break, div.session {
     width: 40%;
     text-transform: uppercase;
     display: inline-block;
-}
-span.adjust {
-    cursor: default;
 }
 #break, #session {
     width: 20%;
@@ -31,16 +28,15 @@ span.adjust {
 input:focus{
     outline: none;
 }
-#timer{
-  color:#f00;
+#time{
   font-size:50px;
   text-transform: uppercase;
   text-align: center;
   margin:10px auto;
   border: 2px solid #99CC00;
   border-radius:50%;
-  width:200px;
-  height:200px;
+  width:300px;
+  height:300px;
   overflow:hidden;
   position:relative;
   z-index: 3;
@@ -50,12 +46,27 @@ input:focus{
   user-select: none;
   cursor: pointer;
 }
+#timer {
+  /* horizontally center */
+  margin-left: auto;
+  margin-right: auto;
+  /* vertically center */
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+}
 #filler{
-  background-color: #99CC00;
+  background-color: #99CC00;  /* session: rgb(153,204,0);  break: rgb(255,68,68); */
   height: 0px;
-  width: 200px;
+  width: 300px;
   position:absolute;
   bottom: 0;
   z-index: -1;
   opacity: 0.6;
+}
+/* remove default style of button */
+button.minus, button.plus {
+  background:none;
+  border:none;
+  outline: none;
 }
