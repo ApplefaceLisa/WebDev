@@ -11,21 +11,21 @@
         <h1>FreeCodeCamp</h1>
     </div>
     <div class="row">
-      <div class="setup">
-        <label for="break">break length</label><br>
-        <span class="adjust" id="breakMinus">-</span>
-        <input type="text" name="break" id="break" value="5">
-        <span class="adjust" id="breakAdd">+</span>
+      <div class="break">
+        <p>break length</p>
+        <button class="minus">-</button>
+        <span id="break">5</span>
+        <button class="plus">+</button>
       </div>
-      <div class="setup">
-        <label for="session">session length</label><br>
-        <span class="adjust" id="sessionMinus">-</span>
-        <input type="text" name="session" id="session" value="25">
-        <span class="adjust" id="sessionAdd">+</span>
+      <div class="session">
+        <p>session length</p>
+        <button class="minus">-</button>
+        <span id="session">25</span>
+        <button class="plus">+</button>
       </div>
     </div>
-    <div class="row" id="timer">
-      <div id="time">
+    <div class="row" id="time">
+      <div id="timer">
         <h3 id="status">Session</h3>
         <div>
           <span id="hours"></span>
