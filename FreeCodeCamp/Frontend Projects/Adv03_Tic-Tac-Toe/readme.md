@@ -12,3 +12,4 @@ Fulfill the below user stories. Use whichever libraries or APIs you need. Give i
 # reference
 - [Building a Tic-Tac-Toe AI with Javascript](https://mostafa-samir.github.io/Tic-Tac-Toe-AI/)
 - [Tic Tac Toe — JavaScript Game](https://medium.com/front-end-hacking/tic-tac-toe-javascript-game-b0cd6e98edd9#.eemk9gfeq)
+  - [code](http://codepen.io/mrkaluzny/pen/kXwrvj)
