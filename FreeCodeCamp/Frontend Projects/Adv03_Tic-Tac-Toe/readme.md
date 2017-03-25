@@ -17,3 +17,6 @@ Fulfill the below user stories. Use whichever libraries or APIs you need. Give i
   - [code](http://codepen.io/mrkaluzny/pen/kXwrvj)
 
 - [unbeatable version](http://perfecttictactoe.herokuapp.com/)
+
+# My submission
+- [naive version](http://codepen.io/ApplefaceLisa/pen/QpxRWa)
