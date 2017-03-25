@@ -28,7 +28,8 @@
   - ele.pause() : pause audio/video
   - ele.duration : return the length of audio/video
   - ele.loop = true : enable loop
-  - [gapless loop audio](https://github.com/regosen/Gapless-5)
+    - [Seamless audio looping in html5 JavaScript](http://www.kevssite.com/2015/11/22/seamless-audio-looping/)
+    - [gapless loop audio](https://github.com/regosen/Gapless-5)
   
   ```
     <!DOCTYPE HTML>
@@ -57,3 +58,5 @@
     pointer-events: none;
   }
   ```
+
+- [Scheduling: setTimeout and setInterval](http://javascript.info/settimeout-setinterval)
