@@ -39,6 +39,10 @@ var game = {
         }
     },
 
+    gameOver: function() {
+        document.getElementById("gameover").innerHTML = "<h1>"+this.result+"</h1>";
+    },
+
     userMove: function(event) {
         var eleId = event.target.id;
         var index = this.squares.indexOf(eleId);
@@ -51,7 +55,11 @@ var game = {
         document.getElementById("U").style.visibility = "invisible";
         document.getElementById("C").style.visibility = "visible";
         */
-        this.computerMove();
+        if (!this.isTerminal()) {
+            this.computerMove();
+        } else {
+            this.gameOver();
+        }
     },
 
     computerMove: function() {
@@ -67,6 +75,48 @@ var game = {
         document.getElementById("C").style.visibility = "invisible";
         document.getElementById("U").style.visibility = "visible";
         */
+        if (this.isTerminal()) {
+            this.gameOver();
+        }
+    },
+
+    isTerminal : function() {
+        var B = this.squareSign;
+        console.log(B);
+        console.log(this.lots);
+
+        //check rows
+        for(var i = 0; i <= 6; i = i + 3) {
+            if(B[i] !== "E" && B[i] === B[i + 1] && B[i + 1] == B[i + 2]) {
+                this.result = B[i] + "-won!"; //update the state result
+                return true;
+            }
+        }
+
+        //check columns
+        for(var i = 0; i <= 2 ; i++) {
+            if(B[i] !== "E" && B[i] === B[i + 3] && B[i + 3] === B[i + 6]) {
+                this.result = B[i] + "-won!"; //update the state result
+                return true;
+            }
+        }
+
+        //check diagonals
+        for(var i = 0, j = 4; i <= 2 ; i = i + 2, j = j - 2) {
+            if(B[i] !== "E" && B[i] == B[i + j] && B[i + j] === B[i + 2*j]) {
+                this.result = B[i] + "-won!"; //update the state result
+                return true;
+            }
+        }
+
+        if(this.lots.length == 0) {
+            //the game is draw
+            this.result = "draw!"; //update the state result
+            return true;
+        }
+        else {
+            return false;
+        }
     },
 
     init: function() {
