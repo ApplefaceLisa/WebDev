@@ -23,7 +23,13 @@
   
 # Reference
 
-- play audio
+- play audio/video
+  - ele.play() : play audio/video
+  - ele.pause() : pause audio/video
+  - ele.duration : return the length of audio/video
+  - ele.loop = true : enable loop
+  - [gapless loop audio](https://github.com/regosen/Gapless-5)
+  
   ```
     <!DOCTYPE HTML>
     <html>
