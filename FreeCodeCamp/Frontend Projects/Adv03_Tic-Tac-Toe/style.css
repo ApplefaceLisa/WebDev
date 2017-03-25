@@ -66,20 +66,23 @@ span.fa-user {
 span.fa-user:hover {
     color: #0dd965;
 }
+/*
 .turn {
     display: flex;
     justify-content: space-around;
-    /*
+    //
     z-index: -1;
     position: relative;
-    */
+    //
 }
 .tran {
     width: 20%;
-    /*height: 62px;
+    //
+    height: 62px;
     position: relative;
     top: 0px;
-    transition: all 0.3s linear;*/
+    transition: all 0.3s linear;
+    //
 }
 #C {
     background-color: #C86464;
@@ -89,12 +92,21 @@ span.fa-user:hover {
     background-color: #00C8C8;
     visibility: hidden;
 }
-/*
 .moved {
     top: 65px;
     //height: 0px;
 }
 */
+
+.reset {
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+}
 #gameover {
     color: #f44242;
+    margin-right: 80px;
+}
+#restart {
+    color: #0ef170;
 }
