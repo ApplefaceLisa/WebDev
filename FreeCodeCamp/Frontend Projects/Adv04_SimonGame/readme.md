@@ -30,34 +30,8 @@
     
   - relative
     - An element with position: relative; is positioned _**relative to its normal position**_.
-    - Setting the _**top, right, bottom, and left**_ properties of a relatively-positioned element will cause it to be adjusted away from its normal position. 
-    - _**Other content will not be adjusted**_ to fit into any gap left by the element.在原来应在的位置（normal position）上会留空白，其他内容不会将该空位填补上。
-    ```html
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <style>
-        div.relative {
-            position: relative;
-            left: 30px;
-            border: 3px solid #73AD21;
-            top: 40px;
-        }
-        </style>
-      </head>
-      
-      <body>
-      <h2>position: relative;</h2>
-
-      <div class="relative">
-      This div element has position: relative;
-      </div>
-
-      <p>An element with position: relative; is positioned relative to its normal position:</p>
-
-      </body>
-      </html>    
-    ```
+    - Setting the _**top, right, bottom, and left**_ properties of a relatively-positioned element will cause it to be adjusted away from its normal position.
+    - _**Other content will not be adjusted**_ to fit into any gap left by the element.在原来应在的位置（normal position）上会留空白，其他内容不会将该空位填补上.
     
   - fixed
     - An element with position: fixed; is positioned _**relative to the viewport**_, which means it always stays in the same place even if the page is scrolled. 
@@ -68,7 +42,8 @@
     - An element with position: absolute; is positioned _**relative to the nearest positioned ancestor**_ (instead of positioned relative to the viewport, like fixed).
     - if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.
     - _**Note**_: A "positioned" element is one whose position is anything except static.
-    ```html
+
+    ```
       <!DOCTYPE html>
       <html>
       <head>
