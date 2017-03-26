@@ -68,3 +68,6 @@
       setTimeout(run, 100);
     }, 100);
   ```
+
+- Brighter or darker color
+  - using '''filter: brightness(x%);'''
