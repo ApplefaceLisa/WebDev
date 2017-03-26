@@ -69,5 +69,27 @@
     }, 100);
   ```
 
-- Brighter or darker color
-  - using '''filter: brightness(x%);'''
+- CSS filter
+  - css tricks [filter](https://css-tricks.com/almanac/properties/f/filter/)
+  ```css
+    .filter-me {
+      filter: <filter-function> [<filter-function>]* | none
+    }
+  ```
+  Where is one of:
+    - blur()
+    - brightness(val) : A value of 0% will create an image that is completely black. A value of 100% leaves the input unchanged. val can be greater than 1.
+    - contrast(val) : A value of 0% will create an image that is completely black. A value of 100% leaves the input unchanged. val can be greater than 1.
+    - drop-shadow()
+    - grayscale() : Converts the input image to grayscale. A value of 100% is completely grayscale. A value of 0% leaves the input unchanged.
+    - hue-rotate()
+    - invert()
+    - opacity() : transparency. A value of 0% is completely transparent. A value of 100% leaves the input unchanged.
+    - saturate()
+    - sepia()
+    - url() - for applying SVG filters
+    - custom() - "coming soon"
+    Multiple functions can be used, space separated.
+    
+  - demo [CSS Filter Effects](http://html5-demos.appspot.com/static/css/filters/index.html)
+  
