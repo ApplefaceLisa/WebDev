@@ -22,7 +22,92 @@
   
   
 # Reference
+- CSS layout : position
+  - static  
+    - HTML elements are positioned static by default.
+    - Static positioned elements are not affected by the top, bottom, left, and right properties.
+    - An element with position: static; is not positioned in any special way; it is always positioned according to the normal flow of the page
+    
+  - relative
+    - An element with position: relative; is positioned _**relative to its normal position**_.
+    - Setting the _**top, right, bottom, and left**_ properties of a relatively-positioned element will cause it to be adjusted away from its normal position. 
+    - _**Other content will not be adjusted**_ to fit into any gap left by the element.在原来应在的位置（normal position）上会留空白，其他内容不会将该空位填补上。
+    ```html
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <style>
+        div.relative {
+            position: relative;
+            left: 30px;
+            border: 3px solid #73AD21;
+            top: 40px;
+        }
+        </style>
+      </head>
+      
+      <body>
+      <h2>position: relative;</h2>
 
+      <div class="relative">
+      This div element has position: relative;
+      </div>
+
+      <p>An element with position: relative; is positioned relative to its normal position:</p>
+
+      </body>
+      </html>    
+    ```
+    
+  - fixed
+    - An element with position: fixed; is positioned _**relative to the viewport**_, which means it always stays in the same place even if the page is scrolled. 
+    - The _**top, right, bottom, and left**_ properties are used to position the element.
+    - A fixed element does not leave a gap in the page where it would normally have been located. 不会在原来应在的位置上留空。
+  
+  - absolute  
+    - An element with position: absolute; is positioned _**relative to the nearest positioned ancestor**_ (instead of positioned relative to the viewport, like fixed).
+    - if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.
+    - _**Note**_: A "positioned" element is one whose position is anything except static.
+    ```html
+      <!DOCTYPE html>
+      <html>
+      <head>
+      <style>
+      div.relative {
+          position: relative;
+          width: 400px;
+          height: 200px;
+          border: 3px solid #73AD21;
+          top: 50px;
+          left: 50px;
+          background-color: blue;
+      } 
+
+      div.absolute {
+          position: absolute;
+          top: 50px;
+          right: 100px;
+          width: 200px;
+          height: 100px;
+          border: 3px solid #73AD21;
+          background-color: yellow;
+      }
+      </style>
+      </head>
+      
+      <body>
+      <h2>position: absolute;</h2>
+
+      <p>An element with position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed):</p>
+
+      <div class="relative">This div element has position: relative;
+        <div class="absolute">This div element has position: absolute;</div>
+      </div>
+
+      </body>
+      </html>    
+    ```
+  
 - play audio/video
   - ele.play() : play audio/video
   - ele.pause() : pause audio/video
