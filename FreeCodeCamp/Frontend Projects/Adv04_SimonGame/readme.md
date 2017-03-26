@@ -60,3 +60,11 @@
   ```
 
 - [Scheduling: setTimeout and setInterval](http://javascript.info/settimeout-setinterval)
+  - _**Recursive setTimeout guarantees a delay between the executions, setInterval – does not.**_
+  ```javascript
+    let i = 1;
+    setTimeout(function run() {
+      func(i);
+      setTimeout(run, 100);
+    }, 100);
+  ```
