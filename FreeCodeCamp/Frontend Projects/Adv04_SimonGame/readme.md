@@ -20,7 +20,9 @@
   - https://s3.amazonaws.com/freecodecamp/simonSound3.mp3
   - https://s3.amazonaws.com/freecodecamp/simonSound4.mp3
   
-  
+# Articles
+- [Creating Simon Game in Javascript](https://medium.com/front-end-hacking/create-simon-game-in-javascript-d53b474a7416)
+
 # Reference
 - CSS layout : position
   - static  
