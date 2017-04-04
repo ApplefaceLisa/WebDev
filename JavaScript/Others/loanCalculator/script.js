@@ -82,7 +82,6 @@ loanCalculator.prototype.renderChart = function (principal, interest, monthly, p
   var g = this.gObject;
   var width = this.gWidth;
   var height = this.gHeight;
-  console.log(width+" "+height);
 
   // These functions convert payment numbers and dollar amounts to pixels
   function paymentToX(n) {
