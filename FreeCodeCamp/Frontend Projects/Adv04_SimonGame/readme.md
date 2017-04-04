@@ -171,3 +171,20 @@
   
 - [Night sky with twinkling stars : pure css3](https://www.script-tutorials.com/night-sky-with-twinkling-stars/)
 - [Transitions & Animations](http://learn.shayhowe.com/advanced-html-css/transitions-animations/)
+- [generating random number between range](http://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range)
+  ```javascript
+  /**
+   * Returns a random number between min (inclusive) and max (exclusive)
+   */
+  function getRandomArbitrary(min, max) {
+      return Math.random() * (max - min) + min;
+  }
+
+  /**
+   * Returns a random integer between min (inclusive) and max (inclusive)
+   * Using Math.round() will give you a non-uniform distribution!
+   */
+  function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+  }  
+  ```
