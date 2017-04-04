@@ -6,33 +6,33 @@
 </head>
 <body>
   <table>
-  <tr>
     <th>Enter Loan Data:</th>
     <td></td>
+  <tr>
     <th>Loan Balance, Cumulative Equity, and Interest Payments</th>
   </tr>
   <tr>
     <td>Amount of the loan ($):</td>
-    <td><input type="number" id="amount" onchange="calculate();" required></td>
+    <td><input type="number" id="amount"></td>
     <td rowspan=8>
       <canvas id="graph" width="400" height="250"></canvas>
     </td>
   </tr>
   <tr>
     <td>Annual interest (%):</td>
-    <td><input type="number" id="apr" onchange="calculate();" required></td>
+    <td><input type="number" id="apr"></td>
   </tr>
   <tr>
     <td>Repayment period (years):</td>
-    <td><input type="number" id="years" onchange="calculate();" required></td>
+    <td><input type="number" id="years"></td>
   </tr>
   <tr>
     <td>Zipcode (to find lenders):</td>
-    <td><input type="number" id="zipcode" onchange="calculate();"></td>
+    <td><input type="number" id="zipcode"></td>
   </tr>
   <tr>
     <th>Approximate Payments:</th>
-    <td><button id="calc" onclick="calculate();">Calculate</button></td>
+    <td><button id="calc">Calculate</button></td>
   </tr>
   <tr>
     <td>Monthly payment:</td>
