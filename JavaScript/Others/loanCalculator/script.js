@@ -1,144 +1,98 @@
-function calculate() {
-  //Look up the input and output elements in the document
-  var amount = document.getElementById("amount");
-  var apr = document.getElementById("apr");
-  var years = document.getElementById("years");
-  var zipcode = document.getElementById("zipcode");
-  var payment = document.getElementById("payment");
-  var total = document.getElementById("total");
-  var totalinterest = document.getElementById("totalinterest");
+function loanCalculator() {
+  this.amountElem = document.getElementById("amount");
+  this.aprElem = document.getElementById("apr");
+  this.yearsElem = document.getElementById("years");
+  this.zipcodeElem = document.getElementById("zipcode");
+  this.calcBtnElem = document.getElementById("calc");
 
-  // Get the user's input from the input elements.
-  // Convert interest from a percentage to a decimal, and convert from
-  // an annual rate to a monthly rate. Convert payment period in years
-  // to the number of monthly payments.
-  var principal = parseFloat(amount.value);
-  var interest = parseFloat(apr.value) / 100 / 12;
-  var payments = parseFloat(years.value) * 12;
+  this.paymentElem = document.getElementById("payment");
+  this.totalElem = document.getElementById("total");
+  this.totalinterestElem = document.getElementById("totalinterest");
+  this.graphElem = document.getElementById("graph");
+  this.lendersElem = document.getElementById("lenders");
 
-  // compute the monthly payment figure
-  var x = Math.pow(1 + interest, payments); //Math.pow computes powers
-  var monthly = (principal*x*interest)/(x-1);
+  this.principal = null;
+  this.apr = null;
+  this.interest = null;   // monthly interest
+  this.years = null;
+  this.payments = null;   // total number of payments
+  this.zipcode = null;
 
-  // If the result is a finite number, the user's input was good and
-  // we have meaningful results to display
-  if (isFinite(monthly)){
-    // Fill in the output fields, rounding to 2 decimal places
-    payment.innerHTML = monthly.toFixed(2);
-    total.innerHTML = (monthly * payments).toFixed(2);
-    totalinterest.innerHTML = ((monthly*payments)-principal).toFixed(2);
+  this.monthlyPayment = null;
+  this.totalPayment = null;
+  this.totalInterest = null;
 
-    // Advertise: find and display local lenders, but ignore network errors
-    try { // Catch any errors that occur within these curly braces
-      getLenders(amount.value, apr.value, years.value, zipcode.value);
-    }
+  this.gWidth = null;
+  this.gHeight = null;
+  this.gObject = null;
+};
 
-    catch(e) { /* And ignore those errors */ }
+loanCalculator.prototype.getPrinciple = function() {
+  this.principal = parseFloat(this.amountElem.value);
+};
 
-    // Finally, chart loan balance, and interest and equity payments
-    chart(principal, interest, monthly, payments);
+loanCalculator.prototype.getInterest = function() {
+  this.apr = this.aprElem.value;
+  this.interest = parseFloat(this.apr) / 100 / 12;
+};
+
+loanCalculator.prototype.getPayments = function() {
+  this.years = this.yearsElem.value;
+  this.payments = parseFloat(this.years) * 12;
+};
+
+loanCalculator.prototype.getZipcode = function() {
+  this.zipcode = parseInt(this.zipcodeElem.value);
+};
+
+loanCalculator.prototype.calculatePayment = function () {
+  var x = Math.pow(1 + this.interest, this.payments);
+  var monthpay = (this.principal * x * this.interest) / (x-1);
+  var total = monthpay * this.payments;
+  this.monthlyPayment = monthpay.toFixed(2);
+  this.totalPayment = total.toFixed(2);
+  this.totalInterest = (total - this.principal).toFixed(2);
+}
+
+loanCalculator.prototype.clearTableChart = function() {
+  this.paymentElem.innerHTML = "";
+  this.totalElem.innerHTML = "";
+  this.totalinterestElem.innerHTML = "";
+  this.renderChart();
+}
+
+loanCalculator.prototype.renderTableContent = function () {
+    this.paymentElem.textContent = this.monthlyPayment;
+    this.totalElem.textContent = this.totalPayment;
+    this.totalinterestElem.textContent = this.totalInterest;
+};
+
+loanCalculator.prototype.getChartSize = function() {
+  this.gWidth = this.graphElem.width;
+  this.gHeight = this.graphElem.height;
+  this.gObject = this.graphElem.getContext("2d");
+};
+
+loanCalculator.prototype.renderChart = function (principal, interest, monthly, payments) {
+  this.graphElem.width = this.graphElem.width; // Magic to clear and reset the canvas element
+  if (arguments.length == 0) {
+    return;
   }
-  else {
-    // Result was Not-a-Number or infinite, which means the input was
-    // incomplete or invalid. Clear any previously displayed output.
-    payment.innerHTML = ""; // Erase the content of these elements
-    total.innerHTML = ""
-    totalinterest.innerHTML = "";
-    chart(); // With no arguments, clears the chart
-  }
-}
 
-function getRequest() {
-  var request;
-    if(window.XMLHttpRequest){
-        request  = new XMLHttpRequest();
-    }else{
-        request = new ActiveXObject();
-    }
-   return request;
-}
+  var g = this.gObject;
+  var width = this.gWidth;
+  var height = this.gHeight;
+  console.log(width+" "+height);
 
-function getLenders() {
-  var ad = document.getElementById("lenders");
-  if (!ad) return; // Quit if no spot for output
-  var xhr = getRequest();
-  xhr.open("GET", 'lenders.json', true);
-  xhr.onreadystatechange = function() {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        var lenders = JSON.parse(xhr.responseText);
-        console.log(lenders);
-        // Convert the array of lender objects to a string of HTML
-        var list = "";
-        for(var i = 0; i < lenders.length; i++) {
-          list += "<li><a href='" + lenders[i].url + "'>" +
-          lenders[i].name + "</a>";
-        }
-        // Display the HTML in the element from above.
-        ad.innerHTML = "<ul>" + list + "</ul>";
-      }
-  };
-  xhr.send();
-}
-/* Pass the user's input to a server-side script which can (in theory) return
-// a list of links to local lenders interested in making loans. This example
-// does not actually include a working implementation of such a lender-finding
-// service. But if the service existed, this function would work with it.
-function getLenders(amount, apr, years, zipcode) {
-  // If the browser does not support the XMLHttpRequest object, do nothing
-  if (!window.XMLHttpRequest) return;
-  // Find the element to display the list of lenders in
-  var ad = document.getElementById("lenders");
-  if (!ad) return; // Quit if no spot for output
-
-  // Encode the user's input as query parameters in a URL
-  var url = "getLenders.php" + // Service url plus
-  "?amt=" + encodeURIComponent(amount) + // user data in query string
-  "&apr=" + encodeURIComponent(apr) +
-  "&yrs=" + encodeURIComponent(years) +
-  "&zip=" + encodeURIComponent(zipcode);
-  // Fetch the contents of that URL using the XMLHttpRequest object
-  var req = new XMLHttpRequest(); // Begin a new request
-  req.open("GET", url); // An HTTP GET request for the url
-  req.send(null); // Send the request with no body
-  // Before returning, register an event handler function that will be called
-  // at some later time when the HTTP server's response arrives. This kind of
-  // asynchronous programming is very common in client-side JavaScript.
-  req.onreadystatechange = function() {
-      if (req.readyState == 4 && req.status == 200) {
-      // If we get here, we got a complete valid HTTP response
-      var response = req.responseText; // HTTP response as a string
-      var lenders = JSON.parse(response); // Parse it to a JS array
-      // Convert the array of lender objects to a string of HTML
-      var list = "";
-      for(var i = 0; i < lenders.length; i++) {
-        list += "<li><a href='" + lenders[i].url + "'>" +
-        lenders[i].name + "</a>";
-      }
-      // Display the HTML in the element from above.
-      ad.innerHTML = "<ul>" + list + "</ul>";
-    }
-  }
-}
-*/
-// Chart monthly loan balance, interest and equity in an HTML <canvas> element.
-// If called with no arguments then just erase any previously drawn chart.
-function chart(principal, interest, monthly, payments) {
-  var graph = document.getElementById("graph"); // Get the <canvas> tag
-  graph.width = graph.width; // Magic to clear and reset the canvas element
-  // If we're called with no arguments, or if this browser does not support
-  // graphics in a <canvas> element, then just return now.
-  if (arguments.length == 0 || !graph.getContext) return;
-  // Get the "context" object for the <canvas> that defines the drawing API
-  var g = graph.getContext("2d"); // All drawing is done with this object
-  var width = graph.width, height = graph.height; // Get canvas size
   // These functions convert payment numbers and dollar amounts to pixels
   function paymentToX(n) {
-    return n * width/payments;
+    return n * width / payments;
   }
 
   function amountToY(a) {
-    return height-(a * height/(monthly*payments*1.05));
+    return height - (a * height / (monthly * payments * 1.05));
   }
+
   // Payments are a straight line from (0,0) to (payments, monthly*payments)
   g.moveTo(paymentToX(0), amountToY(0)); // Start at lower left
   g.lineTo(paymentToX(payments), amountToY(monthly*payments)); // Draw to upper right
@@ -198,8 +152,74 @@ function chart(principal, interest, monthly, payments) {
     var y = amountToY(ticks[i]); // Compute Y position of tick
 
     g.fillRect(rightEdge-3, y-0.5, 3,1); // Draw the tick mark
-    g.fillText(String(ticks[i].toFixed(0)), // And label it.
-    rightEdge-5, y);
+    g.fillText(String(ticks[i].toFixed(0)), rightEdge-5, y); // And label it.
   }
-}
+};
 
+loanCalculator.prototype.mainProcess = function () {
+  this.calculatePayment();
+  // If the result is a finite number, the user's input was good and
+  // we have meaningful results to display
+  if (isFinite(this.monthlyPayment)){
+    this.renderTableContent();
+
+    // Advertise: find and display local lenders, but ignore network errors
+    try { // Catch any errors that occur within these curly braces
+      this.getLenders(this.principal, this.apr, this.years, this.zipcode);
+    }
+
+    catch(e) { /* And ignore those errors */ }
+
+    // Finally, chart loan balance, and interest and equity payments
+    this.renderChart(this.principal, this.interest, this.monthlyPayment, this.payments);
+  }
+  else {
+    // Result was Not-a-Number or infinite, which means the input was
+    // incomplete or invalid. Clear any previously displayed output.
+    this.clearTableChart();
+  }
+};
+
+loanCalculator.prototype.createRequest = function() {
+  var request;
+    if(window.XMLHttpRequest){
+        request  = new XMLHttpRequest();
+    }else{
+        request = new ActiveXObject();
+    }
+   return request;
+};
+
+loanCalculator.prototype.getLenders = function(amount, apr, years, zipcode) {
+  var xhr = this.createRequest();
+  var lendersElem = this.lendersElem;
+  var url = "lenders.json"
+          + "?amt=" + amount
+          + "&apr=" + apr
+          + "&yrs=" + years
+          + "&zip=" + zipcode;
+  xhr.open("GET", url, true);
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        var lenders = JSON.parse(xhr.responseText);
+        var list = "";
+        for(var i = 0; i < lenders.length; i++) {
+          list += "<li><a href='" + lenders[i].url + "'>" +
+          lenders[i].name + "</a>";
+        }
+        // Display the HTML in the element from above.
+        lendersElem.innerHTML = "<ul>" + list + "</ul>";
+      }
+  };
+  xhr.send();
+};
+
+window.onload = function() {
+    var loanCalc = new loanCalculator();
+    loanCalc.getChartSize();
+    loanCalc.amountElem.addEventListener("change", loanCalc.getPrinciple.bind(loanCalc));
+    loanCalc.aprElem.addEventListener("change", loanCalc.getInterest.bind(loanCalc));
+    loanCalc.yearsElem.addEventListener("change", loanCalc.getPayments.bind(loanCalc));
+    loanCalc.zipcodeElem.addEventListener("change", loanCalc.getZipcode.bind(loanCalc));
+    loanCalc.calcBtnElem.addEventListener("click", loanCalc.mainProcess.bind(loanCalc));
+};
