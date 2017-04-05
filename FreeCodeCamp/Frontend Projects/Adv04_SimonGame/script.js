@@ -5,7 +5,6 @@ var Simon = {
     count: 0,
     countDown: 0,
     timer: null,
-    waitTimer: null,
     curPlayer: false,         // false: simon play, true: you play.
     simonKeys: [],
     userKeys: [],
@@ -19,6 +18,7 @@ var Simon = {
     audioRedDom: null,
     audioYellowDom: null,
     audioBlueDom: null,
+    countDom: null,
 
     init: function() {
         this.switchDom = document.getElementById("pwr-sw");
@@ -30,6 +30,7 @@ var Simon = {
         this.audioRedDom = document.getElementById("red");
         this.audioYellowDom = document.getElementById("yellow");
         this.audioBlueDom = document.getElementById("blue");
+        this.countDom = document.querySelector(".count");
 
         this.switchDom.addEventListener("click", function() {
             this.classList.toggle('sw-on');
@@ -49,6 +50,11 @@ var Simon = {
             if (Simon.switchOn) {
                 this.classList.toggle("red-on");
                 Simon.started = !Simon.started;    // toggle started
+            }
+            if (Simon.started) {
+                Simon.countUp();
+                Simon.generateSimonKeys();
+                Simon.simonPlay("initial simon play");
             }
         });
 
@@ -135,16 +141,17 @@ var Simon = {
 
     countUp: function() {
         ++this.count;
-        console.log(this.count);
+        this.showCountNum();
     },
 
     compare: function(userKey) {
         if (!Simon.curPlayer)  return;
-        clearTimeout(Simon.waitTimer);
+        clearTimeout(Simon.timer);
         console.log(Simon.userKeys.length + "  " + Simon.simonKeys.length);
         var index = Simon.userKeys.length - 1;
         if (Simon.userKeys[index] !== Simon.keyDom[Simon.simonKeys[index]].classList[2]) {
             Simon.userKeys = [];
+            Simon.showErrMsg();
             Simon.simonPlay("compare error, simon play");
         } else if (Simon.userKeys.length == Simon.simonKeys.length) {
             Simon.userKeys = [];
@@ -158,20 +165,29 @@ var Simon = {
         Simon.curPlayer = true;
         Simon.keyClickable();
         var timeout = 1000 * Simon.simonKeys.length + 3000;
-        Simon.waitTimer = setTimeout(function() {
+        Simon.timer = setTimeout(function() {
             if (Simon.userKeys.length == 0) {
                 Simon.curPlayer = false;
-                Simon.waitTimer = setTimeout(function() {
+                Simon.timer = setTimeout(function() {
                     Simon.simonPlay("wait timeout, simon play");
                 }, 1000);
             }
         }, timeout);
+    },
+
+    showCountNum: function() {
+        this.countDom.textContent = this.count;
+    },
+
+    showErrMsg: function() {
+        this.countDom.textContent = "!!";
+    },
+
+    reset: function() {
+
     }
 };
 
 window.onload = function() {
     Simon.init();
-    Simon.countUp();
-    Simon.generateSimonKeys();
-    Simon.simonPlay("initial simon play");
-}
+};
