@@ -63,9 +63,10 @@ var Simon = {
         });
 
         Array.from(this.keyDom).forEach(function(obj) {
-            obj.classList.remove("unclickable");
+            //obj.classList.remove("unclickable");
             obj.addEventListener("click", function(e) {
                 Simon.playKey(e);
+                Simon.compare(e.target.classList[2]);
             });
             obj.addEventListener("transitionend", function(e) {
                 this.classList.remove("light");
@@ -103,25 +104,73 @@ var Simon = {
         });
     },
 
+    keyUnclickable: function() {
+        Array.from(this.keyDom).forEach(function(obj) {
+            obj.classList.add("unclickable");
+        });
+    },
+
+    generateSimonKeys: function() {
+        for (var i = 0; i < Simon.count; i++) {
+            var index = Math.floor(Math.random() * Simon.keyDom.length);
+            Simon.simonKeys.push(index);
+        }
+    },
+
     simonPlay: function() {
-        ++this.count;
-        this.countDown = this.count;
+        this.curPlayer = false;
+        this.countDown = 0;
+        Simon.keyUnclickable();
         this.timer = setTimeout(function run() {
-          var index = Math.floor(Math.random() * Simon.keyDom.length);
+          var index = Simon.simonKeys[Simon.countDown];
           Simon.keyDom[index].click();
-          Simon.simonKeys.push(Simon.keyDom[index].classList[2]);
-          --Simon.countDown;
-          if (Simon.countDown <= 0) {
+          ++Simon.countDown;
+          if (Simon.countDown >= Simon.count) {
             clearTimeout(Simon.timer);
+            Simon.waitUserPlay();
           } else {
             Simon.timer = setTimeout(run, 1000);
           }
         }, 1000);
     },
 
+    countUp: function() {
+        ++this.count;
+    },
 
+    compare: function(userKey) {
+        var index = 0;
+        return function() {
+            var simonKey = Simon.keyDom[Simon.simonKeys[index]].classList[2];
+            if (index < Simon.count && simonKey === userKey) {
+                index++;
+            }
+            else {
+                if (index == Simon.count) {
+                    Simon.countUp();
+                    Simon.simonPlay();
+                } else {
+                    Simon.simonRepeat();
+                }
+            }
+        }
+    },
+
+    waitUserPlay: function() {
+        Simon.curPlayer = true;
+        Simon.keyClickable();
+        setTimeout(function() {
+            if (Simon.userKeys.length == 0) {
+                Simon.curPlayer = false;
+                Simon.simonPlay();
+            }
+        }, 5000);
+    }
 };
 
 window.onload = function() {
     Simon.init();
+    Simon.count = 4;
+    Simon.generateSimonKeys();
+    Simon.simonPlay();
 }
