@@ -53,6 +53,25 @@ body {
 .blue {
     background-color: #094a8f;
 }
+.yellow.light{
+  background-color : #fed93f;
+  transition: background-color .2s;
+}
+
+.blue.light{
+  background-color : #1c8cff;
+  transition: background-color .2s;
+}
+
+.red.light{
+  background-color : #ff4c4c;
+  transition: background-color .2s;
+}
+
+.green.light{
+  background-color : #13ff7c;
+  transition: background-color .2s;
+}
 .unclickable {
     pointer-events: none;
 }
