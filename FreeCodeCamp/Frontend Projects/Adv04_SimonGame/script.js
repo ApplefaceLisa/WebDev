@@ -4,7 +4,10 @@ var Simon = {
     strict: false,           // strict mode on / off
     count: 0,
     countDown: 0,
+    timer: null,
     curPlayer: false,         // false: simon play, true: you play.
+    simonKeys: [],
+    userKeys: [],
 
     switchDom: null,
     startDom: null,
@@ -58,14 +61,6 @@ var Simon = {
                 Simon.strict = !Simon.strict;
             }
         });
-/*
-        for (var i = 0; i < this.keyDom.length; i++) {
-            this.keyDom[i].classList.remove("unclickable");
-            this.keyDom[i].addEventListener("click", function(e) {
-                Simon.playKey(e);
-            });
-        }
-*/
 
         Array.from(this.keyDom).forEach(function(obj) {
             obj.classList.remove("unclickable");
@@ -81,28 +76,50 @@ var Simon = {
     playKey: function(event) {
         var clt = event.target.classList;
         clt.add("light");
-        if (clt.contains("green")) {
-            Simon.audioGreenDom.play();
+        switch (clt[2]) {
+            case "green":
+              Simon.audioGreenDom.play();
+              break;
+            case "red":
+              Simon.audioRedDom.play();
+              break;
+            case "yellow":
+              Simon.audioYellowDom.play();
+              break;
+            case "blue":
+              Simon.audioBlueDom.play();
+              break;
+            default:
+              break;
         }
-        if (clt.contains("red")) {
-            Simon.audioRedDom.play();
-        }
-        if (clt.contains("yellow")) {
-            Simon.audioYellowDom.play();
-        }
-        if (clt.contains("blue")) {
-            Simon.audioBlueDom.play();
+        if (Simon.curPlayer) {
+            Simon.userKeys.push(clt[2]);
         }
     },
 
+    keyClickable: function() {
+        Array.from(this.keyDom).forEach(function(obj) {
+            obj.classList.remove("unclickable");
+        });
+    },
+
     simonPlay: function() {
-        ++Simon.count;
-        for (var i = 0; i < Simon.count; i++) {
-            var index = Math.floor(Math.random() * Simon.keyDom.length);
-            Simon.audioDom[index].play();
-            Simon.keyDom[index].classList.toggle("light");
-        }
-    }
+        ++this.count;
+        this.countDown = this.count;
+        this.timer = setTimeout(function run() {
+          var index = Math.floor(Math.random() * Simon.keyDom.length);
+          Simon.keyDom[index].click();
+          Simon.simonKeys.push(Simon.keyDom[index].classList[2]);
+          --Simon.countDown;
+          if (Simon.countDown <= 0) {
+            clearTimeout(Simon.timer);
+          } else {
+            Simon.timer = setTimeout(run, 1000);
+          }
+        }, 1000);
+    },
+
+
 };
 
 window.onload = function() {
