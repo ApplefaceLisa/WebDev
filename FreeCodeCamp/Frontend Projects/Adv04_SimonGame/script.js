@@ -3,7 +3,7 @@ var Simon = {
     started: false,          // start / stop
     strict: false,           // strict mode on / off
     count: 0,
-    countDown: 0,
+    counter: 0,
     timer: null,
     curPlayer: false,         // false: simon play, true: you play.
     simonKeys: [],
@@ -43,6 +43,7 @@ var Simon = {
                 Simon.countDom.classList.add("led-off");
             } else {
                 Simon.countDom.classList.remove("led-off");
+                Simon.showStartMsg("--");
             }
         });
 
@@ -124,24 +125,24 @@ var Simon = {
     simonPlay: function(msg) {
         console.log(msg);
         this.curPlayer = false;
-        this.countDown = 0;
-        Simon.keyUnclickable();
+        this.counter = 0;
         this.timer = setTimeout(function run() {
-          var index = Simon.simonKeys[Simon.countDown];
-          Simon.keyDom[index].click();
-          ++Simon.countDown;
-          if (Simon.countDown >= Simon.count) {
+          if (Simon.counter >= Simon.count) {
             clearTimeout(Simon.timer);
             setTimeout(Simon.waitUserPlay, 500);
           } else {
+            var index = Simon.simonKeys[Simon.counter];
+            Simon.keyDom[index].click();
+            ++Simon.counter;
             Simon.timer = setTimeout(run, 1000);
           }
-        }, 3000);
+        }, 1000);
     },
 
     countUp: function() {
+        Simon.keyUnclickable();
         ++this.count;
-        this.showCountNum();
+        this.showMsg(this.count);
     },
 
     compare: function(userKey) {
@@ -152,12 +153,10 @@ var Simon = {
         if (Simon.userKeys[index] !== Simon.keyDom[Simon.simonKeys[index]].classList[2]) {
             Simon.userKeys = [];
             Simon.showErrMsg();
-            Simon.simonPlay("compare error, simon play");
         } else if (Simon.userKeys.length == Simon.simonKeys.length) {
             Simon.userKeys = [];
             Simon.countUp();
             Simon.generateSimonKeys();
-            Simon.simonPlay("compare correct, simon play");
         }
     },
 
@@ -175,12 +174,51 @@ var Simon = {
         }, timeout);
     },
 
-    showCountNum: function() {
-        this.countDom.textContent = this.count;
+    showMsg: function(msg) {
+        var i = 0;
+        this.countDom.textContent = msg;
+        Simon.timer = setTimeout(function run() {
+            if (i < 4) {
+                Simon.countDom.classList.toggle("led-off");
+                Simon.timer = setTimeout(run, 200);
+                i++;
+            } else {
+                clearTimeout(Simon.timer);
+                Simon.timer = setTimeout(function() {
+                    Simon.simonPlay("simonPlay after show msg.");
+                }, 500);
+            }
+        }, 200);
+    },
+
+    showStartMsg: function() {
+        var i = 0;
+        this.countDom.textContent = "--";
+        Simon.timer = setTimeout(function run() {
+            if (i < 4) {
+                Simon.countDom.classList.toggle("led-off");
+                Simon.timer = setTimeout(run, 200);
+                i++;
+            } else {
+                clearTimeout(Simon.timer);
+            }
+        }, 200);
     },
 
     showErrMsg: function() {
+        Simon.keyUnclickable();
+        var i = 0;
         this.countDom.textContent = "!!";
+        Simon.timer = setTimeout(function run() {
+            if (i < 4) {
+                Simon.countDom.classList.toggle("led-off");
+                Simon.timer = setTimeout(run, 200);
+                i++;
+            } else {
+                clearTimeout(Simon.timer);
+                Simon.showMsg(Simon.count);
+            }
+        }, 200);
     },
 
     reset: function() {
