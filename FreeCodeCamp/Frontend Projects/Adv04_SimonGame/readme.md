@@ -188,3 +188,5 @@
       return Math.floor(Math.random() * (max - min + 1)) + min;
   }  
   ```
+# Submitted Code
+- http://codepen.io/ApplefaceLisa/pen/xqNxPP
