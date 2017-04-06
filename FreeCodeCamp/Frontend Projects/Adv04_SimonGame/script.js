@@ -58,6 +58,8 @@ var Simon = {
                 Simon.countUp();
                 Simon.generateSimonKeys();
             } else {
+                Simon.strict = false;
+                Simon.strictDom.classList.remove("yellow-on");
                 Simon.countDom.textContent = "--";
             }
         });
@@ -130,8 +132,7 @@ var Simon = {
         }
     },
 
-    simonPlay: function(msg) {
-        console.log(msg);
+    simonPlay: function() {
         this.curPlayer = false;
         this.counter = 0;
         this.timer = setTimeout(function run() {
@@ -156,7 +157,6 @@ var Simon = {
     compare: function(userKey) {
         if (!Simon.curPlayer)  return;
         clearTimeout(Simon.timer);
-        console.log(Simon.userKeys.length + "  " + Simon.simonKeys.length);
         var index = Simon.userKeys.length - 1;
         if (Simon.userKeys[index] !== Simon.keyDom[Simon.simonKeys[index]].classList[2]) {
             Simon.userKeys = [];
@@ -193,7 +193,7 @@ var Simon = {
             } else {
                 clearTimeout(Simon.timer);
                 Simon.timer = setTimeout(function() {
-                    Simon.simonPlay("simonPlay after show msg.");
+                    Simon.simonPlay();
                 }, 500);
             }
         }, 200);
@@ -234,7 +234,6 @@ var Simon = {
     },
 
     reset: function() {
-        console.log("reset");
         if (Simon.timer) clearTimeout(Simon.timer);
         Simon.count = 0;
         Simon.curPlayer = false;
