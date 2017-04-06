@@ -36,6 +36,7 @@ var Simon = {
             this.classList.toggle('sw-on');
             Simon.switchOn = !Simon.switchOn;      // toggle switch
             if (!Simon.switchOn) {
+                Simon.reset();
                 Simon.started = false;
                 Simon.strict = false;
                 Simon.startDom.classList.remove("red-on");
@@ -55,7 +56,9 @@ var Simon = {
             if (Simon.started) {
                 Simon.countUp();
                 Simon.generateSimonKeys();
-                Simon.simonPlay("initial simon play");
+            } else {
+                Simon.reset();
+                Simon.countDom.textContent = "--";
             }
         });
 
@@ -222,7 +225,10 @@ var Simon = {
     },
 
     reset: function() {
-
+        if (Simon.timer) clearTimeout(Simon.timer);
+        Simon.count = 0;
+        Simon.simonKeys = [];
+        Simon.userKeys = [];
     }
 };
 
