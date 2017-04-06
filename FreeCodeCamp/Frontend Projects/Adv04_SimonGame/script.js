@@ -35,8 +35,8 @@ var Simon = {
         this.switchDom.addEventListener("click", function() {
             this.classList.toggle('sw-on');
             Simon.switchOn = !Simon.switchOn;      // toggle switch
+            Simon.reset();
             if (!Simon.switchOn) {
-                Simon.reset();
                 Simon.started = false;
                 Simon.strict = false;
                 Simon.startDom.classList.remove("red-on");
@@ -52,12 +52,12 @@ var Simon = {
             if (Simon.switchOn) {
                 this.classList.toggle("red-on");
                 Simon.started = !Simon.started;    // toggle started
+                Simon.reset();
             }
             if (Simon.started) {
                 Simon.countUp();
                 Simon.generateSimonKeys();
             } else {
-                Simon.reset();
                 Simon.countDom.textContent = "--";
             }
         });
@@ -66,6 +66,11 @@ var Simon = {
             if (Simon.started) {
                 this.classList.toggle("yellow-on");
                 Simon.strict = !Simon.strict;
+            }
+            if (Simon.strict) {
+                Simon.reset();
+                Simon.countUp();
+                Simon.generateSimonKeys();
             }
         });
 
@@ -132,7 +137,7 @@ var Simon = {
         this.timer = setTimeout(function run() {
           if (Simon.counter >= Simon.count) {
             clearTimeout(Simon.timer);
-            setTimeout(Simon.waitUserPlay, 500);
+            Simon.timer = setTimeout(Simon.waitUserPlay, 500);
           } else {
             var index = Simon.simonKeys[Simon.counter];
             Simon.keyDom[index].click();
@@ -171,7 +176,7 @@ var Simon = {
             if (Simon.userKeys.length == 0) {
                 Simon.curPlayer = false;
                 Simon.timer = setTimeout(function() {
-                    Simon.simonPlay("wait timeout, simon play");
+                    Simon.showMsg(Simon.count);
                 }, 1000);
             }
         }, timeout);
@@ -219,14 +224,20 @@ var Simon = {
                 i++;
             } else {
                 clearTimeout(Simon.timer);
+                if (Simon.strict) {
+                    Simon.count = 1;
+                    Simon.generateSimonKeys();
+                }
                 Simon.showMsg(Simon.count);
             }
         }, 200);
     },
 
     reset: function() {
+        console.log("reset");
         if (Simon.timer) clearTimeout(Simon.timer);
         Simon.count = 0;
+        Simon.curPlayer = false;
         Simon.simonKeys = [];
         Simon.userKeys = [];
     }
