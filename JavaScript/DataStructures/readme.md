@@ -503,8 +503,7 @@
         queue.enqueue(queue.dequeue());
       }
       eliminated = queue.dequeue();
-        console.log(eliminated + ' was eliminated from the Hot Potato
-        game.');
+        console.log(eliminated + ' was eliminated from the Hot Potato game.');
       }
       return queue.dequeue();
     }
