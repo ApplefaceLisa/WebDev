@@ -1,7 +1,7 @@
 # Data Structures & Algorithms with JavaScript
 
 - ## Arrays and Lists: the most common data structures
-  ### Array
+  ### Array  ([array methods](http://www.w3schools.com/js/js_array_methods.asp))
   - native to Javascript
   - good for _**random access**_
   
