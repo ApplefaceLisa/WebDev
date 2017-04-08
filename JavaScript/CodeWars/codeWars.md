@@ -435,3 +435,34 @@
   ```
 
 - [Double Cola](https://www.codewars.com/kata/double-cola/solutions/javascript)
+  
+  Sheldon, Leonard, Penny, Rajesh and Howard are in the queue for a "Double Cola" drink vending machine; there are no other people in the queue. The first one in the queue (Sheldon) buys a can, drinks it and doubles! The resulting two Sheldons go to the end of the queue. Then the next in the queue (Leonard) buys a can, drinks it and gets to the end of the queue as two Leonards, and so on.
+
+  For example, Penny drinks the third can of cola and the queue will look like this:
+  ```
+  Rajesh, Howard, Sheldon, Sheldon, Leonard, Leonard, Penny, Penny
+  ```
+
+  Write a program that will return the name of a man who will drink the n-th cola.
+  
+  Solution1:
+  ```
+  function whoIsNext(names, r){
+    //your code here
+    var numOfGeeks = names.length;
+    var completeCycles = Math.floor(Math.log2((r/numOfGeeks)+1));
+    var fullCycleColas = (Math.pow(2,completeCycles)-1) * numOfGeeks;
+    var currCycleSize  =  Math.pow(2,completeCycles)    * numOfGeeks;
+    var geekCode = Math.ceil((r - fullCycleColas)/currCycleSize * numOfGeeks);
+
+    return names[geekCode-1];
+  }
+  ```
+  Solution2:
+  ```
+  function whoIsNext(names, r) {
+    var l = names.length;
+    while (r >= l) { r -= l; l *= 2; }
+    return names[Math.ceil(names.length * r / l)-1];
+  }  
+  ```
