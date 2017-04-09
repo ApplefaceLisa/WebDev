@@ -1,4 +1,4 @@
-# jQuery Selectors
+# jQuery Selectors (return a list of element/s)
 
 - Select by tag name
   
