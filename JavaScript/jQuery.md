@@ -42,4 +42,6 @@
  - toggleClass()
  
  ## jQuery events
+ - click
+ - keypress
  
