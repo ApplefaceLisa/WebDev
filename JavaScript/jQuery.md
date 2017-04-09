@@ -1,4 +1,6 @@
-# jQuery Selectors (return a list of element/s)
+# (jQuery reference)[https://api.jquery.com/]
+
+## jQuery Selectors (return a list of element/s)
 
 - Select by tag name
   
@@ -16,7 +18,7 @@
 
   to select all "a" tags inside of "li"s : $("li a")
   
-# Manipulating CSS
+## Manipulating CSS
  - selector.css("property name", "value")
  ```
    $("div").css("border", "2px solid red");
@@ -30,3 +32,14 @@
    $("div").css(styles);
  ```  
   
+## Common jQuery methods
+ - val()
+ - text()  , similar to textContent of javascript
+ - attr()
+ - html()  , similar to innerHtml of javascript
+ - addClass()
+ - removeClass()
+ - toggleClass()
+ 
+ ## jQuery events
+ 
