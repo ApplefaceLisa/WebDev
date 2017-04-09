@@ -1,4 +1,4 @@
-# (jQuery reference)[https://api.jquery.com/]
+# [jQuery reference](https://api.jquery.com/)
 
 ## jQuery Selectors (return a list of element/s)
 
