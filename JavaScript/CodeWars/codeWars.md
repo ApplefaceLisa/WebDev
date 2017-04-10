@@ -466,3 +466,19 @@
     return names[Math.ceil(names.length * r / l)-1];
   }  
   ```
+
+- Decode the Morse code
+  - [Part1](https://www.codewars.com/kata/decode-the-morse-code)
+    solution:
+    ```
+    decodeMorse = function(morseCode){
+      function decodeMorseLetter(letter) {
+        return MORSE_CODE[letter];
+      }
+      function decodeMorseWord(word) {
+        return word.split(' ').map(decodeMorseLetter).join('');
+      }
+      return morseCode.trim().split('   ').map(decodeMorseWord).join(' ');
+    }    
+    ```
+  - [Part2]()
