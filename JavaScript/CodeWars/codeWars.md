@@ -468,7 +468,8 @@
   ```
 
 - Decode the Morse code
-  - [Part1](https://www.codewars.com/kata/decode-the-morse-code)
+  - [Part1: Decode the Morse code](https://www.codewars.com/kata/decode-the-morse-code)
+  
     solution:
     ```
     decodeMorse = function(morseCode){
@@ -481,4 +482,8 @@
       return morseCode.trim().split('   ').map(decodeMorseWord).join(' ');
     }    
     ```
-  - [Part2]()
+  - [Part2: Decode the Morse code, advanced](https://www.codewars.com/kata/decode-the-morse-code-advanced)
+  
+    
+  
+  - [Part3: Decode the Morse code, for real](https://www.codewars.com/kata/decode-the-morse-code-for-real)
