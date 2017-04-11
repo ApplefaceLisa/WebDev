@@ -17,4 +17,7 @@
   - ```cmd_line > browser-sync start --server -- directory --files "**/*" ```
 - github account
 
-# 
+# Basic
+- high cohesion, low coupling
+- MVVM : Model, View, Viewmodel
+
