@@ -48,3 +48,9 @@
     
   Angular is **not** restricted to MVVM.
   In AngularJs, Controller serves the function of ViewModel. (Controller is ViewModel)
+
+- Dependency injection(DI)
+  - Design pattern that _implements inversion of control_(IoC) for resolving dependencies.
+  - Client gets called with the dependency by some system(e.g. AngularJS)
+  - Client is not responsible for instantiating the dependency
+  
