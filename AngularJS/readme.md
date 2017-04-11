@@ -18,7 +18,7 @@
 - github account
 
 # Basic
-- high cohesion, low coupling
+- high cohesion, lose coupling
 
 - MVVM : Model, View, Viewmodel
   - Model: it represents and holds **raw** data.
