@@ -47,3 +47,4 @@
     - Key enabler of the whole MVVM pattern.
     
   Angular is **not** restricted to MVVM.
+  In AngularJs, Controller serves the function of ViewModel. (Controller is ViewModel)
