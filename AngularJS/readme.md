@@ -53,4 +53,73 @@
   - Design pattern that _implements inversion of control_(IoC) for resolving dependencies.
   - Client gets called with the dependency by some system(e.g. AngularJS)
   - Client is not responsible for instantiating the dependency
-  
+  - **Protecting Dependency Injection from Minification**  (week1 Lecture10), two methods:
+    
+    Original code:
+    ```
+      (function () {
+        'use strict';
+        angular.module('DIApp', [])
+        .controller('DIController', DIController);
+        
+        function DIController($scope, $filter) {
+          $scope.name = "Yaakov";
+          
+          $scope.upper = function() {
+            var upCase = $filter('uppercase');
+            $scope.name = upCase($scope.name);
+          };
+        }
+      })();
+    ```    
+    
+    - Inline array with function as last element
+    ```
+      (function () {
+        'use strict';
+        angular.module('DIApp', [])
+        .controller('DIController', ['$scope', '$filter', function($scope, $filter) {
+          $scope.name = "Yaakov";
+          
+          $scope.upper = function() {
+            var upCase = $filter('uppercase');
+            $scope.name = upCase($scope.name);
+          };
+        }]);
+      })();
+      
+      or
+      (function () {
+        'use strict';
+        angular.module('DIApp', [])
+        .controller('DIController', ['$scope', '$filter', DIController]);
+       
+        function DIController($scope, $filter) {
+          $scope.name = "Yaakov";
+          
+          $scope.upper = function() {
+            var upCase = $filter('uppercase');
+            $scope.name = upCase($scope.name);
+          };
+        }
+      })();      
+    ```
+    - Attach $inject property to the function object
+    ```
+      (function () {
+        'use strict';
+        angular.module('DIApp', [])
+        .controller('DIController', DIController);
+        
+        DIController.$inject = ['$scope', '$filter'];
+        
+        function DIController($scope, $filter) {
+          $scope.name = "Yaakov";
+          
+          $scope.upper = function() {
+            var upCase = $filter('uppercase');
+            $scope.name = upCase($scope.name);
+          };
+        }
+      })();
+    ```
