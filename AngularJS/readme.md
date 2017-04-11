@@ -18,7 +18,11 @@
 - github account
 
 # Basic
-- high cohesion, lose coupling
+- high cohesion, loose coupling
+  - high cohesion : when smaller pieces of functionality are strongly related to each other within some code boundary. How well does that one thing stick to doing just one thing.
+  
+  - loose coupling : least possible dependency of one component on another component. If you change one, you do not have to change the other.
+    
 
 - MVVM : Model, View, Viewmodel
   - Model: it represents and holds **raw** data.  
