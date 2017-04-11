@@ -19,5 +19,31 @@
 
 # Basic
 - high cohesion, low coupling
-- MVVM : Model, View, Viewmodel
 
+- MVVM : Model, View, Viewmodel
+  - Model: it represents and holds **raw** data.
+  
+    Some of this data, in some form, may be displayed in the view.
+    Can also contain logic to retrieve the data from some source.
+    Contains **no logic** associated with displaying the model.
+    
+  - View: user interface that never changes data, declares events
+  
+    In a web app, it's just the HTML and CSS.
+    Only displays the data that it is given.
+    **Never** changes the data.
+    Declaratively broadcasts events, but **never** handles them.
+    
+  - View Model: representation of the state of the view.
+  
+    Holds the data that's displayed in the view.
+    Responds to view events, aka presentation logic.
+    Calls other functionality for business logic processing.
+    **Never** directly asks the view to display anything.
+    
+  - Declarative Binder : declaratively binds the model of the ViewModel to the View.
+    
+    _Declaratively_ means you don't have to write any code, the framework does this "magic"
+    Key enabler of the whole MVVM pattern.
+    
+  Angular is not restricted to MVVM.
