@@ -17,7 +17,7 @@
   - ```cmd_line > browser-sync start --server -- directory --files "**/*" ```
 - github account
 
-# Basic
+# AngularJS Basics
 - high cohesion, loose coupling
   - high cohesion : when smaller pieces of functionality are strongly related to each other within some code boundary. How well does that one thing stick to doing just one thing.
   
@@ -122,4 +122,26 @@
           };
         }
       })();
+    ```
+
+- expressions and interpolation
+  - Expression : {{exp}}
+  
+    Something that eveluates to some value
+    - Processed by Angular & _roughly_ similar to the result of _eval(some_js)_
+    - Executed in the context of the scope & has access to properties on $scope
+    - Doesn't throw errors if it results in a TypeError or ReferenceError
+    - Control flow functions (e.g., 'if' statements, etc.) are not allowed
+    - Accept a filter or a filter chain to format the output
+    
+  - Interpolation
+  
+    Process of evaluating a _string literal_ containing one or more placeholders, which are replaced with values
+    - In Angular, this string:
+    ```
+      Message is {{ message }}
+    ```
+    (provide message = "hello") is interpolated into this string:
+    ```      
+      Message is hello
     ```
