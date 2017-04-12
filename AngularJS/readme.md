@@ -149,3 +149,12 @@
       
       If $scope.message changes, so will the interpolation result.
 
+- Filters
+  ```
+  // example, convert msg to uppercase
+  $scope.msg = 'hello';
+  var output = $filter('uppercase')($scope.msg);   // output will be 'HELLO'
+  
+  // if in html:
+  {{ 'hello' | uppercase}}
+  ```
