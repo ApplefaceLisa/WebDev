@@ -513,7 +513,7 @@
 - ## Linked lists: how they overcome the shortcomings of arrays
   - A linked list is a modification of the list data structure, where each element is a separate object linked to the objects on either side of it.
   
-  - Linked lists are efficient when you need to perform _**multiple insertions and deletions**_ in your program.
+  - Linked lists are efficient when you need to perform _**multiple insertions and deletions**_ in your program. Because the most important advantage of a linked list over an array is that you can easily add and remove elements from a linked list without shifting over its elements.
   
   - A linked list is a collection of objects called _**nodes**_. Each node is linked to a successor node in the list using an object reference. The reference to another node is called a _**link**_.
   
@@ -524,7 +524,7 @@
     
       property | what does it describe
       -------- | ---------------------------------
-      data | stores a value.
+      element | stores a value.
       next | points to the next node in the list.
     
     - Linked List methods
@@ -539,6 +539,7 @@
       isEmpty() | This returns true if the linked list does not contain any elements and false if the size of the linked list is bigger than 0.
       size() | returns how many elements the linked list contains. It is similar to the length property of the array.
       toString() | As the list uses a Node class as an item, we need to overwrite the default toString method inherited from the JavaScript object to output only the element values.
+      getHead() | get the first node of the linked list.
   
   - Implementation
   ```javascript
@@ -568,7 +569,28 @@
       };
       
       this.insert = function(position, element){
-      
+        //check for out-of-bounds values
+        if (position >= 0 && position <= length){
+          var node = new Node(element),
+          current = head,
+          previous,
+          index = 0;
+          if (position === 0){ //add on first position
+            node.next = current;
+            head = node;
+          } else {
+            while (index++ < position){
+              previous = current;
+              current = current.next;
+            }
+            node.next = current;
+            previous.next = node;
+          }
+          length++; //update size of list
+          return true;
+        } else {
+          return false;
+        }      
       };
       
       this.removeAt = function(position){
@@ -595,21 +617,70 @@
         }      
       };
       
-      this.remove = function(element){};
+      this.remove = function(element){
+        var index = this.indexOf(element);
+        return this.removeAt(index);      
+      };
       
-      this.indexOf = function(element){};
+      this.indexOf = function(element){
+        var current = head,
+        index = -1;
+        while (current) {
+          index++;
+          if (element === current.element) {
+            return index;
+          }          
+          current = current.next;
+        }
+        return -1;      
+      };
       
-      this.isEmpty = function() {};
+      this.isEmpty = function() {
+        return length === 0;
+      };
       
-      this.size = function() {};
+      this.size = function() {
+        return length;
+      };
       
-      this.toString = function(){};
+      this.toString = function(){
+        var current = head,
+        string = '';
+        while (current) {
+          string += current.element;
+          current = current.next;
+        }
+        return string;      
+      };
       
-      this.print = function(){};
-    }
-  
-  
+      this.getHead = function(){
+        return head;
+      }
+    }  
   ```
+
+  - Double linked lists
+  
+    The doubly linked list provides us with two ways to iterate the list: from the beginning to its end or vice versa. 
+    
+  ```
+    function DoublyLinkedList() {
+      var Node = function(element) {
+        this.element = element;
+        this.next = null;
+        this.prev = null; //NEW
+      };
+      var length = 0;
+      var head = null;
+      var tail = null; //NEW
+      
+      //methods here      
+    }  
+  ```
+
+  - Circular linked lists  
+    - the last element’s next (tail.next) pointer does not make a reference to null, but to the first element (head).    
+    - And a doubly circular linked list has tail.next pointing to the head element and head.prev pointing to the tail element
 
 - ## Dictionaries: storing data as key-value pairs
   - store data as key-value pairs.
