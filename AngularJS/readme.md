@@ -149,12 +149,43 @@
       
       If $scope.message changes, so will the interpolation result.
 
-- Filters
+- [Filters](https://docs.angularjs.org/guide/filter)
+
+  Filters format the value of an expression for display to the user. They can be used in view templates, controllers or services.
+  
+  Syntax:
+  ```
+  1) Filters can be applied to expressions in view templates using the following syntax:
+  {{ expression | filter }}
+  
+  2) Filters can be applied to the result of another filter. This is called "chaining" and uses the following syntax:
+  {{ expression | filter1 | filter2 | ... }}
+  
+  3) Filters may have arguments. The syntax for this is
+  {{ expression | filter:argument1:argument2:... }}
+  ```
+  
   ```
   // example, convert msg to uppercase
-  $scope.msg = 'hello';
-  var output = $filter('uppercase')($scope.msg);   // output will be 'HELLO'
+  var msg = 'hello';
+  var output = $filter('uppercase')(msg);   // output will be 'HELLO'
   
   // if in html:
   {{ 'hello' | uppercase}}
+  
+  // another example
+  {{ 12 | currency }}      // The resulting value is $12.00
   ```
+  - [built-in filters](https://docs.angularjs.org/api/ng/filter)
+  
+    Name | Description  | Usage
+    ---- | -------------------------------------------------------- | ---------------------------------------------------
+    filter | Selects a subset of items from array and returns it as a new array. | 
+    currency | Formats a number as a currency (ie $1,234.56). When no currency symbol is provided, default symbol for current locale is used. | 
+    number | Formats a number as text. | 
+    date | Formats date to a string based on the requested format. | 
+    json | Allows you to convert a JavaScript object into JSON string. | 
+    lowercase | Converts string to lowercase. | 
+    uppercase | Converts string to uppercase. | 
+    limitTo | Creates a new array or string containing only a specified number of elements. The elements are taken from either the beginning or the end of the source array, string or number, as specified by the value and sign (positive or negative) of limit. Other array-like objects are also supported (e.g. array subclasses, NodeLists, jqLite/jQuery collections etc). If a number is used as input, it is converted to a string. | 
+    orderBy | Returns an array containing the items from the specified collection, ordered by a comparator function based on the values computed using the expression predicate. | 
