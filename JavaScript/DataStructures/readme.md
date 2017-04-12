@@ -527,15 +527,86 @@
       data | stores a value.
       next | points to the next node in the list.
     
-    - 
+    - Linked List methods
+    
+      method | what does it describe
+      ------ | --------------------------------
+      append(element) | adds a new item to the end of the list.
+      insert(position, element) | This inserts a new item at a specified position in the list.
+      remove(element) | removes an item from the list.
+      removeAt(position) | removes an item from a specified position in the list. if position is invalid, return null; else, remove the node at position and return its data.
+      indexOf(element) | returns the index of the element in the list. If the element is not in the list, it returns -1.
+      isEmpty() | This returns true if the linked list does not contain any elements and false if the size of the linked list is bigger than 0.
+      size() | returns how many elements the linked list contains. It is similar to the length property of the array.
+      toString() | As the list uses a Node class as an item, we need to overwrite the default toString method inherited from the JavaScript object to output only the element values.
   
   - Implementation
   ```javascript
-  // Node class
-  function Node(element) {
-    this.data = element;
-    this.next = null;
-  }
+    function LinkedList() {
+      var Node = function(element){
+        this.element = element;
+        this.next = null;
+      };
+      var length = 0;
+      var head = null;
+      
+      this.append = function(element){
+        var node = new Node(element),
+        current;
+        if (head === null){ //first node on list
+          head = node;
+        } else {
+          current = head;
+          //loop the list until find last item
+          while(current.next){
+            current = current.next;
+          }
+          //get last item and assign next to node to make the link
+          current.next = node;
+        }
+        length++; //update size of list     
+      };
+      
+      this.insert = function(position, element){
+      
+      };
+      
+      this.removeAt = function(position){
+        //check for out-of-bounds values
+        if (position > -1 && position < length) {
+          var current = head,
+          previous,
+          index = 0;
+          //removing first item
+          if (position === 0) {
+            head = current.next;
+          } else {
+            while (index++ < position) {
+              previous = current;
+              current = current.next;
+            }
+            //link previous with current's next: skip it to remove
+            previous.next = current.next;
+          }
+          length--;
+          return current.element;
+        } else {
+          return null;
+        }      
+      };
+      
+      this.remove = function(element){};
+      
+      this.indexOf = function(element){};
+      
+      this.isEmpty = function() {};
+      
+      this.size = function() {};
+      
+      this.toString = function(){};
+      
+      this.print = function(){};
+    }
   
   
   ```
@@ -579,3 +650,5 @@ https://github.com/loiane/javascript-datastructures-algorithms
 - [how to use Google Developer Tools to debug JavaScript](https://developers.google.com/web/tools/chrome-devtools/?utm_source=dcc&utm_medium=redirect&utm_campaign=2016q3)
 
 - [Hanoi Tower](https://www.codeproject.com/Articles/679651/Tower-of-Hanoi-in-JavaScript)
+
+- [Memory Management](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
