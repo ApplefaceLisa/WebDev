@@ -138,10 +138,13 @@
   
     Process of evaluating a _string literal_ containing one or more placeholders, which are replaced with values
     - In Angular, this string:
-    ```
+      ```
       Message is {{ message }}
-    ```
-    (provide message = "hello") is interpolated into this string:
-    ```      
+      ```
+      (provide message = "hello") is interpolated into this string:
+      ```      
       Message is hello
-    ```
+      ```
+    - Still connected to the original _message_ property
+      
+      If $scope.message changes, so will the interpolation result.
