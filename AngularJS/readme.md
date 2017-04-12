@@ -189,3 +189,32 @@
     uppercase | Converts string to uppercase. | 
     limitTo | Creates a new array or string containing only a specified number of elements. The elements are taken from either the beginning or the end of the source array, string or number, as specified by the value and sign (positive or negative) of limit. Other array-like objects are also supported (e.g. array subclasses, NodeLists, jqLite/jQuery collections etc). If a number is used as input, it is converted to a string. | 
     orderBy | Returns an array containing the items from the specified collection, ordered by a comparator function based on the values computed using the expression predicate. | 
+
+  - **Creating custom filters**
+  
+    Steps:
+    - Define filter factory function
+    ```
+      function CustomFilterFactory() {
+        return function (input) {
+          return changeInput;
+        };
+      }
+    ```
+    
+    - Register filter factory with module
+    ```
+      angular.module('app', [])
+      .controller('ctrl', Ctrl)
+      .filter('custom', CustomFilterFactory);  // Note: we registered a factory function called 'custom', AngularJs will execute our                                                    //       factory to create the actual filter function and name it 'customFilter'.
+    ```
+
+    - Inject it with _name**Filter**_
+    ```
+      Ctrl.$inject = ['$scope', 'customFilter'];
+      
+      function Ctrl($scope, customFilter) {
+        var msg = "Some input";
+        customFilter(msg);
+      }
+    ```
