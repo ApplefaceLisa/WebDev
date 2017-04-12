@@ -196,7 +196,7 @@
     - Define filter factory function
     ```
       function CustomFilterFactory() {
-        return function (input[,arg1 [,arg2]..]) {
+        return function (input[,arg1[,arg2..]]) {
           return changeInput;
         };
       }
@@ -213,7 +213,7 @@
     
     - Use it in html (no need injection to controller)
     ```
-      {{ 'hello' | custom [:arg1 [:arg2}..] }}    // use it with registered name
+      {{ 'hello' | custom [:arg1[:arg2..]] }}    // use it with registered name
     ```    
 
     - Inject it with _name**Filter**_
@@ -222,7 +222,7 @@
       
       function Ctrl($scope, customFilter) {
         var msg = "Some input";
-        customFilter(msg[,arg1[,arg2]..]);
+        customFilter(msg[,arg1[,arg2..]]);
       }
     ```
 
