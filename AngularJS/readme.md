@@ -162,7 +162,7 @@
   {{ expression | filter1 | filter2 | ... }}
   
   3) Filters may have arguments. The syntax for this is
-  {{ expression | filter:argument1:argument2:... }}
+  {{ expression | filter : argument1 : argument2:... }}
   ```
   
   ```
@@ -196,7 +196,7 @@
     - Define filter factory function
     ```
       function CustomFilterFactory() {
-        return function (input) {
+        return function (input[,arg1 [,arg2]..]) {
           return changeInput;
         };
       }
@@ -210,6 +210,11 @@
       // Note: we registered a factory function called 'custom', AngularJs will execute our factory to 
       create the actual filter function and name it 'customFilter'.
     ```
+    
+    - Use it in html (no need injection to controller)
+    ```
+      {{ 'hello' | custom [:arg1 [:arg2}..] }}    // use it with registered name
+    ```    
 
     - Inject it with _name**Filter**_
     ```
@@ -217,6 +222,9 @@
       
       function Ctrl($scope, customFilter) {
         var msg = "Some input";
-        customFilter(msg);
+        customFilter(msg[,arg1[,arg2]..]);
       }
     ```
+
+    
+    
