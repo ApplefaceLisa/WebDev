@@ -207,7 +207,8 @@
       angular.module('app', [])
       .controller('ctrl', Ctrl)
       .filter('custom', CustomFilterFactory); 
-      // Note: we registered a factory function called 'custom', AngularJs will execute our factory to create the actual filter function and name it 'customFilter'.
+      // Note: we registered a factory function called 'custom', AngularJs will execute our factory to 
+      create the actual filter function and name it 'customFilter'.
     ```
 
     - Inject it with _name**Filter**_
