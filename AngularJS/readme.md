@@ -226,5 +226,11 @@
       }
     ```
 
-    
+- Digest Cycle
+  - Running digest loops until all watchers report that nothing has changed (dirty checking).
+  - Several ways to set up _**wathchers**_:
+    - $scope.$watch - **don't** do this in a controller
+    - {{ someProp }}
+    - ```<input... ng-model="someProp">```
+  - Only applies to things done inside of the Angular context
     
