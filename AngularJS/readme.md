@@ -136,7 +136,7 @@
     
   - Interpolation
   
-    Process of evaluating a _string literal_ containing one or more placeholders, which are replaced with values
+    Process of evaluating a _string literal_ containing one or more placeholders, which are replaced with values. In Angular, these placeholders are usually expressions.
     - In Angular, this string:
       ```
       Message is {{ message }}
@@ -145,6 +145,7 @@
       ```      
       Message is hello
       ```
-    - Still connected to the original _message_ property
+    - Still connected to the original _message_ property. Result is automatically updated when placeholder value changes.
       
       If $scope.message changes, so will the interpolation result.
+
