@@ -228,7 +228,9 @@
 
 - Digest Cycle
   - Running digest loops until all watchers report that nothing has changed (dirty checking).
+  
   ![digest cycle](DigestCycle.JPG)
+  
   - Several ways to set up _**wathchers**_:
     - $scope.$watch - **don't** do this in a controller
     - {{ someProp }}
