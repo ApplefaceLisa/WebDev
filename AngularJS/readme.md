@@ -237,3 +237,76 @@
     - ```<input... ng-model="someProp">```
   - Only applies to things done inside of the Angular context
     
+  ![unaware changes](DigestCycle_Unaware.JPG)
+  
+  - $digest and $apply
+    - Digest cycle does not get triggered automatically if events are unaware of Angular.
+    - Solutions:
+      - Call _**$digest**_ after your custom code      
+      ```
+        (function () {
+          'use strict';
+
+          angular.module('CounterApp', [])
+          .controller('CounterController', CounterController);
+
+          CounterController.$inject = ['$scope'];
+          function CounterController($scope) {
+            $scope.counter = 0;
+
+            $scope.upCounter = function () {
+              setTimeout(function () {
+                $scope.counter++;
+                console.log("Counter incremented!");
+                $scope.$digest();     // make the change aware of Angular
+              }, 2000);
+            };
+          }
+        })();
+      ```
+      
+      - Wrap your custom code inside of $apply      
+      ```
+        (function () {
+          'use strict';
+
+          angular.module('CounterApp', [])
+          .controller('CounterController', CounterController);
+
+          CounterController.$inject = ['$scope'];
+          function CounterController($scope) {
+            $scope.counter = 0;
+
+            $scope.upCounter = function () {
+              setTimeout(function () {
+                $scope.$apply(function () {   // make the change aware of Angular
+                  $scope.counter++;
+                  console.log("Counter incremented!");                  
+                });
+              }, 2000);
+            };
+          }
+        })();      
+      ```
+      
+      - Find Angular specific service that handles the same functionality, e.g., $timeout      
+      ```
+        (function () {
+          'use strict';
+
+          angular.module('CounterApp', [])
+          .controller('CounterController', CounterController);
+
+          CounterController.$inject = ['$scope', '$timeout'];
+          function CounterController($scope, $timeout) {
+            $scope.counter = 0;
+
+            $scope.upCounter = function () {
+              $timeout(function () {
+                $scope.counter++;
+                console.log("Counter incremented!");
+              }, 2000);
+            };
+          }
+        })();      
+      ```
