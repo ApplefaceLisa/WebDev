@@ -334,7 +334,7 @@
     <div> Echo: {{ ::fullName }} </div>  // 1-time binding
   ```
 
-- Looping, Controller as syntax
+- Looping
   - ng-repeat
     - ng-repeat is a directive that extends the functionality of HTML elements it's applied to.
       - behaves very similarly to for-each construct.
@@ -345,3 +345,11 @@
     - Angular has a special filter called "filter"
       - Provide a string as 1st argument, it will filter array it's applied to, matching all string items against the provided one.
     - ng-repeat="item in collection | filter : searchString"
+
+- Controller as syntax
+  - Prototypal inheritance
+  - Scope inheritance
+  
+    ![scope inheritance](ScopeInheritance.JPG)
+    
+    The scope of the inner controller prototypically inherits from the scope of the outer controller. The properties declared in the outer controller scope, Controller_1, in this case, are accessible to the inner controller scope, Controller_2 and 3, without any extra effort.
