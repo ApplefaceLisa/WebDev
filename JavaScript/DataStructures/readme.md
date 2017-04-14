@@ -693,6 +693,87 @@
 
 - ## Sets: useful for storing unique elements that appear only once
   - Sets are useful for storing data that is not supposed to have duplicates in the data set.
+  - A set is a collection of items that are unordered and consists of unique elements (meaning they cannot be repeated). This data structure uses the same math concept as of finite sets, but applied to a Computer Science data structure.
+  - A set with no element is called a null set or empty set.
+  - MDN [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) standard built-in object
+  
+    methods | description
+    ------- | ----------------------------------------
+    has(value) | Returns a boolean asserting whether an element is present with the given value in the Set object or not.
+    add(value) | Appends a new element with the given value to the Set object. Returns the Set object.
+    delete(value) | Removes the element associated to the value and returns the value that Set.prototype.has(value) would have previously returned. Set.prototype.has(value) will return false afterwards.
+    clear() | Removes all elements from the Set object.
+    entries() | Returns a new Iterator object that contains an array of [value, value] for each element in the Set object, in insertion order. This is kept similar to the Map object, so that each entry has the same value for its key and value here.
+    values() | Returns a new Iterator object that contains the values for each element in the Set object in insertion order.
+    keys() | Is the same function as the values() function and returns a new Iterator object that contains the values for each element in the Set object in insertion order.
+    forEach(callbackFn[, thisArg]) | Calls callbackFn once for each value present in the Set object, in insertion order. If a thisArg parameter is provided to forEach, it will be used as the this value for each callback.
+    
+  - Implementation (just help understanding)
+  ```
+    function Set() {
+      var items = {};   // using an object to represent the set
+    }
+    
+    this.has = function(value){
+      return items.hasOwnProperty(value);
+    };
+    
+    this.add = function(value){
+      if (!this.has(value)){
+        items[value] = value;    // adding the value as key and value
+        return true;   // value added
+      }
+      return false;    // value not added
+    };    
+    
+    this.remove = function(value){
+      if (this.has(value)){
+        delete items[value];
+        return true;
+      }
+      return false;
+    };  
+    
+    this.size = function(){
+      return Object.keys(items).length;   // Object.keys(obj) returns an array of all properties of a given object.
+    };
+    
+    this.values = function(){
+      return Object.keys(items);
+    };
+  ```
+
+  - basic operations of sets
+    - Union (a ∪ b) : Given two sets, this returns a new set with the elements from both given sets.
+    ```
+      let a = new Set([1,2,3]);
+      let b = new Set([4,3,2]);
+      let union = new Set([...a, ...b]);    
+      // The spread operator (...) inserts the elements of something iterable (like a set) into an array. 
+      // Therefore, [...a, ...b] means that a and b are converted to arrays and concatenated. 
+      // It is equivalent to [...a].concat([...b]).
+    ```
+    
+    - Intersection (a ∩ b) : Given two sets, this returns a new set with the elements that exist in both sets.
+    ```
+      let a = new Set([1,2,3]);
+      let b = new Set([4,3,2]);
+      let intersection = new Set([...a].filter(x => b.has(x)));    
+    ```
+    
+    - Difference (a - b) : Given two sets, this returns a new set with all elements that exist in the first set and do not exist in the second set.
+    ```
+      let a = new Set([1,2,3]);
+      let b = new Set([4,3,2]);
+      let difference = new Set([...a].filter(x => !b.has(x)));
+    ```
+    
+    - Subset (A⊆B) : This confirms whether a given set is a subset of another set. For every x (element) that exists in A also exists in B.
+    ```
+      let a = new Set([1,2,3]);
+      let b = new Set([4,3,2]);
+      let isSubset = [...a].every(x => b.has(x));
+    ```
 
 - ## Binary Trees: storing data in a hierarchy manner
   ### Binary Trees
