@@ -341,3 +341,7 @@
     - ng-repeat="item in collection", where item can now be used in interpolation as an item in the collection at particular index of iteration.
     - ng-repeat exposes a special $index property to the body of its host tag.
       - holds the numeric index of the current item in the loop.
+  - filtered ng-repeat
+    - Angular has a special filter called "filter"
+      - Provide a string as 1st argument, it will filter array it's applied to, matching all string items against the provided one.
+    - ng-repeat="item in collection | filter : searchString"
