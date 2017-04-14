@@ -353,3 +353,9 @@
     ![scope inheritance](ScopeInheritance.JPG)
     
     The scope of the inner controller prototypically inherits from the scope of the outer controller. The properties declared in the outer controller scope, Controller_1, in this case, are accessible to the inner controller scope, Controller_2 and 3, without any extra effort.
+  
+  - Controller As syntax
+  
+    ![controller as](contollerAsSyntax.JPG)
+    
+    
