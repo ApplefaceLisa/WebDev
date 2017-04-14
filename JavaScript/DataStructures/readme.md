@@ -682,6 +682,9 @@
     - the last element’s next (tail.next) pointer does not make a reference to null, but to the first element (head).    
     - And a doubly circular linked list has tail.next pointing to the head element and head.prev pointing to the tail element
 
+# Sets, Dictionaries(maps) and Hashs
+  Sets, dictionaries, and hashes store unique values. In a set, we are interested in the value itself as the primary element. In a dictionary (or map), we store values as pairs as [key, value]. The same goes for hashes (they store values as pairs as [key, value]); however, the way that we implement these data structures is a little bit different.
+
 - ## Dictionaries: storing data as key-value pairs
   - store data as key-value pairs.
 
