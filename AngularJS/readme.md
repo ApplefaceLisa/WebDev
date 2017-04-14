@@ -333,3 +333,11 @@
     <div> Echo: {{ lastName }} </div>    // 1-way binding,   <=== $scope.lastName;
     <div> Echo: {{ ::fullName }} </div>  // 1-time binding
   ```
+
+- Looping, Controller as syntax
+  - ng-repeat
+    - ng-repeat is a directive that extends the functionality of HTML elements it's applied to.
+      - behaves very similarly to for-each construct.
+    - ng-repeat="item in collection", where item can now be used in interpolation as an item in the collection at particular index of iteration.
+    - ng-repeat exposes a special $index property to the body of its host tag.
+      - holds the numeric index of the current item in the loop.
