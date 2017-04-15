@@ -381,7 +381,7 @@
       - Only created if application component declares it as a dependency
         - If no components in your application are dependent on this service, it will never get created
   
-  - how to build custom services
+  - custom services with **.service()**
     - Register Service Function Constructor
       ![register service](registerService.JPG)
       
@@ -407,7 +407,7 @@
       function ShoppingListService([args]) {...};
     ```
   
-  - custom services with .factory()
+  - custom services with **.factory()**
     - factory design pattern
       - Can produce any type of object, not just a singleton
       - Can be used to produce dynamically customizable services
@@ -452,5 +452,63 @@
         someSrv.method();
       ```
       
-      - Difference between these two ways
+    - Summary
+      - .factory() allows us to produce any type of object or function
+        - that includes a service (even a singleton), but is NOT limited to 
+        - .service() is just a more limited factory
+      - .factory('name', factoryFunction) - name is what's injected
+      - Injected factory function refers to whatever is returned in the factory function
+        - can be object literal with a prop that's a function that creates something
+        - can be a function that creates something
       
+  - custom services with **.provider()** (Lecture 22)
+    - The .provider method is the most verbose, and at the same time, the most flexible method of creating services in Angular. Not only can you create a factory that's dynamically configurable at the time of using the factory, with the provider method, you could custom configure the factory just once at the bootstrapping of your entire application. And then, use that factory throughout your application with your custom settings. In other words, you could configure this factory before your application starts. In fact, as the angular documentation tells us, the provider method is what actually gets executed behind the scenes when we configure our services with either .service or .factory methods.
+    
+    - Step1: Define provider function
+    ```
+      function ServiceProvider() {
+        var provider = this;
+        provider.config = {...};   // provide some config object. usually with defaults.
+        
+        provider.$get = function () {      // provider.$get is factory function, just like the one provided to .factory()
+          var service = new Service(provider.config.prop);
+          return service;
+        };
+      }
+    ```
+    
+    - Step2: Register provider function with Module
+    ```
+      angular.module('app', [])
+      .controller('ctrl', Ctrl)
+      .provider('Service', ServiceProvider);  
+      // 'Service' is the name of service, as it will be injected into other services, controllers, and so on.
+    ```
+    
+    - Step3: inject
+    ```
+      Ctrl.$inject = ['$scope', 'Service'];
+      
+      function Ctrl($scope, Service) {
+        Service.someMethod();
+      }
+    ```
+    
+    - Step4a (optional): Register Config function
+    ```
+      angular.module('app', [])
+      .controller('ctrl', Ctrl)
+      .provider('Service', ServiceProvider)
+      .config(Config);     // guaranteed to run before any services, factories, or controllers are created
+    ```
+    
+    - Step4b (optional): inject provider into Config (define Config function)
+    ```
+      ...
+      .provider('Service', ServiceFn);   // registered servce name is 'Service'
+      ...
+      Config.$inject = ['ServiceProvider'];  // registered service name + 'Provider' ==> 'ServiceProvider'
+      function Config('ServiceProvider') {
+        ServiceProvider.config.prop = 'value';
+      }
+    ```
