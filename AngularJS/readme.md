@@ -385,6 +385,26 @@
     - Register Service Function Constructor
       ![register service](registerService.JPG)
       
-
+    - Inject service to controller
+    ```
+      angular.module('ShoppingListApp', [])
+      .controller('ShoppingListAddController', ShoppingListAddController)
+      .controller('ShoppingListShowController', ShoppingListShowController)
+      .service('ShoppingListService', ShoppingListService);
+      
+      ShoppingListAddController.$inject = ['ShoppingListService'];
+      function ShoppingListAddController(ShoppingListService) {
+        ...ShoppingListService.prop...
+        ...ShoppingListService.method()...
+      };
+      
+      ShoppingListShowController.$inject = ['ShoppingListService'];
+      function ShoppingListShowController(ShoppingListService) {
+        ...ShoppingListService.prop...
+        ...ShoppingListService.method()...
+      };
+      
+      function ShoppingListService([args]) {...};
+    ```
   
   
