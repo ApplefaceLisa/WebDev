@@ -360,3 +360,21 @@
     ![controller as JS](controllerAsSyntaxJs.JPG)
     ![controller as html](controllerAsSyntaxHtml.JPG)
     
+- Services
+  - why to build custom services?
+    - Controller's responsibility
+      - Use controllers to :
+        - Set up initial state of $scope
+        - Add behavior to the $scope
+      - Do NOT use controllers to :
+        - ...
+        - Handle business logic directly
+        - Share code or state across controllers
+        
+        _**USE A CUSTOM SERVICE!!!**_
+  
+  - how to build custom services
+    - Register Service Function Constructor
+    ![register service](registerService.JPG)
+  
+  
