@@ -523,3 +523,12 @@
         - we CAN inject the provider of service with nameProvider
         
 - ng-if, ng-show and ng-hide
+  ```
+    <div ng-if = 'list.errorMessage' class = 'error'> Error: {{list.errorMessage}}</div>    
+    <div ng-show = 'list.errorMessage' class = 'error'> Error: {{list.errorMessage}}</div> 
+    <div ng-hide = '!list.errorMessage' class = 'error'> Error: {{list.errorMessage}}</div>
+  ```
+  - ng-if is a general purpose "if statement" like attribute directive
+    - if its value is false, angular removes the containing element from the DOM entirely
+  - ng-show / ng-hide attribute directives automatically attach CSS classes to the containing element that either show or hide the element
+    - the containing element does NOT get removed from the DOM
