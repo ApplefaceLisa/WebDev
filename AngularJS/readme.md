@@ -373,8 +373,18 @@
         
         _**USE A CUSTOM SERVICE!!!**_
   
+  - some related theories
+    - Singleton Design Pattern : restricts object to always having a single instance.
+      - Each dependent component gets a reference to the same instance
+      - Multiple controllers injected with a Service will all have access to the same service instance
+    - Lazy Instantiation
+      - Only created if application component declares it as a dependency
+        - If no components in your application are dependent on this service, it will never get created
+  
   - how to build custom services
     - Register Service Function Constructor
-    ![register service](registerService.JPG)
+      ![register service](registerService.JPG)
+      
+
   
   
