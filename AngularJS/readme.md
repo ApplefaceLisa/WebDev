@@ -360,7 +360,7 @@
     ![controller as JS](controllerAsSyntaxJs.JPG)
     ![controller as html](controllerAsSyntaxHtml.JPG)
     
-- Services
+- Custom Services
   - why to build custom services?
     - Controller's responsibility
       - Use controllers to :
@@ -407,4 +407,14 @@
       function ShoppingListService([args]) {...};
     ```
   
-  
+  - custom services with .factory()
+    - factory design pattern
+      - Can produce any type of object, not just a singleton
+      - Can be used to produce dynamically customizable services
+      
+    - factory vs. servce
+      - .factory() is **NOT** just another way of creating the same service you can create with .service() but it **CAN BE**.
+      - .service() is also a factory, but a much more limited one compared to .factory(). It's a factory that always produces the same type of service - a singleton, without an easy way to configure its behavior. That .service() method is usually used as a shortcut for something that doesn't require any configuration whatsoever.
+      
+    - Register Service Factory Function (similar with register service)
+    ![register factory](registerFactory.JPG)
