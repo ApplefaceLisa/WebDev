@@ -360,7 +360,7 @@
     ![controller as JS](controllerAsSyntaxJs.JPG)
     ![controller as html](controllerAsSyntaxHtml.JPG)
     
-- Custom Services
+- Custom Services (.service() / .factory() / .provider())
   - why to build custom services?
     - Controller's responsibility
       - Use controllers to :
@@ -512,3 +512,14 @@
         ServiceProvider.config.prop = 'value';
       }
     ```
+    
+    - Summary
+      - .provider() - most verbose, but most flexible
+        - configure factory not just at time of use, but at app bootstrapping
+      - .provider('name', function)
+        - whatever the 'name' is - that's what gets injected into other components
+      - .config() function gets called before any service, factory, or controller is instatiated
+        - therefore, we can't inject any regular components into .config
+        - we CAN inject the provider of service with nameProvider
+        
+- ng-if, ng-show and ng-hide
