@@ -412,9 +412,45 @@
       - Can produce any type of object, not just a singleton
       - Can be used to produce dynamically customizable services
       
-    - factory vs. servce
+    - factory vs. service
       - .factory() is **NOT** just another way of creating the same service you can create with .service() but it **CAN BE**.
       - .service() is also a factory, but a much more limited one compared to .factory(). It's a factory that always produces the same type of service - a singleton, without an easy way to configure its behavior. That .service() method is usually used as a shortcut for something that doesn't require any configuration whatsoever.
       
     - Register Service Factory Function (similar with register service)
     ![register factory](registerFactory.JPG)
+
+    - Service Factory function (two ways)
+      - return function
+      ```
+        function CustomService() {
+          var factory = function() {
+            return new SomeService();
+          };
+          
+          return factory;
+        }
+        
+        // usage
+        var someSrv = CustomService();
+        someSrv.method();
+      ```
+      
+      - return object literal
+      ```
+        function CustomService() {
+          var factory = {
+            getSomeService : function() {
+              return new SomeService();
+            }
+          };
+          
+          return factory;
+        }
+        
+        // usage
+        var someSrv = CustomService.getSomeService();
+        someSrv.method();
+      ```
+      
+      - Difference between these two ways
+      
