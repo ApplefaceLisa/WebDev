@@ -534,4 +534,7 @@
     - the containing element does NOT get removed from the DOM
 
 ### Module 3 : Asynchronous Behavior, Promises and Ajax in Angular
-- 
+- Promise (AngularJS and ES6 API)
+  - Object which can be passed around or returned that holds references to the outcome of asynchronous behavior
+  - In Angular, promises are created through the $q service
+  ![angular promise](angularPromise.JPG)
