@@ -687,7 +687,26 @@
 
 - ## Dictionaries: storing data as key-value pairs
   - store data as key-value pairs.
-
+  - A dictionary is also known as a map
+  - MDN [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+  
+  property | description
+  -------- | ---------------------------------------------
+  Map.prototype.size | Returns the number of key/value pairs in the Map object.
+  
+  methods | description
+  ------- | ----------------------------------------------
+  Map.prototype.has(key) | Returns a boolean asserting whether a value has been associated to the key in the Map object or not.
+  Map.prototype.get(key) | Returns the value associated to the key, or undefined if there is none.
+  Map.prototype.set(key, value) | Sets the value for the key in the Map object. Returns the Map object.
+  Map.prototype.delete(key) | Removes any value associated to the key and returns the value that Map.prototype.has(key) would have previously returned. Map.prototype.has(key) will return false afterwards.
+  Map.prototype.clear() | Removes all key/value pairs from the Map object.
+  Map.prototype.keys() | Returns a new Iterator object that contains the keys for each element in the Map object in insertion order.
+  Map.prototype.values() | Returns a new Iterator object that contains the values for each element in the Map object in insertion order.
+  Map.prototype.entries() | Returns a new Iterator object that contains an array of [key, value] for each element in the Map object in insertion order.
+  Map.prototype.forEach(callbackFn[, thisArg]) | Calls callbackFn once for each key-value pair present in the Map object, in insertion order. If a thisArg parameter is provided to forEach, it will be used as the this value for each callback.
+  
+  
 - ## Hashing: good for quick insertion and retrieval
 
   ### Hash Table
