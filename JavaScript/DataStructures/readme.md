@@ -776,6 +776,9 @@
     - There are a few techniques to handle collisions: separate chaining, linear probing, and double hashing.
       - The *separate chaining* technique consists of creating a linked list for each position of the table and store the elements in it. It is the simplest technique to handle collisions; however, it requires additional memory outside the HashTable instance.
       ![separate chaining](hashTable_SeperateChaining.JPG)
+      
+      - Another technique of collision resolution is *linear probing*. When we try to add a new element, if the position index is already occupied, then we try index +1. If index +1 is occupied, then we try index + 2, and so on.
+      ![linear probing](hashTable_linearProbing.JPG)
 
 - ## Sets: useful for storing unique elements that appear only once
   - Sets are useful for storing data that is not supposed to have duplicates in the data set.
