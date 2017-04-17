@@ -539,4 +539,4 @@
   - In Angular, promises are created through the $q service
   - AngularJS $q promise
   
-  ![angular promise](angularPromise.JPG)
+  ![angular promise](angularPromiseQ.JPG)
