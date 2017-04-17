@@ -537,4 +537,6 @@
 - Promise (AngularJS and ES6 API)
   - Object which can be passed around or returned that holds references to the outcome of asynchronous behavior
   - In Angular, promises are created through the $q service
+  - AngularJS $q promise
+  
   ![angular promise](angularPromise.JPG)
