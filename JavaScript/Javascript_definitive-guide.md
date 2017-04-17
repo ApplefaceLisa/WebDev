@@ -1,48 +1,48 @@
 # Part I : Core JavaScript
-## Lexical structure
+## Chapter2. Lexical structure
 
-## Types, Values, and Variables
+## Chapter3. Types, Values, and Variables
 
-## Expressions and Operators
+## Chapter4. Expressions and Operators
 
-## Statements
+## Chapter5. Statements
 
-## Objects
+## Chapter6. Objects
 
-## Arrays
+## Chapter7. Arrays
 
-## Functions
+## Chapter8. Functions
 
-## Classes and Modules
+## Chapter9. Classes and Modules
 
-## Pattern Matching with Regular Expressions
+## Chapter10. Pattern Matching with Regular Expressions
 
-## Javascript Subsets and Extensions
+## Chapter11. Javascript Subsets and Extensions
 
-## Server-side Javascript
+## Chapter12. Server-side Javascript
 
 ***
 
 # Part II : Client-side JavaScript
-## Javascript in Web Browsers
+## Chapter13. Javascript in Web Browsers
 
-## the Window Object
+## Chapter14. the Window Object
 
-## Scripting Documents
+## Chapter15. Scripting Documents
 
-## Scripting CSS
+## Chapter16. Scripting CSS
 
-## Handling Events
+## Chapter17. Handling Events
 
-## Scripted HTTP
+## Chapter18. Scripted HTTP
 
-## the jQuery Library
+## Chapter19. the jQuery Library
 
-## Client-Side Storage
+## Chapter20. Client-Side Storage
 
-## Scripted Media and Graphics
+## Chapter21. Scripted Media and Graphics
 
-## HTML5 APIs
+## Chapter22. HTML5 APIs
 
 ***
 
