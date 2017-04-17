@@ -706,12 +706,76 @@
   Map.prototype.entries() | Returns a new Iterator object that contains an array of [key, value] for each element in the Map object in insertion order.
   Map.prototype.forEach(callbackFn[, thisArg]) | Calls callbackFn once for each key-value pair present in the Map object, in insertion order. If a thisArg parameter is provided to forEach, it will be used as the this value for each callback.
   
+    - Iterating Maps with for..of
+    ```
+      var myMap = new Map();
+      myMap.set(0, 'zero');
+      myMap.set(1, 'one');
+      for (var [key, value] of myMap) {
+        console.log(key + ' = ' + value);
+      }
+      // 0 = zero
+      // 1 = one
+
+      for (var key of myMap.keys()) {
+        console.log(key);
+      }
+      // 0
+      // 1
+
+      for (var value of myMap.values()) {
+        console.log(value);
+      }
+      // zero
+      // one
+
+      for (var [key, value] of myMap.entries()) {
+        console.log(key + ' = ' + value);
+      }
+      // 0 = zero
+      // 1 = one    
+    ```
+    
+    - Iterating Maps with forEach()
+    ```
+      myMap.forEach(function(value, key) {
+        console.log(key + ' = ' + value);
+      });
+      // Will show 2 logs; first with "0 = zero" and second with "1 = one"
+    ```
+    
+    - Relation with Array objects [new Map(arr) / uneval([...map])]
+    ```
+      var kvArray = [['key1', 'value1'], ['key2', 'value2']];
+
+      // Use the regular Map constructor to transform a 2D key-value Array into a map
+      var myMap = new Map(kvArray);
+
+      myMap.get('key1'); // returns "value1"
+
+      // Use the spread operator to transform a map into a 2D key-value Array.
+      console.log(uneval([...myMap])); // Will show you exactly the same Array as kvArray
+
+      // Or use the spread operator on the keys or values iterator to get 
+      // an array of only the keys or values
+      console.log(uneval([...myMap.keys()])); // Will show ["key1", "key2"]    
+    ```
+    The [uneval()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/uneval) function creates a string representation of the source code of an Object.
+    
+    [... spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator)
+    
+  
   
 - ## Hashing: good for quick insertion and retrieval
 
   ### Hash Table
   - One way to implement a dictionary is to use a hash table.
   - how to build hash tables and the hash algorithms that are used to store data in the table.
+  - Handling collisions between hash tables
+    - Sometimes, different keys can have the same hash value, we call it a collision.
+    - There are a few techniques to handle collisions: separate chaining, linear probing, and double hashing.
+      - The *separate chaining* technique consists of creating a linked list for each position of the table and store the elements in it. It is the simplest technique to handle collisions; however, it requires additional memory outside the HashTable instance.
+      ![separate chaining](hashTable_SeperateChaining.JPG)
 
 - ## Sets: useful for storing unique elements that appear only once
   - Sets are useful for storing data that is not supposed to have duplicates in the data set.
