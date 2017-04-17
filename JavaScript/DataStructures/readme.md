@@ -1,7 +1,8 @@
 # Data Structures & Algorithms with JavaScript
 
-- ## Arrays and Lists: the most common data structures
-  ### Array  ([array methods](http://www.w3schools.com/js/js_array_methods.asp))
+# Sequential data structures
+- ## 1. Arrays and Lists: the most common data structures
+  ### 1.1 Array  ([array methods](http://www.w3schools.com/js/js_array_methods.asp))
   - native to Javascript
   - good for _**random access**_
   
@@ -165,7 +166,7 @@
       arr = [[1,2,3], [4,5], [6,7,8,9,10]];
       ```
 
-  ### List
+  ### 1.2 List
   Lists are especially useful if we _**don’t**_ have to perform searches on the items in the list or put them into some type of sorted order.
   - A List ADT
  
@@ -342,8 +343,8 @@
     ```
     Iterators are used _**only**_ to move through a list and should not be combined with any functions for adding or removing items from a list.
 
-- ## Stacks and Queues: more complex list-like data structures
-  ### Stack
+- ## 2. Stacks and Queues: more complex list-like data structures
+  ### 2.1 Stack
   - A stack is a list of elements that are accessible only from one end of the list. One area where stacks are used is in implementing recursion. LIFO.
   - used throughout computer science in both _**compiler and operating system implementations**_.
   - Operations
@@ -394,7 +395,7 @@
     }
     ```
   
-  ### Queue
+  ### 2.2 Queue
   - A queue is a type of list where data are inserted at the end and are removed from the front. FIFO.
   - Queues are used extensively in simulation software where data has to be _**lined up**_ before it is processed. 
   - Queues are used to order processes submitted to an operating system or a print spooler, and simulation applications use queues to model scenarios such as customers standing in the line at a bank or a grocery store.
@@ -510,7 +511,7 @@
     ```
   
   
-- ## Linked lists: how they overcome the shortcomings of arrays
+- ## 3. Linked lists: how they overcome the shortcomings of arrays
   - A linked list is a modification of the list data structure, where each element is a separate object linked to the objects on either side of it.
   
   - Linked lists are efficient when you need to perform _**multiple insertions and deletions**_ in your program. Because the most important advantage of a linked list over an array is that you can easily add and remove elements from a linked list without shifting over its elements.
@@ -685,7 +686,7 @@
 # Sets, Dictionaries(maps) and Hashs
   Sets, dictionaries, and hashes store unique values. In a set, we are interested in the value itself as the primary element. In a dictionary (or map), we store values as pairs as [key, value]. The same goes for hashes (they store values as pairs as [key, value]); however, the way that we implement these data structures is a little bit different.
 
-- ## Dictionaries: storing data as key-value pairs
+- ## 4. Dictionaries: storing data as key-value pairs
   - store data as key-value pairs.
   - A dictionary is also known as a map
   - MDN [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
@@ -764,23 +765,185 @@
     
     [... spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator)
     
-  
-  
-- ## Hashing: good for quick insertion and retrieval
+- ## 5. Hashing: good for quick insertion and retrieval
 
-  ### Hash Table
+  ### 5.1 Hash Table
   - One way to implement a dictionary is to use a hash table.
   - how to build hash tables and the hash algorithms that are used to store data in the table.
+  
+  methods | description
+  ------- | -----------------------------------------
+  put(key,value) | This adds a new item to the hash table (or it can also update it)
+  remove(key) | This removes the value from the hash table using the key
+  get(key) | This returns a specific value searched by the key  
+  
+  ```
+    function HashTable() {
+      var table = [];
+      
+      var loseloseHashCode = function (key) {
+        var hash = 0;
+        for (var i = 0; i < key.length; i++) {
+          hash += key.charCodeAt(i);
+        }
+        return hash % 37;
+      };
+      
+      this.put = function (key, value) {
+        var position = loseloseHashCode(key);
+        console.log(position + ' - ' + key);
+        table[position] = value;
+      };
+      
+      this.get = function (key) {
+        return table[loseloseHashCode(key)];
+      };
+      
+      this.remove = function(key){
+        table[loseloseHashCode (key)] = undefined;
+      };      
+    }    
+  ```
+  
   - Handling collisions between hash tables
     - Sometimes, different keys can have the same hash value, we call it a collision.
     - There are a few techniques to handle collisions: separate chaining, linear probing, and double hashing.
       - The *separate chaining* technique consists of creating a linked list for each position of the table and store the elements in it. It is the simplest technique to handle collisions; however, it requires additional memory outside the HashTable instance.
       ![separate chaining](hashTable_SeperateChaining.JPG)
       
+      ```
+        var ValuePair = function(key, value){
+          this.key = key;
+          this.value = value;
+          this.toString = function() {
+            return '[' + this.key + ' - ' + this.value + ']';
+          }
+        };
+        
+        this.put = function(key, value){
+          var position = loseloseHashCode(key);
+          if (table[position] == undefined) {
+            table[position] = new LinkedList();
+          }
+          table[position].append(new ValuePair(key, value));
+        }; 
+        
+        this.get = function(key) {
+          var position = loseloseHashCode(key);
+          if (table[position] !== undefined){
+            //iterate linked list to find key/value
+            var current = table[position].getHead();
+            while(current.next){
+              if (current.element.key === key){
+                return current.element.value;
+              }
+              current = current.next;
+            }
+            //check in case first or last element
+            if (current.element.key === key){ 
+              return current.element.value;
+            }
+          }
+          return undefined;
+        }; 
+        
+        this.remove = function(key){
+          var position = loseloseHashCode(key);
+          if (table[position] !== undefined){
+            var current = table[position].getHead();
+            while(current.next){
+              if (current.element.key === key){
+                table[position].remove(current.element);
+                if (table[position].isEmpty()){ 
+                  table[position] = undefined;
+                }
+                return true;
+              }
+              current = current.next;
+            }
+            //check in case first or last element
+            if (current.element.key === key){
+              table[position].remove(current.element);
+              if (table[position].isEmpty()){
+                table[position] = undefined;
+              }
+              return true;
+            }
+          }
+          return false;
+        };        
+      ```
+      
       - Another technique of collision resolution is *linear probing*. When we try to add a new element, if the position index is already occupied, then we try index +1. If index +1 is occupied, then we try index + 2, and so on.
-      ![linear probing](hashTable_linearProbing.JPG)
+      ![linear probing](hashTable_linearProbing.jpg)
+      
+      ```
+        this.put = function(key, value){
+          var position = loseloseHashCode(key);
+          if (table[position] == undefined) {
+            table[position] = new ValuePair(key, value); 
+          } else {
+            var index = ++position;
+            while (table[index] != undefined){
+              index++; 
+            }
+            table[index] = new ValuePair(key, value);
+          }
+        };
+        
+        this.get = function(key) {
+          var position = loseloseHashCode(key);
+          if (table[position] !== undefined){
+            if (table[position].key === key) {
+              return table[position].value;
+            } else {
+              var index = ++position;
+              while (table[index] === undefined || table[index].key !== key){
+                index++;
+              }
+              if (table[index].key === key) {
+                return table[index].value;
+              }
+            }
+          }
+          return undefined;
+        };
+        
+        this.remove = function(key) {
+          var position = loseloseHashCode(key);
+          if (table[position] !== undefined){
+            if (table[position].key === key) {
+              table[position] = undefined;
+            } else {
+              var index = ++position;
+              while (table[index] === undefined || table[index].key !== key){
+                index++;
+              }
+              if (table[index].key === key) {
+                table[index] = undefined;
+              }
+            }
+          }
+          return undefined;
+        };        
+      ```
+      
+    - Creating better hash functions
+    
+      A good hash function is composed by some factors: time to insert and retrieve an element (performance) and also a low probability of collisions. For example:
+    ```
+      var djb2HashCode = function (key) {
+        var hash = 5381;
+        for (var i = 0; i < key.length; i++) { 
+          hash = hash * 33 + key.charCodeAt(i);
+        }
+        return hash % 1013;
+      };    
+    ```
+    
+    reference: [Integer Hash Function](http://web.archive.org/web/20071223173210/http://www.concentric.net/~Ttwang/tech/inthash.htm)
 
-- ## Sets: useful for storing unique elements that appear only once
+- ## 6. Sets: useful for storing unique elements that appear only once
   - Sets are useful for storing data that is not supposed to have duplicates in the data set.
   - A set is a collection of items that are unordered and consists of unique elements (meaning they cannot be repeated). This data structure uses the same math concept as of finite sets, but applied to a Computer Science data structure.
   - A set with no element is called a null set or empty set.
@@ -864,28 +1027,33 @@
       let isSubset = [...a].every(x => b.has(x));
     ```
 
-- ## Binary Trees: storing data in a hierarchy manner
-  ### Binary Trees
+# Trees
+- ## 7. Binary Trees: storing data in a hierarchy manner
+  ### 7.1 Binary Trees
   
   
-  ### Binary Search Trees
+  ### 7.2 Binary Search Trees
   - binary search trees are useful for storing data that needs to be stored originally in sorted form.
 
-- ## Graphs and graph algorithms: ideal for modeling networks
+
+# Graphs
+- ## 8. Graphs and graph algorithms: ideal for modeling networks
   - Graphs are used to represent data such as the _**nodes of a computer network or the cities on a map**_.
 
-- ## Algorithms: including those that help you sort or search data
-  ### Sorting
-  
-  ### Searching
 
-- ## Advanced algorithms: dynamic programming and greedy algorithms
-  ### dynamic programming 
+# Algorithms
+- ## 9. Algorithms: including those that help you sort or search data
+  ### 9.1 Sorting
   
-  ### greedy algorithms
+  ### 9.2 Searching
+
+- ## 10. Advanced algorithms: dynamic programming and greedy algorithms
+  ### 10.1 dynamic programming 
+  
+  ### 10.2 greedy algorithms
 
 # Example Code
-https://github.com/loiane/javascript-datastructures-algorithms
+## https://github.com/loiane/javascript-datastructures-algorithms
 
 # Reference
 - [how to use Google Developer Tools to debug JavaScript](https://developers.google.com/web/tools/chrome-devtools/?utm_source=dcc&utm_medium=redirect&utm_campaign=2016q3)
