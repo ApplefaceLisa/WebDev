@@ -1113,6 +1113,10 @@ preceding diagram.
     
       An in-order traversal visits all the nodes of a BST in ascending order, meaning it visits the nodes from the smallest to largest. An application of in-order traversal would be to sort a tree.
       
+      The following diagram illustrates the path the in-order traverse followed:
+      
+    ![in-order traversal](inOrderTrav.JPG)      
+      
       ```
       this.inOrderTraverse = function(callback){
         inOrderTraverseNode(root, callback);
@@ -1136,7 +1140,49 @@ preceding diagram.
       ```
       
       The inOrderTraverse method receives a callback function as a parameter. This function can be used to perform the action we would like to execute when the node is visited (this is known as the [visitor pattern](https://en.wikipedia.org/wiki/Visitor_pattern)).
-    ![in-order traversal](inOrderTrav.JPG)
+      
+    - Pre-order traversal
+    
+      A pre-order traversal visits the node prior to its descendants. An application of pre-order traversal could be to print a structured document.
+      
+      The following diagram illustrates the path followed by the pre-order traverse:
+      
+    ![pre-order traversal](preOrderTrav.jpg)
+      
+      ```
+      this.preOrderTraverse = function(callback){
+        preOrderTraverseNode(root, callback);
+      };
+      
+      var preOrderTraverseNode = function (node, callback) {
+        if (node !== null) {
+          callback(node.key);
+          preOrderTraverseNode(node.left, callback);
+          preOrderTraverseNode(node.right, callback);
+        }
+      };
+      ```
+      
+    - Post-order traversal
+    
+      A post-order traversal visits the node after it visits its descendants. An application of postorder could be computing the space used by a file in a directory and its subdirectories.
+      
+      The following diagram illustrates the path the post-order traverse method followed:
+      ![post-order traversal](postOrderTrav.jpg)
+      
+      ```
+      this.postOrderTraverse = function(callback){
+        postOrderTraverseNode(root, callback);
+      };
+      
+      var postOrderTraverseNode = function (node, callback) {
+        if (node !== null) {
+          postOrderTraverseNode(node.left, callback);
+          postOrderTraverseNode(node.right, callback);
+          callback(node.key);
+        }
+      };
+      ```
 
 # Graphs
 - ## 8. Graphs and graph algorithms: ideal for modeling networks
