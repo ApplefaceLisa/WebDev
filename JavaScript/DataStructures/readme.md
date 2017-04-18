@@ -1105,10 +1105,109 @@ preceding diagram.
         }
       };
 
-
+      // Searching for minimum values : left most value
+      this.min = function() {
+        return minNode(root);
+      };
+      
+      var minNode = function (node) {
+        if (node){
+          while (node.left) { 
+            node = node.left;
+          }
+          return node.key;
+        }
+        return null;
+      };
+      
+      // Searching for maximum values : right most value
+      this.max = function() {
+        return maxNode(root);
+      };
+      
+      var maxNode = function (node) {
+        if (node){
+          while (node.right) {
+            node = node.right;
+          }
+          return node.key;
+        }
+        return null;
+      };       
     }
+    
+    // Searching for a specific value
+    this.search = function(key){
+      return searchNode(root, key);
+    };
+    
+    var searchNode = function(node, key){
+      if (node === null){
+        return false;
+      }
+      if (key < node.key){
+        return searchNode(node.left, key);
+      } else if (key > node.key){ 
+        return searchNode(node.right, key); 
+      } else {
+        return true; 
+      }
+    };
+    
+    // Removing a node
+    this.remove = function(key){
+      root = removeNode(root, key); // helper function
+    };    
+
+    var removeNode = function(node, key){
+      if (node === null){
+        return null;
+      }
+      if (key < node.key){
+        node.left = removeNode(node.left, key);
+        return node;
+      } else if (key > node.key){
+        node.right = removeNode(node.right, key);
+        return node;
+      } else { // key is equal to node.key
+        //case 1 - a leaf node
+        if (node.left === null && node.right === null){
+          node = null; // get rid of this node
+          return node;
+        }
+        
+        //case 2 - a node with only 1 child, update the node with its child and return the node
+        if (node.left === null){
+          node = node.right;
+          return node;
+        } else if (node.right === null){ 
+          node = node.left;
+          return node;
+        }
+        
+        //case 3 - a node with 2 children
+        var aux = findMinNode(node.right); // to find the minimum node from its right edge subtree
+        node.key = aux.key; // update the value of the node with the key of the minimum node from its right subtree
+        node.right = removeNode(node.right, aux.key); // remove the minimum node from the right subtree
+        return node;
+      }
+      
+      var findMinNode = function (node) {
+        if (node){
+          while (node.left) { 
+            node = node.left;
+          }
+          return node;
+        }
+        return null;
+      };
+    }; 
   ```
-  - Tree traversal : there are three different approaches that can be used to visit all the nodes in a tree: in-order, pre-order, and postorder.
+  
+  ![remove node](removeNode.jpg)
+  
+  
+  - **Tree traversal** : there are three different approaches that can be used to visit all the nodes in a tree: in-order, pre-order, and postorder.
     - In-order traversal
     
       An in-order traversal visits all the nodes of a BST in ascending order, meaning it visits the nodes from the smallest to largest. An application of in-order traversal would be to sort a tree.
