@@ -1031,14 +1031,112 @@
 - A tree is an abstract model of a hierarchical structure.
 - A tree consists of nodes with a parent-child relationship. Each node has a parent (except for the first node at the top) and zero or more children.
   ![tree](tree.JPG)
+  The tree from the preceding diagram has height 3 (maximum depth is 3 as shown in the preceding figure—level 3).
+  
+  - Root : The top node of a tree is called the root (11). It is the node that does not have a parent.
+  - Node : Each element of the tree is called node. There are internal nodes and external nodes. 
+    - An internal node is a node with at least one child (7, 5, 9, 15, 13, and 20 are internal nodes). 
+    - A node that does not have children is called an external node or leaf (3, 6, 8, 10, 12, 14, 18, and 25 are leaves).
+    - A node can have ancestors and descendants. 
+      - The ancestors of a node (except the root) are parent, grandparent, great-grandparent, and so on. 
+      - The descendants of a node are child, grandchild, great-grandchild, and so on.
+      For example, node 5 has 7 and 11 as its ancestors and 3 and 6 as its descendants.
+  - Subtree : A subtree consists of a node and its descendants. For example, nodes 13, 12, and 14 consist a subtree of the tree from the
+preceding diagram.
+  - Depth of node : The depth of a node consists of the number of ancestors. For example, node 3 has depth 3 because it has 3 ancestors (5, 7, and 11).
+  - Height of tree : The height of a tree consists of the maximum depth of any node.
+  - Levels : A tree can also be broken down into levels. The root is on level 0, its children are on level 1, and so on.
+  - Edges : the connection between nodes.
 
-- ## 7. Binary Trees: storing data in a hierarchy manner
+- ## 7. Binary Trees: 
+  - A node in a binary tree has at most two children: one left child and one right child.
+  - A binary search tree (BST) is a binary tree where each node has a Comparable key (and an associated value) and satisfies the restriction that the key in any node is _**larger than**_ the keys in all nodes in that node's _**left subtree**_ and _**smaller than**_ the keys in all nodes in that node's _**right subtree**_.
+  
   ### 7.1 Binary Trees
   
   
   ### 7.2 Binary Search Trees
   - binary search trees are useful for storing data that needs to be stored originally in sorted form.
+  - Implementation:
+  
+    methods | description
+    ------- | -----------------------------------------------------
+    insert(key) | This inserts a new key in the tree
+    remove(key) | This removes the key from the tree
+    search(key) | This searches for the key in the tree and returns true if it exists and returns false if the node does not exist
+    min | This returns the minimum value/key in the tree
+    max | This returns the maximum value/key in the tree
+    inOrderTraverse | This visits all nodes of the tree using in-order traverse
+    preOrderTraverse | This visits all nodes of the tree using pre-order traverse
+    postOrderTraverse | This visits all nodes of the tree using post-order traverse  
+  
+  ```
+    function BinarySearchTree() {
+      var Node = function(key){
+        this.key = key;
+        this.left = null;
+        this.right = null;
+      };
+      var root = null;
+      
+      // Inserting a key in a tree
+      var insertNode = function(node, newNode){
+        if (newNode.key < node.key){
+          if (node.left === null){
+            node.left = newNode;
+          } else {
+            insertNode(node.left, newNode);
+          }
+        } else {
+          if (node.right === null){
+            node.right = newNode;
+          } else {
+            insertNode(node.right, newNode);
+          }
+        }
+      };
 
+      this.insert = function(key){
+        var newNode = new Node(key);
+        if (root === null){
+          root = newNode;
+        } else {
+          insertNode(root,newNode);
+        }
+      };
+
+
+    }
+  ```
+  - Tree traversal : there are three different approaches that can be used to visit all the nodes in a tree: in-order, pre-order, and postorder.
+    - In-order traversal
+    
+      An in-order traversal visits all the nodes of a BST in ascending order, meaning it visits the nodes from the smallest to largest. An application of in-order traversal would be to sort a tree.
+      
+      ```
+      this.inOrderTraverse = function(callback){
+        inOrderTraverseNode(root, callback);
+      };
+      
+      var inOrderTraverseNode = function (node, callback) {
+        if (node !== null) {
+          inOrderTraverseNode(node.left, callback);
+          callback(node.key);
+          inOrderTraverseNode(node.right, callback);
+        }
+      };
+      
+      // example callback function
+      function printNode(value){
+        console.log(value);
+      }
+      
+      // inOrderTraverse method usage
+      tree.inOrderTraverse(printNode);
+      ```
+      
+      The inOrderTraverse method receives a callback function as a parameter. This function can be used to perform the action we would like to execute when the node is visited (this is known as the [visitor pattern](https://en.wikipedia.org/wiki/Visitor_pattern)).
+    ![in-order traversal](inOrderTrav.JPG)
 
 # Graphs
 - ## 8. Graphs and graph algorithms: ideal for modeling networks
