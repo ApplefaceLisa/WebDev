@@ -1028,6 +1028,10 @@
     ```
 
 # Trees
+- A tree is an abstract model of a hierarchical structure.
+- A tree consists of nodes with a parent-child relationship. Each node has a parent (except for the first node at the top) and zero or more children.
+  ![tree](tree.JPG)
+
 - ## 7. Binary Trees: storing data in a hierarchy manner
   ### 7.1 Binary Trees
   
