@@ -1053,7 +1053,9 @@ preceding diagram.
   - A binary search tree (BST) is a binary tree where each node has a Comparable key (and an associated value) and satisfies the restriction that the key in any node is _**larger than**_ the keys in all nodes in that node's _**left subtree**_ and _**smaller than**_ the keys in all nodes in that node's _**right subtree**_.
   
   ### 7.1 Binary Trees
-  
+  #### 7.1.1 AVL tree
+  #### 7.1.2 Red-Black tree
+  #### 7.1.3 Heap tree
   
   ### 7.2 Binary Search Trees
   - binary search trees are useful for storing data that needs to be stored originally in sorted form.
@@ -1205,6 +1207,14 @@ preceding diagram.
   ```
   
   ![remove node](removeNode.jpg)
+  
+  - BST has an problem: depending on how many nodes you add, one of the edges of tree can be very deep, meaning a branch of the tree can have a high level, and another branch can have a low level.
+  
+    This can cause performance issues when adding, removing, and searching for a node on a particular edge of the tree. For this reason, there is a tree called Adelson-Velskii and Landis’ tree (AVL tree). The _**AVL tree is a self-balancing BST tree**_, which means the height of both the left and right subtree of any node differs by 1 at most. This means the tree will try to become a complete tree whenever possible while adding or removing a node.
+    
+    Another tree that you should also learn about is the _**Red-Black tree**_, which is a special type of binary tree. This tree allows efficient in-order traversal of its nodes.
+    
+    You should also check out the _**Heap tree**_ as well.
   
   
   - **Tree traversal** : there are three different approaches that can be used to visit all the nodes in a tree: in-order, pre-order, and postorder.
