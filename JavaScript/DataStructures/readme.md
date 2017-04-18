@@ -1208,15 +1208,6 @@ preceding diagram.
   
   ![remove node](removeNode.jpg)
   
-  - BST has an problem: depending on how many nodes you add, one of the edges of tree can be very deep, meaning a branch of the tree can have a high level, and another branch can have a low level.
-  
-    This can cause performance issues when adding, removing, and searching for a node on a particular edge of the tree. For this reason, there is a tree called Adelson-Velskii and Landis’ tree (AVL tree). The _**AVL tree is a self-balancing BST tree**_, which means the height of both the left and right subtree of any node differs by 1 at most. This means the tree will try to become a complete tree whenever possible while adding or removing a node.
-    
-    Another tree that you should also learn about is the _**Red-Black tree**_, which is a special type of binary tree. This tree allows efficient in-order traversal of its nodes.
-    
-    You should also check out the _**Heap tree**_ as well.
-  
-  
   - **Tree traversal** : there are three different approaches that can be used to visit all the nodes in a tree: in-order, pre-order, and postorder.
     - In-order traversal
     
@@ -1292,6 +1283,15 @@ preceding diagram.
         }
       };
       ```
+
+  - BST has an **problem**: depending on how many nodes you add, one of the edges of tree can be very deep, meaning a branch of the tree can have a high level, and another branch can have a low level.
+  
+    This can cause performance issues when adding, removing, and searching for a node on a particular edge of the tree. For this reason, there is a tree called Adelson-Velskii and Landis’ tree (AVL tree). The _**AVL tree is a self-balancing BST tree**_, which means the height of both the left and right subtree of any node differs by 1 at most. This means the tree will try to become a complete tree whenever possible while adding or removing a node.
+    
+    Another tree that you should also learn about is the _**Red-Black tree**_, which is a special type of binary tree. This tree allows efficient in-order traversal of its nodes.
+    
+    You should also check out the _**Heap tree**_ as well.
+  
 
 # Graphs
 - ## 8. Graphs and graph algorithms: ideal for modeling networks
