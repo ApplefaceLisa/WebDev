@@ -1296,6 +1296,66 @@ preceding diagram.
 # Graphs
 - ## 8. Graphs and graph algorithms: ideal for modeling networks
   - Graphs are used to represent data such as the _**nodes of a computer network or the cities on a map**_.
+  - A graph is an abstract model of a network structure.
+  - Any social network, such as Facebook, Twitter, and Google plus, can be represented by a graph. We can also use graphs to represent roads, flights, and communications
+  
+  #### Graph terminology
+  - vertices (or nodes)
+  - edges : connectiong between vertices
+  - A graph G = (V, E) is composed of 
+    - V : a set of vertices
+    - E : a set of edges connecting the vertices in V
+  - adjacent vertices : vertices connected by an edge
+  - degree : a degree of a vertex consists of the number of adjacent vertices.
+  - path : a path is a sequence of consecutive vertices v1, v2,..., vk, where vi and vi+1 are adjacent.
+  - simple path : a simple path does not contain repeated vertices.
+  - acyclic graph : a graph does not have cycles.
+  - connected graph : there is a path between every pair of vertices.
+  - directed graph (digraph) : edges have a direction.
+  - undirected graph : edges do not have a direction.
+  - strongly connected graph : there is a path in both directions between every pair of vertices.
+  - unweighted graph : edges donot have weight.
+  - weighted graph : the edges have weights.
+  
+  #### Problems using graph
+  - searching a graph for a specific vertex,
+  - searching for a specific edge, 
+  - finding a path in the graph (from one vertex to another), 
+  - finding the shortest path between two vertices,
+  - cycle detection.
+  
+  #### Representing a graph
+  - the adjacency matrix
+  
+    We represent the connectivity between vertices using a two-dimensional array, as array[i][j] === 1 if there is an edge from the node with index i to the node with index j; or as array[i][j] === 0 otherwise.
+    ![adjacency matrix](adjacencyMatrix.jpg)
+    
+    Finding out whether vertices v and w are adjacent is faster using adjacent matrix.
+    
+    Graphs that are not strongly connected (sparse graphs) will be represented by a matrix with many zero entries in the adjacency matrix. This means we will waste space in the computer memory to represent edges that do not exist.
+    
+    Another reason this might not be a good representation is because the number of vertices in the graph may change and a twodimensional array is inflexible.
+
+  - **the adjacency list**
+  
+    This consists of a list of adjacent vertices for every vertex of the graph. There are a few different ways we can represent this data structure. To represent the list of adjacent vertices, we can use a list (array), a linked list, or even a hash map or dictionary.
+    ![adjacency list](adjacencyList.jpg)  
+    
+  - the incidence matrix
+  
+    Each row of the matrix represents a vertex and each column represents an edge. We represent the connectivity between the two objects using a two-dimensional array, as ```array[v][e] === 1``` if the vertex v is incident upon edge e; or as ```array[v][e] === 0``` otherwise.
+    ![incidence matrix](incidenceMatrix.jpg)
+    
+    An incidence matrix is usually used to save space and memory when we have more edges than vertices.
+  
+  #### Creating the graph class
+  #### Graph traversals
+  - Breadth-first search (**BFS**)
+    - finding the shortest paths using BFS
+    - other shortest paths algorithms
+  - Depth-first search (**DFS**)
+    - DFS algorithm
+    - Topological sorting using DFS
 
 
 # Algorithms
