@@ -1395,7 +1395,7 @@ preceding diagram.
     - Application : Topological sorting using DFS
     
     When we need to specify the order that some tasks or steps need to be executed in, it is called topological sorting (or topsort or even toposort).Topological sorting can only be applied to DAGs (Directed Acyclic Graph).
-    ![toposort](toposort.jpg)
+    ![toposort](topoSort.jpg)
     
     Other possibilities : B - A - D - C - F - E, A - B - C - D - F - E, etc.
 
