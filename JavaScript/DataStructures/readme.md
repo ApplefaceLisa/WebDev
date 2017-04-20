@@ -1344,18 +1344,60 @@ preceding diagram.
   - the incidence matrix
   
     Each row of the matrix represents a vertex and each column represents an edge. We represent the connectivity between the two objects using a two-dimensional array, as ```array[v][e] === 1``` if the vertex v is incident upon edge e; or as ```array[v][e] === 0``` otherwise.
-    ![incidence matrix](incidenceMatrix.jpg)
     
     An incidence matrix is usually used to save space and memory when we have more edges than vertices.
-  
-  #### Creating the graph class
+    ![incidence matrix](incidenceMatrix.jpg)  
+    
+  #### Creating the graph class (undirected)
+    ```
+    function Graph() {
+      var vertices = []; // store the names of all the vertices of the graph
+      var adjList = new Dictionary(); // store the adjacent list
+    }
+    
+    // add a new vertex to the graph
+    this.addVertex = function(v){
+      vertices.push(v);
+      adjList.set(v, []);
+    };
+    
+    // add edge
+    this.addEdge = function(v, w){
+      adjList.get(v).push(w);
+      adjList.get(w).push(v);
+    };
+    ```
   #### Graph traversals
+  
+  Traversing a graph can be used to find a specific vertex or to find a path between two vertices, check whether the graph is connected, check whether it contains cycles, and so on.
+  
+  The BFS and DFS algorithms are basically the same, with only one difference, which is the data structure used to store the list of vertices to be visited:
+  
+  Algorithm | Data structure | Description
+  --------- | -------------- | -----------------------------------------------------
+  DFS | Stack | By storing the vertices in a stack, the vertices are explored by lurching along a path, visiting a new adjacent vertex if there is one available.
+  BFS | Queue | By storing the vertices in a queue, the oldest unexplored vertices are explored first.
+
   - Breadth-first search (**BFS**)
-    - finding the shortest paths using BFS
+  ![BFS](BFS.jpg)
+    - Application : finding the shortest paths using BFS
     - other shortest paths algorithms
+      - Dijkstra’s algorithm : solves the single-source shortest path problem.
+      - Bellman–Ford algorithm : solves the single-source problem if edge weights are negative. 
+      - A* search algorithm : provides the shortest path for a single pair of vertices using heuristics to try to speed up the search. 
+      - Floyd–Warshall algorithm : provides the shortest path for all pairs of vertices.
+      
   - Depth-first search (**DFS**)
+  ![DFS](DFS.jpg)
     - DFS algorithm
-    - Topological sorting using DFS
+    ![DFS example](dfsExample.jpg)
+    
+    - Application : Topological sorting using DFS
+    
+    When we need to specify the order that some tasks or steps need to be executed in, it is called topological sorting (or topsort or even toposort).Topological sorting can only be applied to DAGs (Directed Acyclic Graph).
+    ![toposort](toposort.jpg)
+    
+    Other possibilities : B - A - D - C - F - E, A - B - C - D - F - E, etc.
 
 
 # Algorithms
