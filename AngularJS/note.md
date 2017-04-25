@@ -57,8 +57,101 @@
     $even | true for the even-numbered objects in a collection 
     $odd | true for the odd-numbered objects in a collection
     
-  - ng-include : to statically include HTML partial Views
+  - ng-include : to include HTML partial Views
   
+    The ng-include directive retrieves a fragment of HTML content from the server, compiles it to process any directives that it might contain, and adds it to the Document Object Model. These fragments are known as partial views.
+    
+    - to statically include HTML partial Views  
+      ```
+      <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
+        <h3 class="panel-header">To Do List</h3>
+        <ng-include src="'./includeDir/table.html'"></ng-include>
+      </div>
+
+      // in table.html
+      <table class="table">
+          <thead>
+          <tr>
+              <th>#</th>
+              <th>Action</th>
+              <th>Done</th>
+          </tr>
+          </thead>
+          <tr ng-repeat="item in todos" ng-class="$odd ? 'odd' : 'even'">
+              <td>{{$index + 1}}</td>
+              <td ng-repeat="prop in item">{{prop}}</td>
+          </tr>
+      </table>    
+      ```
+  
+    - to dynamically include HTML partial Views 
+    
+      The real power of the ng-include lies in the way that the src attribute is evaluated.
+      
+      ```
+      <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
+          <h3 class="panel-header">To Do List</h3>
+
+          <div class="well">
+              <div class="checkbox">
+                  <label>
+                      <input type="checkbox" ng-model="showList">
+                      Use the list view
+                  </label>
+              </div>
+          </div>
+
+          <ng-include src="viewFile()"></ng-include>
+      </div>   
+      <script>
+        angular.module("exampleApp", [])
+        .controller("defaultCtrl", function ($scope) {
+          $scope.todos = [
+                          { action: "Get groceries", complete: false },
+                          { action: "Call plumber", complete: false },
+                          { action: "Buy running shoes", complete: true },
+                          { action: "Buy flowers", complete: false },
+                          { action: "Call family", complete: false }
+                         ];
+
+                      /**
+                       *This function returns the name of one of the two fragment files we created based on
+                       * the value of a variable called showList.
+                       * If showList is true, then the viewFile behavior returns the name of the listItems.html file;
+                       * if showList is false or undefined, then the behavior returns the name of the table.html file.
+                       * @returns {string}
+                       */
+          $scope.viewFile = function () {
+            return $scope.showList ? "./includeDir/listItems.html" : "./includeDir/table.html";
+          };
+        });
+      </script>
+      
+      // listItems.html
+      <ol>
+          <li ng-repeat="item in todos">
+              {{item.action}}
+              <span ng-if="item.complete"> (Done)</span>
+          </li>
+      </ol>      
+      
+      // table.html
+      <table class="table">
+          <thead>
+          <tr>
+              <th>#</th>
+              <th>Action</th>
+              <th>Done</th>
+          </tr>
+          </thead>
+          <tr ng-repeat="item in todos" ng-class="$odd ? 'odd' : 'even'">
+              <td>{{$index + 1}}</td>
+              <td ng-repeat="prop in item">{{prop}}</td>
+          </tr>
+      </table>      
+      ```
+    
+    
 # AngularJS Filters
 
 - AngularJS filters format the value of an expression for _**display**_ to the end user.
