@@ -1,16 +1,66 @@
 # AngularJS Directives and Data Binding
 
-  name | description
+- Directives
+  - Directives have two parts. The first part is extra attributes, elements, and CSS classes that are added to an HTML template. The second part is JavaScript code that extends the normal behavior of the DOM.
+  - The advantage of using directives is that an HTML template indicates the intended logic with a directive. Also, the built-in AngularJS directives handle most of the necessary DOM manipulation functionality that you need to implement to bind the data in the scope to a view.
+  - More than 50 built-in directives
+    - One way data binding [$scope, ng-bind] 
+    - Two way data binding [ng-model] 
+    - form validation [] 
+    - template generation [ng-repeat] 
+    - event handling [ng-click] 
+    - manipulating HTML elements[ng-show, ng-hide]
+  - Usage:
+    - As an attribute: `<span my-directive></span>`
+    - As an element: `<my-directive></my-directive>`
+  
+- Data binding directives
+  - one-way binding, means a value is taken from the data model and inserted into an HTML element.
+  - Two-way binding means a value is exchanged between data model and HTML element. Two bindings are realized by the ng-model. It can be applied only to elements that allow the user to provide a data value, which means the input, textarea, and select elements.
+
+  Directives | description
   ---- | ----------------------------------------------
   ng- | indicates Angular built-in directive
   ng-app | defines and initializes an AngularJS application
-  ng-bind | Declares one-way data binding. Binds application data ($scope.property) to the HTML View
+  ng-controller | This directive creates new scope. e.g. `<div ng-controller="myFilterDemoCtrl"></div>`. Note the "controller as" syntax.
+  ng-bind | Declares one-way data binding. Binds the innerText property of an HTML element. Binds application data ($scope.property) to the HTML View. `<p ng-bind=“name”></p>` equals to `<p> {{name}} </p>`.
+  ng-bind-html | Creates data bindings using the innerHTML property of an HTML element. This is potentially dangerous because it means that the browser will interpret the content as HTML, rather than content.
+  ng-bind-template | Similar to the ng-bind directive but allows for multiple template expressions to be specified in the attribute value.
   ng-model | Declares two-way data binding. Binds value of HTML controls (input, select, textarea, etc) to application data ($scope.property), e.g. `<p>Name: <input type="text" ng-model="name"></p>`
-  {{ expression }} | Data Binding Expression, bind AngularJS data to HTML the same way as the ng-bind directive. `<p> {{name}} </p>` equals to `<p ng-bind=“name”></p>`
-  ng-init | initializes JS Model data behind the scenes, e.g. `<div ng-init="names=['Laura', 'Vivek', 'Mark', 'Steve']">`
-  ng-repeat | iterates through data, e.g. `<li ng-repeat="name in names"> {{ name }} </li>`
+  ng-non-bindable | Declares a region of content for which data binding will not be performed.
+  
+- Template Directives:
+
+  directives that can consume collections and generate the view over the data, to operate on collections of similar data objects and vary the view they present to the user based on different data values.
+  
+    Directives | description
+    ---------- | --------------------------------------------
+    ng-cloak | Applies a CSS style that hides inline binding expressions, which can be briefly visible when the document first loads
+    ng-include | Loads, processes, and inserts a fragment of HTML into the Document Object Model
+    ng-repeat | Generates new copies of a single element and its contents for each object in an array or property on an object, e.g. `<li ng-repeat="name in names"> {{ name }} </li>`
+    ng-repeat-start | Denotes the start of a repeating section with multiple top-level elements
+    ng-repeat-end | Denotes the end of a repeating section with multiple top-level elements
+    ng-switch | Changes the elements in the Document Object Model based on the value of data bindings
+  
+  - ng-repeat : generating Elements Repeatedly
+  
+    The basic format of the value for the ng-repeat directive attribute is `<variable> in <source>`, where source is an _**object or array**_ defined by the controller $scope.
+    
+    For ng-repeat there are a set of built-in variables that provide context for the data being processed:
+    
+    Variable | Operation
+    -------- | --------------------------------------------------------
+    $index | Returns the position of the current object or property
+    $first | true if the current object is the first in the collection 
+    $middle | true if the current object is the first in the collection 
+    $last | true if the current object is the last in the collection 
+    $even | true for the even-numbered objects in a collection 
+    $odd | true for the odd-numbered objects in a collection
+    
+  - ng-include : to statically include HTML partial Views
   
 # AngularJS Filters
+
 - AngularJS filters format the value of an expression for _**display**_ to the end user.
 
 - Built-in filters:
