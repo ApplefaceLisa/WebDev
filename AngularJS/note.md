@@ -1,5 +1,12 @@
 # AngularJS Directives and Data Binding
 
+### AngularJS core concepts
+- Directives : HTML annotations that trigger Javascript behaviors
+- Modules : Where our application components live
+- Controllers : Where we add application behavior
+- Expressions : How values get displayed within the page
+
+### Detail
 - Directives
   - Directives have two parts. The first part is extra attributes, elements, and CSS classes that are added to an HTML template. The second part is JavaScript code that extends the normal behavior of the DOM.
   - The advantage of using directives is that an HTML template indicates the intended logic with a directive. Also, the built-in AngularJS directives handle most of the necessary DOM manipulation functionality that you need to implement to bind the data in the scope to a view.
