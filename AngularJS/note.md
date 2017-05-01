@@ -2,8 +2,8 @@
 
 ### AngularJS core concepts
 - Directives : HTML annotations that trigger Javascript behaviors
-- Modules : Where our application components live
-- Controllers : Where we add application behavior
+- Modules : Where our application components live. use `ng-app` to attach the application module to the page.
+- Controllers : Where we add application behavior. use `ng-controller` to attach a controller function to the page.
 - Expressions : How values get displayed within the page
 
 ### Detail
