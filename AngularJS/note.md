@@ -13,6 +13,8 @@
   - Usage:
     - As an attribute: `<span my-directive></span>`
     - As an element: `<my-directive></my-directive>`
+    - As a class: `<span class="my-directive: expression;"></span>`     ----- for much older browsers
+    - As a comment: `<!-- directive: my-directive expression -->`     ----- for much older browsers
   
 - Data binding directives
   - one-way binding, means a value is taken from the data model and inserted into an HTML element.
