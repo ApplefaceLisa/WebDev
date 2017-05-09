@@ -16,8 +16,6 @@ Hong Kong University
   - [What is the 3-Tier Architecture?](http://www.tonymarston.net/php-mysql/3-tier-architecture.html)
   
 ### Introduction to Node.js and NPM
-(Week01_1-Nodejs.pdf)
-
 - What is Node.js
   - Javascript runtime built on Chrome V8 Javascript engine
   - Uses an event-driven, non-bloking I/O model, which makes it lightweight and efficient.
@@ -31,10 +29,18 @@ Hong Kong University
 - Node Package Manager (NPM)
   - NPM manages ecosystem of node modules / packages
   - A package contains: JS files and package.json (manifest)
+  - Semantic Versioning
+    - `<Major Version>.<Minor Version>.<Patch>`
+    - npm install can specify the acceptable package version:
+      - Exact: `npm install express@4.0.0`
+      - Patch acceptable: `npm install express@"~4.0.0"`
+      - Minor version acceptable: `npm install express@"^4.0.0"`
   
 - Setting up Node.js and npm on your computer  
   - Verifying the Node Installation: `node -v`, `npm -v`
   
+- Slides (Week01_1-Nodejs.pdf)
+
 - Additional resources
   - [Nodejs.org](https://nodejs.org/)
   - [Npmjs.com](https://www.npmjs.com/)
@@ -59,6 +65,31 @@ Hong Kong University
     - Closures: 
       - A function defined inside another function has access to all the variables declared in the outer function (outer scope).
       - The inner function will continue to have access to the variables from the outer scope even after the outer function has returned.
+
+  - Asynchronous programming
+  
+  - Different kinds of Node Modules and how to use them
+    - File-based Modules
+      - user defined modules
+      - usage:
+        - require("./module_name")
+        - specify the relative path to the file
+        
+    - Core Modules
+      - Part of core NodeJS
+      - Examples: path, fs, os, util,...
+      - usage:
+        - require("module_name")
+          
+    - External Node modules
+      - Third-party modules
+      - Installed using NPM
+      - node_modules folder in your Node application
+      - usage:
+        - require("module_name")
+        - Looks for external modules in 
+          - ./node_modules, ../node_modules, ../../node_modules,etc
+          - Up the folder hierarchy until the module is found      
 
 ### Node and HTTP
 
