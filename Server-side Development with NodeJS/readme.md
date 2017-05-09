@@ -281,6 +281,20 @@ Hong Kong University
   });  
   ```
 
+- Slides
+  - Week01_5-HTTP-Protocol.pdf
+  - Week01_6-Node-HTTP.pdf
+  
+- Additional resources
+  - Node
+    - [Anatomy of an HTTP Transaction](https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/)
+    - [Node http module](https://nodejs.org/api/http.html)
+    - [Node fs module](https://nodejs.org/dist/latest-v4.x/docs/api/fs.html)
+    - [Node path module](https://nodejs.org/dist/latest-v4.x/docs/api/path.html)
+  
+  - Http
+    - [Hypertext Transfer Protocol](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+    - [List of HTTP Status Codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)    
 
 ### Introduction to Express
 
