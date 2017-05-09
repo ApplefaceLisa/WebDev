@@ -178,7 +178,7 @@ Hong Kong University
       500 | Internal server Error
       505 | HTTP Version Not Supported
 
-- **Node HTTP module**
+- **Node http module**
   - Core networking module supporting a high-performance foundation for a HTTP stack
   - Using the module:
   
@@ -200,9 +200,28 @@ Hong Kong University
   
     `server.listen(port[,...]);`
     
+- **Node path module**   
+  - The path module enables user to specify the paths to various files. 
+  - The path module will construct the path based upon the native operating system of the machine on which this code is running, it takes care of "/" or "\" for different OS paths.
+  - Using path Module:
     
+    `var path = require('path');`
     
+  - The path module supports additional methods:
+    - `path.resolve('./public'+fileUrl);` , will return the absolute path of file
+    - `path.extname(filePath);`  will return the extension for the file that is specified by the file path.
     
+- **Node fs module** 
+  - filesystem module
+  - Usage:
+    `var fs = require('fs');`
+  - Some methods:
+    - `fs.exists(filePath, function(exists){...});` will return true if the specified file exists, and false if not exists, as the param
+    for callback function.
+    - `fs.createReadStream(filePath).pipe(res);` will create a read stream for the specified file, and pipe to response.
+
+
+
 ### Introduction to Express
 
 
