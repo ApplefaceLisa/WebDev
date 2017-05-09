@@ -104,8 +104,105 @@ Hong Kong University
   - [RequireJS](http://requirejs.org/)
 
 ### Node and HTTP
+- Objectives
+  - Create a simple HTTP server using the Node HTTP core module
+  - Create a web server to serve static HTML files from a folder
+  
+- The HTTP (Hypertext Transfer Protocol) Protocol
+  - A client-server communications protocol
+  - Allows retrieving inter-linked text documents(hypertext)
+    - world wide web
+  - HTTP verbs:
+    - HEAD
+    - GET
+    - POST
+    - PUT
+    - DELETE
+    - TRACE
+    - OPTIONS
+    - CONNECT
+  
+  - HTTP request message
+    - Request Line
+      - Method
+      - URL
+      - Version (of http protocol)
+      - Example:  `GET  /index.html  HTTP/1.1`
+    - Headers
+      - Header Field Name : Value 
+      - Example: 
+        ```
+        host: localhost:3000
+        connection: keep-alive
+        user-agent: Mozilla/5.0....
+        accept-encoding: gzip, deflate, sdch
+        ```
+    - Blank Line : divide headers and body
+    - Body
+      - Body Contents
+  
+  - HTTP response message
+    - Status Line
+      - Example: `HTTP/1.1  200  OK`
+    
+    - Headers
+      - Example:
+        ```
+        Connection: keep-alive
+        Content-Type: text/html
+        Date: Sun, 21 Feb 2016 06:01:43 GMT
+        Transfer-Encoding: chunked
+        ```
+    
+    - Blank Line : used for dividing
+    
+    - Response Data
+      - Example:
+        ```
+        <html><title>This is index.html</title><body>....</body></html>
+        ```
 
+    - HTTP response code (main ones)
+    
+      Code | Meaning
+      ---- | ---------------------------------------
+      200 | OK
+      201 | Created
+      301 | Moved Pernamently
+      304 | Not Modified
+      400 | Bad Request
+      401 | Unauthorized
+      403 | Forbidden
+      404 | Not Found
+      422 | Unprocessable Entry
+      500 | Internal server Error
+      505 | HTTP Version Not Supported
 
+- **Node HTTP module**
+  - Core networking module supporting a high-performance foundation for a HTTP stack
+  - Using the module:
+  
+    `var http = require('http');`
+    
+  - Creating a server:
+  
+    `var server = http.createServer(function(req, res){...});`
+    
+    - Incoming request message information available through the first parameter "req" (req.header, req.body,...)
+    - Response message is constructed on the second parameter "res"
+      - res.setHeader("Content-Type", "text/html");
+      - res.statusCode = 200;
+      - res.writeHead(200, {"Content-Type": "text/html"});
+      - res.write('Hello World!');
+      - res.end(`'<html><body><h1>Hello World</h1></body></html>'`);
+    
+  - Starting the server:
+  
+    `server.listen(port[,...]);`
+    
+    
+    
+    
 ### Introduction to Express
 
 
