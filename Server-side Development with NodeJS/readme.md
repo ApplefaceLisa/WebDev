@@ -198,7 +198,7 @@ Hong Kong University
     
   - Starting the server:
   
-    `server.listen(port[,...]);`
+    `server.listen(port[,hostname, callback]);`
     
 - **[Node path module](https://nodejs.org/api/path.html)**   
   - The path module enables user to specify the paths to various files. 
@@ -220,7 +220,23 @@ Hong Kong University
     for callback function.
     - `fs.createReadStream(filePath).pipe(res);` will create a read stream for the specified file, and pipe to response.
 
-
+- Example Server
+  ```
+  var http = require('http');
+  var hostname = 'localhost';
+  var port = 3000;
+  
+  var server = http.createServer(function(req, res){
+    console.log(req.header);
+    
+    res.writeHead(200, { 'Content-Type':'text/html' });
+    res.end('<h1>Hello World</h1>');
+  });
+  
+  server.listen(port, hostname, function(){
+    console.log(`Server running at http://${hostname}:${port}`);
+  });
+  ```
 
 ### Introduction to Express
 
