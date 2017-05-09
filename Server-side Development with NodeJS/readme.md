@@ -91,6 +91,18 @@ Hong Kong University
           - ./node_modules, ../node_modules, ../../node_modules,etc
           - Up the folder hierarchy until the module is found      
 
+- Slides
+  - Week01_2-Node-Modules.pdf
+  - Week01_3-Node-Callbacks-Error-Handling.pdf
+  - Week01_4-Node-Modules-Further.pdf
+  
+- Additional resources
+  - [Node Modules](https://nodejs.org/dist/latest-v4.x/docs/api/modules.html)
+  - [yargs](https://github.com/yargs/yargs)
+  - [CommonJS](http://www.commonjs.org/)
+  - [CommonJS Module Format](http://wiki.commonjs.org/wiki/Modules/1.1.1)
+  - [RequireJS](http://requirejs.org/)
+
 ### Node and HTTP
 
 
