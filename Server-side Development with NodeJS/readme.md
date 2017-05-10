@@ -405,6 +405,7 @@ Hong Kong University
       ```
     - why use this way?
   
-  
+### Articles
+- [Understanding Express.js](http://evanhahn.com/understanding-express/)
 
 ## Week 02
