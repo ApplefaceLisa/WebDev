@@ -302,53 +302,109 @@ Hong Kong University
   - Develop a web server that supports a REST API
   - Use Express router to implement support for the REST API
   
-- What is Express
-  - Express: fast, unopinionated, minimalist web framework for Node.js (from expressjs.com)
-  - Web application framework that provides a robust set of features
-  - Express has many third-party _**middleware**_ to extend functionality
-  - Installing: `npm install express --save`
+- Express Introduction  
+  - What is Express
+    - Express: fast, unopinionated, minimalist web framework for Node.js (from expressjs.com)
+    - Web application framework that provides a robust set of features
+    - Express has many third-party _**middleware**_ to extend functionality
+    - Installing: `npm install express --save`
+
+  - Example: express server-1, use express to build a simple server, when get request, return greeting info.
+    ```
+    var express = require('express'),
+        http    = require('http');
+
+    var hostname = 'localhost';
+    var port     = 3000;
+
+    var app = express();
+    app.use(function(req, res, next) {
+      console.log(req.headers);
+
+      res.writeHead(200, {'Content-Type':'text/html'});
+      res.end('<html><body><h1>Welcome to Express Server-1</h1></body></html>');
+    });
+
+    var server = http.createServer(app);
+    server.listen(port, hostname, function(){
+      console.log(`Server running at http://${hostname}:${port}`);
+    });  
+    ```
+  - Example: express server-2, serving static files. use middleware 'morgan' which allows us to log information on the server side.
+    ```
+    var express = require('express'),
+        morgan = require('morgan');
+
+    var hostname = 'localhost';
+    var port     = 3000;
+
+    var app = express();
+
+    app.use(morgan('dev'));
+    app.use(express.static(__dirname + '/public'));
+
+    app.listen(port, hostname, function(){
+      console.log(`Server running at http://${hostname}:${port}`);
+    });  
+    ```
+
+    In browser, do 'http://localhost:3000/index.html' will show the index.html; do 'http://localhost:3000/aboutus.html' will show aboutus.html. If do 'http://localhost:3000/home.html' will return 404 error. And this server only support 'GET' method.
+
+- REST (REpresentational State Transfer)
+  - REST is a style of software architechture for distributed hypermedia systems such as the World Wide Web.
+  - Introduced in the doctoral dissertation of Roy Fielding, one of the principle authors of the HTTP specification.
+  - A collection of network architecture principles which outline how resources are defined and addressed.
+  - Four basic design principles:
+    - Use HTTP methods explicitly
+    - Be stateless : server-side should not track the client state
+    - Expose directory structure-like URIs
+    - Transfer information using XML, JSON or both
+  - REST and HTTP
+    - The motivation for REST are to capture the characteristics of the Web that made the web successful
+      - URI(Uniform Resource Indicator) Addressable resources
+      - HTTP Protocol
+      - Make a Request - Receive Response - Display Response
+    - Exploits the use of the HTTP protocol beyond HTTP POST and HTTP GET
+      - HTTP PUT, HTTP DELETE
+      - Preserve Idempotence
+      
+  - REST concepts: 
+    - resources
+    - verbs (actions, CRUD Create/Read/Update/Delete --> HTTP POST/GET/PUT/DELETE)
+    - representation
+    
+- Express Application Routes
+
+  `app.methodName(path, function(req, res, next){...});`
   
-- Example: express server-1, use express to build a simple server, when get request, return greeting info.
-  ```
-  var express = require('express'),
-      http    = require('http');
-
-  var hostname = 'localhost';
-  var port     = 3000;
-
-  var app = express();
-  app.use(function(req, res, next) {
-    console.log(req.headers);
-
-    res.writeHead(200, {'Content-Type':'text/html'});
-    res.end('<html><body><h1>Welcome to Express Server-1</h1></body></html>');
-  });
-
-  var server = http.createServer(app);
-  server.listen(port, hostname, function(){
-    console.log(`Server running at http://${hostname}:${port}`);
-  });  
-  ```
-- Example: express server-2, serving static files. use middleware 'morgan' which allows us to log information on the server side.
-  ```
-  var express = require('express'),
-      morgan = require('morgan');
-
-  var hostname = 'localhost';
-  var port     = 3000;
-
-  var app = express();
-
-  app.use(morgan('dev'));
-  app.use(express.static(__dirname + '/public'));
-
-  app.listen(port, hostname, function(){
-    console.log(`Server running at http://${hostname}:${port}`);
-  });  
-  ```
+  - app.all
+  - app.get
+  - app.post
+  - app.put,
+  - app.delete
   
-  In browser, do 'http://localhost:3000/index.html' will show the index.html; do 'http://localhost:3000/aboutus.html' will show aboutus.html. If do 'http://localhost:3000/home.html' will return 404 error. And this server only support 'GET' method.
+  - Body Parser
+    - Middleware to parse the body of the message
+    - Using body parser:
+      ```
+      var bodyParser = require('body-parser');
+      app.use(bodyParser.json());   // parse the JSON in the body
+      ```
+    - Parses the body of the message and populates the *req.body* property
+    
+  - Express Router
+    - Express router creates a mini-express application:
+      ```
+      var dishRouter = express.Router();
+      dishRouter.use(bodyParser.json());
+      
+      dishRouter.route('/')
+        .all(...);
+        .get(...);
+        ...
+      ```
+    - why use this way?
   
--   
+  
 
 ## Week 02
