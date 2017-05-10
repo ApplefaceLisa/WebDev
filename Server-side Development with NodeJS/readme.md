@@ -374,14 +374,15 @@ Hong Kong University
     - representation
     
 - Express Application Routes
+  - routing
 
-  `app.methodName(path, function(req, res, next){...});`
-  
-  - app.all
-  - app.get
-  - app.post
-  - app.put,
-  - app.delete
+    `app.methodName(path, function(req, res, next){...});`
+
+    - app.all
+    - app.get
+    - app.post
+    - app.put,
+    - app.delete
   
   - Body Parser
     - Middleware to parse the body of the message
