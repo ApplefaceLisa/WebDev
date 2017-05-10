@@ -297,6 +297,58 @@ Hong Kong University
     - [List of HTTP Status Codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)    
 
 ### Introduction to Express
+- Objective
+  - Implement a web server using the Express framework
+  - Develop a web server that supports a REST API
+  - Use Express router to implement support for the REST API
+  
+- What is Express
+  - Express: fast, unopinionated, minimalist web framework for Node.js (from expressjs.com)
+  - Web application framework that provides a robust set of features
+  - Express has many third-party _**middleware**_ to extend functionality
+  - Installing: `npm install express --save`
+  
+- Example: express server-1, use express to build a simple server, when get request, return greeting info.
+  ```
+  var express = require('express'),
+      http    = require('http');
 
+  var hostname = 'localhost';
+  var port     = 3000;
+
+  var app = express();
+  app.use(function(req, res, next) {
+    console.log(req.headers);
+
+    res.writeHead(200, {'Content-Type':'text/html'});
+    res.end('<html><body><h1>Welcome to Express Server-1</h1></body></html>');
+  });
+
+  var server = http.createServer(app);
+  server.listen(port, hostname, function(){
+    console.log(`Server running at http://${hostname}:${port}`);
+  });  
+  ```
+- Example: express server-2, serving static files. use middleware 'morgan' which allows us to log information on the server side.
+  ```
+  var express = require('express'),
+      morgan = require('morgan');
+
+  var hostname = 'localhost';
+  var port     = 3000;
+
+  var app = express();
+
+  app.use(morgan('dev'));
+  app.use(express.static(__dirname + '/public'));
+
+  app.listen(port, hostname, function(){
+    console.log(`Server running at http://${hostname}:${port}`);
+  });  
+  ```
+  
+  In browser, do 'http://localhost:3000/index.html' will show the index.html; do 'http://localhost:3000/aboutus.html' will show aboutus.html. If do 'http://localhost:3000/home.html' will return 404 error. And this server only support 'GET' method.
+  
+-   
 
 ## Week 02
