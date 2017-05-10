@@ -307,6 +307,7 @@ Hong Kong University
     - Express: fast, unopinionated, minimalist web framework for Node.js (from expressjs.com)
     - Web application framework that provides a robust set of features
     - Express has many third-party _**middleware**_ to extend functionality
+      - A middleware is added by calling use() on the application and passing the middleware as a parameter.
     - Installing: `npm install express --save`
 
   - Example: express server-1, use express to build a simple server, when get request, return greeting info.
@@ -384,7 +385,7 @@ Hong Kong University
     - app.put,
     - app.delete
   
-  - Body Parser
+  - [Body Parser](https://github.com/expressjs/body-parser)
     - Middleware to parse the body of the message
     - Using body parser:
       ```
@@ -408,5 +409,6 @@ Hong Kong University
   
 ### Articles
 - [Understanding Express.js](http://evanhahn.com/understanding-express/)
+- [Express APIs](http://expressjs.com/en/4x/api.html)
 
 ## Week 02
