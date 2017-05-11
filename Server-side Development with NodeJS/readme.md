@@ -412,3 +412,27 @@ Hong Kong University
 - [Express APIs](http://expressjs.com/en/4x/api.html)
 
 ## Week 02
+### Express Generator
+- What is express generator
+  - Quick scaffolding tool to generate an Express application skeleton
+  - Installing Express generator: `npm install express-generator -g`
+  
+- How to use express generator  
+
+  - `express <App Name>`
+  
+    It will automatically generate a folder with `<App Name>`, and inside the folder will be a bunch of files that are already scafolded out for you. And it'll be a rudimentary express application.
+  
+    Another approach would be to first create a folder and then thereafter move into that folder and simply type `express`, and the application will be generated within that folder. 
+
+    Express takes several command line options which you can easily read up in Express Generator documentation.
+  
+  - move into the `<App Name>` folder, then type `npm install`
+
+    This will enable all the node modules on which your Express application is dependent to be installed locally within the application folder.
+
+### Intro to MongoDB
+
+### Node and MongoDB
+
+### Mongoose ODM
