@@ -522,10 +522,23 @@ Hong Kong University
       console.log(`Server running at http://${hostname}:${port}/`);
     });    
     ```
+    
+- Slides
+  - Week01_7-Intro-Express.pdf
+  - Week01_8-REST.pdf
+  - Week01_9-Express-Router.pdf
+  
+- Additional Resources
+  - [ExpressJS](http://expressjs.com/)
+  - [Connect](https://github.com/senchalabs/connect)
+  - [Express Wiki](https://github.com/expressjs/express/wiki)
+  - [morgan](https://github.com/expressjs/morgan)
+  - [body-parser](https://github.com/expressjs/body-parser)  
   
 ### Articles
 - [Understanding Express.js](http://evanhahn.com/understanding-express/)
 - [Express APIs](http://expressjs.com/en/4x/api.html)
+- [A short guide to Connect Middleware](https://stephensugden.com/middleware_guide/)
 
 ## Week 02
 ### Express Generator
