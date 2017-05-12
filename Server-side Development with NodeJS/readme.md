@@ -559,6 +559,28 @@ Hong Kong University
   - move into the `<App Name>` folder, then type `npm install`
 
     This will enable all the node modules on which your Express application is dependent to be installed locally within the application folder.
+    
+  - use `npm start` to start the server, default port is 3000
+
+- File structure after generating
+  ```
+  <App Name>/
+    app.js  ------  starting applicaation
+    package.json
+    node_modules/
+    bin/    ------  take a look at file www
+    public/ ------  static resources, like html, css, image, etc
+    routes/ ------  application routes
+    views/  ------  template engine templates
+  ```
+  
+- Slides
+
+  Week02_1-Express-Generator.pdf
+  
+- Additional resources
+  - [Express](http://expressjs.com/)
+  - [Express Generator](http://expressjs.com/en/starter/generator.html)
 
 ### Intro to MongoDB
 
