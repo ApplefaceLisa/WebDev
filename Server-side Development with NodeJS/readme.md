@@ -574,6 +574,19 @@ Hong Kong University
     views/  ------  template engine templates
   ```
   
+- Example : modify the week1 assignment using the express-generator
+  - copy the _dishRouter.js, promoRouter.js and leaderRouter.js_ from week1 assignment to the _routes_ folder within the Express application just scaffolded out.
+  - add the following code in app.js
+  ```
+    var dishRouter = require('./routes/dishRouter');
+    var promoRouter = require('./routes/promoRouter');
+    var leaderRouter = require('./routes/leaderRouter');   
+      
+    app.use('/dishes',dishRouter);
+    app.use('/promotions',promoRouter);
+    app.use('/leadership',leaderRouter);      
+  ```  
+  
 - Slides
 
   Week02_1-Express-Generator.pdf
