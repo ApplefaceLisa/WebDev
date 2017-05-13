@@ -3,7 +3,7 @@ Hong Kong University
 
 ## Week 01
 
-### Full Stack Web Development: The Big Picture 
+### 1.1 Full Stack Web Development: The Big Picture 
 - the big picture (Week01_FSWD-BigPicture.pdf)
 
 - course overview (Week01_CourseOverview.pdf)
@@ -15,7 +15,7 @@ Hong Kong University
   - [Multi-tier Architecture](https://en.wikipedia.org/wiki/Multitier_architecture)
   - [What is the 3-Tier Architecture?](http://www.tonymarston.net/php-mysql/3-tier-architecture.html)
   
-### Introduction to Node.js and NPM
+### 1.2 Introduction to Node.js and NPM
 - What is Node.js
   - Javascript runtime built on Chrome V8 Javascript engine
   - Uses an event-driven, non-bloking I/O model, which makes it lightweight and efficient.
@@ -47,7 +47,7 @@ Hong Kong University
   - [Node API Documentation](https://nodejs.org/api/)
   - [NPM Documentation](https://docs.npmjs.com/)
 
-### Node Modules
+### 1.3 Node Modules
 - Objectives
   - Write simple Node applications and run them using Node
   - Develop Node modules and use them within your Node applications
@@ -103,7 +103,7 @@ Hong Kong University
   - [CommonJS Module Format](http://wiki.commonjs.org/wiki/Modules/1.1.1)
   - [RequireJS](http://requirejs.org/)
 
-### Node and HTTP
+### 1.4 Node and HTTP
 - Objectives
   - Create a simple HTTP server using the Node HTTP core module
   - Create a web server to serve static HTML files from a folder
@@ -296,7 +296,7 @@ Hong Kong University
     - [Hypertext Transfer Protocol](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
     - [List of HTTP Status Codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)    
 
-### Introduction to Express
+### 1.5 Introduction to Express
 - Objective
   - Implement a web server using the Express framework
   - Develop a web server that supports a REST API
@@ -541,7 +541,7 @@ Hong Kong University
 - [A short guide to Connect Middleware](https://stephensugden.com/middleware_guide/)
 
 ## Week 02
-### Express Generator
+### 2.1 Express Generator
 - What is express generator
   - Quick scaffolding tool to generate an Express application skeleton
   - Installing Express generator: `npm install express-generator -g`
@@ -595,8 +595,11 @@ Hong Kong University
   - [Express](http://expressjs.com/)
   - [Express Generator](http://expressjs.com/en/starter/generator.html)
 
-### Intro to MongoDB
+### 2.2 Intro to MongoDB
+- Objective
+  - Explain the salient features of MongoDB and understand the difference between SQL and NoSQL databases.
+  - Download, install and run a MongoDB server and interact with it from the mongo REPL shell.
 
-### Node and MongoDB
+### 2.3 Node and MongoDB
 
-### Mongoose ODM
+### 2.4 Mongoose ODM
