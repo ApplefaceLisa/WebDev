@@ -45,3 +45,5 @@
  - click
  - keypress
  
+# Articles
+- [Building a Responsive jQuery Carousel Plugin from Scratch](https://www.barrelny.com/blog/building-a-jquery-slideshow-plugin-from-scratch/)
