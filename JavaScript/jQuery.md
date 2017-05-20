@@ -47,6 +47,6 @@
  
 # Articles
 - [Simple jQuery Carousel Slider Tutorial](http://paulmason.name/item/simple-jquery-carousel-slider-tutorial) fadeIn/fadeOut
-- [Building a Responsive jQuery Carousel Plugin from Scratch](https://www.barrelny.com/blog/building-a-jquery-slideshow-plugin-from-scratch/)     
+- [Building a Responsive jQuery Carousel Plugin from Scratch](https://www.barrelny.com/blog/building-a-jquery-slideshow-plugin-from-scratch/) Prev/Next, Responsive    
   - [Code](https://codepen.io/barrel/pres/oBefw)
 - [Project: Creating an Image Carousel/Slider in Javascript](https://www.theodinproject.com/courses/javascript-and-jquery/lessons/creating-an-image-carousel-slider)
