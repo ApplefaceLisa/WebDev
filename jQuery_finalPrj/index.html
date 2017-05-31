@@ -18,14 +18,14 @@
           <p>
               Limited coverage plan provides the basic protection, and may not be adequate. It may cost you less, but the coverage is limited to pre defined clause of fixed amout of charges. Must read policy details for benefit and coverage details.
           </p>
-          <div class="right"><button>Select</button></div>
+          <div class="right"><button><a href="#limited_coverage">Select</a></button></div>
       </div>
       <div class="subbox">
           <h2>Comprehensive Coverage</h2>
           <p>
               These plans offer much better and flexible coverage. Most of these plans work like PPO type of 80-20% plan. Means insured have to pay 20% of the cost for the first 5,000 per policy period policy pays rest 80%.
           </p>
-          <div class="right"><button>Select</button></div>
+          <div class="right"><button><a href="#compre_coverage">Select</a></button></div>
       </div>
     </div>
   </div>
@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="right light_green">
-        <button>Select</button>
+        <button><a href="#personal">Select</a></button>
       </div>
     </div>
     <div class="content">
@@ -58,7 +58,7 @@
         </div>
       </div>
       <div class="right light_green">
-        <button>Select</button>
+        <button><a href="#personal">Select</a></button>
       </div>
     </div>
   </div>
@@ -76,7 +76,7 @@
           <p>Plan-A offers medical coverage and emergency services to individuals and families travelling outside their Home Countries.</p>
         </div>
       </div>
-      <div class="right light_green"><button>Select</button></div>
+      <div class="right light_green"><button><a href="#personal">Select</a></button></div>
     </div>
     <div class="content">
       <div class="flex_box">
@@ -88,7 +88,7 @@
           <p>Plan-B offers medical coverage and emergency services to individuals and families travelling outside their Home Countries. The plan pays 75% of eligible expenses to the selected Medical Maximum.</p>
         </div>
       </div>
-      <div class="right light_green"><button>Select</button></div>
+      <div class="right light_green"><button><a href="#personal">Select</a></button></div>
     </div>
     <div class="content">
       <div class="flex_box">
@@ -100,7 +100,7 @@
           <p>Plan-C offers medical coverage and emergency services to individuals and families travelling outside their Home Countries. The plan pays 90% of eligible expenses to the selected Medical Maximum.</p>
         </div>
       </div>
-      <div class="right light_green"><button>Select</button></div>
+      <div class="right light_green"><button><a href="#personal">Select</a></button></div>
     </div>
   </div>
   <div class="box" id="personal">
@@ -113,31 +113,34 @@
       </div>
       <table>
         <tr>
-          <td>Name <span class="red">* </span>:</td>
+          <td>Name <span class="red">* </span></td>
           <td><input type="text" name="name" required></td>
         </td>
         <tr>
-          <td>Address <span class="red">* </span>:</td>
+          <td>Address <span class="red">* </span></td>
           <td><input type="text" name="address" required></td>
         </tr>
         <tr>
           <td></td>
-          <td><input type="text" name="address" required></td>
+          <td><input type="text" name="address"></td>
         </tr>
         <tr>
-          <td>Start date <span class="red">* </span>:</td>
+          <td>Start date <span class="red">* </span></td>
           <td><input type="date" name="sod"></td>
         </tr>
         <tr>
-          <td>End date <span class="red">* </span>:</td>
+          <td>End date <span class="red">* </span></td>
           <td><input type="date" name="eod"></td>
         </tr>
       </table>
     </div>
     <div class="flex_box2">
         <p>+ <a href="#">Add more insured</a></p>
-        <button>Submit</button>
+        <button><a href="#success">Submit</a></button>
     </div>
+  </div>
+  <div class="box" id="success">
+    <h1 style="text-align: center;">Submit Successful!</h1>
   </div>
 </body>
 <script
@@ -145,5 +148,30 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
 <script type="text/javascript">
+/*
+    $(function() {
+      $(".box").css("display", "none");
+      $("#plans").css("display", "block");
+      $("a").on("click", function(event) {
+        event.preventDefault();
+        $id = $(this).attr("href");
+        console.log(typeof $id);
+      });
+    });
+
+    $(window).on("hashchange", function() {
+        // Read hash
+        var targetScreen = location.hash;
+
+        // Hide all other screen first
+        $(".box").hide();
+
+        // Show the target screen
+        $(targetScreen).show();
+      });
+
+      // Set default screen
+      location.hash = "plans";
+*/
 </script>
 </html>
