@@ -99,7 +99,7 @@ button:active {
 #plans .header {
     background-color: #8cb3d9;
 }
-#limited_coverage .header, #compre_coverage .header {
+#limited_coverage .header, #compre_coverage .header, #personal .header {
     background: linear-gradient(#ffffff, #d9d9d9);
     background: -webkit-linear-gradient(#ffffff, #d9d9d9); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(#ffffff, #d9d9d9); /* For Opera 11.1 to 12.0 */
@@ -119,4 +119,30 @@ button:active {
 }
 .light_yellow {
      background-color: #ffffe6;
+}
+.red {
+    color: red;
+}
+table {
+    margin: 10px;
+}
+tr>td {
+    text-align: right;
+}
+td:nth-child(2) {
+    text-align: left;
+}
+.info {
+    width: 70%;
+    border: 2px solid #e0e0eb;
+    margin: 20px;
+    border-radius: 15px;
+    position: relative;
+}
+.title {
+    border: 2px solid #e0e0eb;
+    border-radius: 15px 15px 6px 6px;
+    background-color: #e6f2ff;
+    margin: -2px;
+    padding: 0;
 }
