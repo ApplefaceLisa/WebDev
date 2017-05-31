@@ -154,3 +154,7 @@ td:nth-child(2) {
     margin: -2px;
     padding-left: 10px;
 }
+#navigator {
+    border: none;
+    display: none;
+}
