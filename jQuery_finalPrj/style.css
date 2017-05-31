@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+h1 {
+    font-size: 1.8em;
+}
+h2 {
+    font-size: 1.5em;
+}
+p {
+    font-size: 1.2em;
+}
+button {
+    color: #0066cc;
+    background-color: #e6e6e6;
+    border-radius: 8px;
+    border: 1px solid #888888;
+    box-shadow: 0 2px 5px;
+    outline: none;
+    padding: 5px;
+    font-weight: bold;
+}
+button:active {
+    box-shadow: 0 0 5px;
+    transform: translateY(2px);
+}
+.box {
+    width: 60%;
+    padding: 0;
+    margin: 30px auto;
+    border-radius: 5px;
+    border: 2px solid #d9e6f2;
+}
+.header {
+    border-radius: 5px;
+    padding: 2px 10px;
+    margin-right: 5px;
+    box-shadow: 5px 5px 6px #a6a6a6;
+}
+.subbox {
+    width: 90%;
+    margin: 15px auto;
+    padding: 5px 10px 10px 10px;
+    border: 2px solid #8cb3d9;
+    border-radius: 6px;
+    background: linear-gradient(#ffffff, #d9d9d9);
+    background: -webkit-linear-gradient(#ffffff, #d9d9d9); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ffffff, #d9d9d9); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ffffff, #d9d9d9); /* For Firefox 3.6 to 15 */
+}
+.right {
+    text-align: right;
+}
+.flex_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: center;
+    padding: 30px;
+}
+.name {
+    position: relative;
+    width: 24%;
+    padding-top: 18%;
+    background-color: orange;
+    border-radius: 8px;
+    border: 2px solid #e6f2ff;
+}
+.text {
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   text-align: center;
+   font-size: 20px;
+   color: white;
+}
+.details {
+    width: 65%;
+}
+.light_green {
+    background-color: #d6f5d6;
+    padding: 8px 5px;
+}
+#plans {
+    background: linear-gradient(#ffffff, #c6d9ec);
+    background: -webkit-linear-gradient(#ffffff, #c6d9ec); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ffffff, #c6d9ec); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ffffff, #c6d9ec); /* For Firefox 3.6 to 15 */
+}
+#plans .header {
+    background-color: #8cb3d9;
+}
+#limited_coverage .header, #compre_coverage .header {
+    background: linear-gradient(#ffffff, #d9d9d9);
+    background: -webkit-linear-gradient(#ffffff, #d9d9d9); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ffffff, #d9d9d9); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ffffff, #d9d9d9); /* For Firefox 3.6 to 15 */
+}
+.gradient_orange {
+    background: linear-gradient(#ffb380, #ff751a);
+    background: -webkit-linear-gradient(#ffb380, #ff751a); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ffb380, #ff751a); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ffb380, #ff751a); /* For Firefox 3.6 to 15 */
+}
+.gradient_blue {
+    background: linear-gradient(#adc2eb, #5c85d6);
+    background: -webkit-linear-gradient(#adc2eb, #5c85d6); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#adc2eb, #5c85d6); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#adc2eb, #5c85d6); /* For Firefox 3.6 to 15 */
+}
+.light_yellow {
+     background-color: #ffffe6;
+}
