@@ -5,5 +5,7 @@ References
 
   Using jQuery and handlebar
   
+- [Single Page Application Micro Framework](https://github.com/c-smile/spapp)  
+  
 - [Single page apps in depth](http://singlepageappbook.com/single-page.html)
   - [github](https://github.com/mixu/singlepageappbook) 
