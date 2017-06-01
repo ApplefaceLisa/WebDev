@@ -6,7 +6,6 @@
 </head>
 <body>
   <div class="box" id="navigator">
-      <a href="#">Plans</a> <span> >> </span>
   </div>
   <div class="box" id="plans">
     <div class="header">
@@ -25,7 +24,7 @@
           <p>
               These plans offer much better and flexible coverage. Most of these plans work like PPO type of 80-20% plan. Means insured have to pay 20% of the cost for the first 5,000 per policy period policy pays rest 80%.
           </p>
-          <div class="right"><button><a href="#compre_coverage">Select</a></button></div>
+          <div class="right"><button><a href="#comprehensive_coverage">Select</a></button></div>
       </div>
     </div>
   </div>
@@ -44,7 +43,7 @@
         </div>
       </div>
       <div class="right light_green">
-        <button><a href="#personal">Select</a></button>
+        <button><a href="#insured_info">Select</a></button>
       </div>
     </div>
     <div class="content">
@@ -58,11 +57,11 @@
         </div>
       </div>
       <div class="right light_green">
-        <button><a href="#personal">Select</a></button>
+        <button><a href="#insured_info">Select</a></button>
       </div>
     </div>
   </div>
-  <div class="box" id="compre_coverage">
+  <div class="box" id="comprehensive_coverage">
     <div class="header">
         <h1>Comprehensive Coverage</h1>
     </div>
@@ -76,7 +75,7 @@
           <p>Plan-A offers medical coverage and emergency services to individuals and families travelling outside their Home Countries.</p>
         </div>
       </div>
-      <div class="right light_green"><button><a href="#personal">Select</a></button></div>
+      <div class="right light_green"><button><a href="#insured_info">Select</a></button></div>
     </div>
     <div class="content">
       <div class="flex_box">
@@ -88,7 +87,7 @@
           <p>Plan-B offers medical coverage and emergency services to individuals and families travelling outside their Home Countries. The plan pays 75% of eligible expenses to the selected Medical Maximum.</p>
         </div>
       </div>
-      <div class="right light_green"><button><a href="#personal">Select</a></button></div>
+      <div class="right light_green"><button><a href="#insured_info">Select</a></button></div>
     </div>
     <div class="content">
       <div class="flex_box">
@@ -100,10 +99,10 @@
           <p>Plan-C offers medical coverage and emergency services to individuals and families travelling outside their Home Countries. The plan pays 90% of eligible expenses to the selected Medical Maximum.</p>
         </div>
       </div>
-      <div class="right light_green"><button><a href="#personal">Select</a></button></div>
+      <div class="right light_green"><button><a href="#insured_info">Select</a></button></div>
     </div>
   </div>
-  <div class="box" id="personal">
+  <div class="box" id="insured_info">
     <div class="header">
       <h1>Personal Details</h1>
     </div>
@@ -147,7 +146,9 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-<script type="text/javascript">
+<script type="application/javascript">
+//
+    var $path = [];
     $(window).on("hashchange", function() {
         // Read hash
         var targetScreen = location.hash;
@@ -155,8 +156,49 @@
         $(".box").hide();
         // Show the target screen
         $(targetScreen).show();
-      });
-      // Set default screen
-      location.hash = "plans";
+        // Show the path info
+        showPath(targetScreen);
+    });
+    // Set default screen
+    location.hash = "plans";
+
+    function showPath(target) {
+      var index = $path.indexOf(target);
+      if (index === -1) {
+        $path.push(target);
+      } else {
+        $path = $path.slice(0, index+1);
+      }
+
+      if ($path.length == 0) {
+        $('#navigator').hide();
+        return;
+      }
+
+      var tmp = $path[0];
+      var $html = "<a href = " + tmp + ">" + extractName(tmp) + "</a>";
+      for (var i = 1; i < $path.length; i++) {
+        tmp = $path[i];
+        $html += " >> " + "<a href = " + tmp + ">" + extractName(tmp) + "</a>";
+      }
+      $('#navigator').html($html).show();
+    }
+
+    function extractName(str) {
+      return str.slice(str.indexOf("#") + 1);
+    }
+//
+/*
+    $(window).on("hashchange", function() {
+        // Read hash
+        var targetScreen = location.hash;
+        // Hide all other screen first
+        $(".box").hide();
+        // Show the target screen
+        $(targetScreen).show();
+    });
+    // Set default screen
+    location.hash = "plans";
+*/
 </script>
 </html>
