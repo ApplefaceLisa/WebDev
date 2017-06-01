@@ -22,10 +22,12 @@
 - [jQuery: Creating templates for your HTML Content](http://www.webistrate.com/jquery-creating-templates-for-your-html-content/)
   - [jquery-tmpl code](https://github.com/BorisMoore/jquery-tmpl)
   
-- [jsRender, jsViews](https://www.jsviews.com/)
+- jsRender, jsViews
   - [Difference between jsRender and jsViews](https://stackoverflow.com/questions/9965571/difference-between-jsrender-and-jsviews)
   
     In short, 
-    - JsRender helps you render HTML using a template (static HTML/CSS with embedded tokens that get replaced with data). It supports simple logic, rendering values, and custom functions.
+    - [JsRender](https://github.com/borismoore/jsrender) helps you render HTML using a template (static HTML/CSS with embedded tokens that get replaced with data). It supports simple logic, rendering values, and custom functions.
 
-    - JsViews, which is built on top of JsRender, adds observability to objects/properties. This allows you to link your json objects to HTML targets and get 2 way data binding.
+    - [JsViews](https://github.com/BorisMoore/jsviews), which is built on top of JsRender, adds observability to objects/properties. This allows you to link your json objects to HTML targets and get 2 way data binding.
+
+  - [try them online](https://www.jsviews.com/)
