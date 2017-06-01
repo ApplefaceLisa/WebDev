@@ -16,3 +16,6 @@ References
 
 - Video: [Build a Single Page Application with jQuery & AJAX](https://www.youtube.com/watch?v=NdJhKcm8JHY)
   - [Code](https://github.com/nax3t/ajax-jquery-tutorial)
+
+- jQuery Templates
+  - [jQuery: Creating templates for your HTML Content](http://www.webistrate.com/jquery-creating-templates-for-your-html-content/)
