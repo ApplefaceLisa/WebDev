@@ -31,7 +31,8 @@
     <div class="header">
       <h1>Personal Details</h1>
     </div>
-    <div class="info">
+    <form>
+    <!--div class="info">
       <div class="title">
         <h2>Insured #<span>1</span></h2>
       </div>
@@ -57,11 +58,13 @@
           <td><input type="date" name="eod"></td>
         </tr>
       </table>
+    </div-->
+    <div class="flex_box2" id="info_footer">
+        <p>+ <a href="#add_info">Add more insured</a></p>
+        <!--button><a href="#success">Submit</a></button-->
+        <input type = "submit" value="Submit" class="button" />
     </div>
-    <div class="flex_box2">
-        <p>+ <a href="#">Add more insured</a></p>
-        <button><a href="#success">Submit</a></button>
-    </div>
+    </form>
   </div>
   <div class="box" id="success">
     <h1 style="text-align: center;">Submit Successful!</h1>
@@ -103,6 +106,36 @@
     </div>
 </script>
 
+<script id="insuredTmpl" type="text/x-jsrender">
+    <div class="info">
+      <div class="title">
+        <h2>Insured #<span>{{:number}}</span></h2>
+      </div>
+      <table>
+        <tr>
+          <td>Name <span class="red">* </span></td>
+          <td><input type="text" name="name" required></td>
+        </td>
+        <tr>
+          <td>Address <span class="red">* </span></td>
+          <td><input type="text" name="address" required></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input type="text" name="address"></td>
+        </tr>
+        <tr>
+          <td>Start date <span class="red">* </span></td>
+          <td><input type="date" name="sod"></td>
+        </tr>
+        <tr>
+          <td>End date <span class="red">* </span></td>
+          <td><input type="date" name="eod"></td>
+        </tr>
+      </table>
+    </div>
+</script>
+
 <script type="application/javascript">
 //
     var $path = [];
@@ -111,6 +144,26 @@
         var targetScreen = location.hash;
         // Hide all other screen first
         $(".box").hide();
+
+        switch(targetScreen) {
+            case "#plans" :
+              renderPlans(planList);
+              break;
+
+            case "#limited_coverage":
+              renderPlanDetails(limited, "#limited_coverage");
+              break;
+            case "#comprehensive_coverage":
+              renderPlanDetails(comprehensive, "#comprehensive_coverage");
+              break;
+
+            case "#insured_info":
+              renderInsured();
+              break;
+
+            default:
+              break;
+        }
         // Show the target screen
         $(targetScreen).show();
         // Show the path info
@@ -187,8 +240,8 @@ function renderPlanDetails(planData, planId) {
     $(planId).append(content);
 };
 
-renderPlanDetails(limited, "#limited_coverage");
-renderPlanDetails(comprehensive, "#comprehensive_coverage");
+//renderPlanDetails(limited, "#limited_coverage");
+//renderPlanDetails(comprehensive, "#comprehensive_coverage");
 
 // render plan list
 var planList = [
@@ -208,7 +261,17 @@ function renderPlans(plans) {
     var content = template.render(plans);
     $("#plan_list").append(content);
 }
-renderPlans(planList);
+//renderPlans(planList);
+
+// render insured info form
+function renderInsured() {
+    var template = $.templates("#insuredTmpl");
+    var number = $("div.info").length + 1;
+    var content = template.render({number: number});
+    $(content).insertBefore($("#info_footer"));
+}
+//renderInsured();
+
 /*
     $(window).on("hashchange", function() {
         // Read hash
