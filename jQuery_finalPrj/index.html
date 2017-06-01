@@ -32,7 +32,7 @@
     <div class="header">
         <h1>Limited Coverage</h1>
     </div>
-    <div class="content">
+    <!--div class="content">
       <div class="flex_box">
         <div class="name gradient_orange">
             <div class="text"><p>Limited Plan A</p></div>
@@ -59,13 +59,13 @@
       <div class="right light_green">
         <button><a href="#insured_info">Select</a></button>
       </div>
-    </div>
+    </div-->
   </div>
   <div class="box" id="comprehensive_coverage">
     <div class="header">
         <h1>Comprehensive Coverage</h1>
     </div>
-    <div class="content">
+    <!--div class="content">
       <div class="flex_box">
         <div class="name gradient_blue">
           <div class="text"><p>Comprehensive Plan A</p></div>
@@ -100,7 +100,7 @@
         </div>
       </div>
       <div class="right light_green"><button><a href="#insured_info">Select</a></button></div>
-    </div>
+    </div-->
   </div>
   <div class="box" id="insured_info">
     <div class="header">
@@ -146,6 +146,23 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.84/jsrender.min.js"></script>
+<script id="planTmpl" type="text/x-jsrender">
+    <div class="content">
+      <div class="flex_box">
+        <div class="name {{:class}}">
+          <div class="text"><p>{{:name}}</p></div>
+        </div>
+        <div class="details">
+          <h2>{{:name}}</h2>
+          <p>{{:details}}</p>
+        </div>
+      </div>
+      <div class="right light_green">
+        <button><a href="#insured_info">Select</a></button>
+      </div>
+    </div>
+</script>
 <script type="application/javascript">
 //
     var $path = [];
@@ -188,6 +205,45 @@
       return str.slice(str.indexOf("#") + 1);
     }
 //
+var limited = [
+  {
+    "name": "Limited Plan A" ,
+    "details" : "Limited Plan A provides basic medical coverage for non-U.S. citizens, who come to the U.S. for business, pleasure, to study, or to immigrate with a maximum coverage of $120,000.",
+    "class" : "gradient_orange"
+  },
+  {
+    "name": "Limited Plan B",
+    "details" : "Limited Plan B provides basic medical coverage for non-U.S. citizens, who come to the U.S. for business, pleasure, to study, or to immigrate with a maximum coverage of $140,000.",
+    "class" : "gradient_orange"
+  }
+];
+
+var comprehensive = [
+  {
+    "name" : "Comprehensive Plan A",
+    "details" : "Plan-A offers medical coverage and emergency services to individuals and families travelling outside their Home Countries.",
+    "class" : "gradient_blue"
+  },
+  {
+    "name" : "Comprehensive Plan B",
+    "details" : "Plan-B offers medical coverage and emergency services to individuals and families travelling outside their Home Countries. The plan pays 75% of eligible expenses to the selected Medical Maximum.",
+    "class" : "gradient_blue"
+  },
+  {
+    "name" : "Comprehensive Plan C",
+    "details" : "Plan-C offers medical coverage and emergency services to individuals and families travelling outside their Home Countries. The plan pays 90% of eligible expenses to the selected Medical Maximum.",
+    "class" : "gradient_blue"
+  }
+];
+
+function renderPlanDetails(planData, planId) {
+    var template = $.templates("#planTmpl");
+    var content = template.render(planData);
+    $(planId).append(content);
+};
+
+renderPlanDetails(limited, "#limited_coverage");
+renderPlanDetails(comprehensive, "#comprehensive_coverage");
 /*
     $(window).on("hashchange", function() {
         // Read hash
