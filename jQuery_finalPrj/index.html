@@ -170,7 +170,7 @@
         $path = $path.slice(0, index+1);
       }
 
-      if ($path.length == 0) {
+      if ($path.length < 2) {
         $('#navigator').hide();
         return;
       }
