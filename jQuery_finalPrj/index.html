@@ -11,96 +11,21 @@
     <div class="header">
       <h1>Available Plans</h1>
     </div>
-    <div class="content">
-      <div class="subbox">
-          <h2>Limited Coverage</h2>
-          <p>
-              Limited coverage plan provides the basic protection, and may not be adequate. It may cost you less, but the coverage is limited to pre defined clause of fixed amout of charges. Must read policy details for benefit and coverage details.
-          </p>
-          <div class="right"><button><a href="#limited_coverage">Select</a></button></div>
-      </div>
-      <div class="subbox">
-          <h2>Comprehensive Coverage</h2>
-          <p>
-              These plans offer much better and flexible coverage. Most of these plans work like PPO type of 80-20% plan. Means insured have to pay 20% of the cost for the first 5,000 per policy period policy pays rest 80%.
-          </p>
-          <div class="right"><button><a href="#comprehensive_coverage">Select</a></button></div>
-      </div>
+    <div class="content" id="plan_list">
+      <!-- plan list will be added here -->
     </div>
   </div>
   <div class="box" id="limited_coverage">
     <div class="header">
         <h1>Limited Coverage</h1>
     </div>
-    <!--div class="content">
-      <div class="flex_box">
-        <div class="name gradient_orange">
-            <div class="text"><p>Limited Plan A</p></div>
-        </div>
-        <div class="details">
-            <h2>Limited Plan A</h2>
-            <p>Limited Plan A provides basic medical coverage for non-U.S. citizens, who come to the U.S. for business, pleasure, to study, or to immigrate with a maximum coverage of $120,000.</p>
-        </div>
-      </div>
-      <div class="right light_green">
-        <button><a href="#insured_info">Select</a></button>
-      </div>
-    </div>
-    <div class="content">
-      <div class="flex_box">
-        <div class="name gradient_orange">
-            <div class="text"><p>Limited Plan B</p></div>
-        </div>
-        <div class="details">
-            <h2>Limited Plan B</h2>
-            <p>Limited Plan B provides basic medical coverage for non-U.S. citizens, who come to the U.S. for business, pleasure, to study, or to immigrate with a maximum coverage of $140,000.</p>
-        </div>
-      </div>
-      <div class="right light_green">
-        <button><a href="#insured_info">Select</a></button>
-      </div>
-    </div-->
+    <!-- plans detail will be added here -->
   </div>
   <div class="box" id="comprehensive_coverage">
     <div class="header">
         <h1>Comprehensive Coverage</h1>
     </div>
-    <!--div class="content">
-      <div class="flex_box">
-        <div class="name gradient_blue">
-          <div class="text"><p>Comprehensive Plan A</p></div>
-        </div>
-        <div class="details">
-          <h2>Comprehensive Plan A</h2>
-          <p>Plan-A offers medical coverage and emergency services to individuals and families travelling outside their Home Countries.</p>
-        </div>
-      </div>
-      <div class="right light_green"><button><a href="#insured_info">Select</a></button></div>
-    </div>
-    <div class="content">
-      <div class="flex_box">
-        <div class="name gradient_blue">
-          <div class="text"><p>Comprehensive Plan B</p></div>
-        </div>
-        <div class="details">
-          <h2>Comprehensive Plan B</h2>
-          <p>Plan-B offers medical coverage and emergency services to individuals and families travelling outside their Home Countries. The plan pays 75% of eligible expenses to the selected Medical Maximum.</p>
-        </div>
-      </div>
-      <div class="right light_green"><button><a href="#insured_info">Select</a></button></div>
-    </div>
-    <div class="content">
-      <div class="flex_box">
-        <div class="name gradient_blue">
-          <div class="text"><p>Comprehensive Plan C</p></div>
-        </div>
-        <div class="details">
-          <h2>Comprehensive Plan C</h2>
-          <p>Plan-C offers medical coverage and emergency services to individuals and families travelling outside their Home Countries. The plan pays 90% of eligible expenses to the selected Medical Maximum.</p>
-        </div>
-      </div>
-      <div class="right light_green"><button><a href="#insured_info">Select</a></button></div>
-    </div-->
+    <!-- plans detail will be added here -->
   </div>
   <div class="box" id="insured_info">
     <div class="header">
@@ -146,7 +71,21 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.84/jsrender.min.js"></script>
+
+<script id="planlistTmpl" type="text/x-jsrender">
+    <div class="subbox">
+        <h2>{{:name}}</h2>
+        <p>
+            {{:intro}}
+        </p>
+        <div class="right">
+          <button><a href = {{:href}}>Select</a></button>
+        </div>
+    </div>
+</script>
+
 <script id="planTmpl" type="text/x-jsrender">
     <div class="content">
       <div class="flex_box">
@@ -159,10 +98,11 @@
         </div>
       </div>
       <div class="right light_green">
-        <button><a href="#insured_info">Select</a></button>
+        <button><a href = {{:href}}>Select</a></button>
       </div>
     </div>
 </script>
+
 <script type="application/javascript">
 //
     var $path = [];
@@ -209,12 +149,14 @@ var limited = [
   {
     "name": "Limited Plan A" ,
     "details" : "Limited Plan A provides basic medical coverage for non-U.S. citizens, who come to the U.S. for business, pleasure, to study, or to immigrate with a maximum coverage of $120,000.",
-    "class" : "gradient_orange"
+    "class" : "gradient_orange",
+    "href" : "#insured_info"
   },
   {
     "name": "Limited Plan B",
     "details" : "Limited Plan B provides basic medical coverage for non-U.S. citizens, who come to the U.S. for business, pleasure, to study, or to immigrate with a maximum coverage of $140,000.",
-    "class" : "gradient_orange"
+    "class" : "gradient_orange",
+    "href" : "#insured_info"
   }
 ];
 
@@ -222,17 +164,20 @@ var comprehensive = [
   {
     "name" : "Comprehensive Plan A",
     "details" : "Plan-A offers medical coverage and emergency services to individuals and families travelling outside their Home Countries.",
-    "class" : "gradient_blue"
+    "class" : "gradient_blue",
+    "href" : "#insured_info"
   },
   {
     "name" : "Comprehensive Plan B",
     "details" : "Plan-B offers medical coverage and emergency services to individuals and families travelling outside their Home Countries. The plan pays 75% of eligible expenses to the selected Medical Maximum.",
-    "class" : "gradient_blue"
+    "class" : "gradient_blue",
+    "href" : "#insured_info"
   },
   {
     "name" : "Comprehensive Plan C",
     "details" : "Plan-C offers medical coverage and emergency services to individuals and families travelling outside their Home Countries. The plan pays 90% of eligible expenses to the selected Medical Maximum.",
-    "class" : "gradient_blue"
+    "class" : "gradient_blue",
+    "href" : "#insured_info"
   }
 ];
 
@@ -244,6 +189,26 @@ function renderPlanDetails(planData, planId) {
 
 renderPlanDetails(limited, "#limited_coverage");
 renderPlanDetails(comprehensive, "#comprehensive_coverage");
+
+// render plan list
+var planList = [
+          {
+            "name" : "Limited Coverage",
+            "intro" : "Limited coverage plan provides the basic protection, and may not be adequate. It may cost you less, but the coverage is limited to pre defined clause of fixed amout of charges. Must read policy details for benefit and coverage details.",
+            "href" : "#limited_coverage"
+          },
+          {
+            "name" : "Comprehensive Coverage",
+            "intro" : "These plans offer much better and flexible coverage. Most of these plans work like PPO type of 80-20% plan. Means insured have to pay 20% of the cost for the first 5,000 per policy period policy pays rest 80%.",
+            "href" : "#comprehensive_coverage"
+          }
+        ];
+function renderPlans(plans) {
+    var template = $.templates("#planlistTmpl");
+    var content = template.render(plans);
+    $("#plan_list").append(content);
+}
+renderPlans(planList);
 /*
     $(window).on("hashchange", function() {
         // Read hash
