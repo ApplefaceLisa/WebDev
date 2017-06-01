@@ -20,3 +20,8 @@
 
 ### jQuery Templates
 - [jQuery: Creating templates for your HTML Content](http://www.webistrate.com/jquery-creating-templates-for-your-html-content/)
+  - [jquery-tmpl code](https://github.com/BorisMoore/jquery-tmpl)
+  
+- jsRender, jsViews
+  - [Difference between jsRender and jsViews](https://stackoverflow.com/questions/9965571/difference-between-jsrender-and-jsviews)
+  
