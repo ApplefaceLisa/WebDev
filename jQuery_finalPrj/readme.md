@@ -31,3 +31,5 @@
     - [JsViews](https://github.com/BorisMoore/jsviews), which is built on top of JsRender, adds observability to objects/properties. This allows you to link your json objects to HTML targets and get 2 way data binding.
 
   - [try them online](https://www.jsviews.com/)
+
+  - [Display JSON Data Using the JsRender Template Engine](http://www.htmlgoodies.com/beyond/javascript/display-json-data-using-the-jsrender-template-engine.html)
