@@ -22,7 +22,7 @@
 - [jQuery: Creating templates for your HTML Content](http://www.webistrate.com/jquery-creating-templates-for-your-html-content/)
   - [jquery-tmpl code](https://github.com/BorisMoore/jquery-tmpl)
   
-- jsRender, jsViews
+- [jsRender, jsViews](https://www.jsviews.com/)
   - [Difference between jsRender and jsViews](https://stackoverflow.com/questions/9965571/difference-between-jsrender-and-jsviews)
   
     In short, 
