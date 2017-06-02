@@ -40,3 +40,8 @@
 ### jQuery form validation
 - **[HTML5 Form Validation - Showing All Error Messages](https://www.tjvantoll.com/2012/08/05/html5-form-validation-showing-all-error-messages/)**
 - [Basic jQuery Form Validation Example](https://www.sitepoint.com/basic-jquery-form-validation-tutorial/)
+
+### event binding
+- [Event binding on dynamically created elements?](https://stackoverflow.com/questions/203198/event-binding-on-dynamically-created-elements)
+
+  Use `$(static_parent_selector).on(event, dynamic_added_element, function(){})` instead of `$(dynamic_added_element).on(event, function(){})`
