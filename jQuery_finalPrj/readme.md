@@ -36,3 +36,6 @@
     - [Quick JsRender Tutorial](http://blog.teamextension.com/quick-jsrender-tutorial-1043)
     - [Display JSON Data Using the JsRender Template Engine](http://www.htmlgoodies.com/beyond/javascript/display-json-data-using-the-jsrender-template-engine.html)
     - [Client Side Templating with JsRender](http://www.dotnetcurry.com/javascript/840/client-side-template-jsrender)
+
+### jQuery form validation
+- [Basic jQuery Form Validation Example](https://www.sitepoint.com/basic-jquery-form-validation-tutorial/)
