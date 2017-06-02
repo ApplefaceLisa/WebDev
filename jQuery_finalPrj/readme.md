@@ -38,4 +38,5 @@
     - [Client Side Templating with JsRender](http://www.dotnetcurry.com/javascript/840/client-side-template-jsrender)
 
 ### jQuery form validation
+- [HTML5 Form Validation - Showing All Error Messages](https://www.tjvantoll.com/2012/08/05/html5-form-validation-showing-all-error-messages/)
 - [Basic jQuery Form Validation Example](https://www.sitepoint.com/basic-jquery-form-validation-tutorial/)
