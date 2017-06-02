@@ -32,42 +32,17 @@
       <h1>Personal Details</h1>
     </div>
     <form>
-    <!--div class="info">
-      <div class="title">
-        <h2>Insured #<span>1</span></h2>
-      </div>
-      <table>
-        <tr>
-          <td>Name <span class="red">* </span></td>
-          <td><input type="text" name="name" required></td>
-        </td>
-        <tr>
-          <td>Address <span class="red">* </span></td>
-          <td><input type="text" name="address" required></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td><input type="text" name="address"></td>
-        </tr>
-        <tr>
-          <td>Start date <span class="red">* </span></td>
-          <td><input type="date" name="sod"></td>
-        </tr>
-        <tr>
-          <td>End date <span class="red">* </span></td>
-          <td><input type="date" name="eod"></td>
-        </tr>
-      </table>
-    </div-->
-    <div class="flex_box2" id="info_footer">
-        <p>+ <a href="#add_info">Add more insured</a></p>
-        <!--button><a href="#success">Submit</a></button-->
-        <input type = "submit" value="Submit" class="button" />
-    </div>
+        <!-- insured detail info will be added here -->
+        <div class="flex_box2" id="info_footer">
+            <p>+ <a href="add_info">Add more insured</a></p>
+            <!--button><a href="#success">Submit</a></button-->
+            <input type = "submit" value="Submit" class="button"/>
+        </div>
     </form>
   </div>
   <div class="box" id="success">
-    <h1 style="text-align: center;">Submit Successful!</h1>
+    <h1>Submit Successful!</h1>
+    <h2>Thank You</h2>
   </div>
 </body>
 <script
@@ -113,11 +88,17 @@
       </div>
       <table>
         <tr>
-          <td>Name <span class="red">* </span></td>
-          <td><input type="text" name="name" required></td>
+          <td>
+            <label for="fullname">Name <span class="red">* </span></label>
+          </td>
+          <td>
+            <input type="text" name="fullname" required>
+          </td>
         </td>
         <tr>
-          <td>Address <span class="red">* </span></td>
+          <td>
+            <label for="address">Address <span class="red">* </span></label>
+          </td>
           <td><input type="text" name="address" required></td>
         </tr>
         <tr>
@@ -125,12 +106,16 @@
           <td><input type="text" name="address"></td>
         </tr>
         <tr>
-          <td>Start date <span class="red">* </span></td>
-          <td><input type="date" name="sod"></td>
+          <td>
+            <label for="startDate">Start date <span class="red">* </span></label>
+          </td>
+          <td><input type="date" name="startDate" required></td>
         </tr>
         <tr>
-          <td>End date <span class="red">* </span></td>
-          <td><input type="date" name="eod"></td>
+          <td>
+            <label for="endDate">End date <span class="red">* </span></label>
+          </td>
+          <td><input type="date" name="endDate" required></td>
         </tr>
       </table>
     </div>
@@ -147,28 +132,49 @@
 
         switch(targetScreen) {
             case "#plans" :
-              renderPlans(planList);
+              renderPlans(planList, targetScreen);
               break;
 
             case "#limited_coverage":
-              renderPlanDetails(limited, "#limited_coverage");
+              renderPlanDetails(limited, "#limited_coverage", targetScreen);
               break;
             case "#comprehensive_coverage":
-              renderPlanDetails(comprehensive, "#comprehensive_coverage");
+              renderPlanDetails(comprehensive, "#comprehensive_coverage", targetScreen);
               break;
 
             case "#insured_info":
-              renderInsured();
+              renderInsured(targetScreen, false);
+              break;
+
+            case "#success":
+              $("#success").show();
               break;
 
             default:
               break;
         }
-        // Show the target screen
-        $(targetScreen).show();
+
         // Show the path info
         showPath(targetScreen);
     });
+
+    $("a[href='add_info']").on("click", function(e) {
+        e.preventDefault();
+        renderInsured("#insured_info", true);
+    });
+
+    function submitHandler() {
+        var form = $(this);
+        $("input[type='submit']").on("click", function(e) {
+            console.log("invalid length", form.find( ":invalid" ).length);
+            if (form.find( ":invalid" ).length === 0) {
+              e.preventDefault();
+              location.hash = "#success";
+            }
+        });
+    }
+    $("form").each(submitHandler);
+
     // Set default screen
     location.hash = "plans";
 
@@ -234,10 +240,11 @@ var comprehensive = [
   }
 ];
 
-function renderPlanDetails(planData, planId) {
+function renderPlanDetails(planData, planId, targetScreen) {
     var template = $.templates("#planTmpl");
     var content = template.render(planData);
-    $(planId).append(content);
+    $(planId).html(content);
+    $(targetScreen).show();
 };
 
 //renderPlanDetails(limited, "#limited_coverage");
@@ -256,19 +263,30 @@ var planList = [
             "href" : "#comprehensive_coverage"
           }
         ];
-function renderPlans(plans) {
+function renderPlans(plans, targetScreen) {
     var template = $.templates("#planlistTmpl");
     var content = template.render(plans);
-    $("#plan_list").append(content);
+    $("#plan_list").html(content);
+    $(targetScreen).show();
 }
 //renderPlans(planList);
 
 // render insured info form
-function renderInsured() {
+function renderInsured(targetScreen, addOne) {
+    // if addOne == true, add one more insured form; else just show.
     var template = $.templates("#insuredTmpl");
-    var number = $("div.info").length + 1;
-    var content = template.render({number: number});
-    $(content).insertBefore($("#info_footer"));
+    var l = $("div.info").length;
+    var number, content;
+    if (addOne) {
+        number = l + 1;
+        content = template.render({number: number});
+        $(content).insertBefore($("#info_footer"));
+    } else if (l == 0) {
+        content = template.render({number: 1});
+        $(content).insertBefore($("#info_footer"));
+    }
+
+    $(targetScreen).show();
 }
 //renderInsured();
 
