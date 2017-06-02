@@ -85,6 +85,7 @@
     <div class="info">
       <div class="title">
         <h2>Insured #<span>{{:number}}</span></h2>
+        <div class="button" id="delete">delete</div>
       </div>
       <table>
         <tr>
@@ -122,8 +123,7 @@
 </script>
 
 <script type="application/javascript">
-//
-    var $path = [];
+
     $(window).on("hashchange", function() {
         // Read hash
         var targetScreen = location.hash;
@@ -178,6 +178,7 @@
     // Set default screen
     location.hash = "plans";
 
+    var $path = [];
     function showPath(target) {
       var index = $path.indexOf(target);
       if (index === -1) {
@@ -203,91 +204,93 @@
     function extractName(str) {
       return str.slice(str.indexOf("#") + 1);
     }
-//
-var limited = [
-  {
-    "name": "Limited Plan A" ,
-    "details" : "Limited Plan A provides basic medical coverage for non-U.S. citizens, who come to the U.S. for business, pleasure, to study, or to immigrate with a maximum coverage of $120,000.",
-    "class" : "gradient_orange",
-    "href" : "#insured_info"
-  },
-  {
-    "name": "Limited Plan B",
-    "details" : "Limited Plan B provides basic medical coverage for non-U.S. citizens, who come to the U.S. for business, pleasure, to study, or to immigrate with a maximum coverage of $140,000.",
-    "class" : "gradient_orange",
-    "href" : "#insured_info"
-  }
-];
+    //
+    var limited = [
+      {
+        "name": "Limited Plan A" ,
+        "details" : "Limited Plan A provides basic medical coverage for non-U.S. citizens, who come to the U.S. for business, pleasure, to study, or to immigrate with a maximum coverage of $120,000.",
+        "class" : "gradient_orange",
+        "href" : "#insured_info"
+      },
+      {
+        "name": "Limited Plan B",
+        "details" : "Limited Plan B provides basic medical coverage for non-U.S. citizens, who come to the U.S. for business, pleasure, to study, or to immigrate with a maximum coverage of $140,000.",
+        "class" : "gradient_orange",
+        "href" : "#insured_info"
+      }
+    ];
 
-var comprehensive = [
-  {
-    "name" : "Comprehensive Plan A",
-    "details" : "Plan-A offers medical coverage and emergency services to individuals and families travelling outside their Home Countries.",
-    "class" : "gradient_blue",
-    "href" : "#insured_info"
-  },
-  {
-    "name" : "Comprehensive Plan B",
-    "details" : "Plan-B offers medical coverage and emergency services to individuals and families travelling outside their Home Countries. The plan pays 75% of eligible expenses to the selected Medical Maximum.",
-    "class" : "gradient_blue",
-    "href" : "#insured_info"
-  },
-  {
-    "name" : "Comprehensive Plan C",
-    "details" : "Plan-C offers medical coverage and emergency services to individuals and families travelling outside their Home Countries. The plan pays 90% of eligible expenses to the selected Medical Maximum.",
-    "class" : "gradient_blue",
-    "href" : "#insured_info"
-  }
-];
+    var comprehensive = [
+      {
+        "name" : "Comprehensive Plan A",
+        "details" : "Plan-A offers medical coverage and emergency services to individuals and families travelling outside their Home Countries.",
+        "class" : "gradient_blue",
+        "href" : "#insured_info"
+      },
+      {
+        "name" : "Comprehensive Plan B",
+        "details" : "Plan-B offers medical coverage and emergency services to individuals and families travelling outside their Home Countries. The plan pays 75% of eligible expenses to the selected Medical Maximum.",
+        "class" : "gradient_blue",
+        "href" : "#insured_info"
+      },
+      {
+        "name" : "Comprehensive Plan C",
+        "details" : "Plan-C offers medical coverage and emergency services to individuals and families travelling outside their Home Countries. The plan pays 90% of eligible expenses to the selected Medical Maximum.",
+        "class" : "gradient_blue",
+        "href" : "#insured_info"
+      }
+    ];
 
-function renderPlanDetails(planData, planId, targetScreen) {
-    var template = $.templates("#planTmpl");
-    var content = template.render(planData);
-    $(planId).html(content);
-    $(targetScreen).show();
-};
+    function renderPlanDetails(planData, planId, targetScreen) {
+        var template = $.templates("#planTmpl");
+        var content = template.render(planData);
+        $(planId).html(content);
+        $(targetScreen).show();
+    };
 
-//renderPlanDetails(limited, "#limited_coverage");
-//renderPlanDetails(comprehensive, "#comprehensive_coverage");
+    //renderPlanDetails(limited, "#limited_coverage");
+    //renderPlanDetails(comprehensive, "#comprehensive_coverage");
 
-// render plan list
-var planList = [
-          {
-            "name" : "Limited Coverage",
-            "intro" : "Limited coverage plan provides the basic protection, and may not be adequate. It may cost you less, but the coverage is limited to pre defined clause of fixed amout of charges. Must read policy details for benefit and coverage details.",
-            "href" : "#limited_coverage"
-          },
-          {
-            "name" : "Comprehensive Coverage",
-            "intro" : "These plans offer much better and flexible coverage. Most of these plans work like PPO type of 80-20% plan. Means insured have to pay 20% of the cost for the first 5,000 per policy period policy pays rest 80%.",
-            "href" : "#comprehensive_coverage"
-          }
-        ];
-function renderPlans(plans, targetScreen) {
-    var template = $.templates("#planlistTmpl");
-    var content = template.render(plans);
-    $("#plan_list").html(content);
-    $(targetScreen).show();
-}
-//renderPlans(planList);
+    // render plan list
+    var planList = [
+              {
+                "name" : "Limited Coverage",
+                "intro" : "Limited coverage plan provides the basic protection, and may not be adequate. It may cost you less, but the coverage is limited to pre defined clause of fixed amout of charges. Must read policy details for benefit and coverage details.",
+                "href" : "#limited_coverage"
+              },
+              {
+                "name" : "Comprehensive Coverage",
+                "intro" : "These plans offer much better and flexible coverage. Most of these plans work like PPO type of 80-20% plan. Means insured have to pay 20% of the cost for the first 5,000 per policy period policy pays rest 80%.",
+                "href" : "#comprehensive_coverage"
+              }
+            ];
+    function renderPlans(plans, targetScreen) {
+        var template = $.templates("#planlistTmpl");
+        var content = template.render(plans);
+        $("#plan_list").html(content);
+        $(targetScreen).show();
+    }
+    //renderPlans(planList);
 
-// render insured info form
-function renderInsured(targetScreen, addOne) {
-    // if addOne == true, add one more insured form; else just show.
-    var template = $.templates("#insuredTmpl");
-    var l = $("div.info").length;
-    var number, content;
-    if (addOne) {
-        number = l + 1;
-        content = template.render({number: number});
-        $(content).insertBefore($("#info_footer"));
-    } else if (l == 0) {
-        content = template.render({number: 1});
-        $(content).insertBefore($("#info_footer"));
+    // render insured info form
+    function renderInsured(targetScreen, addOne) {
+        // if addOne == true, add one more insured form; else just show.
+        var template = $.templates("#insuredTmpl");
+        var l = $("div.info").length;
+        var number, content;
+        if (addOne) {
+            number = l + 1;
+            content = template.render({number: number});
+            $(content).insertBefore($("#info_footer"));
+        } else if (l == 0) {
+            content = template.render({number: 1});
+            $(content).insertBefore($("#info_footer"));
+        }
+
+        $(targetScreen).show();
     }
 
-    $(targetScreen).show();
-}
+
 //renderInsured();
 
 /*
