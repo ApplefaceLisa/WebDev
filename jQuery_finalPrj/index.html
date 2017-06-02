@@ -84,7 +84,7 @@
 <script id="insuredTmpl" type="text/x-jsrender">
     <div class="info">
       <div class="title">
-        <h2>Insured #<span>{{:number}}</span></h2>
+        <h2>Insured #<span id="number">{{:number}}</span></h2>
         <div class="button" id="delete">delete</div>
       </div>
       <table>
@@ -161,6 +161,14 @@
     $("a[href='add_info']").on("click", function(e) {
         e.preventDefault();
         renderInsured("#insured_info", true);
+    });
+
+    // delegation
+    $("#insured_info").on("click", "#delete", function(e) {
+        $(this).parent().parent().remove();
+        $(".info").each(function(index) {
+            $(this).find("#number").text(index+1);
+        });
     });
 
     function submitHandler() {
