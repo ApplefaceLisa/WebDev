@@ -49,5 +49,6 @@
 ### jQuery Datepicker
 - [jQuery DatePicker: Start Date should be less than End date validation](https://www.aspsnippets.com/Articles/jQuery-DatePicker-Start-Date-should-be-less-than-End-date-validation.aspx)
 - [jQuery UI - Dynamically add DatePicker to input TextBox](http://www.mysamplecode.com/2012/10/jquery-ui-dynamically-add-datepicker-to.html) --- **Clone event instantiation**
+- stackflow [jQuery clone() not cloning event bindings, even with on()](https://stackoverflow.com/questions/9549643/jquery-clone-not-cloning-event-bindings-even-with-on) --- **shallow clone and deep clone**
   
   
