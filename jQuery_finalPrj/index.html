@@ -46,10 +46,9 @@
   </div>
 </body>
 <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
   crossorigin="anonymous"></script>
-
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.84/jsrender.min.js"></script>
 
 <script id="planlistTmpl" type="text/x-jsrender">
@@ -110,20 +109,30 @@
           <td>
             <label for="startDate">Start date <span class="red">* </span></label>
           </td>
-          <td><input type="date" name="startDate" required></td>
+          <td>
+            <input type="text" name="startDate" class="datepicker" required>
+          </td>
         </tr>
         <tr>
           <td>
             <label for="endDate">End date <span class="red">* </span></label>
           </td>
-          <td><input type="date" name="endDate" required></td>
+          <td>
+            <input type="text" name="endDate" class="datepicker" required>
+          </td>
         </tr>
       </table>
     </div>
 </script>
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
 
 <script type="application/javascript">
-
+$(function () {
+    // listening hash change
     $(window).on("hashchange", function() {
         // Read hash
         var targetScreen = location.hash;
@@ -157,6 +166,8 @@
         // Show the path info
         showPath(targetScreen);
     });
+    // Set default screen
+    location.hash = "plans";
 
     $("a[href='add_info']").on("click", function(e) {
         e.preventDefault();
@@ -182,9 +193,6 @@
         });
     }
     $("form").each(submitHandler);
-
-    // Set default screen
-    location.hash = "plans";
 
     var $path = [];
     function showPath(target) {
@@ -256,9 +264,6 @@
         $(targetScreen).show();
     };
 
-    //renderPlanDetails(limited, "#limited_coverage");
-    //renderPlanDetails(comprehensive, "#comprehensive_coverage");
-
     // render plan list
     var planList = [
               {
@@ -278,7 +283,6 @@
         $("#plan_list").html(content);
         $(targetScreen).show();
     }
-    //renderPlans(planList);
 
     // render insured info form
     function renderInsured(targetScreen, addOne) {
@@ -295,11 +299,15 @@
             $(content).insertBefore($("#info_footer"));
         }
 
+        $(".datepicker").datepicker({
+            showOn: "both",
+            buttonImage: "images/calendar.gif",
+            buttonImageOnly: true
+        });
+
         $(targetScreen).show();
     }
-
-
-//renderInsured();
+});
 
 /*
     $(window).on("hashchange", function() {
