@@ -48,6 +48,6 @@
 
 ### jQuery Datepicker
 - [jQuery DatePicker: Start Date should be less than End date validation](https://www.aspsnippets.com/Articles/jQuery-DatePicker-Start-Date-should-be-less-than-End-date-validation.aspx)
-- [jQuery UI - Dynamically add DatePicker to input TextBox](http://www.mysamplecode.com/2012/10/jquery-ui-dynamically-add-datepicker-to.html)
+- [jQuery UI - Dynamically add DatePicker to input TextBox](http://www.mysamplecode.com/2012/10/jquery-ui-dynamically-add-datepicker-to.html) --- **Clone event instantiation**
   
-  **Clone event instantiation**
+  
