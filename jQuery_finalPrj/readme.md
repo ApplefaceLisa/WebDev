@@ -45,3 +45,6 @@
 - [Event binding on dynamically created elements?](https://stackoverflow.com/questions/203198/event-binding-on-dynamically-created-elements)
 
   Use `$(static_parent_selector).on(event, dynamic_added_element, function(){})` instead of `$(dynamic_added_element).on(event, function(){})`
+
+### jQuery Datepicker
+- [jQuery DatePicker: Start Date should be less than End date validation](https://www.aspsnippets.com/Articles/jQuery-DatePicker-Start-Date-should-be-less-than-End-date-validation.aspx)
