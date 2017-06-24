@@ -10,3 +10,6 @@ MongoDB basics
 
 # Supplement Materials
 - [O'Reilly Webcast: MongoDB Schema Design: How to Think Non-Relational](https://www.youtube.com/watch?v=PIWVFUtBV1Q)
+- [6 Rules of Thumb for MongoDB Schema Design: Part 1](https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design-part-1)
+- [MongoDB - Data Modelling](https://www.tutorialspoint.com/mongodb/mongodb_data_modeling.htm)
+- [MongoDB Schema Design: Four Real-World Examples](https://www.slideshare.net/friedo/data-modeling-examples)
