@@ -19,6 +19,7 @@ MongoDB basics
 
 # Extra
 ### [Mongoose limiting queries](https://stackoverflow.com/questions/29169834/mongoose-limiting-queries-doesnt-work)
+- https://stackoverflow.com/questions/5830513/how-do-i-limit-the-number-of-returned-items
 ```
 items.find().sort({field: 1}).limit(5).exec(function(err, theItems) {...})
 ```
