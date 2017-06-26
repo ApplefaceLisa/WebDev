@@ -6,9 +6,9 @@ MongoDB basics
 ![primary data types](img/Four-Primary_datatypes.JPG)
 
 ### Schema
-![schema](img/Schema_example.png)
+#### [schema doc](http://mongoosejs.com/docs/guide.html)
 
-[schema doc](http://mongoosejs.com/docs/guide.html)
+![schema](img/Schema_example.png)
 
 # Supplement Materials
 - [O'Reilly Webcast: MongoDB Schema Design: How to Think Non-Relational](https://www.youtube.com/watch?v=PIWVFUtBV1Q)
