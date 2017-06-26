@@ -8,7 +8,7 @@ MongoDB basics
 ### Schema
 ![schema](img/Schema_example.png)
 
-[schema doc](http://mongoosejs.com/docs/guide.html#collection)
+[schema doc](http://mongoosejs.com/docs/guide.html)
 
 # Supplement Materials
 - [O'Reilly Webcast: MongoDB Schema Design: How to Think Non-Relational](https://www.youtube.com/watch?v=PIWVFUtBV1Q)
