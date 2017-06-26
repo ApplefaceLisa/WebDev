@@ -15,3 +15,15 @@ MongoDB basics
 - [6 Rules of Thumb for MongoDB Schema Design: Part 1](https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design-part-1)
 - [MongoDB - Data Modelling](https://www.tutorialspoint.com/mongodb/mongodb_data_modeling.htm)
 - [MongoDB Schema Design: Four Real-World Examples](https://www.slideshare.net/friedo/data-modeling-examples)
+
+
+# Extra
+### [Mongoose limiting queries](https://stackoverflow.com/questions/29169834/mongoose-limiting-queries-doesnt-work)
+```
+items.find().sort({field: 1}).limit(5).exec(function(err, theItems) {...})
+```
+
+### [Angular limiting item number per page](https://stackoverflow.com/questions/29469393/limiting-the-number-of-ngrepeat-to-10-but-it-shows-all-40-items-at-once)
+```
+ng-repeat="x in alpha | limitTo: 20"
+```
