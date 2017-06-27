@@ -550,3 +550,8 @@
       - 2nd - function to handle error or 'reject' outcome
       - 'then' itself returns a Promise, so it's chainable
     - $q.all method allows us to execute multiple promises in parallel, handling success/failure in one central place
+    
+    
+    
+# References & Articles
+- [A Brief Walk-through of the Ng-options in AngularJS](https://www.undefinednull.com/2014/08/11/a-brief-walk-through-of-the-ng-options-in-angularjs/)
