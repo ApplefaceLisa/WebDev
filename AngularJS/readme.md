@@ -555,3 +555,4 @@
     
 # References & Articles
 - [A Brief Walk-through of the Ng-options in AngularJS](https://www.undefinednull.com/2014/08/11/a-brief-walk-through-of-the-ng-options-in-angularjs/)
+- [Everything about custom filters in AngularJS](https://toddmotto.com/everything-about-custom-filters-in-angular-js/)
