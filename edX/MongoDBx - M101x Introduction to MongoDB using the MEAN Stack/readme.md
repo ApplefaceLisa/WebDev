@@ -10,6 +10,9 @@ MongoDB basics
 
 ![schema](img/Schema_example.png)
 
+### Mongoose population
+- [Population](http://mongoosejs.com/docs/populate.html)
+
 # Supplement Materials
 - [O'Reilly Webcast: MongoDB Schema Design: How to Think Non-Relational](https://www.youtube.com/watch?v=PIWVFUtBV1Q)
 - [6 Rules of Thumb for MongoDB Schema Design: Part 1](https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design-part-1)
