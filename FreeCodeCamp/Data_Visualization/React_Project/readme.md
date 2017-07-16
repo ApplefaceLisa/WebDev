@@ -5,3 +5,6 @@
 ### [State and Lifecycle](https://facebook.github.io/react/docs/state-and-lifecycle.html)
 - lifecycle hooks : componentDidMount, componentWillUnmount
 - this.setState((prevState, props) => ({ ... }));
+
+### React.Component
+- [Link](https://facebook.github.io/react/docs/react-component.html)
