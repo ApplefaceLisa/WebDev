@@ -10,3 +10,5 @@
 #### Hint
 - To get the top 100 campers for the last 30 days: https://fcctop100.herokuapp.com/api/fccusers/top/recent.
 - To get the top 100 campers of all time: https://fcctop100.herokuapp.com/api/fccusers/top/alltime.
+
+### [my solution](https://codepen.io/ApplefaceLisa/full/NgQwLY/)
