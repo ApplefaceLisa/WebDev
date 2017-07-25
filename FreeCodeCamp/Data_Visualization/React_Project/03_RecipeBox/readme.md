@@ -7,3 +7,9 @@
 - I can edit these recipes.
 - I can delete these recipes.
 - All new recipes I add are saved in my browser's local storage. If I refresh the page, these recipes will still be there.
+
+### Reference Tutorial
+[Link](https://www.safaribooksonline.com/library/view/react-projects/9781786465504/video3_1.html)
+
+### My Solution
+[Link](https://codepen.io/ApplefaceLisa/pen/YxPOPK)
