@@ -97,7 +97,7 @@ JSX is a preprocessor step that adds XML syntax to JavaScript. You can definitel
   ```
   
 - A simple example of using JSX
-  ```
+  ```javascript
   // client.js
   import React from 'react';
   import ReactdOM from 'react-dom';
@@ -112,11 +112,73 @@ JSX is a preprocessor step that adds XML syntax to JavaScript. You can definitel
   );
   ```
 
-##### 2.1.3.2 Basics of JSX
+##### 2.1.3.2 [JSX in-depth](https://facebook.github.io/react/docs/jsx-in-depth.html)
 
 #### 2.1.4 React
+##### 2.1.4.1 [Use Composition instead of Inheritance](https://facebook.github.io/react/docs/composition-vs-inheritance.html)
+- Example
+```javascript
+  function FancyBorder(props) {
+    return (
+      <div className={'FancyBorder FancyBorder-' + props.color}>
+        {props.children}
+      </div>
+    );
+  }
 
+  function WelcomeDialog() {
+    return (
+      <FancyBorder color="blue">
+        <h1 className="Dialog-title">
+          Welcome
+        </h1>
+        <p className="Dialog-message">
+          Thank you for visiting our spacecraft!
+        </p>
+      </FancyBorder>
+    );
+  }
+```
+
+##### 2.1.4.2 [Typechecking With PropTypes](https://facebook.github.io/react/docs/typechecking-with-proptypes.html)
+- Example
+  ```javascript
+  import PropTypes from 'prop-types';
+
+  class Greeting extends React.Component {
+    render() {
+      return (
+        <h1>Hello, {this.props.name}</h1>
+      );
+    }
+  }
+
+  Greeting.propTypes = {
+    name: PropTypes.string
+  };
+  ```
   
+- Default Prop Values
+  ```javascript
+  class Greeting extends React.Component {
+    render() {
+      return (
+        <h1>Hello, {this.props.name}</h1>
+      );
+    }
+  }
+
+  // Specifies the default values for props:
+  Greeting.defaultProps = {
+    name: 'Stranger'
+  };
+
+  // Renders "Hello, Stranger":
+  ReactDOM.render(
+    <Greeting />,
+    document.getElementById('example')
+  );
+  ```
 ### 2.2 AJAX in React
 
 - [How to make AJAX requests in React?](https://medium.com/@baphemot/how-to-make-ajax-requests-in-react-a6a52bb5a8b1)
