@@ -179,6 +179,10 @@ JSX is a preprocessor step that adds XML syntax to JavaScript. You can definitel
     document.getElementById('example')
   );
   ```
+  
+##### 2.1.4.3 React Router
+- [A Simple React Router v4 Tutorial](https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf)
+  
 ### 2.2 AJAX in React
 
 - [How to make AJAX requests in React?](https://medium.com/@baphemot/how-to-make-ajax-requests-in-react-a6a52bb5a8b1)
