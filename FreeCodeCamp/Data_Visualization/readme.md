@@ -224,6 +224,8 @@ JSX is a preprocessor step that adds XML syntax to JavaScript. You can definitel
   - **State is read-only**
 
     The only way to change the state is to emit an _**action**_, an object describing what happened.
+    
+    *[Avoid Array mutations with concat(), slice() and ...spread]*(https://egghead.io/lessons/javascript-redux-avoiding-array-mutations-with-concat-slice-and-spread)
 
   - **Changes are made with pure functions**
 
