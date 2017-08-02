@@ -193,6 +193,88 @@ JSX is a preprocessor step that adds XML syntax to JavaScript. You can definitel
 #### 2.3.1 Data flow
 ![flux data flow](flux.png)
 
+#### 2.3.2 Three principles
+
+- Redux can be described in three fundamental principles:
+  - **Single source of truth**
+
+    The state of your whole application is stored in an object tree within a _**single store**_.
+
+  - **State is read-only**
+
+    The only way to change the state is to emit an _**action**_, an object describing what happened.
+
+  - **Changes are made with pure functions**
+
+    To specify how the state tree is transformed by actions, you write _**pure reducers**_.
+
+#### 2.3.3 Redux Basics 
+##### 2.3.3.1 Actions
+- Actions are _**payloads of information**_ that send data from your application to your store. They are the only source of information for the store. You send them to the store using `store.dispatch()`.
+
+- Actions are plain JavaScript objects. Actions must have a type property that indicates the type of action being performed. Types should typically be defined as string constants.
+
+  ```
+  const ADD_TODO = 'ADD_TODO'
+  {
+    type: ADD_TODO,
+    text: 'Build my first Redux app'
+  }
+  ```
+  
+- **Action creators** are exactly that—functions that create actions.
+  ```
+  function addTodo(text) {
+    return {
+      type: ADD_TODO,
+      text
+    }
+  }
+  ```
+
+- Example code : actions.js
+  ```
+  /*
+   * action types
+   */
+
+  export const ADD_TODO = 'ADD_TODO'
+  export const TOGGLE_TODO = 'TOGGLE_TODO'
+  export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
+
+  /*
+   * other constants
+   */
+
+  export const VisibilityFilters = {
+    SHOW_ALL: 'SHOW_ALL',
+    SHOW_COMPLETED: 'SHOW_COMPLETED',
+    SHOW_ACTIVE: 'SHOW_ACTIVE'
+  }
+
+  /*
+   * action creators
+   */
+
+  export function addTodo(text) {
+    return { type: ADD_TODO, text }
+  }
+
+  export function toggleTodo(index) {
+    return { type: TOGGLE_TODO, index }
+  }
+
+  export function setVisibilityFilter(filter) {
+    return { type: SET_VISIBILITY_FILTER, filter }
+  }  
+  ```
+
+##### 2.3.3.2 Reducers
+
+##### 2.3.3.3 Store
+
+
+
 - [Redux’s Mysterious Connect Function](https://medium.com/mofed/reduxs-mysterious-connect-function-526efe1122e4)
 
 ## 3. D3
