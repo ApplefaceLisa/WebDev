@@ -189,9 +189,28 @@ JSX is a preprocessor step that adds XML syntax to JavaScript. You can definitel
 - [5 best libraries for making AJAX calls in React](https://hashnode.com/post/5-best-libraries-for-making-ajax-calls-in-react-cis8x5f7k0jl7th53z68s41k1)
 - [react-ajax-best-practices](http://andrewhfarmer.com/react-ajax-best-practices/)
 
-### 2.3 Redux
+### 2.3 [Redux](http://redux.js.org/)
 #### 2.3.1 Data flow
+
 ![flux data flow](flux.png)
+
+- strict _**unidirectional**_ data flow
+- The data lifecycle in any Redux app follows these 4 steps:
+
+  - You call `store.dispatch(action)`.  
+  
+    You can call `store.dispatch(action)` from anywhere in your app, including components and XHR callbacks, or even at scheduled intervals.
+    
+  - The Redux store calls the reducer function you gave it.
+  
+    The store will pass two arguments to the reducer: the current state tree and the action.
+    
+  - The root reducer may combine the output of multiple reducers into a single state tree.
+  
+  - The Redux store saves the complete state tree returned by the root reducer.
+  
+    This new tree is now the next state of your app! Every listener registered with `store.subscribe(listener)` will now be invoked; listeners may call `store.getState()` to get the current state. Now, the UI can be updated to reflect the new state. 
+    
 
 #### 2.3.2 Three principles
 
@@ -199,6 +218,8 @@ JSX is a preprocessor step that adds XML syntax to JavaScript. You can definitel
   - **Single source of truth**
 
     The state of your whole application is stored in an object tree within a _**single store**_.
+    
+    In Redux, _**all the application state is stored as a single object**_. It's a good idea to think of its shape before writing any code. What's the minimal representation of your app's state as an object?
 
   - **State is read-only**
 
@@ -270,8 +291,106 @@ JSX is a preprocessor step that adds XML syntax to JavaScript. You can definitel
   ```
 
 ##### 2.3.3.2 Reducers
+- Reducers specify how the application's state changes in response to actions.
+- The reducer is a _**pure function**_ that takes the previous state and an action, and returns the next state.
+  ```
+  (previousState, action) => newState
+  ```
+- Things you should _**never**_ do inside a reducer:
+  - Mutate its arguments;
+  - Perform side effects like API calls and routing transitions;
+  - Call non-pure functions, e.g. Date.now() or Math.random().
+
+- Example code : reducer.js
+```
+  import { combineReducers } from 'redux'
+  import {
+    ADD_TODO,
+    TOGGLE_TODO,
+    SET_VISIBILITY_FILTER,
+    VisibilityFilters
+  } from './actions'
+  const { SHOW_ALL } = VisibilityFilters
+
+  function visibilityFilter(state = SHOW_ALL, action) {
+    switch (action.type) {
+      case SET_VISIBILITY_FILTER:
+        return action.filter
+      default:
+        return state
+    }
+  }
+
+  function todos(state = [], action) {
+    switch (action.type) {
+      case ADD_TODO:
+        return [
+          ...state,
+          {
+            text: action.text,
+            completed: false
+          }
+        ]
+      case TOGGLE_TODO:
+        return state.map((todo, index) => {
+          if (index === action.index) {
+            return Object.assign({}, todo, {
+              completed: !todo.completed
+            })
+          }
+          return todo
+        })
+      default:
+        return state
+    }
+  }
+
+  const todoApp = combineReducers({
+    visibilityFilter,
+    todos
+  })
+
+  export default todoApp
+```
+
+  - Each of these reducers is managing its own part of the global state. The state parameter is different for every reducer, and corresponds to the part of the state it manages.
+  
+  - `combineReducers()` 
+    When you emit an action, todoApp returned by combineReducers will call both reducers, it will then combine both sets of results into a single state tree.
 
 ##### 2.3.3.3 Store
+- The store has the following responsibilities:
+  - Holds application state;
+  - Allows access to state via _**getState()**_;
+  - Allows state to be updated via _**dispatch(action)**_;
+  - Registers listeners via _**subscribe(listener)**_;
+  - Handles unregistering of listeners via the function returned by subscribe(listener).
+
+- `createStore()` 
+  ```
+  import { createStore } from 'redux'
+  import todoApp from './reducers'
+  let store = createStore(todoApp)  
+  ```
+  
+#### 2.3.4 Redux Usage with React
+##### 2.3.4.1 Installing React Redux
+```
+npm install --save react-redux
+```
+
+##### 2.3.4.2 Presentational and Container Components
+React bindings for Redux embrace the idea of [_**separating presentational and container components**_](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0).
+
+   items  | Presentational Components | Container Components
+--------- | ------------------------- | ---------------------------------          
+Purpose | How things **look** (markup, styles) | How things **work** (data fetching, state updates)
+Aware of Redux | No | Yes
+To read data | Read data from props |	Subscribe to Redux state
+To change data | Invoke callbacks from props | Dispatch Redux actions
+Are written |	By hand |	Usually generated by React Redux
+
+
 
 
 
