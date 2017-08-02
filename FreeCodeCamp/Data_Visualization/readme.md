@@ -191,6 +191,6 @@ JSX is a preprocessor step that adds XML syntax to JavaScript. You can definitel
 
 #### 2.2.5 Redux
 
--[Redux’s Mysterious Connect Function](https://medium.com/mofed/reduxs-mysterious-connect-function-526efe1122e4)
+- [Redux’s Mysterious Connect Function](https://medium.com/mofed/reduxs-mysterious-connect-function-526efe1122e4)
 
 ## 3. D3
