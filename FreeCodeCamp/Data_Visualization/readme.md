@@ -114,8 +114,8 @@ JSX is a preprocessor step that adds XML syntax to JavaScript. You can definitel
 
 ##### 2.1.3.2 [JSX in-depth](https://facebook.github.io/react/docs/jsx-in-depth.html)
 
-#### 2.1.4 React
-##### 2.1.4.1 [Use Composition instead of Inheritance](https://facebook.github.io/react/docs/composition-vs-inheritance.html)
+### 2.2 React Basics
+#### 2.2.1 [Use Composition instead of Inheritance](https://facebook.github.io/react/docs/composition-vs-inheritance.html)
 - Example
 ```javascript
   function FancyBorder(props) {
@@ -140,7 +140,7 @@ JSX is a preprocessor step that adds XML syntax to JavaScript. You can definitel
   }
 ```
 
-##### 2.1.4.2 [Typechecking With PropTypes](https://facebook.github.io/react/docs/typechecking-with-proptypes.html)
+#### 2.2.2 [Typechecking With PropTypes](https://facebook.github.io/react/docs/typechecking-with-proptypes.html)
 - Example
   ```javascript
   import PropTypes from 'prop-types';
@@ -180,13 +180,17 @@ JSX is a preprocessor step that adds XML syntax to JavaScript. You can definitel
   );
   ```
   
-##### 2.1.4.3 React Router
+#### 2.2.3 React Router
 - [A Simple React Router v4 Tutorial](https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf)
   
-### 2.2 AJAX in React
+#### 2.2.4 AJAX in React
 
 - [How to make AJAX requests in React?](https://medium.com/@baphemot/how-to-make-ajax-requests-in-react-a6a52bb5a8b1)
 - [5 best libraries for making AJAX calls in React](https://hashnode.com/post/5-best-libraries-for-making-ajax-calls-in-react-cis8x5f7k0jl7th53z68s41k1)
 - [react-ajax-best-practices](http://andrewhfarmer.com/react-ajax-best-practices/)
+
+#### 2.2.5 Redux
+
+-[Redux’s Mysterious Connect Function](https://medium.com/mofed/reduxs-mysterious-connect-function-526efe1122e4)
 
 ## 3. D3
