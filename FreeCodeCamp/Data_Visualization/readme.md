@@ -189,7 +189,9 @@ JSX is a preprocessor step that adds XML syntax to JavaScript. You can definitel
 - [5 best libraries for making AJAX calls in React](https://hashnode.com/post/5-best-libraries-for-making-ajax-calls-in-react-cis8x5f7k0jl7th53z68s41k1)
 - [react-ajax-best-practices](http://andrewhfarmer.com/react-ajax-best-practices/)
 
-#### 2.2.5 Redux
+### 2.3 Redux
+#### 2.3.1 Data flow
+![flux data flow](flux.png)
 
 - [Redux’s Mysterious Connect Function](https://medium.com/mofed/reduxs-mysterious-connect-function-526efe1122e4)
 
