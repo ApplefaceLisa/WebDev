@@ -974,7 +974,79 @@ pixelDepth | The number of bits per pixel of the screen.
   [startsWith](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith) | str.startsWith(searchString[, position]) <br> case-sensitive <br> return true or false <br> start searching from position, default is 0 | var str = 'To be, or not to be, that is the question.'; <br> console.log(str.startsWith('not to be')); // false <br> console.log(str.startsWith('not to be', 10)); // true
   [endsWith](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith) | str.endsWith(searchString[, length]) <br> case-sensitive <br> return true or false <br> end searching till length, default is str.length | var str = 'To be, or not to be, that is the question.'; <br> console.log(str.endsWith('to be', 19)); // true, search length is 19 instead of str.length
   [repeat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat) | let resultString = str.repeat(count) <br> return a new string contains count number copies of str | 'abc'.repeat(0); // '' <br> 'abc'.repeat(3.5);  // 'abcabcabc' (count will be converted to integer)
+  
+  
+## String Template literals
+- [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) are string literals allowing embedded expressions.
+- Template literals are enclosed by the back-tick (` `)
+  ```
+  `string text ${expression} string text`
+  ```
+- You can use multi-line strings and string interpolation features with them.
+  ```
+  console.log(`string text line 1
+  string text line 2`);
+  // "string text line 1
+  // string text line 2"
+  ```
+  
+- Expression interpolation
+  ```
+  var a = 5;
+  var b = 10;
+  console.log(`Fifteen is ${a + b} and
+  not ${2 * a + b}.`);
+  // "Fifteen is 15 and
+  // not 20."
+  ```
+  
+- Tagged template literals
 
+  Tags allow you to parse template literals with a function. The first argument of a tag function contains an array of string values. The remaining arguments are related to the expressions. The name of the function used for the tag can be named whatever you want.
+  ```
+  var person = 'Mike';
+  var age = 28;
+
+  function myTag(strings, personExp, ageExp) {
+
+    var str0 = strings[0]; // "that "
+    var str1 = strings[1]; // " is a "
+
+    // There is technically a string after
+    // the final expression (in our example),
+    // but it is empty (""), so disregard.
+    // var str2 = strings[2];
+
+    var ageStr;
+    if (ageExp > 99){
+      ageStr = 'centenarian';
+    } else {
+      ageStr = 'youngster';
+    }
+
+    return str0 + personExp + str1 + ageStr;
+
+  }
+
+  var output = myTag`that ${ person } is a ${ age }`;
+
+  console.log(output);
+  // that Mike is a youngster  
+  ```
+  
+- Raw strings
+  
+  The special raw property, available on the first function argument of tagged template literals, allows you to access the raw strings as they were entered, without processing escape sequences.
+  ```
+  function tag(strings, ...values) {
+    console.log(strings.raw[0]);
+  }
+
+  tag`string text line 1 \n string text line 2`;
+  // logs "string text line 1 \n string text line 2" ,
+  // including the two characters '\' and 'n'  
+  ```
+  
 
 # Recommended Reference
 - http://javascriptissexy.com/how-to-learn-javascript-properly/
