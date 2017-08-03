@@ -1047,6 +1047,31 @@ pixelDepth | The number of bits per pixel of the screen.
   // including the two characters '\' and 'n'  
   ```
   
+## Block bindings: let, const
+### [let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+
+- The let statement declares a _**block scope**_ local variable, optionally initializing it to a value.
+
+### [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+
+- Constants are block-scoped, much like variables defined using the _let_ statement. 
+- The value of a constant cannot change through re-assignment, and it can't be redeclared.
+
+### var vs. const vs. let
+#### var vs. let
+- let has block scope, var has function scope
+- var gets hoisted, let does not.
+
+#### let vs. const
+- const means that the identifier can’t be reassigned and redeclared. let can.
+- const and let are all local variable, they can not be global variable.
+  ```
+  let hello = 'hello';
+  const hi = 'hi';
+  console.log(hello);   // 'hello'
+  console.log(window.hello);  // undefined
+  console.log(window.hi === hi);  // false
+  ```
 
 # Recommended Reference
 - http://javascriptissexy.com/how-to-learn-javascript-properly/
