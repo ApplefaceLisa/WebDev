@@ -1050,7 +1050,7 @@ pixelDepth | The number of bits per pixel of the screen.
 ## Block bindings: let, const
 ### [let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
 
-- The let statement declares a _**block scope**_ local variable, optionally initializing it to a value.
+- let allows you to declare variables that are _**limited in scope to the block, statement, or expression**_ on which it is used. This is unlike the var keyword, which defines a variable globally, or locally to an entire function regardless of block scope.
 
 ### [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
 
@@ -1060,6 +1060,20 @@ pixelDepth | The number of bits per pixel of the screen.
 ### var vs. const vs. let
 #### var vs. let
 - let has block scope, var has function scope
+  ```
+  for(var i = 1; i <= 5; i++) {               |      for(var i = 1; i <= 5; i++) {  
+     setTimeout(function() {                  |         setTimeout(function() {
+         console.log('Value of i : ' + i);    |             console.log('Value of i : ' + i);
+     },100);                                  |        },100); 
+  }                                           |      }
+                                              |      
+  output:                                     |      output:
+  Value of i : 6                              |      Value of i : 1
+  Value of i : 6                              |      Value of i : 2 
+  Value of i : 6                              |      Value of i : 3
+  Value of i : 6                              |      Value of i : 4 
+  Value of i : 6                              |      Value of i : 5
+  ```
 - var gets hoisted, let does not.
 
 #### let vs. const
