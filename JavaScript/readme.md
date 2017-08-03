@@ -14,6 +14,8 @@
 
 #### JavaScript. The Definitive Guide, David Flanagan
 
+#### [Eloquent JavaScript](http://eloquentjavascript.net/index.html)
+
 # Video
 - [Douglas Crockford: The JavaScript Programming Language](https://www.youtube.com/watch?v=v2ifWcnQs6M)
 - [Douglas Crockford: Advanced JavaScript](https://www.youtube.com/watch?v=DwYPG6vreJg)
@@ -65,7 +67,7 @@
 - Function Binding (call / apply / bind)
   - [call()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
   
-    func.call(thisObj[, arg1[, arg2[, ...]]])
+    _**func.call(thisObj[, arg1[, arg2[, ...]]])**_
     
     return the result of calling the function with the specified _this_ value and arguments.
     
@@ -74,7 +76,7 @@
   
     The apply() method calls a function with a given this value and arguments provided as an array (or an array-like object).
   
-    func.apply(thisObj[, arg_arr])
+    _**func.apply(thisObj[, arg_arr])**_
     
     **the arguments are passed to the function are specified as an array** : arg_arr = [arg1[, arg2[, ...]]].
     
@@ -82,13 +84,13 @@
     
   - [bind()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
   
-    func.bind(thisObj[, arg1[, arg2[, ...]]])
+    _**func.bind(thisObj[, arg1[, arg2[, ...]]])**_
     
     return a copy of the given function with the specified _this_ value and initial arguments.
     
     The bind() function creates a **new bound function (BF)**. It creates a new function instance whose _this_ value is bound to the value that was passed into bind().
   
-  - compare
+  - **compare**
   
     Use **.bind()** when you want that function to **later be called** with a certain context, useful in events. Use **.call() or .apply()** when you want to invoke the funciton **immediately**, and modify the context.
 
@@ -111,7 +113,7 @@
 
 - Closure
 
-  a closure is simply an outer function that returns an inner function. Doing this creates a mechanism to return an enclosed scope on demand.
+  A closure is simply an outer function that returns an inner function. Doing this creates a mechanism to return an enclosed scope on demand.
   
   Closures have access to the outer function’s variable even after the outer function returns.
   
@@ -328,7 +330,7 @@ unshift() | Adds elements to the beginning of an array.
 
 #### Date Object
 - methods
-  - [methods list] (https://www.tutorialspoint.com/javascript/javascript_date_object.htm)
+  - [methods list](https://www.tutorialspoint.com/javascript/javascript_date_object.htm)
   - [methods detail](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
 #### Math Object
@@ -962,6 +964,17 @@ pixelDepth | The number of bits per pixel of the screen.
   ajaxRequest.send(null); // Send the request
 }  // End getText() function
 ```
+
+# ES6
+## String Methods
+
+  method | Syntax | example
+  ------ | ------ | --------------
+  [includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes) | str.includes(searchString[, position]) <br> case-sensitive <br> return true or false <br> start searching from position, default is 0 | var str = 'To be, or not to be, that is the question.'; <br> console.log(str.includes('To be', 1)); // false <br> console.log(str.includes('TO BE')); // false
+  [startsWith](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith) | str.startsWith(searchString[, position]) <br> case-sensitive <br> return true or false <br> start searching from position, default is 0 | var str = 'To be, or not to be, that is the question.'; <br> console.log(str.startsWith('not to be')); // false <br> console.log(str.startsWith('not to be', 10)); // true
+  [endsWith](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith) | str.endsWith(searchString[, length]) <br> case-sensitive <br> return true or false <br> end searching till length, default is str.length | var str = 'To be, or not to be, that is the question.'; <br> console.log(str.endsWith('to be', 19)); // true, search length is 19 instead of str.length
+  [repeat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat) | let resultString = str.repeat(count) <br> return a new string contains count number copies of str | 'abc'.repeat(0); // '' <br> 'abc'.repeat(3.5);  // 'abcabcabc' (count will be converted to integer)
+
 
 # Recommended Reference
 - http://javascriptissexy.com/how-to-learn-javascript-properly/
