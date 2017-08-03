@@ -1061,7 +1061,7 @@ pixelDepth | The number of bits per pixel of the screen.
 #### var vs. let
 - let has block scope, var has function scope
   ```
-  for(var i = 1; i <= 5; i++) {               |      for(var i = 1; i <= 5; i++) {  
+  for(var i = 1; i <= 5; i++) {               |      for(let i = 1; i <= 5; i++) {  
      setTimeout(function() {                  |         setTimeout(function() {
          console.log('Value of i : ' + i);    |             console.log('Value of i : ' + i);
      },100);                                  |        },100); 
