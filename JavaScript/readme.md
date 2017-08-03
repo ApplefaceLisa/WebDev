@@ -1071,6 +1071,9 @@ pixelDepth | The number of bits per pixel of the screen.
   console.log(hello);   // 'hello'
   console.log(window.hello);  // undefined
   console.log(window.hi === hi);  // false
+  
+  var you = 'John';
+  console.log(window.you === you);  // true
   ```
 
 # Recommended Reference
