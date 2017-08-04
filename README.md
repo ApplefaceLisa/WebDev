@@ -9,6 +9,9 @@ all web development exercises
 - [MongoDB for your Heroku NodeJS app](https://www.youtube.com/watch?v=GDqtv1eGGpA&t=13s)
 - [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs#deploy-the-app)
 - [Heroku Cannot GET /](https://stackoverflow.com/questions/24566635/heroku-cannot-get)
+- [How to Add a Favicon to your Site](https://www.w3.org/2005/10/howto-favicon)
+- [Setting up favicon.ico](http://befused.com/html/setting-favicon-ico)
+- [How To Create And Install A favicon.ico](http://www.winterdrache.de/freeware/png2ico/favicon.html)
 
 ### Deploying app to Heroku
 #### [Heroku setup](https://classroom.udacity.com/courses/ud272/lessons/b36fbb24-bfb1-4401-bb8d-9fff509bf016/concepts/89efbf29-454f-4b3d-9af7-006aff792b41)
