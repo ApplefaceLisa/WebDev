@@ -15,16 +15,15 @@ all web development exercises
 - download [Heroku Toolbelt](https://devcenter.heroku.com/articles/heroku-cli), i.e. Heroku CLI;
 - Heroku Login
 
-  under command line shell, input `heroku login`. This will prompt you for your Heroku email and password. You won’t have to log in every time you want to deploy, your credentials will be saved for some time.
-  
-  ![heroku login](heroku-login.gif)
+  under command line shell, input `heroku login`. This will prompt you for your Heroku email and password. You won’t have to log in every time you want to deploy, your credentials will be saved for some time.  
+  ![heroku login](./Heroku/heroku-login.gif)
 
 - install Git
 - change your working directory to the repository directory
 - Heroku Create
 
   To get yourself deployed on Heroku, you must first create a remote on Git. To do this you have to run the `heroku create` command. This will make a new remote repo named heroku where the code will be pushed to.
-  ![heroku create](heroku-create.png)
+  ![heroku create](./Heroku/heroku-create.png)
   
   To ensure you have properly created this remote, run the `git remote -v` command, you should see something output that reveals the two remotes listed, origin and heroku.
-  ![git remote -v](git-remote-v.png)
+  ![git remote -v](./Heroku/git-remote-v.png)
