@@ -180,10 +180,32 @@ JSX is a preprocessor step that adds XML syntax to JavaScript. You can definitel
   );
   ```
   
-#### 2.2.3 React Router
+#### 2.2.3 React lifecycle
+
+  In an ideal world, we wouldn’t use lifecycle methods. All our rendering issues would be controlled via state and props.
+But it’s not an ideal world, and sometimes you need to exact a little more control over how and when your component is updating.
+
+  ![react lifecycle methods](Lifecycle_methods.JPG)
+  
+  method | Most Common Use Case | Can call setState
+  ------ | -------------------- | ----------------------------
+  componentWillMount | App configuration in your root component | Don’t. Use default state instead.
+  componentDidMount | Starting AJAX calls to load in data for your component | Yes
+  componentWillReceiveProps | Acting on particular prop changes to trigger state transitions. we have access to both the next props (via nextProps), and current props (via this.props). `componentWillReceiveProps(nextProps) {...}` | Yes
+  shouldComponentUpdate | Controlling exactly when your component will re-render. `shouldComponentUpdate(nextProps, nextState)` | No
+  componentWillUpdate | Used instead of componentWillReceiveProps on a component that also has shouldComponentUpdate (but no access to previous props). | No
+  componentDidUpdate | Updating the DOM in response to prop or state changes. | Yes
+  componentWillUnmount | Cleaning up any leftover debris from your component. | No
+  
+
+- [React Lifecycle Methods- how and when to use them](https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1)
+
+- [React: Lifecycles](https://www.lynda.com/React-js-tutorials/React-Lifecycles/592509-2.html)
+  
+#### 2.2.4 React Router
 - [A Simple React Router v4 Tutorial](https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf)
   
-#### 2.2.4 AJAX in React
+#### 2.2.5 AJAX in React
 
 - [How to make AJAX requests in React?](https://medium.com/@baphemot/how-to-make-ajax-requests-in-react-a6a52bb5a8b1)
 - [5 best libraries for making AJAX calls in React](https://hashnode.com/post/5-best-libraries-for-making-ajax-calls-in-react-cis8x5f7k0jl7th53z68s41k1)
