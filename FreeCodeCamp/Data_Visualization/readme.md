@@ -201,6 +201,8 @@ But it’s not an ideal world, and sometimes you need to exact a little more con
 - [React Lifecycle Methods- how and when to use them](https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1)
 
 - [React: Lifecycles](https://www.lynda.com/React-js-tutorials/React-Lifecycles/592509-2.html)
+
+- [React in-depth](https://developmentarc.gitbooks.io/react-indepth/content/)
   
 #### 2.2.4 React Router
 - [A Simple React Router v4 Tutorial](https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf)
