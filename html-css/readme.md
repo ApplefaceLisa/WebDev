@@ -29,7 +29,67 @@
 
 ![html5-sectioning-flowchart](html5-sectioning-flowchart.png)
 
-#### External resources:
-- [the-importance-of-sections](http://coding.smashingmagazine.com/2013/01/18/the-importance-of-sections/)
-- [new-structural-elements-in-html5](https://dev.opera.com/articles/new-structural-elements-in-html5/)
-- [the-semantics-of-html5-structural-elements](http://colinaut.com/2009/10/15/the-semantics-of-html5-structural-elements/)
+### Best practices when using sectioning elements
+- Best practice 1: always add a heading to explicit sectioning content (mainly for accessibility reasons )
+  - Always use a heading element after a sectioning element, for example `<section><Hx>...</Hx>...</section>`, and after `<body>`, where x can be 1..6,
+  - Or, use a `<header>` element, like in `<section><header><Hx>...</Hx>.....</header>...</section>`. **_You can use heading elements `<h1>...<h6>` in a `<header>` but be careful if you use more than one_**
+  ```
+  // Good:
+  <section>
+    <h1>Blog post of April 2015</h1>
+    ...
+  </section>
+  
+  // Good
+  <section>
+    <header>
+       <h1>Blog post of April 2015</h1>
+       <p>Posted by Michel Buffa...</p>
+    </header>
+    ...
+  </section>
+  
+  // Bad:
+  <section>
+    <header>
+      <p class="article title">Blog post of April 2015</p>
+      <p>Posted by Michel Buffa...</p>
+    </header>
+    ...
+  </section>
+  ```
+  
+  Notice that <body> is also a sectioning element. It's called a "sectioning root", and would also need a heading.
+  ```
+  // Good
+  <body>
+    <h1>Example Blog</h1>
+    <section>
+      <header>
+         <h2>Blog post of April 2015</h2>
+         <p>Posted by Michel Buffa...</p>
+      </header>
+      <p>Content of the blog post...</p>
+    </section>
+  </body>
+  ```
+  
+- Best practice 2: try not to rely on implicit sectioning, use `<section>, <article>`, etc. instead of just `<h1>...<h6>`
+
+### `<main>`
+- Constraints:
+  - There must NOT be more than one `<main>` element in a document,
+  - It must NOT be a descendent of an `<article>,<aside>, <footer>, <header>, or <nav>` element.
+  
+- Best practice:
+  - For accessibility matters, a best practice is to split your page content into "regions" defined by the five 5 elements (aside, footer, header, main and nav).
+
+### External resources:
+- Structural elements
+  - [the-importance-of-sections](http://coding.smashingmagazine.com/2013/01/18/the-importance-of-sections/)
+  - [new-structural-elements-in-html5](https://dev.opera.com/articles/new-structural-elements-in-html5/)
+  - [the-semantics-of-html5-structural-elements](http://colinaut.com/2009/10/15/the-semantics-of-html5-structural-elements/)
+- main tag
+  - http://www.w3.org/TR/html5/grouping-content.html#the-main-element
+  - http://www.w3.org/html/wg/wiki/User:Sfaulkne/main-usecases#Introduction
+  - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main
