@@ -27,3 +27,9 @@
 
 ![html5_StructuringElements_description](html5_StructuringElements_description.JPG)
 
+![html5-sectioning-flowchart](html5-sectioning-flowchart.png)
+
+#### External resources:
+- [the-importance-of-sections](http://coding.smashingmagazine.com/2013/01/18/the-importance-of-sections/)
+- [new-structural-elements-in-html5](https://dev.opera.com/articles/new-structural-elements-in-html5/)
+- [the-semantics-of-html5-structural-elements](http://colinaut.com/2009/10/15/the-semantics-of-html5-structural-elements/)
