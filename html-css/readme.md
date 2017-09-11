@@ -17,3 +17,13 @@
   - [18 Simple Styles for Horizontal Rules (hr CSS Design)](https://codepen.io/ibrahimjabbari/pen/ozinB)
 - get images [unsplash](https://source.unsplash.com/)
 - [How To Center Anything With CSS](https://codemyviews.com/blog/how-to-center-anything-with-css)
+
+
+---
+# HTML5
+## New structural elements
+
+![html5_StructuringElements](html5_StructuringElements.jpg)
+
+![html5_StructuringElements_description](html5_StructuringElements_description.JPG)
+
