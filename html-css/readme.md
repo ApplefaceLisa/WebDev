@@ -101,3 +101,12 @@
   - http://www.w3.org/html/wg/wiki/User:Sfaulkne/main-usecases#Introduction
   - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main
 - [HTML5 Accessibility Chops: hidden and aria-hidden](https://developer.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/)
+- using CSS to position elements : float and clear
+  - http://learn.shayhowe.com/html-css/positioning-content/
+  - http://alistapart.com/article/css-floats-101
+  - http://webdesign.about.com/od/advancedcss/a/css-clear.htm
+  - https://developer.mozilla.org/en-US/docs/Web/CSS/clear
+- using CSS to position elements : flexbox
+  - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+  - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes
+  - online practice flexbox : http://flexboxfroggy.com/
