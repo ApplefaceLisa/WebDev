@@ -83,6 +83,13 @@
   
 - Best practice:
   - For accessibility matters, a best practice is to split your page content into "regions" defined by the five 5 elements (aside, footer, header, main and nav).
+  
+### about "not display heading content"
+- BEST PRACTICE 1: In order to NOT display the heading content on screen  the recommended technique  is described in [this article by Steve Faulkner](https://developer.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/). Do not use display:none or visibility:hidden in your CSS stylesheet, as in that case the heading content will never be vocalized by screen readers, and more generally by assistive technologies. 
+
+  As an illustration of the recommended technique, see [this JSBin version of the blog example](http://jsbin.com/savabo/edit?html,css,output) that hides the `<h2>Navigation menu</h2>` from the `<nav>...</nav>` element, using the CSS technique explained in the above link.
+  
+- BEST PRACTICE 2: it is not advised to include interactive content (links, controls etc) that is hidden offscreen (it is in fact a violation of the [W3C WCAG 2.0 Guidelines](http://www.w3.org/TR/WCAG20/)). All interactive content must have a visible focus indicator (and be on screen when focused).
 
 ### External resources:
 - Structural elements
@@ -93,3 +100,4 @@
   - http://www.w3.org/TR/html5/grouping-content.html#the-main-element
   - http://www.w3.org/html/wg/wiki/User:Sfaulkne/main-usecases#Introduction
   - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main
+- [HTML5 Accessibility Chops: hidden and aria-hidden](https://developer.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/)
