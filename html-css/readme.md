@@ -91,6 +91,23 @@
   
 - BEST PRACTICE 2: it is not advised to include interactive content (links, controls etc) that is hidden offscreen (it is in fact a violation of the [W3C WCAG 2.0 Guidelines](http://www.w3.org/TR/WCAG20/)). All interactive content must have a visible focus indicator (and be on screen when focused).
 
+### `<details> & <summary>`
+A sort of "accordion" with foldable content. [Example](https://codepen.io/ApplefaceLisa/pen/yzBxjg):
+```
+  <!DOCTYPE html>
+  <html>
+  <body>
+  <details>
+      <summary>
+          How to beat the boss...spoiler alert !
+      </summary>
+         <p> Just aim to the red spots near his eyes</p>
+         <p>Keep shooting at these spots until the eyes open, then hit quickly both eyes with your laser beam.</p>
+  </details>
+  </body>
+  </html>
+```
+
 ### External resources:
 - Structural elements
   - [the-importance-of-sections](http://coding.smashingmagazine.com/2013/01/18/the-importance-of-sections/)
