@@ -29,6 +29,9 @@
 - Google map api
 - [Sencha Ext JS](https://www.sencha.com/products/extjs/#overview)
 
+# JS library
+- [particles.js](https://github.com/VincentGarreau/particles.js/)
+
 # Articles
 - [3 JavaScript questions to watch out for during coding interviews](https://medium.freecodecamp.com/3-questions-to-watch-out-for-in-a-javascript-interview-725012834ccb#.mfc6xdg3d)
 
