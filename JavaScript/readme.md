@@ -32,8 +32,8 @@
 # JS library
 ### Particles.js
 - [particles.js](https://github.com/VincentGarreau/particles.js/)
+- [An Introduction to Particles.js](https://code.tutsplus.com/series/an-introduction-to-particlesjs--cms-1017)
 - [particleground](https://github.com/jnicol/particleground)
-- [How to add Particles to your Divi Section with Particleground](https://www.youtube.com/watch?v=Qo86UfR2qSA)
 
 # Cool stuff
 - [Building a 3D Rotating Carousel with CSS and JavaScript](https://www.sitepoint.com/building-3d-rotating-carousel-css-javascript/)
