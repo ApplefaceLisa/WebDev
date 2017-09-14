@@ -30,7 +30,13 @@
 - [Sencha Ext JS](https://www.sencha.com/products/extjs/#overview)
 
 # JS library
+### Particles.js
 - [particles.js](https://github.com/VincentGarreau/particles.js/)
+- [particleground](https://github.com/jnicol/particleground)
+- [How to add Particles to your Divi Section with Particleground](https://www.youtube.com/watch?v=Qo86UfR2qSA)
+
+# Cool stuff
+- [Building a 3D Rotating Carousel with CSS and JavaScript](https://www.sitepoint.com/building-3d-rotating-carousel-css-javascript/)
 
 # Articles
 - [3 JavaScript questions to watch out for during coding interviews](https://medium.freecodecamp.com/3-questions-to-watch-out-for-in-a-javascript-interview-725012834ccb#.mfc6xdg3d)
