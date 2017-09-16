@@ -7,6 +7,22 @@
 - [CSS Transitions and Transforms for Beginners](https://robots.thoughtbot.com/transitions-and-transforms)
 - [Align a pseudo element to the right and vertical center](https://stackoverflow.com/questions/30055459/align-a-pseudo-element-to-the-right-and-vertical-center)
 - [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- traditional clear fix trick
+  ```
+  @mixin clearfix {
+    &:before,
+    &:after {
+      content: '';
+      display: table;
+    }
+    &:after {
+      clear : both;
+    }
+  }
+  #target_element_Id {
+    @include clearfix;
+  }
+  ```
 
 ### Reference
 - [How to style checkbox using CSS?](http://stackoverflow.com/questions/4148499/how-to-style-checkbox-using-css)
