@@ -46,6 +46,8 @@
   - Question #3: Debouncing
   
 - [JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/)
+
+- [JavaScript Promises: an Introduction](https://developers.google.com/web/fundamentals/getting-started/primers/promises)
     
 # Basic Knowledge
 ### Variable scope and hoisting
