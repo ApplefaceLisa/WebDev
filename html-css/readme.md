@@ -24,6 +24,10 @@
   }
   ```
 
+### SASS
+- [sass-lang documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)
+- [the sass way](http://thesassway.com)
+
 ### Reference
 - [How to style checkbox using CSS?](http://stackoverflow.com/questions/4148499/how-to-style-checkbox-using-css)
 - [10 Hilarious Lorem Ipsum Generators for Web Designers](http://theultralinx.com/2013/08/10-hilarious-lorem-ipsum-generators-web-designers/)
