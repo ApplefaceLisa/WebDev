@@ -559,3 +559,5 @@
 - Stack overflow : [Limiting the number of ngrepeat to 10 but it shows all 40 items at once](https://stackoverflow.com/questions/29469393/limiting-the-number-of-ngrepeat-to-10-but-it-shows-all-40-items-at-once)
 
 - [Angular 4 Firebase Tutorial: Make a Simple Angular 4 App](https://coursetro.com/posts/code/54/Angular-4-Firebase-Tutorial:-Make-a-Simple-Angular-4-App)
+- [Angular 2 Auth0 Application](https://www.youtube.com/watch?v=i_dHFvi1BJc&t=199s)
+- [Build a Full Angular Authentication System with Firebase (Tutorial)](https://www.youtube.com/watch?v=O_jxEC0hWcA&t=147s)
