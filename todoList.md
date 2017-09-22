@@ -23,6 +23,7 @@
 - [Web Accessibility](https://www.udacity.com/course/web-accessibility--ud891)
 - [Front-End Frameworks](https://www.udacity.com/course/front-end-frameworks--ud894)
 - [Client-Server Communications](https://www.udacity.com/course/client-server-communication--ud897)
+- [Data Visualization and D3.js](https://www.udacity.com/course/data-visualization-and-d3js--ud507)
 
 ## full-stack
 - [Intro to Backend](https://www.udacity.com/course/intro-to-backend--ud171)
@@ -31,6 +32,7 @@
 - [Authentication & Authorization: OAuth](https://www.udacity.com/course/authentication-authorization-oauth--ud330)
 - [HTTP & Web Servers](https://www.udacity.com/course/http-web-servers--ud303)
 - [Designing RESTful APIs](https://www.udacity.com/course/designing-restful-apis--ud388)
+- [Data Wrangling with MongoDB](https://www.udacity.com/course/data-wrangling-with-mongodb--ud032)
 - [Programming Foundations with Python](https://www.udacity.com/course/programming-foundations-with-python--ud036)
 - [Developing Scalable Apps in Python](https://www.udacity.com/course/developing-scalable-apps-in-python--ud858)
 - [Linux Command Line Basics](https://www.udacity.com/course/linux-command-line-basics--ud595)
