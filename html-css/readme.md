@@ -23,16 +23,20 @@
     @include clearfix;
   }
   ```
-
-### SASS
+### CSS Pre-Processor
+#### SASS
 - [sass-lang documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)
 - [the sass way](http://thesassway.com)
 
-### SCSS
+#### SCSS
 - [Intro to SCSS for Sass Users](http://sass-lang.com/documentation/file.SCSS_FOR_SASS_USERS.html)
 
-### SASS vs. SCSS
+##### SASS vs. SCSS
 ![Sass vs SCSS](Sass_vs_SCSS.JPG)
+
+#### LESS
+- [less doc](http://lesscss.org/)
+- [Video: Less Tutorial](https://www.youtube.com/watch?v=YD91G8DdUsw&t=105s)
 
 ### Reference
 - [How to style checkbox using CSS?](http://stackoverflow.com/questions/4148499/how-to-style-checkbox-using-css)
@@ -48,6 +52,10 @@
 
 ---
 # HTML5
+tutorial
+- [HTML5 Part 1: HTML5 Coding Essentials and Best Practices](https://courses.edx.org/courses/course-v1:W3Cx+HTML5.1x+2T2016/course/)
+- [HTML5 Part 2: Advanced Techniques for Designing HTML5 Apps](https://courses.edx.org/courses/course-v1:W3Cx+HTML5.2x+1T2016/course/)
+
 ## New structural elements
 
 ![html5_StructuringElements](html5_StructuringElements.jpg)
