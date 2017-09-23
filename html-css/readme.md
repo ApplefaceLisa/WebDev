@@ -28,6 +28,12 @@
 - [sass-lang documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)
 - [the sass way](http://thesassway.com)
 
+### SCSS
+- [Intro to SCSS for Sass Users](http://sass-lang.com/documentation/file.SCSS_FOR_SASS_USERS.html)
+
+### SASS vs. SCSS
+![Sass vs SCSS](Sass_vs_SCSS.JPG)
+
 ### Reference
 - [How to style checkbox using CSS?](http://stackoverflow.com/questions/4148499/how-to-style-checkbox-using-css)
 - [10 Hilarious Lorem Ipsum Generators for Web Designers](http://theultralinx.com/2013/08/10-hilarious-lorem-ipsum-generators-web-designers/)
