@@ -8,6 +8,28 @@
 - [Intro to AJAX](https://www.udacity.com/course/intro-to-ajax--ud110)
 ---
 - [Website Performance Optimization](https://www.udacity.com/course/website-performance-optimization--ud884)
+  - [Web Fundamentals : Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) by Google
+  - Optimize the DOM
+    - fewer bytes faster renders
+      - [minify](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer#minification-preprocessing--context-specific-optimizations)
+      - [compress](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer#text-compression-with-gzip)
+      - [cache](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
+  - Unblocking CSS (CSS is render blocking, why wait on styles you don't need?)
+    - split CSS file to multiple files and use @media to let browser know which ones are needed for current case.
+      ```
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="style-print.css" media="print">
+      ```
+    - [Render Blocking CSS](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css)
+      - By default, CSS is treated as a render blocking resource.
+      - Media types and media queries allow us to mark some CSS resources as non-render blocking.
+      - The browser downloads all CSS resources, regardless of blocking or non-blocking behavior.
+      ```
+      <link href="style.css"    rel="stylesheet">
+      <link href="style.css"    rel="stylesheet" media="all">
+      <link href="portrait.css" rel="stylesheet" media="orientation:portrait">
+      <link href="print.css"    rel="stylesheet" media="print">
+      ```
 - [Browser Rendering Optimization](https://www.udacity.com/course/browser-rendering-optimization--ud860)
 - [Object-Oriented JavaScript](https://www.udacity.com/course/object-oriented-javascript--ud015)
 - [JavaScript Design Patterns](https://www.udacity.com/course/javascript-design-patterns--ud989)
