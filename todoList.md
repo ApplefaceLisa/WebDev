@@ -30,6 +30,15 @@
       <link href="portrait.css" rel="stylesheet" media="orientation:portrait">
       <link href="print.css"    rel="stylesheet" media="print">
       ```
+    - more about media query [Responsive Web Design Basics](https://developers.google.com/web/fundamentals/design-and-ui/responsive/)
+  - Optimizing JS (JavaScript is parser blocking)
+    - use the [defer attribute](https://hacks.mozilla.org/2009/06/defer/) _**async**_ to tell browser : 1) do not block DOM construction 2) do not block on CSSOM.
+    ```
+    <script src="script.js" async></script>
+    ```
+    - use [window.onload](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onload) in JS
+    - Learn more about [parser blocking vs. asynchronous JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript#parser-blocking-vs-asynchronous-javascript)
+  
 - [Browser Rendering Optimization](https://www.udacity.com/course/browser-rendering-optimization--ud860)
 - [Object-Oriented JavaScript](https://www.udacity.com/course/object-oriented-javascript--ud015)
 - [JavaScript Design Patterns](https://www.udacity.com/course/javascript-design-patterns--ud989)
