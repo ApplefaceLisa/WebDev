@@ -54,6 +54,12 @@
     - Minimize bytes
     - Reduce critical resources
     - Shorten CRP(critical rendering path) length
+      - how to calculate CRP
+      ![crp_01](crp_calc_01.JPG)
+      ![crp_02](crp_calc_02.JPG)
+      - preload scanner
+        [How the Browser Pre-loader Makes Pages Load Faster](http://andydavies.me/blog/2013/10/22/how-the-browser-pre-loader-makes-pages-load-faster/)
+      ![preload scanner](preload_scanner.JPG)
   
     =====>>> more readings:
     - [optimizing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path)
