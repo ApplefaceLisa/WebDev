@@ -38,7 +38,29 @@
     ```
     - use [window.onload](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onload) in JS
     - Learn more about [parser blocking vs. asynchronous JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript#parser-blocking-vs-asynchronous-javascript)
+    
+    ![optimizing JS](opt_JS.JPG)
   
+  - General Strategies
+    - Minify, Compress, Cache (HTML, CSS, JavaScript)      
+    - Minimize use of render blocking resources (CSS)
+      - Use media queries on <link> to unblock rendering
+      - Inline CSS
+    - Minimize use of parser blocking resources (JS)
+      - Defer JavaScript execution
+      - Use async attribute on <script>
+      
+    ====>>>> 3 patterns:
+    - Minimize bytes
+    - Reduce critical resources
+    - Shorten CRP(critical rendering path) length
+  
+    =====>>> more readings:
+    - [optimizing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path)
+    - [Critical Rendering Path performance patterns](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp#performance-patterns)
+    - TCP Slow Start [High Performance Browser Networking](http://hpbn.co/)
+    
+    
 - [Browser Rendering Optimization](https://www.udacity.com/course/browser-rendering-optimization--ud860)
 - [Object-Oriented JavaScript](https://www.udacity.com/course/object-oriented-javascript--ud015)
 - [JavaScript Design Patterns](https://www.udacity.com/course/javascript-design-patterns--ud989)
