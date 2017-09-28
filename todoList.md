@@ -6,7 +6,6 @@
 - [JavaScript Basics](https://www.udacity.com/course/javascript-basics--ud804)
 - [Intro to jQuery](https://www.udacity.com/course/intro-to-jquery--ud245)
 - [Intro to AJAX](https://www.udacity.com/course/intro-to-ajax--ud110)
----
 - [Website Performance Optimization](https://www.udacity.com/course/website-performance-optimization--ud884)
   - [Web Fundamentals : Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) by Google
   - Optimize the DOM
@@ -66,8 +65,16 @@
     - [Critical Rendering Path performance patterns](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp#performance-patterns)
     - TCP Slow Start [High Performance Browser Networking](http://hpbn.co/)
     
-    
+---    
 - [Browser Rendering Optimization](https://www.udacity.com/course/browser-rendering-optimization--ud860)
+  - Most devices refresh their screen 60 times per second. To match that, we need to have 60 frames to put up, which is 60fps.
+  - What goes into one frame? (DOM, CSSOM, render tree). Only the visible elements exist in the render tree.
+    ![frame pipeline](frame_pipeline.JPG)
+  - The property we change affect performance in different ways. https://csstriggers.com/ (opacity and transform only trigger composite)
+  - Use chrome devtool do [Performance Analysis Reference](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference)
+  - Each stage has a different window of time to execute JavaScript without incurring a user experience penalty.
+    ![stage window time](stage_window.JPG)
+
 - [Object-Oriented JavaScript](https://www.udacity.com/course/object-oriented-javascript--ud015)
 - [JavaScript Design Patterns](https://www.udacity.com/course/javascript-design-patterns--ud989)
 - [JavaScript Testing](https://www.udacity.com/course/javascript-testing--ud549)
