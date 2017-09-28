@@ -69,12 +69,17 @@
 - [Browser Rendering Optimization](https://www.udacity.com/course/browser-rendering-optimization--ud860)
   - Most devices refresh their screen 60 times per second. To match that, we need to have 60 frames to put up, which is 60fps.
   - What goes into one frame? (DOM, CSSOM, render tree). Only the visible elements exist in the render tree.
-    ![frame pipeline](frame_pipeline.JPG)
   - The property we change affect performance in different ways. https://csstriggers.com/ (opacity and transform only trigger composite)
-  - Use chrome devtool do [Performance Analysis Reference](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference)
-  - Each stage has a different window of time to execute JavaScript without incurring a user experience penalty.
+    ![frame pipeline](frame_pipeline.JPG)
+  - App lifecycles(load, idle, animate, response)
+  
+    Each stage has a different window of time to execute JavaScript without incurring a user experience penalty.
     ![stage window time](stage_window.JPG)
 
+  - Use chrome devtool do [Performance Analysis Reference](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference), find jank caused in each stage of life cycle.
+  
+  - JavaScript
+  
 - [Object-Oriented JavaScript](https://www.udacity.com/course/object-oriented-javascript--ud015)
 - [JavaScript Design Patterns](https://www.udacity.com/course/javascript-design-patterns--ud989)
 - [JavaScript Testing](https://www.udacity.com/course/javascript-testing--ud549)
