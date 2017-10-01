@@ -71,6 +71,7 @@
   - What goes into one frame? (DOM, CSSOM, render tree). Only the visible elements exist in the render tree.
   - The property we change affect performance in different ways. https://csstriggers.com/ (opacity and transform only trigger composite)
     ![frame pipeline](frame_pipeline.JPG)
+  - [How (not) to trigger a layout in WebKit](http://gent.ilcore.com/2011/03/how-not-to-trigger-layout-in-webkit.html)
   - App lifecycles(load, idle, animate, response)
   
     Each stage has a different window of time to execute JavaScript without incurring a user experience penalty.
@@ -88,6 +89,12 @@
       - [Writing Fast, Memory-Efficient JavaScript on Smashing Magazine](http://www.smashingmagazine.com/2012/11/writing-fast-memory-efficient-javascript/)
       - [Memory Management on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
       - [High-Performance, Garbage-Collector-Friendly Code on Build New Games](http://buildnewgames.com/garbage-collector-friendly-code/)
+  
+  - Styles and Layout
+    - Keep selector matching simple (Block Element Modifier)
+      - [key concepts](https://en.bem.info/methodology/key-concepts/)
+      - [BEM and SMACSS](https://www.sitepoint.com/bem-smacss-advice-from-developers/)
+    
   
 - [Object-Oriented JavaScript](https://www.udacity.com/course/object-oriented-javascript--ud015)
 - [JavaScript Design Patterns](https://www.udacity.com/course/javascript-design-patterns--ud989)
