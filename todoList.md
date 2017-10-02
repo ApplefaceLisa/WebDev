@@ -121,16 +121,16 @@
 
 ## 3. full-stack
 ### 3.1 [Intro to Backend](https://www.udacity.com/course/intro-to-backend--ud171)
-- [Full Stack Foundations](https://www.udacity.com/course/full-stack-foundations--ud088)
-- [Intro to Relational Databases](https://www.udacity.com/course/intro-to-relational-databases--ud197)
-- [Authentication & Authorization: OAuth](https://www.udacity.com/course/authentication-authorization-oauth--ud330)
-- [HTTP & Web Servers](https://www.udacity.com/course/http-web-servers--ud303)
-- [Designing RESTful APIs](https://www.udacity.com/course/designing-restful-apis--ud388)
-- [Data Wrangling with MongoDB](https://www.udacity.com/course/data-wrangling-with-mongodb--ud032)
-- [Programming Foundations with Python](https://www.udacity.com/course/programming-foundations-with-python--ud036)
-- [Developing Scalable Apps in Python](https://www.udacity.com/course/developing-scalable-apps-in-python--ud858)
-- [Linux Command Line Basics](https://www.udacity.com/course/linux-command-line-basics--ud595)
-- [Configuring Linux Web Servers](https://www.udacity.com/course/configuring-linux-web-servers--ud299)
+### 3.2 [Full Stack Foundations](https://www.udacity.com/course/full-stack-foundations--ud088)
+### 3.3 [Intro to Relational Databases](https://www.udacity.com/course/intro-to-relational-databases--ud197)
+### 3.4 [Authentication & Authorization: OAuth](https://www.udacity.com/course/authentication-authorization-oauth--ud330)
+### 3.5 [HTTP & Web Servers](https://www.udacity.com/course/http-web-servers--ud303)
+### 3.6 [Designing RESTful APIs](https://www.udacity.com/course/designing-restful-apis--ud388)
+### 3.7 [Data Wrangling with MongoDB](https://www.udacity.com/course/data-wrangling-with-mongodb--ud032)
+### 3.8 [Programming Foundations with Python](https://www.udacity.com/course/programming-foundations-with-python--ud036)
+### 3.9 [Developing Scalable Apps in Python](https://www.udacity.com/course/developing-scalable-apps-in-python--ud858)
+### 3.10 [Linux Command Line Basics](https://www.udacity.com/course/linux-command-line-basics--ud595)
+### 3.11 [Configuring Linux Web Servers](https://www.udacity.com/course/configuring-linux-web-servers--ud299)
 
 # Reference
 - [Udacity Nanodegrees curricula](https://github.com/mikesprague/udacity-nanodegrees)
