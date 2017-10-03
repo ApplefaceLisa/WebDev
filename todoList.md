@@ -107,6 +107,121 @@
 ### 1.10 [JavaScript Design Patterns](https://www.udacity.com/course/javascript-design-patterns--ud989)
 ### 1.11 [JavaScript Testing](https://www.udacity.com/course/javascript-testing--ud549)
 ### 1.12 [HTML5 Canvas](https://www.udacity.com/course/html5-canvas--ud292)
+#### 1.12.1  Canvas Basics
+- [draw image](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage)
+  ```
+  var c = document.querySelector("#c");
+  var ctx = c.getContext("2d");
+  image = new Image();
+  image.onload = function() {
+    ctx.drawImage(image, x, y, width, height);
+  }
+  
+  image.src = "frys.jpg";
+  ```
+- rectangle
+  ```
+  var c = document.querySelector("#c");
+  var ctx = c.getContext("2d");
+  ctx.fillStyle = "blue";    // set background color
+  // Start at (0,0) and draw a 50px x 50px blue rectangle.
+  ctx.fillRect(0,0,50,50);   // draw rectangle with fillin, default black
+  // Start at (0,0) and clear a 25px x 25px rectangle.
+  ctx.clearRect(0,0,25,25);  // erase rectangle
+  ctx.clearRect(0, 0, c.width, c.height);   // erase the entire canvas
+  c.width = c.width;    // shorter way to clear a full canvas
+  
+  ctx.strokeStyle = "#33CC33";     // green. line color.
+  ctx.strokeRect(x, y, width, height);  // draw rectangle without fillin
+  ```
+  
+- [path](http://www.w3.org/TR/2dcontext/#building-paths)
+```
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(x, y);
+  ...
+  ctx.fill();    // done drawing with fillin
+  ctx.stroke();  // done drawing without fillin
+```
+
+- [drawing text](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_text)
+  ```
+  ctx.fillText("Hello World!");
+  ctx.strokeText("Hello World!");
+  ```
+
+  - Example: 
+  
+    Draw the phrase "CANVAS MEMES!" with iconic meme typography, the text must use letters that have black outline and white fill. Use the Impact font, size 36pt. The black outlines should have a width of 3px.
+    ```
+    ctx.font = "36pt Impact";
+    ctx.textAlign = "center";
+
+    ctx.fillStyle = "white";
+    ctx.fillText("CANVAS MEMES!", 150, 40);
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 3;
+    ctx.strokeText("CANVAS MEMES!", 150, 40);
+    ```
+  - [more reading](http://diveintohtml5.info/canvas.html#text)
+
+- Canvas2D allows you to translate (move), rotate, or scale objects. 
+
+  You should generally _**scale**_ objects first, _**rotate**_ them next, and then finally _**translate**_ last.
+  - Scaling
+  
+    **scale(x,y)** multiplies the x and y values by a given factor so `ctx.scale(2,3);` will make all values twice as large on the x axis and three times as large on the y axis.
+    
+  - Translation
+    
+    **translate(x,y)** moves all subsequent draw commands by x number of pixels on horizontally and y pixels vertically. `ctx.translate(20,40);` moves all elements drawn after it 20 pixels to the rights and 40 pixels down.
+    
+  - Rotation
+  
+    **ctx.rotate(angleRadians)** rotates an object a certain number of radians (generally) about its center. 
+    
+    The formula to convert a value from degrees to radians: `radians = degrees * (Math.PI/180)`.
+    
+- stack of drawing states for each canvas object
+  
+  The canvas state can store:
+  - The current transformation matrix (rotation, scaling, translation)
+  - strokeStyle
+  - fillStyle
+  - font
+  - globalAlpha
+  - lineWidth
+  - lineCap
+  - lineJoin
+  - miterLimit
+  - shadowOffsetX
+  - shadowOffsetY
+  - shadowBlur
+  - shadowColor
+  - globalCompositeOperation
+  - textAlign
+  - textBaseline
+  - The current clipping region
+  
+  Example:
+  ```
+  var c = document.querySelector("#c");
+  var ctx = c.getContext("2d");
+
+  ctx.fillStyle = "blue";
+  ctx.fillRect(0,0,50,50);  
+  ctx.save();   // Save state with blue fill
+  
+  ctx.fillStyle = "green";
+  ctx.fillRect(100,100,10,10);  
+  
+  ctx.restore();  // Restore to blue fill
+  ctx.fillRect(200,10,20,20);
+  ```
+  
+  Example: MemeMaker | [starter](https://gist.github.com/jwill/7482ccf83ccf869f3302)  |  [solution](https://gist.github.com/jwill/d017253e2bb1d3c91c84)
+
 ### 1.13 [HTML5 Game Development](https://www.youtube.com/watch?v=i3n-BZ2UHO0&list=PLAwxTw4SYaPlUUkh6txMRXE-w-6N1Z225)
 
 ## 2. front-end intermediate
