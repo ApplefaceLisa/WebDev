@@ -222,6 +222,45 @@
   
   Example: MemeMaker | [starter](https://gist.github.com/jwill/7482ccf83ccf869f3302)  |  [solution](https://gist.github.com/jwill/d017253e2bb1d3c91c84)
 
+#### 1.12.2 from pixel to animation
+- play with pixel manipulation
+  - ctx.getImageData
+  - ctx.putImageData
+  - ctx.drawImage
+
+- play videos with canvas
+  - [Animating with requestAnimationFrame](https://www.kirupa.com/html5/animating_with_requestAnimationFrame.htm)
+  - [requestAnimationFrame for Smart Animating](https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/)
+  ```
+  <video id="v" controls loop src="video.mp4"></video>
+  <canvas id="c"></canvas>
+  <script type="text/javascript">
+    var canvas = document.querySelector("canvas");
+    var ctx = canvas.getContext("2d");
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      var v = document.querySelector('#v');
+      var canvas = document.querySelector('#c');
+      var ctx = canvas.getContext('2d');
+      
+      v.addEventListener('loadedmetadata', function(){
+        canvas.width = this.videoWidth;
+        canvas.height = this.videoHeight;
+      });
+      
+      var draw = function() {
+        canvas.getContext('2d').drawImage(v, 0, 0);
+        requestAnimationFrame(draw);
+      };
+      
+      v.addEventListener('play', function() {
+        if (v.paused || v.ended) return;
+        draw();
+      });
+    });
+  </script>
+  ```
+
 ### 1.13 [HTML5 Game Development](https://www.youtube.com/watch?v=i3n-BZ2UHO0&list=PLAwxTw4SYaPlUUkh6txMRXE-w-6N1Z225)
 
 ## 2. front-end intermediate
