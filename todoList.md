@@ -8,6 +8,7 @@
 ### 1.6 [Intro to AJAX](https://www.udacity.com/course/intro-to-ajax--ud110)
 ### 1.7 [Website Performance Optimization](https://www.udacity.com/course/website-performance-optimization--ud884)
 - [Web Fundamentals : Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) by Google
+![Critical Rendering Path](CRP.JPG)
 - Optimize the DOM
   - fewer bytes faster renders
     - [minify](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer#minification-preprocessing--context-specific-optimizations)
