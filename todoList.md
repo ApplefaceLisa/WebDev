@@ -260,6 +260,8 @@
     });
   </script>
   ```
+- [The Game Loop / Processing User Input](https://classroom.udacity.com/courses/ud292/lessons/3183538785/concepts/32434388120923)  
+  - Kibo.js - a JavaScript library for processing keyboard input.
 
 ### 1.13 [HTML5 Game Development](https://www.youtube.com/watch?v=i3n-BZ2UHO0&list=PLAwxTw4SYaPlUUkh6txMRXE-w-6N1Z225)
 
