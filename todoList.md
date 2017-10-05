@@ -269,6 +269,45 @@
 ## 2. front-end intermediate
 ### 2.1 [Building High Conversion Web Forms](https://www.udacity.com/course/building-high-conversion-web-forms--ud890)
 ### 2.2 [JavaScript Promises](https://www.udacity.com/course/javascript-promises--ud898)
+The Promise object is used for deferred and asynchronous computations.
+- Callbacks vs. Promises
+```
+// callback
+function loadImage(src, parent, callback) {
+  var img = document.createElement('img');
+  img.src = src;
+  img.onload = callback;
+  parent.appendChild(img);
+}
+problems: 1) how to handle error? 2) how to chain sequence works?
+
+// Promise
+new Promise(function(resolve, reject) {
+  var img = document.createElement('img');
+  img.src = 'image.jpg';
+  img.onload = resolve;  // pass values to function called by then
+  img.onerror = reject;  // pass values to function called by catch
+  document.body.appendChild(img);
+})
+.then(finishLoading)
+.catch(showAlternateImage)
+;
+```
+- [JavaScript Promises - Jake Archibald](http://www.html5rocks.com/en/tutorials/es6/promises/)
+```
+var promise = new Promise(function(resolve, reject) {
+  var value = doSometing();
+  if (thingWorked) {
+    resolve(value);
+  } else if (somethingWrong) {
+    reject();
+  }
+}).then(function(value) {
+  // success
+  return nextThing(value);
+}).catch(rejectFunction);
+```
+
 ### 2.3 [Web Tooling & Automation](https://www.udacity.com/course/web-tooling-automation--ud892)
 ### 2.4 [Offline Web Applications](https://www.udacity.com/course/offline-web-applications--ud899)
 ### 2.5 [Web Accessibility](https://www.udacity.com/course/web-accessibility--ud891)
