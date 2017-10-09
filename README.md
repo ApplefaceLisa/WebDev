@@ -1,8 +1,20 @@
 # WebDev
 all web development exercises
-- [Create a Web App and RESTful API Server Using the MEAN Stack](https://devcenter.heroku.com/articles/mean-apps-restful-api)
+
+# Learning Materials
+## HTML / HTML5
+### HTML5
+- W3Cx : [HTML5 and CSS Fundamentals](https://courses.edx.org/courses/course-v1:W3Cx+HTML5.0x+1T2017/course/)
+- W3Cx : [HTML5 Coding Essentials and Best Practices](https://courses.edx.org/courses/course-v1:W3Cx+HTML5.1x+1T2017/course/)
+- W3Cx : [HTML5 Apps and Games](https://courses.edx.org/courses/course-v1:W3Cx+HTML5.2x+3T2017/course/)
+
+# Online tools
+- [W3C developer tools](http://w3c.github.io/developers/tools/)
+- [W3C cheatsheet](http://www.w3.org/2009/cheatsheet/)
+
 
 # TBD
+- [Create a Web App and RESTful API Server Using the MEAN Stack](https://devcenter.heroku.com/articles/mean-apps-restful-api)
 ## HEROKU
 - [Deploying a MEAN stack app to Heroku](http://www.tilcode.com/deploying-a-mean-stack-app-to-heroku/)
 - [MEAN Stack App Part 20: Deploy App Using Heroku](https://www.youtube.com/watch?v=IhU6x94eTXU)
