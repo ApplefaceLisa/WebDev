@@ -1,4 +1,12 @@
-# Create default react app
+# Projects List
+### [Build a Markdown Previewer](https://www.freecodecamp.org/challenges/build-a-markdown-previewer)
+### [Build a Camper Leaderboard](https://www.freecodecamp.org/challenges/build-a-camper-leaderboard)
+### [Build a Recipe Box](https://www.freecodecamp.org/challenges/build-a-recipe-box)
+### [Build the Game of Life](https://www.freecodecamp.org/challenges/build-the-game-of-life)
+### [Build a Roguelike Dungeon Crawler Game](https://www.freecodecamp.org/challenges/build-a-roguelike-dungeon-crawler-game)
+
+# General Workflow
+## Create default react app
 under command line,
 1) make sure node.js installed : `> node -v`
 
@@ -12,11 +20,11 @@ under command line,
   > npm start
   ```
 
-# Start coding
-## clean initial project code
+## Start coding
+### clean initial project code
 enter `src/` folder, delete all files except index.css and index.js
 
-## create components
+### create components
 - deep clone nested array
 ```
 JSON.parse(JSON.stringify(array));
@@ -26,7 +34,7 @@ JSON.parse(JSON.stringify(array));
 run `npm install --save react-bootstrap` under app folder in command line,
 add `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">` in index.html
 
-## Problems
+# Problems To Be Solved
 ### GameOfLife
 - box grid layout error when zoom-in or zoom-out window
 - generations number won't stop if grid is clear or stop changing.
