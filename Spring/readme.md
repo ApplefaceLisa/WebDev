@@ -1,5 +1,13 @@
 ## Book : Spring Microservices in Action
-### 1. [Chapter 1](http://proquest.safaribooksonline.com.rpa.sccl.org/book/web-development/9781617293986/chapter-1dot-welcome-to-the-cloud-spring/kindle_split_010_html) Welcome to the cloud, Spring
+### Main Content
+- What a microservice is and the design considerations that go into building a microservice-based application
+- When you shouldn’t build a microservice-based application
+- How to build microservices using the Spring Boot framework
+- The core operational patterns that need to be in place to support microservice applications, particularly a cloud-based application
+- How you can use Spring Cloud to implement these operational patterns
+- How to take what you’ve learned and build a deployment pipeline that can be used to deploy your services to a private, internally managed cloud or a public cloud provider
+
+### 1. [Chapter 1](http://proquest.safaribooksonline.com.rpa.sccl.org/book/web-development/9781617293986/chapter-1dot-welcome-to-the-cloud-spring/kindle_split_010_html) : Welcome to the cloud, Spring
 #### 1.1 Understanding microservices and why companies use them
 ##### 1.1.1 Monolithic architecture vs. Microservices architecture
 - In a monolithic architecture, an application is delivered as a single deployable software artifact. All the UI (user interface), business, and database access logic are packaged together into a single application artifact and deployed to an application server.
