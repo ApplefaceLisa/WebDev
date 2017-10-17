@@ -33,6 +33,15 @@ The following forces are impacting the way developers have to think about buildi
 Keep in mind, **Small, Simple, and Decoupled Services = Scalable, Resilient, and Flexible Applications**.
 
 #### 1.2 Using Spring, Spring Boot, and Spring Cloud for building microservices
+##### 1.2.1 Spring, Spring Boot and Spring Cloud
+- **Spring** has become the de facto development framework for building Java-based applications. At its core, Spring is based on the concept of _**dependency injection**_. In a normal Java application, the application is decomposed into classes where each class often has explicit linkages to other classes in the application. The linkages are the invocation of a class constructor directly in the code. Once the code is compiled, these linkage points can’t be changed.
+- **Spring Boot** is a re-envisioning of the Spring framework. While it embraces core features of Spring, Spring Boot strips away many of the “enterprise” features found in Spring and instead delivers a framework geared toward _**Java-based, REST-oriented**_ (Representational State Transfer) microservices. With a few simple _**annotations**_, a Java developer can quickly build a REST microservice that can be packaged and deployed without the need for an external application container.
+  - The core concept behind **REST** is that your services should embrace the use of the _**HTTP verbs (GET, POST, PUT, and DELETE)**_ to represent the core actions of the service and use a lightweight web-oriented data serialization protocol, such as JSON, for requesting and receiving data from the service.
+- The **Spring Cloud** framework makes it simple to _**operationalize and deploy**_ microservices to a private or public cloud. Spring Cloud wraps several popular cloud-management microservice frameworks under a common framework and makes the use and deployment of these technologies as easy to use as annotating your code.
+
+##### 1.2.2 Building a microservice with Spring Boot 
+- A simple example : how to write a simple “Hello World” REST-service using Spring Boot.
+
 
 #### 1.3 Learning why the cloud and microservices are relevant to microservice-based applications
 #### 1.4 Building microservices involves more than building service code
