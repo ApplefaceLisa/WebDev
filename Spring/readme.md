@@ -6,3 +6,7 @@
 - Building microservices involves more than building service code
 - Understanding the parts of cloud-based development
 - Using Spring Boot and Spring Cloud in microservice development
+
+
+## [microservices](https://www.microservices.com/)
+- [A typical microservices architecture](https://www.microservices.com/reference-architecture/)
