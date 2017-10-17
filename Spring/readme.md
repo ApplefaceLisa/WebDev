@@ -1,11 +1,25 @@
 ## Book : Spring Microservices in Action
-### [Chapter 1](http://proquest.safaribooksonline.com.rpa.sccl.org/book/web-development/9781617293986/chapter-1dot-welcome-to-the-cloud-spring/kindle_split_010_html)
-- Understanding microservices and why companies use them
-- Using Spring, Spring Boot, and Spring Cloud for building microservices
-- Learning why the cloud and microservices are relevant to microservice-based applications
-- Building microservices involves more than building service code
-- Understanding the parts of cloud-based development
-- Using Spring Boot and Spring Cloud in microservice development
+### 1. [Chapter 1](http://proquest.safaribooksonline.com.rpa.sccl.org/book/web-development/9781617293986/chapter-1dot-welcome-to-the-cloud-spring/kindle_split_010_html)
+#### 1.1 Understanding microservices and why companies use them
+##### 1.1.1 Monolithic architecture vs. Microservices architecture
+- In a monolithic architecture, an application is delivered as a single deployable software artifact. All the UI (user interface), business, and database access logic are packaged together into a single application artifact and deployed to an application server.
+- A microservice is a small, loosely coupled, distributed service. The key concept you need to embrace as you think about microservices is decomposing and unbundling the functionality of your applications so they’re completely independent of one another.
+
+![monolithic vs. microservices](./images/monolithic_vs_microservices.jpg)
+
+A microservice architecture has the following characteristics:
+
+- Application logic is broken down into small-grained components with well-defined boundaries of responsibility that coordinate to deliver a solution.
+- Each component has a small domain of responsibility and is deployed completely independently of one another. Microservices should have - responsibility for a single part of a business domain. Also, a microservice should be reusable across multiple applications.
+- Microservices communicate based on a few basic principles (notice I said principles, not standards) and employ lightweight communication protocols such as HTTP and JSON (JavaScript Object Notation) for exchanging data between the service consumer and service provider.
+- The underlying technical implementation of the service is irrelevant because the applications always communicate with a technology-neutral protocol (JSON is the most common). This means an application built using a microservice application could be built with multiple languages and technologies.
+- Microservices—by their small, independent, and distributed nature—allow organizations to have small development teams with well-defined areas of responsibility. These teams might work toward a single goal such as delivering an application, but each team is responsible only for the services on which they’re working.
+
+#### 1.2 Using Spring, Spring Boot, and Spring Cloud for building microservices
+#### 1.3 Learning why the cloud and microservices are relevant to microservice-based applications
+#### 1.4 Building microservices involves more than building service code
+#### 1.5 Understanding the parts of cloud-based development
+#### 1.6 Using Spring Boot and Spring Cloud in microservice development
 
 
 ## [microservices](https://www.microservices.com/)
