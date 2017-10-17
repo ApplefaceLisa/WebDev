@@ -1,5 +1,5 @@
 ## Book : Spring Microservices in Action
-### 1. [Chapter 1](http://proquest.safaribooksonline.com.rpa.sccl.org/book/web-development/9781617293986/chapter-1dot-welcome-to-the-cloud-spring/kindle_split_010_html)
+### 1. [Chapter 1](http://proquest.safaribooksonline.com.rpa.sccl.org/book/web-development/9781617293986/chapter-1dot-welcome-to-the-cloud-spring/kindle_split_010_html) Welcome to the cloud, Spring
 #### 1.1 Understanding microservices and why companies use them
 ##### 1.1.1 Monolithic architecture vs. Microservices architecture
 - In a monolithic architecture, an application is delivered as a single deployable software artifact. All the UI (user interface), business, and database access logic are packaged together into a single application artifact and deployed to an application server.
@@ -15,7 +15,17 @@ A microservice architecture has the following characteristics:
 - The underlying technical implementation of the service is irrelevant because the applications always communicate with a technology-neutral protocol (JSON is the most common). This means an application built using a microservice application could be built with multiple languages and technologies.
 - Microservices—by their small, independent, and distributed nature—allow organizations to have small development teams with well-defined areas of responsibility. These teams might work toward a single goal such as delivering an application, but each team is responsible only for the services on which they’re working.
 
+##### 1.1.2 Why change the way we build applications?
+The following forces are impacting the way developers have to think about building applications:
+- Complexity has gone way up : Today’s applications need to talk to multiple services and databases residing not only inside a company’s data center, but also to external service providers over the internet.
+- Customers want faster delivery
+- Performance and scalability : Global applications make it extremely difficult to predict how much transaction volume is going to be handled by an application and when that transaction volume is going to hit. Applications need to scale up across multiple servers quickly and then scale back down when the volume needs have passed.
+- Customers expect their applications to be available
+
+Keep in mind, **Small, Simple, and Decoupled Services = Scalable, Resilient, and Flexible Applications**.
+
 #### 1.2 Using Spring, Spring Boot, and Spring Cloud for building microservices
+
 #### 1.3 Learning why the cloud and microservices are relevant to microservice-based applications
 #### 1.4 Building microservices involves more than building service code
 #### 1.5 Understanding the parts of cloud-based development
