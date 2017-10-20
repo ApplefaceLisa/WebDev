@@ -333,3 +333,6 @@ var promise = new Promise(function(resolve, reject) {
 
 # Interview Questions
 - javatpoint [question list](https://www.javatpoint.com/html-lists)
+
+# Fun Stuff
+- [How to Make an Image Map](https://html.com/images/how-to-make-an-image-map/)
