@@ -334,6 +334,75 @@ var promise = new Promise(function(resolve, reject) {
 # Interview Questions
 - [Front-end Developer Handbook 2017](https://frontendmasters.gitbooks.io/front-end-handbook-2017/content/practice/interview-q.html)
 - javatpoint [question list](https://www.javatpoint.com/html-lists)
+## Prepare
+### Before the interview
+- Ask your recruiter for the format of the interview, e.g. whiteboard or online coding? 
+- Ask your recruiter for tips on what topics to focus on when preparing, e.g. front-end specific question? traditional computer science questions?
 
+### Front-end concepts
+HTML and CSS, Javascript, and Javascript design patterns.
+#### HTML and CSS
+- [CSS animations](https://css-tricks.com/almanac/properties/a/animation/)
+- [CSS sprites](https://css-tricks.com/css-sprites/)
+- [Pseudo classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+- [Grid systems](http://www.sitepoint.com/understanding-css-grid-systems/)
+- [Semantic markup](http://www.hongkiat.com/blog/html-5-semantics/)
+- CSS preprocessors
+  - [SASS](http://sass-lang.com/guide)
+  - [LESS](http://lesscss.org/)
+- CSS naming conventions
+  - [BEM and OOCSS](http://clubmate.fi/oocss-acss-bem-smacss-what-are-they-what-should-i-use/)
+- CSS best practices
+  - [Medium’s CSS is actually pretty f***ing good](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06)
+
+#### JavaScript  
+- Key concepts
+  - [Prototypal inheritance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+  - [Scoping](https://spin.atomicobject.com/2014/10/20/javascript-scope-closures/)
+  - [Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
+  - [The event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
+  - [Event bubbling](http://javascript.info/tutorial/bubbling-and-capturing)
+  - [Apply, call, and bind](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/)
+  - [Callbacks and promises](https://www.quora.com/Whats-the-difference-between-a-promise-and-a-callback-in-Javascript)
+  - [Variable and function hoisting](http://adripofjavascript.com/blog/drips/variable-and-function-hoisting)
+  - [Currying](http://www.sitepoint.com/currying-in-functional-javascript/)
+  
+- online test
+  - [36 Essential JavaScript Interview Questions](https://www.toptal.com/javascript/interview-questions)
+  - [21 Essential JavaScript Interview Questions](https://www.codementor.io/nihantanu/21-essential-javascript-tech-interview-practice-questions-answers-du107p62z)
+  - [Top 85 JavaScript Interview Questions & Answers](https://career.guru99.com/top-85-javascript-interview-questions/)
+  
+#### Design Patterns
+- [Decorator](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#decoratorpatternjavascript)
+- [Factory](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#factorypatternjavascript)
+- [Singleton](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#singletonpatternjavascript)
+- [Revealing module](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript)
+- [Facade](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#facadepatternjavascript)
+- [Observer](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#observerpatternjavascript)
+- [MVC](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#detailmvc), [MVP](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#detailmvp), [MVVM](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#detailmvvm)
+- Javascript frameworks 
+  - when and why front-end teams use frameworks
+  - architecture of the framework
+  
+### Computer science concepts
+#### Data structures
+- Linked lists
+- Hashtables
+- Stacks and queues
+- Trees (binary trees and heaps)
+- Graphs
+- implementation [SanFoundry](http://www.sanfoundry.com/java-programming-examples-data-structures/)
+
+#### Algorightms
+- Sorting
+  - Binary search
+  - Bubble sort
+  - Insertion sort
+  - Merge sort
+  - Quick sort
+  - Selection sort
+- [technical Javascript questions](https://www.interviewcake.com/javascript-interview-questions)  
+  
 # Fun Stuff
 - [How to Make an Image Map](https://html.com/images/how-to-make-an-image-map/)
+- simple yet nice design [Dribbble](https://dribbble.com/)
