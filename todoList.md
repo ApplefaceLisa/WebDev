@@ -330,3 +330,6 @@ var promise = new Promise(function(resolve, reject) {
 
 # Reference
 - [Udacity Nanodegrees curricula](https://github.com/mikesprague/udacity-nanodegrees)
+
+# Interview Questions
+- javatpoint [question list](https://www.javatpoint.com/html-lists)
