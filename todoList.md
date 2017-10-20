@@ -332,6 +332,7 @@ var promise = new Promise(function(resolve, reject) {
 - [Udacity Nanodegrees curricula](https://github.com/mikesprague/udacity-nanodegrees)
 
 # Interview Questions
+- [Front-end Developer Handbook 2017](https://frontendmasters.gitbooks.io/front-end-handbook-2017/content/practice/interview-q.html)
 - javatpoint [question list](https://www.javatpoint.com/html-lists)
 
 # Fun Stuff
