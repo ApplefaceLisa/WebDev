@@ -143,7 +143,7 @@ function resetScores() {
 
 function clearHandler() {
   if (handler)  {
-    clearInterval(handler);
+    cancelAnimationFrame(handler);
     handler = null;
   }
 }
@@ -161,11 +161,17 @@ function initialGame() {
 
 function aiMovement() {
   let paddle1YCenter = paddle1Y + (PADDLE_HEIGHT/2);
-  if(paddle1YCenter < ballY - 15) {
-    paddle1Y = paddle1Y + 6;
-  } else if(paddle1YCenter > ballY + 15) {
-    paddle1Y = paddle1Y - 6;
-  }
+	if(paddle1YCenter < ballY - 15) {
+		paddle1Y = paddle1Y + 6;
+	} else if(paddle1YCenter > ballY + 15) {
+		paddle1Y = paddle1Y - 6;
+	}
+}
+
+function moveNdraw() {
+  moveEverything();
+  drawEverything();
+  requestAnimationFrame(moveNdraw);
 }
 
 function changeGame() {
@@ -173,10 +179,7 @@ function changeGame() {
   else {
     started = !started;
     if (started) {
-      handler = setInterval(function() {
-        moveEverything();
-        drawEverything();
-      }, 1000/framePerSecond);
+      handler = requestAnimationFrame(moveNdraw);
       statusBtn.innerText = "STOP";
     } else {
       clearHandler();
@@ -184,6 +187,16 @@ function changeGame() {
     }
   }
 }
+
+window.requestAnimationFrame = window.requestAnimationFrame
+    || window.mozRequestAnimationFrame
+    || window.webkitRequestAnimationFrame
+    || window.msRequestAnimationFrame
+    || function(f){return setTimeout(f, 1000/60)} // simulate calling code 60 
+ 
+window.cancelAnimationFrame = window.cancelAnimationFrame
+    || window.mozCancelAnimationFrame
+    || function(requestID){clearTimeout(requestID)} //fall back
 
 window.onload = function() {
   statusBtn = document.getElementById("status");
@@ -193,7 +206,7 @@ window.onload = function() {
   canvasContext.font = "20px Arial";
 
   initialGame();
-
+  
   aiCheckbox.addEventListener("click", function() {
     aiMode = aiCheckbox.checked;
     console.log(aiMode);
