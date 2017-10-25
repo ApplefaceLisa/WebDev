@@ -6,6 +6,8 @@
 ### 1.4 [JavaScript Basics](https://www.udacity.com/course/javascript-basics--ud804)
 ### 1.5 [Intro to jQuery](https://www.udacity.com/course/intro-to-jquery--ud245)
 ### 1.6 [Intro to AJAX](https://www.udacity.com/course/intro-to-ajax--ud110)
+Asynchronous Javascript and XML, is essentially the technique of using XMLHTTPRequest to fetch data and then modify the current page.
+
 ### 1.7 [Website Performance Optimization](https://www.udacity.com/course/website-performance-optimization--ud884)
 - [Web Fundamentals : Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) by Google
 ![Critical Rendering Path](CRP.JPG)
