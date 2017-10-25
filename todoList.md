@@ -314,6 +314,8 @@ var promise = new Promise(function(resolve, reject) {
 ### 2.4 [Offline Web Applications](https://www.udacity.com/course/offline-web-applications--ud899)
 ### 2.5 [Web Accessibility](https://www.udacity.com/course/web-accessibility--ud891)
 ### 2.6 [Front-End Frameworks](https://www.udacity.com/course/front-end-frameworks--ud894)
+JavaScript libraries arose to hide the complex browser differences, JavaScript frameworks made developing complex, powerful applications manageable.
+
 ### 2.7 [Client-Server Communications](https://www.udacity.com/course/client-server-communication--ud897)
 ### 2.8 [Data Visualization and D3.js](https://www.udacity.com/course/data-visualization-and-d3js--ud507)
 
