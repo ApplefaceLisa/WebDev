@@ -344,7 +344,10 @@ JavaScript libraries arose to hide the complex browser differences, JavaScript f
 - Ask your recruiter for tips on what topics to focus on when preparing, e.g. front-end specific question? traditional computer science questions?
 
 ### Front-end concepts
-HTML and CSS, Javascript, and Javascript design patterns.
+HTML and CSS, Javascript, and Javascript design patterns, HTTP/URL
+#### HTTP/URL
+- [The Difference Between URLs and URIs](https://danielmiessler.com/study/url-uri/?fb_ref=rmLf4XZ=qJ-Twitter&utm_source=Twitter&utm_medium=ShareButton&utm_campaign=GetSocial)
+
 #### HTML and CSS
 - [CSS animations](https://css-tricks.com/almanac/properties/a/animation/)
 - [CSS sprites](https://css-tricks.com/css-sprites/)
