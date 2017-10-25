@@ -1,4 +1,21 @@
-# Udacity
+# Front-end handbook learning path
+If you were to set out today to become a front-end developer I would loosely strive to follow the process outlined below (Part two, "Learning Front-End Dev", dives into more details on learning resources).
+
+Learn, roughly, how the web works. Make sure you know the "what" and "where" of Domains, DNS, URLs, HTTP, networks, browsers, servers/hosting, JSON, data APIs, HTML, CSS, DOM, and JavaScript. Don't dive deep on anything, just understand the parts and loosely how they fit together. Focus on the high level outlines for front-end architectures. Start with simple web pages and briefly study front-end applications (aka SPAs).
+- Learn HTML
+- Learn CSS
+- Learn JavaScript
+- Learn DOM
+- Learn JSON and data APIs
+- Learn the fundamentals of user interface design (i.e. UI patterns, interaction design, user experience design, and usability).
+- Learn CLI/command line
+- Learn the practice of software engineering (i.e., Application design/architecture, templates, Git, testing, monitoring, automating, code quality, development methodologies).
+- Get opinionated and customize your tool box with whatever makes sense to your brain (e.g. Webpack, React, and Redux).
+- Learn Node.js
+
+A short word of advice on learning. Learn the actual underlying technologies, before learning abstractions. Don't learn jQuery, learn the DOM. Don't learn SASS, learn CSS. Don't learn HAML, learn HTML. Don't learn CoffeeScript, learn JavaScript. Don't learn Handlebars, learn JavaScript ES6 templates. Don't just use Bootstrap, learn UI patterns.
+
+# Udacity Learning Path
 ## 1. front-end beginner
 ### 1.1 [Intro to HTML and CSS](https://www.udacity.com/course/intro-to-html-and-css--ud304)
 ### 1.2 [Responsive Web Design Fundamentals](https://www.udacity.com/course/responsive-web-design-fundamentals--ud893)
