@@ -2,9 +2,13 @@
 If you were to set out today to become a front-end developer I would loosely strive to follow the process outlined below (Part two, "Learning Front-End Dev", dives into more details on learning resources).
 
 Learn, roughly, how the web works. Make sure you know the "what" and "where" of Domains, DNS, URLs, HTTP, networks, browsers, servers/hosting, JSON, data APIs, HTML, CSS, DOM, and JavaScript. Don't dive deep on anything, just understand the parts and loosely how they fit together. Focus on the high level outlines for front-end architectures. Start with simple web pages and briefly study front-end applications (aka SPAs).
+- Learn Internet/Web
+  - [How Does the Internet Work?](http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm)
+  
 - Learn HTML
 - Learn CSS
 - Learn JavaScript
+  - [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read/)
 - Learn DOM
 - Learn JSON and data APIs
 - Learn the fundamentals of user interface design (i.e. UI patterns, interaction design, user experience design, and usability).
