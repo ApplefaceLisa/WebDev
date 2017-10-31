@@ -1,5 +1,9 @@
 ## Official [Spring Framework Reference Documentation](https://docs.spring.io/spring/docs/4.3.13.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/)
 
+# Video Tutorials
+## Lynda [Spring: Framework In Depth](https://www.lynda.com/Spring-Framework-tutorials/Spring-Framework-Depth/606088-2.html)
+
+
 ## Book : Spring Microservices in Action
 ### Main Content
 - What a microservice is and the design considerations that go into building a microservice-based application
