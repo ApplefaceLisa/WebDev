@@ -26,6 +26,9 @@
   - `mvn package` : The package goal will compile your Java code, run any tests, and finish by packaging the code up in a JAR file within the target directory. The name of the JAR file will be based on the project’s <artifactId> and <version>.
   - `mvn install` : The install goal will compile, test, and package your project’s code and then copy it into the local dependency repository, ready for another project to reference it as a dependency.
   
+- [Working a Getting Started guide with STS](https://spring.io/guides/gs/sts/)  
+
+  How to use Spring Tool Suite (STS) to build one of the Getting Started guides. You’ll pick a Spring guide and import it into Spring Tool Suite. Then you can read the guide, work on the code, and run the project.
   
 - [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
 
@@ -99,6 +102,61 @@
   - `@RequestParam` binds the value of the query string parameter `name` into the name parameter of the greeting() method. This query string parameter is explicitly marked as optional (required=true by default): if it is absent in the request, the `defaultValue of "World"` is used.
   
 - [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
+
+  You’ll create a MySQL database, build a Spring application and connect it with the newly created database. Steps :
+  
+  - pom.xml, dependencies : web, JPA, mySQL connector
+  - Create the `application.properties` file (src/main/resources/application.properties). Example:
+    ```
+    spring.jpa.hibernate.ddl-auto=create
+    spring.datasource.url=jdbc:mysql://localhost:3306/db_example
+    spring.datasource.username=springuser
+    spring.datasource.password=ThePassword  
+    ```
+  - Create the `@Entity` model. Example: This is the entity class which Hibernate will automatically translate into a table.
+    ```
+    package hello;
+
+    import javax.persistence.Entity;
+    import javax.persistence.GeneratedValue;
+    import javax.persistence.GenerationType;
+    import javax.persistence.Id;
+
+    @Entity // This tells Hibernate to make a table out of this class
+    public class User {
+      @Id
+      @GeneratedValue(strategy=GenerationType.AUTO)
+      private Integer id;
+
+      private String name;
+
+      private String email;
+
+      public Integer getId() {
+        return id;
+      }
+      ......
+    }    
+    ```
+  - Create the repository, example
+    ```
+    package hello;
+
+    import org.springframework.data.repository.CrudRepository;
+
+    import hello.User;
+
+    // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
+    // CRUD refers Create, Read, Update, Delete
+
+    public interface UserRepository extends CrudRepository<User, Long> {
+
+    }    
+    ```
+  - Create a new controller for your Spring application. @RestController, @RequestMapping, etc.
+  - Make the application executable. @SpringBootApplication
+  - Build an executable JAR : `./mvnw spring-boot:run` or `./mvnw clean package`.
+  - Run the JAR file, example : `java -jar target/gs-accessing-data-mysql-0.1.0.jar`.
 
 ## Video Tutorials
 - Lynda [Spring: Framework In Depth](https://www.lynda.com/Spring-Framework-tutorials/Spring-Framework-Depth/606088-2.html)
