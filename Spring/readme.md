@@ -1,6 +1,7 @@
 # Resources
 ## Official Documentations
 - [Spring Framework Reference Documentation](https://docs.spring.io/spring/docs/4.3.13.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/)
+- [Spring Guides](https://spring.io/guides)
 
 ## Video Tutorials
 - Lynda [Spring: Framework In Depth](https://www.lynda.com/Spring-Framework-tutorials/Spring-Framework-Depth/606088-2.html)
