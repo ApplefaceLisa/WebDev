@@ -157,6 +157,11 @@
   - Make the application executable. @SpringBootApplication
   - Build an executable JAR : `./mvnw spring-boot:run` or `./mvnw clean package`.
   - Run the JAR file, example : `java -jar target/gs-accessing-data-mysql-0.1.0.jar`.
+  
+- [Testing the Web Layer](https://spring.io/guides/gs/testing-web/)  
+
+  You’ll build a simple Spring application and test it with JUnit. You'll test just the web layer using Spring’s `MockMvc`.
+
 
 ## Video Tutorials
 - Lynda [Spring: Framework In Depth](https://www.lynda.com/Spring-Framework-tutorials/Spring-Framework-Depth/606088-2.html)
