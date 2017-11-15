@@ -4,7 +4,7 @@
 - [Spring Guides](https://spring.io/guides)
 
 ### Spring Getting Started
-- [Building Java Projects with Maven](https://spring.io/guides/gs/maven/)
+1. [Building Java Projects with Maven](https://spring.io/guides/gs/maven/)
   - To test the Maven installation, run mvn from the command-line : `mvn -v`
   - To create a Maven project definition in _**pom.xml**_. This file gives the project’s name, version, and dependencies that it has on external libraries. Main configurations :
     - `<modelVersion>` : POM model version (always 4.0.0).
@@ -26,83 +26,79 @@
   - `mvn package` : The package goal will compile your Java code, run any tests, and finish by packaging the code up in a JAR file within the target directory. The name of the JAR file will be based on the project’s <artifactId> and <version>.
   - `mvn install` : The install goal will compile, test, and package your project’s code and then copy it into the local dependency repository, ready for another project to reference it as a dependency.
   
-- [Working a Getting Started guide with STS](https://spring.io/guides/gs/sts/)  
-
+2. [Working a Getting Started guide with STS](https://spring.io/guides/gs/sts/)  
   How to use Spring Tool Suite (STS) to build one of the Getting Started guides. You’ll pick a Spring guide and import it into Spring Tool Suite. Then you can read the guide, work on the code, and run the project.
   
-- [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-
-  In Spring's approach to building RESTful web services, HTTP requests are handled by a controller. These components are easily identified by the `@RestController` annotation.
-  
-  Example code:
+3. [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)  
+  In Spring's approach to building RESTful web services, HTTP requests are handled by a controller. These components are easily identified by the `@RestController` annotation.    
+  Example code:  
   ```
-  // src/main/java/hello/Greeting.java
-  package hello;
+    // src/main/java/hello/Greeting.java
+    package hello;
 
-  public class Greeting {
+    public class Greeting {
 
-      private final long id;
-      private final String content;
+        private final long id;
+        private final String content;
 
-      public Greeting(long id, String content) {
-          this.id = id;
-          this.content = content;
-      }
+        public Greeting(long id, String content) {
+            this.id = id;
+            this.content = content;
+        }
 
-      public long getId() {
-          return id;
-      }
+        public long getId() {
+            return id;
+        }
 
-      public String getContent() {
-          return content;
-      }
-  }  
-  
-  ---------------------------------------------------------------------------------------------------------
-  // src/main/java/hello/GreetingController.java
-  package hello;
+        public String getContent() {
+            return content;
+        }
+    }  
 
-  import java.util.concurrent.atomic.AtomicLong;
-  import org.springframework.web.bind.annotation.RequestMapping;
-  import org.springframework.web.bind.annotation.RequestParam;
-  import org.springframework.web.bind.annotation.RestController;
+    ---------------------------------------------------------------------------------------------------------
+    // src/main/java/hello/GreetingController.java
+    package hello;
 
-  @RestController
-  public class GreetingController {
+    import java.util.concurrent.atomic.AtomicLong;
+    import org.springframework.web.bind.annotation.RequestMapping;
+    import org.springframework.web.bind.annotation.RequestParam;
+    import org.springframework.web.bind.annotation.RestController;
 
-      private static final String template = "Hello, %s!";
-      private final AtomicLong counter = new AtomicLong();
+    @RestController
+    public class GreetingController {
 
-      @RequestMapping("/greeting")
-      public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
-          return new Greeting(counter.incrementAndGet(),
-                              String.format(template, name));  
-          // The object data will be written directly to the HTTP response as JSON.
-      }
-  }
-  
-  ---------------------------------------------------------------------------------------------------------
-  // src/main/java/hello/Application.java
-  package hello;
+        private static final String template = "Hello, %s!";
+        private final AtomicLong counter = new AtomicLong();
 
-  import org.springframework.boot.SpringApplication;
-  import org.springframework.boot.autoconfigure.SpringBootApplication;
+        @RequestMapping("/greeting")
+        public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
+            return new Greeting(counter.incrementAndGet(),
+                                String.format(template, name));  
+            // The object data will be written directly to the HTTP response as JSON.
+        }
+    }
 
-  @SpringBootApplication
-  public class Application {
+    ---------------------------------------------------------------------------------------------------------
+    // src/main/java/hello/Application.java
+    package hello;
 
-      public static void main(String[] args) {
-          SpringApplication.run(Application.class, args);
-      }
-  }  
+    import org.springframework.boot.SpringApplication;
+    import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+    @SpringBootApplication
+    public class Application {
+
+        public static void main(String[] args) {
+            SpringApplication.run(Application.class, args);
+        }
+    }  
   ```
   
   -  `@RestController` annotation, which marks the class as a controller where every method returns a domain object instead of a view. It’s shorthand for `@Controller` and `@ResponseBody` rolled together.
   - `@RequestMapping` annotation ensures that HTTP requests to `/greeting` are mapped to the `greeting()` method.
   - `@RequestParam` binds the value of the query string parameter `name` into the name parameter of the greeting() method. This query string parameter is explicitly marked as optional (required=true by default): if it is absent in the request, the `defaultValue of "World"` is used.
   
-- [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
-
+4. [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)  
   You’ll create a MySQL database, build a Spring application and connect it with the newly created database. Steps :
   
   - pom.xml, dependencies : web, JPA, mySQL connector
@@ -158,10 +154,11 @@
   - Build an executable JAR : `./mvnw spring-boot:run` or `./mvnw clean package`.
   - Run the JAR file, example : `java -jar target/gs-accessing-data-mysql-0.1.0.jar`.
   
-- [Testing the Web Layer](https://spring.io/guides/gs/testing-web/)  
-
+5. [Testing the Web Layer](https://spring.io/guides/gs/testing-web/)  
   You’ll build a simple Spring application and test it with JUnit. You'll test just the web layer using Spring’s `MockMvc`.
 
+6. [Service Registration and Discovery](https://spring.io/guides/gs/service-registration-and-discovery/)  
+  You’ll setup a Netflix Eureka service registry and then build a client that both registers itself with the registry and uses it to resolve its own host.
 
 ## Video Tutorials
 - Lynda [Spring: Framework In Depth](https://www.lynda.com/Spring-Framework-tutorials/Spring-Framework-Depth/606088-2.html)
