@@ -158,7 +158,8 @@
   You’ll build a simple Spring application and test it with JUnit. You'll test just the web layer using Spring’s `MockMvc`.
 
 6. [Service Registration and Discovery](https://spring.io/guides/gs/service-registration-and-discovery/)  
-  You’ll setup a Netflix Eureka service registry and then build a client that both registers itself with the registry and uses it to resolve its own host.
+  You’ll setup a Netflix Eureka service registry and then build a client that both registers itself with the registry and uses it to resolve its own host.  
+  A service registry is useful because it enables client-side load-balancing and decouples service providers from consumers without the need for DNS.
 
 ## Video Tutorials
 - Lynda [Spring: Framework In Depth](https://www.lynda.com/Spring-Framework-tutorials/Spring-Framework-Depth/606088-2.html)
