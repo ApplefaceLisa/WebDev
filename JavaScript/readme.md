@@ -24,6 +24,7 @@
 
 # Cheat sheet
 - [JavaScript cheat sheet](http://overapi.com/javascript)
+- [JavaScript Reference Cheat Sheet](https://codepen.io/davidicus/details/trhme)
 
 # Tools
 - [JSLint](http://www.jslint.com/)
@@ -51,6 +52,7 @@
 - [JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/)
 
 - [JavaScript Promises: an Introduction](https://developers.google.com/web/fundamentals/getting-started/primers/promises)
+- [JavaScript Best Practices: Tips & Tricks to Level Up Your Code](https://www.codementor.io/johnnyb/javascript-best-practices-du107mvud)
     
 # Basic Knowledge
 ### Variable scope and hoisting
