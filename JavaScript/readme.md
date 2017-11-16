@@ -22,6 +22,9 @@
 - [Douglas Crockford: An Inconvenient API - The Theory of the DOM](https://www.youtube.com/watch?v=Y2Y0U-2qJMs)
 - and more...
 
+# Cheat sheet
+- [JavaScript cheat sheet](http://overapi.com/javascript)
+
 # Tools
 - [JSLint](http://www.jslint.com/)
 - [Can I Use](http://caniuse.com)
