@@ -1,7 +1,23 @@
 # Resources
 ## Official Documentations
+### Maven
+- [Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/)
+- [Maven Repository](https://mvnrepository.com/)
+- [Maven Build Lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
+
+### Spring
 - [Spring Framework Reference Documentation](https://docs.spring.io/spring/docs/4.3.13.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/)
 - [Spring Guides](https://spring.io/guides)
+- [Spring Web MVC](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc)
+- [Common application properties](https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)
+- [Spring Data repository](https://docs.spring.io/spring-data/data-commons/docs/1.6.1.RELEASE/reference/html/repositories.html)
+
+### MySQL
+- MySQL workbench [Modeling Tutorials](https://dev.mysql.com/doc/workbench/en/wb-tutorials.html)
+
+### Tools
+- [JSON to XML Converter](https://www.freeformatter.com/json-to-xml-converter.html)
+- [documentation Editor](https://editor.swagger.io/)
 
 ### Spring Getting Started
 1. [Building Java Projects with Maven](https://spring.io/guides/gs/maven/)
