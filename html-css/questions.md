@@ -51,3 +51,40 @@
 
   HTML5 introduced a method to let web designers take control over the viewport (the user's visible area of a web page), through the <meta> tag (See "Setting The Viewport" example below).
   
+- How can you add comments to your HTML source?
+
+  `<!-- ........ -->`
+  
+- Is there a difference between `<b>` and `<strong>` tags?
+  
+  The HTML `<b>` element defines bold text, without any extra importance.
+  
+  The HTML `<strong>` element defines strong text, with added semantic "strong" importance.
+  
+- What is the usage of `<noscript>` HTML tag?
+  
+  The `<noscript>` tag defines an alternate content for users that have disabled scripts in their browser or have a browser that doesn't support script.
+  
+- Does the browsers display HTML tags on web page?
+
+  The browser does not display the HTML tags, but uses them to determine how to display the document.
+  
+- What is a HTML tag?
+
+  The `<html>` tag tells the browser that this is an HTML document. It represents the root of an HTML document. It is the container for all other HTML elements (except for the `<!DOCTYPE>` tag).
+  
+- Select required element for `<head>...</head>` section.
+
+  The <head> element is a container for all the head elements.
+
+  The <head> element can include a title for the document, scripts, styles, meta information, and more.
+
+  The following elements can go inside the <head> element:
+
+  - `<title>` (this element is required in an HTML document)
+  - `<style>`
+  - `<base>`
+  - `<link>`
+  - `<meta>`
+  - `<script>`
+  - `<noscript>`
