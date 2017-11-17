@@ -133,3 +133,14 @@
   - In HTML, all values are case-insensitive
   
 - html [inline elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements) vs. [block-level elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)  
+
+- html attributes
+  - All HTML elements can have attributes, name-value pair
+  - The _**title**_ attribute provides additional "tool-tip" information
+  - The _**href**_ attribute provides address information for links
+  - The _**width**_ and _**height**_ attributes provide size information for images
+  - The _**alt**_ attribute provides text for screen readers
+  - Attribute names are case-insensitive. At W3Schools we always use _lowercase_ attribute _names_
+  - Attribute values are generally case-insensitive. At W3Schools we always _quote_ attribute _values_ with double quotes
+  
+  
