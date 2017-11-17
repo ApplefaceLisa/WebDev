@@ -99,4 +99,37 @@
   ```
   
 ### html Syntax and Page Layout
-- 
+- How will you insert a single line break on a page?
+
+  `<br>` or `<br/>`
+  - The <br> (less strict validation in HTML5) tag inserts a single line break.
+  - The <br/> (more strict validation in XHTML) tag inserts a single line break.
+  
+- HTML `<font>` color Attribute  
+
+  ```
+  <p><font color="red">This is some text!</font></p>
+  <p style="color: red;">Text</p>
+  ```
+
+- What does HTML title attribute used for?
+
+  - The title attribute specifies extra information about an element.
+  - The information is most often shown as a _**tooltip(pop-up hint) text**_ when the mouse moves over the element.
+  
+- In the HTML5 standard, the `<html>` tag, the `<body>` tag, and the `<head>` tag can be omitted. The two HTML elements that are required for HTML5 document are `<!doctype>` and `<title>`.
+  
+- What HTML tag you must use to display anything, with right spacing and line-breaks?
+
+  `<pre>`. The HTML `<pre>` element defines a block of pre-formatted text, with structured spaces and lines.
+  
+- how to Specify a background color for an HTML document?
+
+  `<body bgcolor="#E6E6FA">`
+  
+- HTML id attribute naming rules
+  - Must contain at least one character
+  - Must not contain any space characters
+  - In HTML, all values are case-insensitive
+  
+- html [inline elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements) vs. [block-level elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)  
