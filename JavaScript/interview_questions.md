@@ -6,12 +6,14 @@
   Java is an object – oriented programming (OOPS) or structured programming language like C++ or C whereas JavaScript is a client-side scripting language and it is said to be unstructured programming.
   
 3. What are JavaScript Data Types?  
-  - Number
-  - String
-  - Boolean
-  - Function
-  - Object
-  - Undefined
+  - Six data types that are primitives:
+    - Boolean
+    - Null
+    - Undefined
+    - Number
+    - String
+    - Symbol (new in ECMAScript 6)
+  - and Object
   
 4. What is the use of isNaN function?  
   We should differ the global isNaN() function and Number.isNaN() method. The isNaN() function determines whether a value is an illegal number (Not-a-Number). The Number.isNaN() method determines whether a value is NaN (Not-A-Number).
