@@ -88,3 +88,15 @@
   - `<meta>`
   - `<script>`
   - `<noscript>`
+
+- `<meta charset="UTF-8">` 
+
+  The charset attribute specifies the character encoding for the HTML document. Syntax:
+  ```
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  ```
+  
+### html Syntax and Page Layout
+- 
