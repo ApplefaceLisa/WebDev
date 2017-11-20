@@ -155,7 +155,7 @@
       console.log(someObj.getSecretValue());
   ```
   
-- What are the advantages of IIFEs(Immediately Invoked Functon Expressions)?
+- What are the advantages of IIFEs(Immediately Invoked Function Expressions)?
   - [Immediately-Invoked Function Expression (IIFE)](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
   - [Quora Answer](https://www.quora.com/What-are-the-advantages-of-using-an-immediately-invoked-function-expression)
     - Module pattern can  be implemented with the help of IIFE.
@@ -378,7 +378,7 @@ Math.round(Number) | Rounds Number to the closest integer
 Math.toString(Number) | Converts Number to string
 
 ### Wrapper Objects
-#### String Object
+#### [String Object](https://www.w3schools.com/jsref/jsref_obj_string.asp)
 - properties
 
 Property | What It Does
