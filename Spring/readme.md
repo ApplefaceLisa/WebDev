@@ -8,26 +8,25 @@
 ### Spring
 #### [Spring Guides](https://spring.io/guides)
 
-  title | summary
-  ----- | ----------------------------------------------------------------------------------------------------------------------------
-  [Building Java Projects with Maven](https://spring.io/guides/gs/maven/) | Learn how to build a Java project with Maven.
-  [Building an Application with Spring Boot](https://spring.io/guides/gs/spring-boot/) | Learn how to build an application with minimal configuration.
-  [Working a Getting Started guide with STS](https://spring.io/guides/gs/sts/) | Learn how to import a Getting Started guide with Spring Tool Suite (STS).
-  [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/) | Learn how to create a RESTful web service with Spring.
-  [Building a RESTful Web Service with Spring Boot Actuator](https://spring.io/guides/gs/actuator-service/) | Learn how to create a RESTful Web service with Spring Boot Actuator.
-  [Building a Hypermedia-Driven RESTful Web Service](https://spring.io/guides/gs/rest-hateoas/) | Learn how to create a hypermedia-driven RESTful Web service with Spring.
-  [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/) | Learn how to work with JPA data persistence using Spring Data JPA.
-  [Accessing JPA Data with REST](https://spring.io/guides/gs/accessing-data-rest/) | Learn how to work with RESTful, hypermedia-based data persistence using Spring Data REST.
-  [Accessing Relational Data using JDBC with Spring](https://spring.io/guides/gs/relational-data-access/) | Learn how to access relational data with Spring.
-  [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/) | Learn how to set up and manage user accounts on MySQL and how to configure Spring Boot to connect to it at runtime.
-  [Testing the Web Layer](https://spring.io/guides/gs/testing-web/) | Learn how to test Spring Boot applications and MVC controllers.
-  [Centralized Configuration](https://spring.io/guides/gs/centralized-configuration/) | Learn how to manage application settings from an external, centralized source.
-  [Service Registration and Discovery](https://spring.io/guides/gs/service-registration-and-discovery/) | Learn how to register and find services with Eureka.
-  [Consuming a RESTful Web Service](https://spring.io/guides/gs/consuming-rest/) | Learn how to retrieve web page data with Spring's RestTemplate.
-  [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/) | Learn how to create a web page with Spring MVC.
-  [Consuming a RESTful Web Service with AngularJS](https://spring.io/guides/gs/consuming-rest-angularjs/) | Learn how to retrieve web page data with AngularJS.
-  [Enabling Cross Origin Requests for a RESTful Web Service](https://spring.io/guides/gs/rest-service-cors/) | Learn how to create a RESTful web service with Spring that support Cross-Origin Resource Sharing (CORS).
-  []() | 
+  seq | title | summary
+  --- |----- | ---------------------------------------------------------------------------------------------------------------------
+  1 | [Building Java Projects with Maven](https://spring.io/guides/gs/maven/) | Learn how to build a Java project with Maven.
+  2 | [Building an Application with Spring Boot](https://spring.io/guides/gs/spring-boot/) | Learn how to build an application with minimal configuration.
+  3 | [Working a Getting Started guide with STS](https://spring.io/guides/gs/sts/) | Learn how to import a Getting Started guide with Spring Tool Suite (STS).
+  4 | [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/) | Learn how to create a RESTful web service with Spring.
+  5 | [Building a RESTful Web Service with Spring Boot Actuator](https://spring.io/guides/gs/actuator-service/) | Learn how to create a RESTful Web service with Spring Boot Actuator.
+  6 | [Building a Hypermedia-Driven RESTful Web Service](https://spring.io/guides/gs/rest-hateoas/) | Learn how to create a hypermedia-driven RESTful Web service with Spring.
+  7 | [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/) | Learn how to work with JPA data persistence using Spring Data JPA.
+  8 | [Accessing JPA Data with REST](https://spring.io/guides/gs/accessing-data-rest/) | Learn how to work with RESTful, hypermedia-based data persistence using Spring Data REST.
+  9 | [Accessing Relational Data using JDBC with Spring](https://spring.io/guides/gs/relational-data-access/) | Learn how to access relational data with Spring.
+  10 | [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/) | Learn how to set up and manage user accounts on MySQL and how to configure Spring Boot to connect to it at runtime.
+  11 | [Testing the Web Layer](https://spring.io/guides/gs/testing-web/) | Learn how to test Spring Boot applications and MVC controllers.
+  12 | [Centralized Configuration](https://spring.io/guides/gs/centralized-configuration/) | Learn how to manage application settings from an external, centralized source.
+  13 | [Service Registration and Discovery](https://spring.io/guides/gs/service-registration-and-discovery/) | Learn how to register and find services with Eureka.
+  14 | [Consuming a RESTful Web Service](https://spring.io/guides/gs/consuming-rest/) | Learn how to retrieve web page data with Spring's RestTemplate.
+  15 | [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/) | Learn how to create a web page with Spring MVC.
+  16 | [Consuming a RESTful Web Service with AngularJS](https://spring.io/guides/gs/consuming-rest-angularjs/) | Learn how to retrieve web page data with AngularJS.
+  17 | [Enabling Cross Origin Requests for a RESTful Web Service](https://spring.io/guides/gs/rest-service-cors/) | Learn how to create a RESTful web service with Spring that support Cross-Origin Resource Sharing (CORS).
 
   
 #### [Spring Framework Reference Documentation](https://docs.spring.io/spring/docs/4.3.13.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/)
