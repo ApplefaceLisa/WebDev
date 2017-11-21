@@ -13,8 +13,10 @@
 - [Spring Data repository](https://docs.spring.io/spring-data/data-commons/docs/1.6.1.RELEASE/reference/html/repositories.html)
 
 ### MySQL
-- MySQL workbench [Connections in MySQL Workbench](https://dev.mysql.com/doc/workbench/en/wb-mysql-connections.html)
-- MySQL workbench [Modeling Tutorials](https://dev.mysql.com/doc/workbench/en/wb-tutorials.html)
+#### MySQL workbench
+- [Connections in MySQL Workbench](https://dev.mysql.com/doc/workbench/en/wb-mysql-connections.html)
+- [Modeling Tutorials](https://dev.mysql.com/doc/workbench/en/wb-tutorials.html)
+- [Database Design / Modeling](https://dev.mysql.com/doc/workbench/en/wb-data-modeling.html)
 
 ### Tools
 - [JSON to XML Converter](https://www.freeformatter.com/json-to-xml-converter.html)
