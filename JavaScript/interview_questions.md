@@ -61,5 +61,11 @@
     </html>
   ```
 
+8. _this_ keyword
+   
+9. what does viod(0) do?
+10. how to read a file using JavaScript
+11. what is cookies?
+
 - [Top 85 JavaScript Interview Questions & Answers](https://career.guru99.com/top-85-javascript-interview-questions/)
   
