@@ -61,11 +61,40 @@
     </html>
   ```
 
-8. _this_ keyword
+8. _this_ keyword  
+  In JavaScript, the thing called _**this**_, is the object that "owns" the JavaScript code.  
+- The value of this, when used in a function, is the object that "owns" the function.  
+- The value of this, when used in an object, is the object itself.  
+- The this keyword in an object constructor does not have a value. It is only a substitute for the new object.  
+- The value of this will become the new object when the constructor is used to create an object.
    
-9. what does viod(0) do?
-10. how to read a file using JavaScript
+9. [What Does JavaScript Void(0) Mean?](https://www.quackit.com/javascript/tutorial/javascript_void_0.cfm)  
+  The JavaScript _**[void](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void)**_ operator evaluates the given expression and then returns a value of _undefined_.    
+  
+  - JavaScript void is often used when, inserting an expression into a web page may produce an unwanted side-effect. By using `JavaScript:Void(0)`, you can eliminate the unwanted side-effect, because it will return the undefined primative value. A common usage of `JavaScript:Void(0)` is with hyperlinks to prevent the page from refreshing. For example:
+  ```
+    <a href="JavaScript:void(0);" ondblclick="alert('Well done!')">Double Click Me!</a>
+  ```
+  
+  - `JavaScript:Void(0)` Alternatives :
+    - `event.preventDefault()` : for example
+    ```
+      <a href="https://www.quackit.com" 
+         onclick="event.preventDefault();" 
+         ondblclick="alert('Well done!')">Double Click Me!</a>
+    ```
+    - `return false` : for example
+    ```
+      <a href="https://www.quackit.com" 
+         onclick="return false;" 
+         ondblclick="alert('Well done!')">Double Click Me!</a>
+    ```
+  
+10. how to read a file using JavaScript?  
+  
 11. what is cookies?
+12. How do you think about our webpage? suggestions?
+13. Describe a typical work day
 
 - [Top 85 JavaScript Interview Questions & Answers](https://career.guru99.com/top-85-javascript-interview-questions/)
   
