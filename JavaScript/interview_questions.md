@@ -92,7 +92,11 @@
   
 10. how to read a file using JavaScript?  
   
-11. what is cookies?
+11. Cookie
+- [What Are Cookies?](http://www.whatarecookies.com/)
+- [What are Cookies and What Do Cookies Do?](https://www.webopedia.com/DidYouKnow/Internet/all_about_cookies.asp)
+- [JS cookies](https://www.w3schools.com/js/js_cookies.asp)
+
 12. How do you think about our webpage? suggestions?
 13. Describe a typical work day
 
