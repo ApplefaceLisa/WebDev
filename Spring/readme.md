@@ -37,7 +37,9 @@
 ### MySQL
 #### MySQL workbench
 - [Connections in MySQL Workbench](https://dev.mysql.com/doc/workbench/en/wb-mysql-connections.html)
+  - [Creating A New MySQL Connection (Tutorial)](https://dev.mysql.com/doc/workbench/en/wb-getting-started-tutorial-create-connection.html)
 - [Modeling Tutorials](https://dev.mysql.com/doc/workbench/en/wb-tutorials.html)
+  - [Creating a Model](https://dev.mysql.com/doc/workbench/en/wb-getting-started-tutorial-creating-a-model.html)
 - [Database Design / Modeling](https://dev.mysql.com/doc/workbench/en/wb-data-modeling.html)
 
 ### Tools
