@@ -36,10 +36,12 @@
 
 ### MySQL
 #### MySQL workbench
+- [Server Configuration with MySQL Installer](https://dev.mysql.com/doc/mysql-installer/en/mysql-installer-workflow-server.html)
 - [Connections in MySQL Workbench](https://dev.mysql.com/doc/workbench/en/wb-mysql-connections.html)
   - [Creating A New MySQL Connection (Tutorial)](https://dev.mysql.com/doc/workbench/en/wb-getting-started-tutorial-create-connection.html)
 - [Modeling Tutorials](https://dev.mysql.com/doc/workbench/en/wb-tutorials.html)
   - [Creating a Model](https://dev.mysql.com/doc/workbench/en/wb-getting-started-tutorial-creating-a-model.html)
+- Database Development [Adding Data](https://dev.mysql.com/doc/workbench/en/wb-getting-started-tutorial-adding-data.html)  
 - [Database Design / Modeling](https://dev.mysql.com/doc/workbench/en/wb-data-modeling.html)
 
 ### Tools
