@@ -373,31 +373,31 @@
 
 - [object literal notation vs constructor](http://stackoverflow.com/questions/4859800/should-i-be-using-object-literals-or-constructor-functions)
   - If you **don't have behaviour** associated with an object (i.e. if the object is just a container for data/state), use an object literal. Furthermore, Object literals are basically singletons with variables/methods that are all public.
-  ```javascript
-  var data = {
-      foo: 42,
-      bar: 43
-  };
-  data.foo = 12;
-  data.bar = 99;
-  ```
+    ```javascript
+    var data = {
+        foo: 42,
+        bar: 43
+    };
+    data.foo = 12;
+    data.bar = 99;
+    ```
   - Object defined with a constructor lets you have multiple instances of that object. If you want to use **(semi-)private variables or functions** in you object, a constructor function is the way to do it.
-  ```javascript
-  function MyData(foo, bar) {
-      var _foo = foo;   // private
-      this.bar = bar;   // public
+    ```javascript
+    function MyData(foo, bar) {
+        var _foo = foo;   // private
+        this.bar = bar;   // public
 
-      this.verify = function () {
-          return _foo === this.bar;   // _foo doesn't need this
-      };
-  }
-  ```
+        this.verify = function () {
+            return _foo === this.bar;   // _foo doesn't need this
+        };
+    }
+    ```
   - Prototype lets you attach each function once and only once: they'll be inherited by the instances through prototypal inheritance.
-  ```javascript
-  MyData.prototype.verify = function () {
-      return this.foo === this.bar;
-  };
-  ```
+    ```javascript
+    MyData.prototype.verify = function () {
+        return this.foo === this.bar;
+    };
+    ```
   
 - Basic class, subclass and inheritance
   - MDN [Details of the object model](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model)
@@ -414,20 +414,37 @@
 #### Array Object
 - Array methods
 
-Method | What It Does
------- | ----------------------------------------------------------------
-concat() | Concatenates elements from one array to another array.
-join() | Joins the elements of an array by a separator to form a string.
-pop() | Removes and returns the last element of an array.
-push() | Adds elements to the end of an array.
-reverse() | Reverses the order of the elements in an array.
-shift() | Removes and returns the first element of an array.
-slice() | Creates a new array from elements of an existing array.
-sort() | Sorts an array alphabetically or numerically.
-splice() | Removes and/or replaces elements of an array.
-toLocaleString() | Returns a string representation of the array in local format.
-toString() | Returns a string representation of the array.
-unshift() | Adds elements to the beginning of an array.
+  Method | What It Does | Syntax
+  ------ | ------------ | ---------------------------------------------------
+  [concat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat) | Concatenates elements from one array to another array. | `var new_array = old_array.concat(value1[, value2[, ...[, valueN]]])`
+  [copyWithin()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin) | shallow copies part of an array (start/end) to another location (target) in the same array and returns it, without modifying its size. | `arr.copyWithin(target[, start[, end]])`, return the modified array
+  [fill()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill) | fills all the elements of an array from a start index to an end index with a static value | `arr.fill(value[, start[, end]])`, return the modified array.
+  [pop()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop) | Removes and returns the last element of an array | `var poped_element = arr.pop()`, return _**undefined**_ if the array is empty.
+  [push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) | Adds one or more elements to the end of an array | `var new_arr_len = arr.push([element1[, ...[, elementN]]])`
+  [shift()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift) | Removes and returns the first element of an array | `var shifted_element = arr.shift()`, return _**undefined**_ if the array is empty.
+  [unshift()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift) | Adds one or more elements to the beginning of an array | `var new_arr_len = arr.unshift([element1[, ...[, elementN]]])`
+  [join()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join) | Joins the elements of an array by a separator to form a string | `var new_string = arr.join([separator])`
+  [slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice) | returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included). The original array will not be modified | `var new_array = arr.slice([begin[, end]])`, end is exclusive
+  [splice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) | changes the contents of an array by removing existing elements and/or adding new elements, return an array containing the deleted elements. | `var arr = array.splice(start[, deleteCount[, item1, item2, ...]])`
+  [every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every) | tests whether all elements in the array pass the test implemented by the provided function | `var res_boolean = arr.every(callback[, thisArg])`
+  [some()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) | tests whether at least one element in the array passes the test implemented by the provided function | `var res_boolean = arr.some(callback[, thisArg])` 
+  [filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) | creates a new array with all elements that pass the test implemented by the provided function | `var new_array = arr.filter(callback[, thisArg])`
+  [forEach()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) | executes a provided function once for each array element | `arr.forEach(function callback(currentValue, index, array) { //your iterator }[, thisArg]);`, return undefined
+  [map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) | creates a new array with the results of calling a provided function on every element in the calling array | `var new_array = arr.map(function callback(currentValue, index, array) {  // Return element for new_array  }[, thisArg])`
+  [reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) | applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value | `var result = arr.reduce(callback[, initialValue])`
+  [reduceRight()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/ReduceRight) | applies a function against an accumulator and each value of the array (from right-to-left) to reduce it to a single value | `var result = arr.reduceRight(callback[, initialValue])`
+  [find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) | returns the _**value**_ of the first element in the array that satisfies the provided testing function. Otherwise _**undefined**_ is returned | `var element = arr.find(callback[, thisArg])`
+  [findIndex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex) | returns the _**index**_ of the _**first**_ element in the array that satisfies the provided _**testing function**_. Otherwise _**-1**_ is returned | `var first_index = arr.findIndex(callback[, thisArg])`
+  [indexOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) | returns the _**first index**_ at which a _**given element**_ can be found in the array, or _**-1**_ if it is not present | `var first_index = arr.indexOf(searchElement[, fromIndex])`
+  [lastIndexOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf) | returns the _**last index**_ at which a _**given element**_ can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex | `var last_index = arr.lastIndexOf(searchElement[, fromIndex])`
+  [includes()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes) | determines whether an array includes a certain element, returning true or false as appropriate | `var res_boolean = arr.includes(searchElement[, fromIndex])`
+  [sort()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) | Sorts an array alphabetically or numerically _**in place**_ and no copy is made. return the sorted array. | `[var arr = ]arr.sort([compareFunction])`
+  [reverse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse) | reverses an array _**in place**_. The first array element becomes the last, and the last array element becomes the first. Return reversed array. | `[var reversed_arr = ]arr.reverse()`
+  [entries()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries) | returns a new Array Iterator object that contains the key/value pairs for each index in the array | `var arr_iterator = arr.entries()`
+  [keys()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/keys) | returns a new Array Iterator object that contains the keys for each index in the array | `var arr_iterator = arr.keys()`
+  [values()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values) | returns a new Array Iterator object that contains the values for each index in the array | `var arr_iterator = arr.values()`
+  [toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString) | Returns a string representation of the array in local format. | `var str = arr.toLocaleString([locales[, options]]);`
+  [toString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString) | returns a string representing the specified array and its elements. | `var str = arr.toString()`
 
 #### Date Object
 - methods
