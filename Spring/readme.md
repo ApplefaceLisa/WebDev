@@ -45,6 +45,8 @@
 - [Database Design / Modeling](https://dev.mysql.com/doc/workbench/en/wb-data-modeling.html)
 
 ### Tools
+- [bitbucket](https://bitbucket.org/) : the git solution
+  - [Tutorial: Learn Git with Bitbucket Cloud](https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud)
 - [JSON to XML Converter](https://www.freeformatter.com/json-to-xml-converter.html)
 - [documentation Editor](https://editor.swagger.io/)
 
