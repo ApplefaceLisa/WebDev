@@ -55,7 +55,9 @@
 - [JavaScript Best Practices: Tips & Tricks to Level Up Your Code](https://www.codementor.io/johnnyb/javascript-best-practices-du107mvud)
     
 # Basic Knowledge
-### Variable scope and hoisting
+## Javascript Data Types and Type Conversion
+- [Javascript Data Types and Type Conversion](https://www.w3schools.com/js/js_type_conversion.asp)
+## Variable scope and hoisting
 - [Demystifying JavaScript Variable Scope and Hoisting](https://www.sitepoint.com/demystifying-javascript-variable-scope-hoisting/)
 - scope problem of setInterval() / setTimeout()
   - [Referencing “this” inside setInterval/setTimeout within object prototype methods
