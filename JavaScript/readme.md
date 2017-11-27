@@ -284,6 +284,91 @@
 
 ## Objects
 ### User Defined Objects
+- [JavaScript Object Creation: Patterns and Best Practices](https://www.sitepoint.com/javascript-object-creation-patterns-best-practises/)
+  - Object Literals, example : an object with methods and data.
+    ```
+    var o = {
+      x: 42,
+      y: 3.14,
+      f: function() {},
+      g: function() {}
+    };
+    ```
+    _**Drawback**_ : 
+
+    If we need to create the same type of object in other places, then we’ll end up copy-pasting the object’s methods, data, and initialization. We need a way to create not just the one object, but a family of objects.
+    
+  - Factory Functions, example : 
+    ```
+    function thing() {
+      return {
+        x: 42,
+        y: 3.14,
+        f: function() {},
+        g: function() {}
+      };
+    }     // return an object literal from a function
+
+    var obj1 = thing();
+    var obj2 = thing();    // create the same type of object multiple times or in multiple places
+    ```
+    
+    _**Drawback**_ : 
+
+    This approach can cause memory bloat because each object contains its own unique copy of each function. Ideally we want every object to share just one copy of its functions.
+      
+  - Prototype Chains
+  
+    JavaScript gives us a built-in mechanism to share data across objects, called the prototype chain.
+    
+    Example:
+    ```
+      thing.prototype.f = function() {};
+      thing.prototype.g = function() {};
+
+      function thing() {
+        var o = Object.create(thing.prototype);
+
+        o.x = 42;
+        o.y = 3.14;
+
+        return o;
+      }
+
+      var o = thing();    
+    ```
+    _**Drawback**_ : The first and last lines of the “thing” function are going to be repeated almost verbatim in every such delegating-to-prototype-factory-function.
+    
+  - ES5 Classes : isolate the repetitive lines by moving them into their own function. Example:
+    ```
+      Thing.prototype.f = function() {};
+      Thing.prototype.g = function() {};  // delegate shared data to a prototype object
+
+      function Thing() {
+        this.x = 42;
+        this.y = 3.14;
+      }
+
+      var o = new Thing();  // rely on the “new” keyword to handle repetitive logic
+    ```
+    
+    _**Drawback**_ : verbose and ugly
+    
+  - ES6 Classes : example
+    ```
+      class Thing {
+        constructor() {
+          this.x = 42;
+          this.y = 3.14;
+        }
+
+        f() {}
+        g() {}
+      }
+
+      var o = new Thing();    
+    ```    
+  
 - [JavaScript Objects in Detail](http://javascriptissexy.com/javascript-objects-in-detail/)
 
 - [object literal notation vs constructor](http://stackoverflow.com/questions/4859800/should-i-be-using-object-literals-or-constructor-functions)
