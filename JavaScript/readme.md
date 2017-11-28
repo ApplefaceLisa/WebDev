@@ -55,8 +55,47 @@
 - [JavaScript Best Practices: Tips & Tricks to Level Up Your Code](https://www.codementor.io/johnnyb/javascript-best-practices-du107mvud)
     
 # Basic Knowledge
-## Javascript Data Types and Type Conversion
-- [Javascript Data Types and Type Conversion](https://www.w3schools.com/js/js_type_conversion.asp)
+## [Javascript Data Types and Type Conversion](https://www.w3schools.com/js/js_type_conversion.asp)
+- Javascript Data Types
+
+  Six data types that are primitives:
+  - Boolean
+  - Null
+  - Undefined
+  - Number
+  - String
+  - Symbol (new in ECMAScript 6)
+  
+  and Object
+  
+- Type Conversion
+  - Number() : converts to a Number. The _**unary +**_ operator can be used to convert a variable to a number (e.g. var x = +y).
+    - Strings to Numbers
+      - Strings containing ONLY numbers (like "3.14") convert to numbers (like 3.14).
+      - Empty strings convert to 0, i.e. `Number("") -> 0`.
+      - Anything else converts to NaN (Not a number), example "99 99".      
+    - Booleans to Numbers
+      - `Number(false) -> 0`
+      - `Number(true) -> 1`
+    - Array to Numbers
+      - Empty arrays convert to 0, i.e. `Number([]) -> 0`.
+      - `Number([20]) -> 20`, `Number([20, 30]) -> NaN`
+    - Others
+      - `Number(null) -> 0`
+      - `Number(Infinity) -> Infinity`, `Number(-Infinity) -> -Infinity`
+      - `Number(undefined) -> NaN`
+      - `Number(NaN) -> NaN`
+      - others (function, objects) are all converted to NaN
+    
+  - String() : converts to a String
+    - Empty array will be converted to empty string, i.e. `String([]) -> ""`
+    - All others will be converted to string type of itself, e.g. `String(null) -> "null"`
+  
+  - Boolean() : converts to a Boolean
+    - falsy : 0 (Number), "" (empty string), null, undefined, NaN, false are converted to false.
+    - all other are true.
+    
+
 ## Variable scope and hoisting
 - [Demystifying JavaScript Variable Scope and Hoisting](https://www.sitepoint.com/demystifying-javascript-variable-scope-hoisting/)
 - scope problem of setInterval() / setTimeout()
