@@ -16,4 +16,6 @@ Three ways to run this app:
   - build app to jar : > mvn clean package
   - run jar : > java -jar <path_to_jar_file>.jar
 
+_**TBTF code**_: user-service-1 and checking-account-service-1
+
 ## 
