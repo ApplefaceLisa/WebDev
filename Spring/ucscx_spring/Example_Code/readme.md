@@ -140,3 +140,55 @@ The spring-data provides a Spring wrapper over Hibernate and provide transaction
   a) make sure server is running : MySQL workbench -> connection -> "Server" -> "Server status" / "Startup/Shutdown"
   b) in STS run app  
   c) use postman test. GET/POST...See "user-service2.postman_collection.json"
+
+## Microservice discovery and configuration
+- Discovery : services talk to each other. 
+  - Code : eureka-service
+- Externalized configuration : 
+  - Code : config-service
+  - [Sample properties](https://github.com/rahulaga/tbtf-sample-props) (MUST be a git repo)
+### Coding steps from user-service-2 to user-service-3
+1. In _**pom.xml**_ file, add eureka-server/cloud-config dependencies and dependency management.
+```
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-eureka-server</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-config</artifactId>
+    </dependency> 
+    ...
+  </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>Camden.SR5</version>
+        <type>pom</type>
+        <scope>import</scope>
+        </dependency>
+      </dependencies>
+  </dependencyManagement>
+```
+
+2. In _**UserServiceApplication.java**_, add @EnableEurekaClient
+```
+  @SpringBootApplication
+  @EnableEurekaClient
+  public class UserServiceApplication {
+    ...
+  }
+```
+
+3. Modify _**application.properties**_, move all properties except server.port to external .properties file.  
+4. Modify _**bootstrap.properties**_, add uri of external .properties file. For example `spring.cloud.config.uri=http://localhost:8888`.  
+5. Run application
+  a) run eureka-service. open localhost:9999 in browser to check if start successfully.  
+  b) run config-service.  
+  c) run user-service-3.  
+  d) use postman do REST test.  
