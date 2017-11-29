@@ -139,4 +139,4 @@ The spring-data provides a Spring wrapper over Hibernate and provide transaction
 8. run application  
   a) make sure server is running : MySQL workbench -> connection -> "Server" -> "Server status" / "Startup/Shutdown"
   b) in STS run app  
-  c) use postman test. GET/POST...
+  c) use postman test. GET/POST...See "user-service2.postman_collection.json"
