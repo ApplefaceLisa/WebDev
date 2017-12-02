@@ -22,17 +22,18 @@ _**TBTF code**_: user-service-1 and checking-account-service-1
 ### Introduction
 - JPA : 
 
-The Java Persistence Architecture API (JPA) is a Java _**specification**_ for accessing, persisting, and managing
+  The Java Persistence Architecture API (JPA) is a Java _**specification**_ for accessing, persisting, and managing
 data between Java objects/classes and a relational database. JPA is just a set of interfaces, and requires an implementation.
 
 - Hibernate : 
 
-Hibernate is one implementation of JPA and a very popular choice. Hibernate takes care of the mapping from Java classes to database tables and also provides data query and retrieval facilities. It can significantly reduce development time otherwise spent with manual data
+  Hibernate is one implementation of JPA and a very popular choice. Hibernate takes care of the mapping from Java classes to database tables and also provides data query and retrieval facilities. It can significantly reduce development time otherwise spent with manual data
 handling in SQL and JDBC.
 
 - Spring Data
 
-The spring-data provides a Spring wrapper over Hibernate and provide transaction management. It also provides a wrapper over other DBs like Mongo, Redis etc. Spring Data provides:
+  The spring-data provides a Spring wrapper over Hibernate and provide transaction management. It also provides a wrapper over other DBs like Mongo, Redis etc. Spring Data provides:
+
   - Standard Crud Repository
   - Paging/Sorting support
   - Custom Finder method - converted to SQL – based on method name
@@ -118,7 +119,7 @@ The spring-data provides a Spring wrapper over Hibernate and provide transaction
   a) create model : "File"->"New Model".  
   b) click "+" on the top-right of window, input schema name.  
   c) double-click "Add Table", input table name and column name/type/etc. Notice id name must start with "id".  
-  d) generate EER diagram for model : "Model" -> "create diagram from catalog object". Then save model by click "File" -> "save model". 
+  d) generate EER diagram for model : "Model" -> "create diagram from catalog object". Then save model by click "File" -> "save model".  
   e) synchronize model : "Database" -> "Synchronize Model". ONLY need to do once.  
   f) add data into database : open MySQL connection, in "Navigator" -> "Schemas", select the database you want to modify. Select the table name and right click, select "Select rows - limit 1000". You will see the current content and modify it's contents.  
   
