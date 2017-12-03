@@ -101,4 +101,4 @@
 13. Describe a typical work day
 
 - [Top 85 JavaScript Interview Questions & Answers](https://career.guru99.com/top-85-javascript-interview-questions/)
-  
+- [front-end-Interview-Questions](https://github.com/khan4019/front-end-Interview-Questions)  
