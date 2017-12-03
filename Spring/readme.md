@@ -44,6 +44,8 @@
 - [Many-to-Many Relationship](https://www.youtube.com/watch?v=a-o0d_e9mW8)
 - [Summary of Relationships](https://www.youtube.com/watch?v=N026kasOr4w)
 
+- [Spring Boot JPA Many to Many Relationship Mapping Example](http://javabycode.com/spring-framework-tutorial/spring-boot-tutorial/spring-boot-jpa-many-to-many-relationship-mapping-example.html#comment-7644)
+
 #### MySQL workbench
 - [Server Configuration with MySQL Installer](https://dev.mysql.com/doc/mysql-installer/en/mysql-installer-workflow-server.html)
 - [Connections in MySQL Workbench](https://dev.mysql.com/doc/workbench/en/wb-mysql-connections.html)
