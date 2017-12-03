@@ -35,7 +35,10 @@
 #### [Spring Data repository](https://docs.spring.io/spring-data/data-commons/docs/1.6.1.RELEASE/reference/html/repositories.html)
 
 ### MySQL
-#### Relationship
+#### Data Modeling
+- [Data modelling - an introduction](https://www.youtube.com/watch?v=tR_rOJPiEXc)
+
+#### Data Relationships
 - [One-to-One Relationship](https://www.youtube.com/watch?v=lDnL1gwCE0o)
 - [One-to-Many Relationship](https://www.youtube.com/watch?v=KjA2LhT4TRU)
 - [Many-to-Many Relationship](https://www.youtube.com/watch?v=a-o0d_e9mW8)
