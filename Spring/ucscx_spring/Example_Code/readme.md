@@ -42,7 +42,7 @@ handling in SQL and JDBC.
 - user-serivce-2 : Using JPA annotations and Spring JDBC template (Repository/DAO).
 - checking-account-service-2 : Using external service (RestTemplate).
 
-#### Coding steps from user-service-1 to user-service-2
+#### Coding steps from XXX-service-1 to XXX-service-2
 1. In _**pom.xml**_ file, add JPA/mysql-connector dependencies  
 ```
   <dependency>
@@ -188,8 +188,11 @@ handling in SQL and JDBC.
 
 3. Modify _**application.properties**_, move all properties except server.port to external .properties file.  
 4. Modify _**bootstrap.properties**_, add uri of external .properties file. For example `spring.cloud.config.uri=http://localhost:8888`.  
-5. Run application
+5. Run application  
   a) run eureka-service. open localhost:9999 in browser to check if start successfully.  
   b) run config-service.  
   c) run user-service-3.  
   d) use postman do REST test.  
+
+### Coding steps from checking-account-service-2 to checking-account-service-3
+The main difference between checking-account-service-3 and user-service-3 is, checking-account-service-3 is dependent on user-service-3. The user info stored in user-service database and user id is stored in checking-account. Checking account and user info are correlated by userId <-> account-Id. When we want to add an checking account for a specific user, we need to first check if this user is already existed by starting a request for user-service from checking-account-service. Details see `addAccount()` in CheckingAccountServiceImpl.java and *.externalresource.
