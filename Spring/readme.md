@@ -39,6 +39,7 @@
 - [One-to-One Relationship](https://www.youtube.com/watch?v=lDnL1gwCE0o)
 - [One-to-Many Relationship](https://www.youtube.com/watch?v=KjA2LhT4TRU)
 - [Many-to-Many Relationship](https://www.youtube.com/watch?v=a-o0d_e9mW8)
+- [Summary of Relationships](https://www.youtube.com/watch?v=N026kasOr4w)
 
 #### MySQL workbench
 - [Server Configuration with MySQL Installer](https://dev.mysql.com/doc/mysql-installer/en/mysql-installer-workflow-server.html)
