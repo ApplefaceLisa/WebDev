@@ -35,6 +35,11 @@
 #### [Spring Data repository](https://docs.spring.io/spring-data/data-commons/docs/1.6.1.RELEASE/reference/html/repositories.html)
 
 ### MySQL
+#### Relationship
+- [One-to-One Relationship](https://www.youtube.com/watch?v=lDnL1gwCE0o)
+- [One-to-Many Relationship](https://www.youtube.com/watch?v=KjA2LhT4TRU)
+- [Many-to-Many Relationship](https://www.youtube.com/watch?v=a-o0d_e9mW8)
+
 #### MySQL workbench
 - [Server Configuration with MySQL Installer](https://dev.mysql.com/doc/mysql-installer/en/mysql-installer-workflow-server.html)
 - [Connections in MySQL Workbench](https://dev.mysql.com/doc/workbench/en/wb-mysql-connections.html)
