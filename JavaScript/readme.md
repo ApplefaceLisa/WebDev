@@ -1249,6 +1249,11 @@ pixelDepth | The number of bits per pixel of the screen.
   console.log(window.you === you);  // true
   ```
 
+## Advanced Topics
+- [Determine if a binary tree is balanced](http://js-algorithms.tutorialhorizon.com/2015/10/18/determine-if-a-binary-tree-is-balanced/)
+
+  A balanced tree is defined to be a tree such that the heights of the two subtrees of any node never differ more than one.
+
 # Recommended Reference
 - http://javascriptissexy.com/how-to-learn-javascript-properly/
 - http://eloquentjavascript.net/
