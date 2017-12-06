@@ -33,6 +33,12 @@ When a Controller is attached to the DOM via the _**ng-controller**_ directive, 
 ```
 _**NOTE**_ : scope inheritance [Understanding Scopes](https://github.com/angular/angular.js/wiki/Understanding-Scopes)
 
+### [Data binging](https://docs.angularjs.org/guide/databinding)
+- one-way data binding : ng-bind or {{value}}
+- two-way data binding : ng-model
+
+### [Forms](https://docs.angularjs.org/guide/forms)
+
 ### [Directives](https://docs.angularjs.org/guide/directive)
 
 Directives are markers on a DOM element (such as an attribute, element name, comment or CSS class) that tell AngularJS's _**[HTML compiler](https://docs.angularjs.org/guide/compiler)**_ (`$compile`) to attach a specified behavior to that DOM element (e.g. via event listeners), or even to transform the DOM element and its children.
@@ -77,13 +83,16 @@ Directives are markers on a DOM element (such as an attribute, element name, com
   
 - Creating Directives
 
-  Directives are registered on modules. To register a directive, you use the module.directive API. module.directive takes the normalized directive name followed by a factory function. This factory function should return an object with the different options to tell $compile how the directive should behave when matched.
+  Directives are registered on modules. To register a directive, you use the module.directive API. `module.directive` takes the normalized directive name followed by a _**factory function**_. This factory function should return an object with the different options to tell $compile how the directive should behave when matched.
+  
+  [Templates](https://docs.angularjs.org/guide/templates) are written with HTML that contains AngularJS-specific elements and attributes.
+  
   ```
   <module>.directive(<name>, directiveFactory() {
       return {
           //restrict: 'E',               // Type of directive
           template: <template_string>,
-		      //templateUrl: <html_url>,     // Template-expanding
+	  //templateUrl: <html_url>,     // Template-expanding
           // scope: {}                   // isolate scope binding
       };
   });
@@ -122,6 +131,10 @@ Directives are markers on a DOM element (such as an attribute, element name, com
   - Creating a Directive that Manipulates the DOM
   - Creating a Directive that Wraps Other Elements
   - Creating a Directive that Adds Event Listeners
+
+### [Filters](https://docs.angularjs.org/guide/filter)
+
+### [Services](https://docs.angularjs.org/guide/services)
 
 ## Tutorial
 ### [PhoneCat Tutorial App](https://docs.angularjs.org/tutorial/)
