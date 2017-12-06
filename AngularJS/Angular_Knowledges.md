@@ -34,8 +34,8 @@ When a Controller is attached to the DOM via the _**ng-controller**_ directive, 
 _**NOTE**_ : scope inheritance [Understanding Scopes](https://github.com/angular/angular.js/wiki/Understanding-Scopes)
 
 ### [Data binging](https://docs.angularjs.org/guide/databinding)
-- one-way data binding : ng-bind or {{value}}, synchronizes the model to the view.
-- two-way data binding : ng-model, synchronizes the model to the view, as well as view to the model.
+- one-way data binding : `ng-bind` or `{{value}}`, synchronizes the model to the view.
+- two-way data binding : `ng-model`, synchronizes the model to the view, as well as view to the model.
 
 ### [Forms](https://docs.angularjs.org/guide/forms)
 A Form is a collection of controls(`input`, `select`, `textarea`) for the purpose of grouping related controls together. Form and controls provide validation services, so that the user can be notified of invalid input before submitting a form. Server-side validation is still necessary for a secure application.
