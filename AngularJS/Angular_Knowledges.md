@@ -40,7 +40,9 @@ _**NOTE**_ : scope inheritance [Understanding Scopes](https://github.com/angular
 ### [Forms](https://docs.angularjs.org/guide/forms)
 A Form is a collection of controls(`input`, `select`, `textarea`) for the purpose of grouping related controls together. Form and controls provide validation services, so that the user can be notified of invalid input before submitting a form. Server-side validation is still necessary for a secure application.
 
-`<form novalidate class="simple-form">` : _**novalidate**_ is used to disable browser's native form validation. 
+  AngularJS provides basic implementation for most common HTML5 input types: (text, number, url, email, date, radio, checkbox), as well as some directives for validation (required, pattern, minlength, maxlength, min, max). Failed validators are stored by key in [ngModelController.$error](https://docs.angularjs.org/api/ng/type/ngModel.NgModelController#$error).
+
+  `<form novalidate class="simple-form">` : _**novalidate**_ is used to disable browser's native form validation. 
 
 - Using CSS classes
   
@@ -59,9 +61,44 @@ A Form is a collection of controls(`input`, `select`, `textarea`) for the purpos
   `ng-pending` | any $asyncValidators are unfulfilled
   
 - Binding to form and control state
+  - A form is an instance of [FormController](https://docs.angularjs.org/api/ng/type/form.FormController). The form instance can optionally be published into the scope using the `name` attribute.
+  ```
+    <form name="form" class="css-form" novalidate>
+      <div ng-show="form.$submitted">...</div>
+      ...
+    </form>
+  ```
+  
+  - An input control that has the [ngModel](https://docs.angularjs.org/api/ng/directive/ngModel) directive holds an instance of [NgModelController](https://docs.angularjs.org/api/ng/type/ngModel.NgModelController). Such a control instance can be published as a property of the form instance using the name attribute on the input control.
+  ```
+    <form name="form" class="css-form" novalidate>
+      <label>Name:
+        <input type="text" ng-model="user.name" name="uName" required="" />
+      </label>
+      <br />
+      <div ng-show="form.$submitted || form.uName.$touched">
+        <div ng-show="form.uName.$error.required">Tell us your name.</div>
+      </div>
+    </form>
+  ```
+  
 - Custom model update triggers
+
+  By default, any change to the content will _**trigger**_ a model update and form validation. You can override this behavior using the [ngModelOptions](https://docs.angularjs.org/api/ng/directive/ngModelOptions) directive to bind only to specified list of events.
+  
+  `ng-model-options="{ updateOn: '[default] [event1] [event2]...' }"`
+  
 - Non-immediate (debounced) model updates
-- Custom Validation
+
+  You can _**delay**_ the model update/validation by using the `debounce` key with the [ngModelOptions](https://docs.angularjs.org/api/ng/directive/ngModelOptions) directive. This delay will also apply to parsers, validators and model flags like `$dirty` or `$pristine`. E.g. `ng-model-options="{ debounce: 500 }"`.
+  
+  Custom trigger and delay : `ng-model-options="{ updateOn: 'default blur', debounce: { default: 500, blur: 0 } }"`
+  
+- _**Custom Validation**_
+
+  - `$validators` object, receives the [modelValue]() and the [viewValue]() as parameters.
+  - `$asyncValidators` object which handles asynchronous validation
+  
 - Modifying built-in validators
 - Implementing custom form controls (using ngModel)
 
