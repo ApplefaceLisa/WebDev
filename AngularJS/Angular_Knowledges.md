@@ -1,6 +1,6 @@
 - [Angular MVC Architecture](https://www.tutorialspoint.com/angularjs/angularjs_mvc_architecture.htm)
 
-# Guide
+# [Developer Guide](https://docs.angularjs.org/guide)
 ## [Core concept](https://docs.angularjs.org/guide/concepts)
 ### [Modules](https://docs.angularjs.org/guide/module)
 You can think of a module as a container for the different parts of your app – controllers, services, filters, directives, etc.
