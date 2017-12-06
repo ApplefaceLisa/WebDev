@@ -1,10 +1,8 @@
 - [Angular MVC Architecture](https://www.tutorialspoint.com/angularjs/angularjs_mvc_architecture.htm)
-- Angular Architecture Overview
-  - component
-  - directive
-  - pipe
-  - data binding
-  - dependency injection (DI)
-  - services and other business logic
-  - data persistence
-  - routing
+
+# Guide
+## [Core concept](https://docs.angularjs.org/guide/concepts)
+
+
+## Tutorial
+### [PhoneCat Tutorial App](https://docs.angularjs.org/tutorial/)
