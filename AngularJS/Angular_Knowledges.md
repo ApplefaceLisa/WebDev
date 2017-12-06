@@ -33,5 +33,95 @@ When a Controller is attached to the DOM via the _**ng-controller**_ directive, 
 ```
 _**NOTE**_ : scope inheritance [Understanding Scopes](https://github.com/angular/angular.js/wiki/Understanding-Scopes)
 
+### [Directives](https://docs.angularjs.org/guide/directive)
+
+Directives are markers on a DOM element (such as an attribute, element name, comment or CSS class) that tell AngularJS's _**[HTML compiler](https://docs.angularjs.org/guide/compiler)**_ (`$compile`) to attach a specified behavior to that DOM element (e.g. via event listeners), or even to transform the DOM element and its children.
+
+#### AngularJS built-in directives
+[AngularJS Built In Directives list](http://www.techstrikers.com/AngularJS/angularjs-built-in-directives.php)
+
+#### Custom directives
+- Normalization
+
+  AngularJS normalizes an element's tag and attribute name to determine which elements match which directives.
+  
+  The normalization process is as follows:
+  - Strip x- and data- from the front of the element/attributes.
+  - Convert the :, -, or _-delimited name to camelCase.
+  
+  For example, the following forms are all equivalent and match the `ngBind` directive:
+  ```
+  <div ng-controller="Controller">
+    Hello <input ng-model='name'> <hr/>
+    <span ng-bind="name"></span> <br/>
+    <span ng:bind="name"></span> <br/>
+    <span ng_bind="name"></span> <br/>
+    <span data-ng-bind="name"></span> <br/>
+    <span x-ng-bind="name"></span> <br/>
+  </div>
+  ```
+  
+- Directive types
+
+  $compile can match directives based on element names (E), attributes (A), class names (C), and comments (M).
+  ```
+  <my-dir></my-dir>                     // E
+  <span my-dir="exp"></span>            // A
+  <!-- directive: my-dir exp -->        // M
+  <span class="my-dir: exp;"></span>    // C
+  ```
+  
+  A directive can specify which of the 4 matching types it supports in the _**restrict**_ _property_ of the directive definition object. The default is `EA`.
+  
+  BEST PRACTICE : prefer using directives via _**tag name and attributes**_.
+  
+- Creating Directives
+
+  Directives are registered on modules. To register a directive, you use the module.directive API. module.directive takes the normalized directive name followed by a factory function. This factory function should return an object with the different options to tell $compile how the directive should behave when matched.
+  ```
+  <module>.directive(<name>, directiveFactory() {
+      return {
+          //restrict: 'E',               // Type of directive
+          template: <template_string>,
+		      //templateUrl: <html_url>,     // Template-expanding
+          // scope: {}                   // isolate scope binding
+      };
+  });
+  ```
+  Example :
+  ```
+  <html ng-app="myApp">
+    <div ng-controller="Controller">
+      <my-customer info="naomi"></my-customer>
+      <hr>
+      <my-customer info="igor"></my-customer>
+    </div>
+  </html>  
+  
+  <script>
+    angular.module('myApp', [])
+    .controller('Controller', ['$scope', function($scope) {
+      $scope.naomi = { name: 'Naomi', address: '1600 Amphitheatre' };
+      $scope.igor = { name: 'Igor', address: '123 Somewhere' };
+    }])
+    .directive('myCustomer', function() {
+      return {
+        restrict: 'E',
+        scope: {
+          customerInfo: '=info'
+        },
+        templateUrl: 'my-customer-iso.html'
+      };
+    });  
+  </script>
+  
+  // my-customer-iso.html
+  Name: {{customerInfo.name}} Address: {{customerInfo.address}}
+  ```
+
+  - Creating a Directive that Manipulates the DOM
+  - Creating a Directive that Wraps Other Elements
+  - Creating a Directive that Adds Event Listeners
+
 ## Tutorial
 ### [PhoneCat Tutorial App](https://docs.angularjs.org/tutorial/)
