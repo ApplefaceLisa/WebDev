@@ -196,6 +196,38 @@ Directives are markers on a DOM element (such as an attribute, element name, com
   - Creating a Directive that Adds Event Listeners
 
 ### [Filters](https://docs.angularjs.org/guide/filter)
+Example:
+```
+<body ng-app="myApp" ng-controller="Controller">
+  <div>
+    <my-customer info="naomi"></my-customer>
+    <hr>
+    <my-customer info="igor"></my-customer>
+  </div>
+
+  <script>
+  var app = angular.module('myApp', []);
+ 
+  app.controller('Controller', function($scope) {
+    $scope.naomi = { name: 'Naomi', address: '1600 Amphitheatre' };
+    $scope.igor = { name: 'Igor', address: '123 Somewhere' };
+  });
+
+  app.directive('myCustomer', function() {
+    return {
+      restrict: 'E',
+      scope: {
+        customerInfo: '=info'
+      },
+      templateUrl: 'example7-my-customer-iso.html'
+    };
+  });  
+  </script>
+</body>
+
+// example7-my-customer-iso.html
+Name: {{customerInfo.name}} Address: {{customerInfo.address}}
+```
 
 ### [Services](https://docs.angularjs.org/guide/services)
 
