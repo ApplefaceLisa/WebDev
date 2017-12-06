@@ -34,10 +34,36 @@ When a Controller is attached to the DOM via the _**ng-controller**_ directive, 
 _**NOTE**_ : scope inheritance [Understanding Scopes](https://github.com/angular/angular.js/wiki/Understanding-Scopes)
 
 ### [Data binging](https://docs.angularjs.org/guide/databinding)
-- one-way data binding : ng-bind or {{value}}
-- two-way data binding : ng-model
+- one-way data binding : ng-bind or {{value}}, synchronizes the model to the view.
+- two-way data binding : ng-model, synchronizes the model to the view, as well as view to the model.
 
 ### [Forms](https://docs.angularjs.org/guide/forms)
+A Form is a collection of controls(`input`, `select`, `textarea`) for the purpose of grouping related controls together. Form and controls provide validation services, so that the user can be notified of invalid input before submitting a form. Server-side validation is still necessary for a secure application.
+
+`<form novalidate class="simple-form">` : _**novalidate**_ is used to disable browser's native form validation. 
+
+- Using CSS classes
+  
+  To allow styling of form as well as controls, ngModel adds these CSS classes:
+
+  class name | description
+  ---------- | -----------------------------------------------------
+  `ng-valid` | the model is valid
+  `ng-invalid` | the model is invalid
+  `ng-valid-[key]` | for each valid key added by $setValidity
+  `ng-invalid-[key]` | for each invalid key added by $setValidity
+  `ng-pristine` | the control hasn't been interacted with yet
+  `ng-dirty` | the control has been interacted with
+  `ng-touched` | the control has been blurred
+  `ng-untouched` | the control hasn't been blurred
+  `ng-pending` | any $asyncValidators are unfulfilled
+  
+- Binding to form and control state
+- Custom model update triggers
+- Non-immediate (debounced) model updates
+- Custom Validation
+- Modifying built-in validators
+- Implementing custom form controls (using ngModel)
 
 ### [Directives](https://docs.angularjs.org/guide/directive)
 
