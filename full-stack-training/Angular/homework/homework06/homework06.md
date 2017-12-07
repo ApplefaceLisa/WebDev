@@ -19,3 +19,4 @@ Note: You should create your own code files for this.
   - [ngOptions](https://docs.angularjs.org/api/ng/directive/ngOptions)
   
 - [Filters](https://docs.angularjs.org/guide/filter)  
+  - [orderBy](https://docs.angularjs.org/api/ng/filter/orderBy)
