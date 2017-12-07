@@ -1,3 +1,4 @@
+# Question description
 Start with a good example at W3Schooles.com:
 
 http://www.w3schools.com/angular/tryit.asp?filename=try_ng_w3css
@@ -12,3 +13,9 @@ edit;
 4. Implement paging / pagination by having 'Prev Page' and 'Next Page'. (the size of each page is pre-defined, such as 20).
 
 Note: You should create your own code files for this.
+
+# AngularJS
+- [select](https://docs.angularjs.org/api/ng/directive/select)
+  - [ngOptions](https://docs.angularjs.org/api/ng/directive/ngOptions)
+  
+- [Filters](https://docs.angularjs.org/guide/filter)  
