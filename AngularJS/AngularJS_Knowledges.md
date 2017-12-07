@@ -233,3 +233,5 @@ Name: {{customerInfo.name}} Address: {{customerInfo.address}}
 
 ## Tutorial
 ### [PhoneCat Tutorial App](https://docs.angularjs.org/tutorial/)
+
+### [orderBy](https://docs.angularjs.org/api/ng/filter/orderBy)
