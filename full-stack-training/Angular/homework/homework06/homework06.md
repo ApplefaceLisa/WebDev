@@ -21,4 +21,6 @@ Note: You should create your own code files for this.
 - [Filters](https://docs.angularjs.org/guide/filter)  
   - [orderBy](https://docs.angularjs.org/api/ng/filter/orderBy)
 
+# References
+- [Search Sort and Pagination in ng-repeat – AngularJS](https://ciphertrick.com/2015/06/01/search-sort-and-pagination-ngrepeat-angularjs/)
 - [AngularJS - Pagination Example with Logic like Google](http://jasonwatmore.com/post/2016/01/31/angularjs-pagination-example-with-logic-like-google)
