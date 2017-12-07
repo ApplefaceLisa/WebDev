@@ -20,3 +20,5 @@ Note: You should create your own code files for this.
   
 - [Filters](https://docs.angularjs.org/guide/filter)  
   - [orderBy](https://docs.angularjs.org/api/ng/filter/orderBy)
+
+- [AngularJS - Pagination Example with Logic like Google](http://jasonwatmore.com/post/2016/01/31/angularjs-pagination-example-with-logic-like-google)
