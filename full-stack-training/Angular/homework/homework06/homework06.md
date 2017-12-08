@@ -27,3 +27,10 @@ Note: You should create your own code files for this.
   Use library [dirPagination.js](https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination)
   
 - [AngularJS - Pagination Example with Logic like Google](http://jasonwatmore.com/post/2016/01/31/angularjs-pagination-example-with-logic-like-google)
+
+
+# How to run on computer
+If double click "homework_6.html" on computer locally, COR will occur. Use _http-server_ to avoid it.
+1. In command line, change working path under the folder where "homework_6.html" exists.  
+2. run `http-server`  
+3. In browser, type `http://localhost:8080/homework_6.html`  
