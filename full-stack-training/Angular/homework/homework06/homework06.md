@@ -24,6 +24,6 @@ Note: You should create your own code files for this.
 # References
 - [Search Sort and Pagination in ng-repeat – AngularJS](https://ciphertrick.com/2015/06/01/search-sort-and-pagination-ngrepeat-angularjs/)
 
-  Use library `dirPagination.js`
+  Use library [dirPagination.js](https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination)
   
 - [AngularJS - Pagination Example with Logic like Google](http://jasonwatmore.com/post/2016/01/31/angularjs-pagination-example-with-logic-like-google)
