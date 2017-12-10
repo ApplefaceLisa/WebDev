@@ -235,3 +235,9 @@ Name: {{customerInfo.name}} Address: {{customerInfo.address}}
 ### [PhoneCat Tutorial App](https://docs.angularjs.org/tutorial/)
 
 ### [orderBy](https://docs.angularjs.org/api/ng/filter/orderBy)
+
+## QA
+1. How to apply external CSS to angular project?  
+
+  External css can not be applied in angular project by using `<style type="text/css" src="style.css"></style>`, instead you should use
+`<link href="style.css" rel="stylesheet">`.
