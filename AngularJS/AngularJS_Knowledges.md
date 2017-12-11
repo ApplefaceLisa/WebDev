@@ -232,6 +232,7 @@ Name: {{customerInfo.name}} Address: {{customerInfo.address}}
 ### [Services](https://docs.angularjs.org/guide/services)
 
 ### [Component Router](https://docs.angularjs.org/guide/component-router)
+- w3school [AngularJS Routing](https://www.w3schools.com/angular/angular_routing.asp)
 - [AngularJS Routing](http://www.tutorialsteacher.com/angularjs/angularjs-routing)
 - [Navigation From One Page to Another In AngularJS Page Routing](http://www.c-sharpcorner.com/UploadFile/58e23e/navigation-from-one-page-to-another-in-angularjs-page-routin/)
 - [Single Page Apps with AngularJS Routing and Templating](https://scotch.io/tutorials/single-page-apps-with-angularjs-routing-and-templating)
