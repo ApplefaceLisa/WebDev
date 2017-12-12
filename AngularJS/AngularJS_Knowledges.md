@@ -247,3 +247,6 @@ Name: {{customerInfo.name}} Address: {{customerInfo.address}}
 
   External css can not be applied in angular project by using `<style type="text/css" src="style.css"></style>`, instead you should use
 `<link href="style.css" rel="stylesheet">`.
+
+2. Pagination
+- [AngularJS - Pagination Example with Logic like Google](http://jasonwatmore.com/post/2016/01/31/angularjs-pagination-example-with-logic-like-google)
