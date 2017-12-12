@@ -236,72 +236,195 @@ Angular provides us with three ways to create and register our own service: fact
   Factories are the most popular way to create and configure a service. When you’re using a `factory` you create an object, add properties to it, then return that same object. When you pass this service into your controller, those properties on the object will now be available in that controller through your factory.  
   You can have `private` variables and functions inside factory, for any variables and functions you want them be accessed in controller, put them in the returned object. Example:
   ```
-  app.factory('myFactory', function ($http, $q) {
-    /* private variables only used inside factory */
-    var baseUrl = 'https://itunes.apple.com/search?term='
-    var _artist = '';
-    var _finalUrl = '';
-    
-    /* private function */
-    var makeUrl = function () {
-      _artist = _artist.split(' ').join('+');
-      _finalUrl = baseUrl + _artist + '&callback=JSON_CALLBACK';
-      return _finalUrl;
-    }
+    app.factory('myFactory', function ($http, $q) {
+      /* private variables only used inside factory */
+      var baseUrl = 'https://itunes.apple.com/search?term='
+      var _artist = '';
+      var _finalUrl = '';
 
-    /* service to be used in controller */
-    var service = {};
-    service.setArtist = function (artist) {
-      _artist = artist;
-    }
+      /* private function */
+      var makeUrl = function () {
+        _artist = _artist.split(' ').join('+');
+        _finalUrl = baseUrl + _artist + '&callback=JSON_CALLBACK';
+        return _finalUrl;
+      }
 
-    service.getArtist = function () {
-      return _artist;
-    }
+      /* service to be used in controller */
+      var service = {};
+      service.setArtist = function (artist) {
+        _artist = artist;
+      }
 
-    service.callItunes = function () {
-      makeUrl()
-      var deferred = $q.defer();
-      $http({
-        method: 'JSONP',
-        url: _finalUrl
-      }).success(function (data) {
-        deferred.resolve(data);
-      }).error(function () {
-        deferred.reject('There was an error');
-      })
+      service.getArtist = function () {
+        return _artist;
+      }
 
-      return deferred.promise;
-    }
-
-    return service;
-  });
-  
-  // use service in controller
-  app.controller('myFactoryCtrl', function ($scope, myFactory) {    // inject myFactory into controller
-    $scope.data = {};
-    $scope.updateArtist = function () {
-      myFactory.setArtist($scope.data.artist);
-    }
-
-    $scope.submitArtist = function () {
-      myFactory.callItunes()
-        .then(function (data) {
-          $scope.data.artistData = data;
-        }, function (data) {
-          alert(data);
+      service.callItunes = function () {
+        makeUrl()
+        var deferred = $q.defer();
+        $http({
+          method: 'JSONP',
+          url: _finalUrl
+        }).success(function (data) {
+          deferred.resolve(data);
+        }).error(function () {
+          deferred.reject('There was an error');
         })
-    }
-  })  
+
+        return deferred.promise;
+      }
+
+      return service;
+    });
+
+    // use service in controller
+    app.controller('myFactoryCtrl', function ($scope, myFactory) {    // inject myFactory into controller
+      $scope.data = {};
+      $scope.updateArtist = function () {
+        myFactory.setArtist($scope.data.artist);
+      }
+
+      $scope.submitArtist = function () {
+        myFactory.callItunes()
+          .then(function (data) {
+            $scope.data.artistData = data;
+          }, function (data) {
+            alert(data);
+          })
+      }
+    })  
   ```
   
 2. Service  
-  When you’re using `service`, it’s instantiated with the _**`new`**_ keyword. Because of that, you’ll add properties to _**`this`**_ and the service will return `this`. When you pass the service into your controller, those properties on `this` will now be available on that controller through your service.  
-  
+  _**Service is instantiated with the `new` keyword**_. Because of that, you’ll add properties to _**`this`**_ and the service will return `this`. When you pass the service into your controller, those properties on `this` will now be available on that controller through your service.  
+  You can have private variables and helper functions used only inside service.  
+  For any varaibles and functions you want to use in controller, attach them to `this`.  
+  Example:  
+  ```
+    app.service('myService', function ($http, $q) {
+      /* private variables and function */
+      var baseUrl = 'https://itunes.apple.com/search?term=';
+      var _artist = '';
+      var _finalUrl = '';
+
+      var makeUrl = function () {
+        _artist = _artist.split(' ').join('+');
+        _finalUrl = baseUrl + _artist + '&callback=JSON_CALLBACK';
+        return _finalUrl;
+      }
+      
+      /* functions available for controllers */
+      this.setArtist = function (artist) {
+        _artist = artist;
+      }
+
+      this.getArtist = function () {
+        return _artist;
+      }
+
+      this.callItunes = function () {
+        makeUrl()
+        var deferred = $q.defer();
+        $http({
+          method: 'JSONP',
+          url: _finalUrl
+        }).success(function (data) {
+          deferred.resolve(data);
+        }).error(function () {
+          deferred.reject('There was an error');
+        })
+
+        return deferred.promise;
+      }
+    });  
+    
+    // use service in controller, exactly same as factory
+    app.controller('myService', function ($scope, myService) {
+      $scope.data = {};
+      $scope.updateArtist = function () {
+        myService.setArtist($scope.data.artist);
+      }
+
+      $scope.submitArtist = function () {
+        myService.callItunes()
+          .then(function (data) {
+            $scope.data.artistData = data;
+          }, function (data) {
+            alert(data);
+          })
+      }
+    });
+  ```
   
 3. Provider  
   Providers are the _**only**_ service you can pass into your _**`.config()`**_ function. Use a provider when you want to provide module-wide configuration for your service object before making it available.  
-  
+  For private variables and helper functions, just declare and use them inside provider;  
+  For the variables/functions that will be available in your app.config function, attach them to `this`;  
+  For the variables/functions that will be available in your controller, attach them to `this.$get()`. `$get` function returns all the methods/properties we want to be available in the controller.  
+  Example:
+  ```
+    app.provider('myProvider', function ($http, $q) {
+      /* private variables and function */
+      var baseUrl = 'https://itunes.apple.com/search?term=';
+      var _artist = '';
+      var _finalUrl = '';
+
+      var makeUrl = function () {
+        _artist = _artist.split(' ').join('+');
+        _finalUrl = baseUrl + _artist + '&callback=JSON_CALLBACK';
+        return _finalUrl;
+      }
+
+      /* variable which will go into app.config() */
+      this.thingFromConfig = '';
+
+      /* varaible / functions which is available for controllers */
+      this.$get = function ($http, $q) {
+        return {
+          callItunes: function () {
+            makeUrl()
+            var deferred = $q.defer();
+            $http({
+              method: 'JSONP',
+              url: _finalUrl
+            }).success(function (data) {
+              deferred.resolve(data);
+            }).error(function () {
+              deferred.reject('There was an error');
+            })
+
+            return deferred.promise;
+          },
+          setArtist: function (artist) {
+            _artist = artist;
+          },
+          getArtist = function () {
+            return _artist;
+          },
+          thingonConfig: this.thingFomConfig
+        }
+      }
+    });  
+    
+    // use in controller
+    app.controller('myProviderCtrl', function ($scope, myProvider) {
+      $scope.data = {};
+      $scope.updateArtist = function () {
+        myProvider.setArtist($scope.data.artist);
+      }
+
+      $scope.submitArtist = function () {
+        myProvider.callItunes()
+          .then(function (data) {
+            $scope.data.artistData = data;
+          }, function (data) {
+            alert(data);
+          })
+      }
+
+      $scope.data.thingFromConfig = myProvider.thingOnConfig;
+    });    
+  ```
 
 ### [Component Router](https://docs.angularjs.org/guide/component-router)
 - w3school [AngularJS Routing](https://www.w3schools.com/angular/angular_routing.asp)
