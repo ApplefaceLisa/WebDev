@@ -437,6 +437,9 @@ Angular provides us with three ways to create and register our own service: fact
 
 ### [orderBy](https://docs.angularjs.org/api/ng/filter/orderBy)
 
+## References
+- [A list of awesome AngularJs services, directives, utilities and resources](https://github.com/gianarb/awesome-angularjs)
+
 ## QA
 1. How to apply external CSS to angular project?  
 
