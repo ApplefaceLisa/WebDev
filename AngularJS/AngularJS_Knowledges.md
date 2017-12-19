@@ -441,6 +441,9 @@ Angular provides us with three ways to create and register our own service: fact
 - [All about $q and Promises in Angular](https://toddmotto.com/promises-angular-q)
 
   This article dives into ES2015 Promise API and how it maps across to $q for AngularJS. 
+  
+- [Using and chaining promises in AngularJS](https://www.airpair.com/angularjs/posts/angularjs-promises)  
+- [$q.defer: You're doing it wrong](http://www.codelord.net/2015/09/24/%24q-dot-defer-youre-doing-it-wrong/)
 
 ## References
 - [A list of awesome AngularJs services, directives, utilities and resources](https://github.com/gianarb/awesome-angularjs)
