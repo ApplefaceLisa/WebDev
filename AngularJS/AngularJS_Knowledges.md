@@ -437,6 +437,11 @@ Angular provides us with three ways to create and register our own service: fact
 
 ### [orderBy](https://docs.angularjs.org/api/ng/filter/orderBy)
 
+## Articles
+- [All about $q and Promises in Angular](https://toddmotto.com/promises-angular-q)
+
+  This article dives into ES2015 Promise API and how it maps across to $q for AngularJS. 
+
 ## References
 - [A list of awesome AngularJs services, directives, utilities and resources](https://github.com/gianarb/awesome-angularjs)
 
