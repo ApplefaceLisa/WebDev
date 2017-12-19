@@ -445,6 +445,87 @@ Angular provides us with three ways to create and register our own service: fact
   This article dives into ES2015 Promise API and how it maps across to $q for AngularJS. 
   
 - [Using and chaining promises in AngularJS](https://www.airpair.com/angularjs/posts/angularjs-promises)  
+  - The `then` and `finally` functions each return a _**new promise**_, known as a derived promise.
+  ```
+    var promiseA = $http.get('/my-url');
+    var promiseB = promiseA.then(function(result) {
+      // Do something with the results of the GET request
+    });
+    promiseB.then(function(result) {
+      // Do something with the resolved result of promiseB
+    })  
+  ```
+  - Derived promises are resolved/rejected with the returned resolved/rejected value of the callback that was run.
+    - Resolving a derived promise immediately
+    ```
+      $http.get('/my-url').then(function(result) {
+        return 'my-immediate-value';
+      }).then(function(results) {
+        // results === 'my-immediate-value';
+      })  
+
+      $http.get('/my-url-that-does-not-exist').then(function(results) {
+      }, function(error) {
+        return 'my-immediate-value';
+      }).then(function(results) {
+        // results === 'my-immediate-value'
+      })    
+    ```
+    - Rejecting a derived promise immediately, by returning the result of `$q.reject()`.
+    ```
+      $http.get('/my-url').then(function(result) {
+        return $q.reject('my-failure-reason');
+      }).then(function(results) {
+        // The code never gets here
+      }, function(error) {
+        // error === 'my-failure-reason'
+      });    
+      --------------- OR -----------------------------------------------------
+      $http.get('/my-url-that does not exist').then(function(results) {
+        // The code never gets here if the GET was unsuccessfull
+      }, function(error) {
+         return $q.reject('my-failure-reason');
+      }.then(function() {
+        // The code never gets here if the GET was unsuccessfull
+      }, function(error) {
+        // error === 'my-failure-reason'
+      });      
+    ```
+    - Deferring a derived promise
+    
+      A powerful aspect of derived promises is that their resolution/rejection can be deferred until another promise has been resolved/rejected. This is done by returning a promise from the success or error callback. 
+    ```
+      $http.get('/my-first-url').then(function(results) {
+        return $http.get('/my-second-url')
+      }).then(function(results) {
+        // results here are the results of the GET to /my-second-url 
+      });    
+    ```
+  - Layered APIs
+  
+    A common use of promises is chaining them via layered APIs. A typical pattern in AngularJS is to have calls to $http functions in a service, so controllers are not aware that $http is used. `MyController -> MyService -> $http`
+    
+  ```
+    // In MyService
+    this.fetchResults = function() {
+      return $http.get('/my-url').then(function(results) {
+        // Just return the http body
+        return results.data;
+    ), function(error) {
+      return $q.reject('Oh no!');
+    });
+
+    // In MyController
+    $scope.fetchResults = function() {
+      MyService.fetchResults().then(function(results) {
+        // Do something with results
+      }, function(error) {
+        // Do something with error if it occurs
+        // which would be 'Oh no!'
+      });
+    }   
+  ```  
+  
 - [$q.defer: You're doing it wrong](http://www.codelord.net/2015/09/24/%24q-dot-defer-youre-doing-it-wrong/)
 
 ## References
