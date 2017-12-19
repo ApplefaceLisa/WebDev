@@ -432,6 +432,8 @@ Angular provides us with three ways to create and register our own service: fact
 - [Navigation From One Page to Another In AngularJS Page Routing](http://www.c-sharpcorner.com/UploadFile/58e23e/navigation-from-one-page-to-another-in-angularjs-page-routin/)
 - [Single Page Apps with AngularJS Routing and Templating](https://scotch.io/tutorials/single-page-apps-with-angularjs-routing-and-templating)
 
+### [AngularJS $q API](https://docs.angularjs.org/api/ng/service/$q)
+
 ## Tutorial
 ### [PhoneCat Tutorial App](https://docs.angularjs.org/tutorial/)
 
