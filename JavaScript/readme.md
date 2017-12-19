@@ -53,6 +53,13 @@
 
 - [JavaScript Promises: an Introduction](https://developers.google.com/web/fundamentals/getting-started/primers/promises)
 - [JavaScript Best Practices: Tips & Tricks to Level Up Your Code](https://www.codementor.io/johnnyb/javascript-best-practices-du107mvud)
+
+## JavaScript debouncing and throttling
+  - [The Difference Between Throttling and Debouncing](https://css-tricks.com/the-difference-between-throttling-and-debouncing/)
+  - [Debounce and Throttle: a visual explanation](http://drupalmotion.com/article/debounce-and-throttle-visual-explanation)
+  - [Debouncing and Throttling Explained Through Examples](https://css-tricks.com/debouncing-throttling-explained-examples/)
+  - [Throttling and Debouncing in JavaScript](https://medium.com/@_jh3y/throttling-and-debouncing-in-javascript-b01cad5c8edf)
+  - [Throttling and debouncing in JavaScript](https://codeburst.io/throttling-and-debouncing-in-javascript-646d076d0a44)
     
 # Basic Knowledge
 ## [Javascript Data Types and Type Conversion](https://www.w3schools.com/js/js_type_conversion.asp)
