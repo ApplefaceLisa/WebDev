@@ -60,6 +60,29 @@
   - [Debouncing and Throttling Explained Through Examples](https://css-tricks.com/debouncing-throttling-explained-examples/)
   - [Throttling and Debouncing in JavaScript](https://medium.com/@_jh3y/throttling-and-debouncing-in-javascript-b01cad5c8edf)
   - [Throttling and debouncing in JavaScript](https://codeburst.io/throttling-and-debouncing-in-javascript-646d076d0a44)
+  
+- [Deep Copying in JS](https://www.codementor.io/avijitgupta/deep-copying-in-js-7x6q8vh5d)  
+  - use JSON.parse and JSON.stringify. works for array contains objects which DO NOT have functions inside them. For example:
+  ```
+  var users = [{id:1, fName:'Hege',  lName:"Pege", title:"Software Engineer", gender:"male", age:22},
+               {id:2, fName:'Kim',   lName:"Pim", title:"Principle", gender:"female", age:45}];
+               
+  var usrCopy = JSON.parse(JSON.stringify(users));
+  ```
+  - use recursive function
+  ```
+  function copy(o) {
+     var output, v, key;
+     output = Array.isArray(o) ? [] : {};
+     for (key in o) {
+         v = o[key];
+         output[key] = (typeof v === "object") ? copy(v) : v;
+     }
+     return output;
+  }
+  ```
+  - use [lodash](https://colintoh.com/blog/lodash-10-javascript-utility-functions-stop-rewriting)’s cloneDeep
+  - use underscore deepclone
     
 # Basic Knowledge
 ## [Javascript Data Types and Type Conversion](https://www.w3schools.com/js/js_type_conversion.asp)
