@@ -434,6 +434,9 @@ Angular provides us with three ways to create and register our own service: fact
 
 ### [AngularJS $q API](https://docs.angularjs.org/api/ng/service/$q)
 
+### [AngularJS deep copy](https://docs.angularjs.org/api/ng/function/angular.copy)
+Angular.copy()
+
 ## Tutorial
 ### [PhoneCat Tutorial App](https://docs.angularjs.org/tutorial/)
 
@@ -539,3 +542,4 @@ Angular provides us with three ways to create and register our own service: fact
 
 2. Pagination
 - [AngularJS - Pagination Example with Logic like Google](http://jasonwatmore.com/post/2016/01/31/angularjs-pagination-example-with-logic-like-google)
+
