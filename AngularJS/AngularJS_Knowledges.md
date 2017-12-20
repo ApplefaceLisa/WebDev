@@ -530,6 +530,7 @@ Angular.copy()
   ```  
   
 - [$q.defer: You're doing it wrong](http://www.codelord.net/2015/09/24/%24q-dot-defer-youre-doing-it-wrong/)
+- [Recipes with Angular.js](http://fdietz.github.io/recipes-with-angular-js/index.html)
 
 ## References
 - [A list of awesome AngularJs services, directives, utilities and resources](https://github.com/gianarb/awesome-angularjs)
