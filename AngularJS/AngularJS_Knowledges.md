@@ -543,4 +543,6 @@ Angular.copy()
 
 2. Pagination
 - [AngularJS - Pagination Example with Logic like Google](http://jasonwatmore.com/post/2016/01/31/angularjs-pagination-example-with-logic-like-google)
-
+- [dir-pagination library](https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination)
+	- [Search Sort and Pagination in ng-repeat – AngularJS](https://ciphertrick.com/2015/06/01/search-sort-and-pagination-ngrepeat-angularjs/)
+	- [Server Side Pagination in AngularJS](https://ciphertrick.com/2015/08/31/server-side-pagination-in-angularjs/)
