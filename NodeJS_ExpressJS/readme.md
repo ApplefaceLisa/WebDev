@@ -35,19 +35,15 @@
 npm install mysql
 ```
 
-2. In `*.js` file  
-```
-var mysql = require('mysql');
-```
-
-3. Create connection to the database  
+2. Create connection to the database  
 ```
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  host: "localhost",
-  user: "yourusername",
-  password: "yourpassword"
+  host: <host_name>,
+  user: <user_name>,
+  password: <password>,
+  database: <database_name>
 });
 
 con.connect(function(err) {
