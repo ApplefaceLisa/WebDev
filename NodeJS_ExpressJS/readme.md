@@ -28,3 +28,30 @@
 
   app.listen(3000)
   ```
+
+# NodeJS mysql
+1. Install "mysql" module  
+```
+npm install mysql
+```
+
+2. In `*.js` file  
+```
+var mysql = require('mysql');
+```
+
+3. Create connection to the database  
+```
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "yourusername",
+  password: "yourpassword"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
+```
