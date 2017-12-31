@@ -546,3 +546,16 @@ Angular.copy()
 - [dir-pagination library](https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination)
 	- [Search Sort and Pagination in ng-repeat – AngularJS](https://ciphertrick.com/2015/06/01/search-sort-and-pagination-ngrepeat-angularjs/)
 	- [Server Side Pagination in AngularJS](https://ciphertrick.com/2015/08/31/server-side-pagination-in-angularjs/)
+
+3. [Submit form on pressing Enter with AngularJS](https://stackoverflow.com/questions/15417125/submit-form-on-pressing-enter-with-angularjs)
+```
+<form ng-submit="myFunc()" ng-controller="mycontroller">
+   <input type="text" ng-model="name" />
+    <br />
+    <input type="text" ng-model="email" />
+</form>
+
+<input ng-keyup="$event.keyCode == 13 && myFunc()"... />
+```
+
+4. [Using MySQL LIKE Operator To Select Data Based On Patterns](http://www.mysqltutorial.org/mysql-like/)
