@@ -559,3 +559,4 @@ Angular.copy()
 ```
 
 4. [Using MySQL LIKE Operator To Select Data Based On Patterns](http://www.mysqltutorial.org/mysql-like/)
+5. [AngularJS Dropdown Multiselect Example](http://dotansimha.github.io/angularjs-dropdown-multiselect/docs/#/main)
