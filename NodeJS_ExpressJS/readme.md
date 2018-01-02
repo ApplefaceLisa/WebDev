@@ -1,8 +1,10 @@
 # NodeJS and ExpressJS
 ## NodeJS
 1. fs : file system module  
+`var fs = require('fs');`
 - read file
   - async : `fs.readFile(filename, [encoding], [callback])`, e.g.
+  
   ```
   fs.readFile('/etc/passwd', function (err, data) {
     if (err) throw err;
@@ -10,6 +12,7 @@
   });
   ```
   - sync : `fs.readFileSync(filename, [encoding])`
+  
   ```
   var text = fs.readFileSync('test.md','utf8')
   console.log (text)
