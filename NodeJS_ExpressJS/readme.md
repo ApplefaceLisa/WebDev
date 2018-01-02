@@ -1,5 +1,7 @@
 # NodeJS and ExpressJS
-### favicon
+## [MDN : Express tutorial](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs)
+
+## favicon
 [serve-favicon](https://github.com/expressjs/serve-favicon)
 - `$ npm install serve-favicon`
 - use with express
@@ -29,4 +31,4 @@
   app.listen(3000)
   ```
 
-# [MDN : Express tutorial](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs)
+
