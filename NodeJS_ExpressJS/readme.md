@@ -29,25 +29,4 @@
   app.listen(3000)
   ```
 
-# NodeJS mysql
-1. Install "mysql" module  
-```
-npm install mysql
-```
-
-2. Create connection to the database  
-```
-var mysql = require('mysql');
-
-var con = mysql.createConnection({
-  host: <host_name>,
-  user: <user_name>,
-  password: <password>,
-  database: <database_name>
-});
-
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-});
-```
+# [MDN : Express tutorial](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs)
