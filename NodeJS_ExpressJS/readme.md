@@ -17,6 +17,7 @@
   var text = fs.readFileSync('test.md','utf8')
   console.log (text)
   ```
+- [Read Files with Node.js](http://stackabuse.com/read-files-with-node-js/)  
   
 ## [MDN : Express tutorial](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs)
 1. [Express Routing](http://expressjs.com/en/guide/routing.html)
