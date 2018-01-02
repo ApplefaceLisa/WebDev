@@ -1,5 +1,23 @@
 # NodeJS and ExpressJS
+## NodeJS
+1. fs : file system module  
+- read file
+  - async : `fs.readFile(filename, [encoding], [callback])`, e.g.
+  ```
+  fs.readFile('/etc/passwd', function (err, data) {
+    if (err) throw err;
+    console.log(data);
+  });
+  ```
+  - sync : `fs.readFileSync(filename, [encoding])`
+  ```
+  var text = fs.readFileSync('test.md','utf8')
+  console.log (text)
+  ```
+  
 ## [MDN : Express tutorial](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs)
+1. [Express Routing](http://expressjs.com/en/guide/routing.html)
+
 
 ## favicon
 [serve-favicon](https://github.com/expressjs/serve-favicon)
