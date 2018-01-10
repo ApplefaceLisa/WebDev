@@ -1,5 +1,6 @@
 1. [Working with objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)  
 2. [Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)  
+2.1 Different ways to create objects and the resulting prototype chain
 ----------------------------------------------------------------------------------------------------------------------------------------
 1. What is JavaScript?  
   JavaScript is a client-side as well as server side scripting language that can be inserted into HTML pages and is understood by web browsers. JavaScript is also an Object Oriented Programming language.
