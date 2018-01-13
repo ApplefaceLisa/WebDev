@@ -84,6 +84,70 @@
   - use [lodash](https://colintoh.com/blog/lodash-10-javascript-utility-functions-stop-rewriting)’s cloneDeep
   - use underscore deepclone
     
+- [Uploading Files with AJAX](http://blog.teamtreehouse.com/uploading-files-ajax)
+
+  In this post you’ve learned how to upload files to a web server using native JavaScript technologies.
+
+  - Selecting Files to Upload
+  ```
+  <form id="file-form" action="handler.php" method="POST">
+    <!-- attribute "multiple" allow the user to select multiple files 
+         from the file picker launched by the browser -->
+    <input type="file" id="file-select" name="photos[]" multiple/>   
+    <button type="submit" id="upload-button">Upload</button>
+  </form>
+  ```
+  - Uploading Files to the Server
+  ```
+  // 1. create three variables that hold references to the <form>, <input>, and <button> elements
+  var form = document.getElementById('file-form');
+  var fileSelect = document.getElementById('file-select');
+  var uploadButton = document.getElementById('upload-button');
+  
+  // 2. attach an event listener to the form’s onsubmit event
+  form.onsubmit = function(event) {
+    // prevent the browser from submitting the form
+    // allowing us to handle the file upload using AJAX instead
+    event.preventDefault();
+
+    // Update button text.
+    uploadButton.innerHTML = 'Uploading...';
+
+    // 3. Get the selected files from the input.
+    var files = fileSelect.files;
+    
+    // 4. Create a new FormData object to construct 
+    //    the `key : value` pairs which form the data payload for the AJAX request
+    var formData = new FormData();
+    
+    // Loop through each of the selected files, add them to formData
+    for (var i = 0; i < files.length; i++) {
+      var file = files[i];
+
+      // Check the file type.
+      if (!file.type.match('image.*')) {
+        continue;
+      }
+
+      // Add the file to the request.
+      formData.append('photos[]', file, file.name);
+    }
+    
+    // 5. create XMLHttpRequest
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'handler.php', true); // Open the connection.
+    xhr.onload = function () {  // Set up a handler for when the request finishes.
+      if (xhr.status === 200) {
+        // File(s) uploaded.
+        uploadButton.innerHTML = 'Upload';
+      } else {
+        alert('An error occurred!');
+      }
+    };
+    xhr.send(formData);  // Send the Data
+  }
+  ```
+
 # Basic Knowledge
 ## [Javascript Data Types and Type Conversion](https://www.w3schools.com/js/js_type_conversion.asp)
 - Javascript Data Types
