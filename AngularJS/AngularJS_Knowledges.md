@@ -533,6 +533,10 @@ Angular.copy()
 - [Recipes with Angular.js](http://fdietz.github.io/recipes-with-angular-js/index.html)
 - [AngularJS File Upload using $http post and FormData](http://www.encodedna.com/angularjs/tutorial/angularjs-file-upload-using-http-post-formdata-webapi.htm)
 - [10 Most Viewed AngularJS Articles on encodedna.com in 2017](http://www.encodedna.com/angularjs/tutorial/10-most-viewed-angularjs-articles-on-my-blog-in-2017.htm)
+- [ANGULARJS FILE UPLOAD EXAMPLE & TUTORIAL](http://www.folio3.com/blog/angularjs-file-upload-example-tutorial/)
+  - [Demos](http://nervgh.github.io/pages/angular-file-upload/examples/simple/)
+  - [Github](https://github.com/nervgh/angular-file-upload)
+
 
 ## References
 - [A list of awesome AngularJs services, directives, utilities and resources](https://github.com/gianarb/awesome-angularjs)
