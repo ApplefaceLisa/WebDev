@@ -147,6 +147,7 @@
     xhr.send(formData);  // Send the Data
   }
   ```
+  - [HTML5 File Upload Example](https://www.webcodegeeks.com/html5/html5-file-upload-example/)
 
 # Basic Knowledge
 ## [Javascript Data Types and Type Conversion](https://www.w3schools.com/js/js_type_conversion.asp)
