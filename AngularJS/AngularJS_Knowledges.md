@@ -531,11 +531,13 @@ Angular.copy()
   
 - [$q.defer: You're doing it wrong](http://www.codelord.net/2015/09/24/%24q-dot-defer-youre-doing-it-wrong/)
 - [Recipes with Angular.js](http://fdietz.github.io/recipes-with-angular-js/index.html)
-- [AngularJS File Upload using $http post and FormData](http://www.encodedna.com/angularjs/tutorial/angularjs-file-upload-using-http-post-formdata-webapi.htm)
-- [10 Most Viewed AngularJS Articles on encodedna.com in 2017](http://www.encodedna.com/angularjs/tutorial/10-most-viewed-angularjs-articles-on-my-blog-in-2017.htm)
-- [ANGULARJS FILE UPLOAD EXAMPLE & TUTORIAL](http://www.folio3.com/blog/angularjs-file-upload-example-tutorial/)
-  - [Demos](http://nervgh.github.io/pages/angular-file-upload/examples/simple/)
-  - [Github](https://github.com/nervgh/angular-file-upload)
+- Upload File
+  - [AngularJS File Upload using $http post and FormData](http://www.encodedna.com/angularjs/tutorial/angularjs-file-upload-using-http-post-formdata-webapi.htm)
+  - [10 Most Viewed AngularJS Articles on encodedna.com in 2017](http://www.encodedna.com/angularjs/tutorial/10-most-viewed-angularjs-articles-on-my-blog-in-2017.htm)
+  - [ANGULARJS FILE UPLOAD EXAMPLE & TUTORIAL](http://www.folio3.com/blog/angularjs-file-upload-example-tutorial/)
+    - [Demos](http://nervgh.github.io/pages/angular-file-upload/examples/simple/)
+    - [Github](https://github.com/nervgh/angular-file-upload)
+  - [Simple file upload example using AngularJS](http://angularcode.com/simple-file-upload-example-using-angularjs/), with server
 
 
 ## References
