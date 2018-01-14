@@ -537,7 +537,8 @@ Angular.copy()
   - [ANGULARJS FILE UPLOAD EXAMPLE & TUTORIAL](http://www.folio3.com/blog/angularjs-file-upload-example-tutorial/)
     - [Demos](http://nervgh.github.io/pages/angular-file-upload/examples/simple/)
     - [Github](https://github.com/nervgh/angular-file-upload)
-  - [Simple file upload example using AngularJS](http://angularcode.com/simple-file-upload-example-using-angularjs/), with server
+  - [Simple file upload example using AngularJS](http://angularcode.com/simple-file-upload-example-using-angularjs/) 
+    - [Working Code](https://github.com/ApplefaceLisa/WebDev/tree/master/AngularJS/SnipCode/Angular-Upload-File)
 
 
 ## References
