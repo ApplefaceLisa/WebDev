@@ -93,7 +93,10 @@
          onclick="return false;" 
          ondblclick="alert('Well done!')">Double Click Me!</a>
     ```
-  
+  - [What does “javascript:void(0)” mean?](https://stackoverflow.com/questions/1291942/what-does-javascriptvoid0-mean)
+    - The void operator evaluates the given expression and then returns undefined.
+
+    - The void operator is often used merely to obtain the undefined primitive value, usually using “void(0)” (which is equivalent to “void 0”). In these cases, the global variable undefined can be used instead (assuming it has not been assigned to a non-default value).
 10. how to read a file using JavaScript?  
   
 11. Cookie
