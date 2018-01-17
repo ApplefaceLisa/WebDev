@@ -134,10 +134,10 @@ Directives are markers on a DOM element (such as an attribute, element name, com
 
   $compile can match directives based on _element names (E), attributes (A), class names (C), and comments (M)_.
   ```
-  <my-dir></my-dir>                     // E
-  <span my-dir="exp"></span>            // A
-  <!-- directive: my-dir exp -->        // M
-  <span class="my-dir: exp;"></span>    // C
+  <my-dir></my-dir>                     // E : Element (or tag)
+  <span my-dir="exp"></span>            // A : Attribute
+  <!-- directive: my-dir exp -->        // M : coMments
+  <span class="my-dir: exp;"></span>    // C : Class
   ```
   
   A directive can specify which of the 4 matching types it supports in the _**restrict**_ _property_ of the directive definition object. The default is `EA`.
@@ -155,7 +155,7 @@ Directives are markers on a DOM element (such as an attribute, element name, com
       return {
           //restrict: 'E',               // Type of directive
           template: <template_string>,
-	  //templateUrl: <html_url>,     // Template-expanding
+	        //templateUrl: <html_url>,     // Template-expanding
           // scope: {}                   // isolate scope binding
       };
   });
@@ -192,6 +192,60 @@ Directives are markers on a DOM element (such as an attribute, element name, com
   ```
 
 - Creating a Directive that Manipulates the DOM
+
+  Directives that want to modify the DOM typically use the `link` option to register DOM listeners as well as update the DOM. It is executed after the template has been cloned and is where directive logic will be put.
+
+  `link` takes a function with the following signature, `function link(scope, element, attrs, controller, transcludeFn) { ... }`, where:
+
+  - `scope` is an AngularJS scope object.
+  - `element` is the jqLite-wrapped element that this directive matches.
+  - `attrs` is a hash object with key-value pairs of normalized attribute names and their corresponding attribute values.
+  - `controller` is the directive's required controller instance(s) or its own controller (if any). The exact value depends on the directive's require property.
+  - `transcludeFn` is a transclude linking function pre-bound to the correct transclusion scope.
+  
+  Example code :
+  ```
+  //------------ html ------------
+  <div ng-controller="Controller">
+    Date format: <input ng-model="format"> <hr/>
+    Current time is: <span my-current-time="format"></span>
+  </div>
+  
+  //------------ js ------------
+  angular.module('docsTimeDirective', [])
+  .controller('Controller', ['$scope', function($scope) {
+    $scope.format = 'M/d/yy h:mm:ss a';
+  }])
+  .directive('myCurrentTime', ['$interval', 'dateFilter', function($interval, dateFilter) {
+    function link(scope, element, attrs) {
+      var format,
+          timeoutId;
+
+      function updateTime() {
+        element.text(dateFilter(new Date(), format));
+      }
+
+      scope.$watch(attrs.myCurrentTime, function(value) {
+        format = value;
+        updateTime();
+      });
+
+      element.on('$destroy', function() {
+        $interval.cancel(timeoutId);
+      });
+
+      // start the UI update process; save the timeoutId for canceling
+      timeoutId = $interval(function() {
+        updateTime(); // update DOM
+      }, 1000);
+    }
+
+    return {
+      link: link
+    };
+  }]);  
+  ```
+
 - Creating a Directive that Wraps Other Elements
 - Creating a Directive that Adds Event Listeners
   
