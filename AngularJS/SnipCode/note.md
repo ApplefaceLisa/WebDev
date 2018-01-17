@@ -9,3 +9,4 @@
 
 3. Base64 image
 - [Base64 encoding images](https://varvy.com/pagespeed/base64-images.html)
+- [Base64!! What? How? Where? and Why? to use](http://resource-guru.com/html-css/web-design-code-snippepts/base64-what-how-where-and-why-use/)
