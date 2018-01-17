@@ -194,6 +194,13 @@ Directives are markers on a DOM element (such as an attribute, element name, com
   - Creating a Directive that Manipulates the DOM
   - Creating a Directive that Wraps Other Elements
   - Creating a Directive that Adds Event Listeners
+  
+- Directive isolated scope shorthand syntax `=, @, &` : [What is the difference between & vs @ and = in angularJS](https://stackoverflow.com/questions/14908133/what-is-the-difference-between-vs-and-in-angularjs)
+  - `@` allows a value defined on the directive attribute to be passed to the directive's isolate scope. The value could be a simple string value (myattr="hello") or it could be an AngularJS interpolated string with embedded expressions (myattr="my_{{helloText}}"). Think of it as "one-way" communication from the parent scope into the child directive. _**parent to child data-binding**_
+  
+  - `&` allows the directive's isolate scope to pass values into the parent scope for evaluation in the expression defined in the attribute. Note that the directive attribute is implicitly an expression and does not use double curly brace expression syntax. _**chile to parent data-binding**_
+  
+  - `=` sets up a two-way binding expression between the directive's isolate scope and the parent scope. Changes in the child scope are propagated to the parent and vice-versa. Think of = as a combination of @ and &. _**two-way data-binding between parent and child**_
 
 ### [Filters](https://docs.angularjs.org/guide/filter)
 Example:
