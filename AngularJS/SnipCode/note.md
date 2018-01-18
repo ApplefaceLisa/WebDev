@@ -13,3 +13,6 @@
 
 4. clear button inside input field
 - [Clear / reset “x” button inside input-field](http://www.milosev.com/88-css/396-clear-reset-x-button-inside-input-field.html)
+
+5. Datepicker
+- [Angular Datetime Picker](https://dalelotts.github.io/angular-bootstrap-datetimepicker/)
