@@ -16,3 +16,6 @@
 
 5. Datepicker
 - [Angular Datetime Picker](https://dalelotts.github.io/angular-bootstrap-datetimepicker/)
+
+6. AngularJS select-option ng-model binding
+- [Can't set selected value of ng-options](https://stackoverflow.com/questions/27514267/cant-set-selected-value-of-ng-options)
