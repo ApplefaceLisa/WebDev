@@ -12,6 +12,7 @@
 - [Base64!! What? How? Where? and Why? to use](http://resource-guru.com/html-css/web-design-code-snippepts/base64-what-how-where-and-why-use/)
 
 4. clear button inside input field
+- [Creating an AngularJS reset field directive](http://softwareninjaneer.com/blog/creating-an-angularjs-reset-field-directive/)
 - [Clear / reset “x” button inside input-field](http://www.milosev.com/88-css/396-clear-reset-x-button-inside-input-field.html)
 
 5. Datepicker
