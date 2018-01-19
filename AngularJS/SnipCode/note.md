@@ -57,3 +57,38 @@
     {{thisTour.site}}
   </div>  
   ```
+7. [directive data binding](https://stackoverflow.com/questions/14115701/angularjs-create-a-directive-that-uses-ng-model?rq=1)
+```
+// JS
+var app = angular.module('plunker', []);
+
+app.controller('MainCtrl', function($scope) {
+  $scope.model = { name: 'World' };
+  $scope.name = "Felipe";
+});
+
+app.directive('myDirective', function($compile) {
+  return {
+    restrict: 'AE', //attribute or element
+    scope: {
+      myDirectiveVar: '=',
+     //bindAttr: '='
+    },
+    template: '<div class="some">' +
+      '<input ng-model="myDirectiveVar"></div>',
+    replace: true,
+    //require: 'ngModel',
+    link: function($scope, elem, attr, ctrl) {
+      console.debug($scope);
+      //var textField = $('input', elem).attr('ng-model', 'myDirectiveVar');
+      // $compile(textField)($scope.$parent);
+    }
+  };
+});
+
+// html
+<body ng-controller="MainCtrl">
+  This scope value <input ng-model="name">
+  <my-directive my-directive-var="name"></my-directive>
+</body>
+```
