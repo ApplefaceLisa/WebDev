@@ -112,7 +112,7 @@
   A promise is _**settled**_ if it’s not pending (it has been resolved or rejected). Sometimes people use resolved and settled to mean the same thing: not pending.  
   Once settled, a promise can not be resettled. Calling resolve() or reject() again will have no effect. The immutability of a settled promise is an important feature.
 
-13. event handling   [ref](https://javascript.info/bubbling-and-capturing)
+13. event handling   [ref](https://javascript.info/bubbling-and-capturing)    [ref](https://www.bitovi.com/blog/a-crash-course-in-how-dom-events-work)
 14. [What is Functional Programming?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
 15. [what's a closure](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36)
 16. [what's a pure function](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976)
