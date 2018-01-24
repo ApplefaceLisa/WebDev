@@ -121,6 +121,7 @@
 19. MVC, MVP, MVVM design patterns  
   [difference](https://www.quora.com/What-are-the-main-differences-between-MVC-MVP-and-MVVM-design-patterns-for-the-JavaScript-developer)  
   [explore](https://www.infoworld.com/article/2926003/microsoft-net/exploring-the-mvc-mvp-and-mvvm-design-patterns.html)
+20. [Mixins](https://medium.com/javascript-scene/functional-mixins-composing-software-ffb66d5e731c)  
 ------------------------------------------------------------------------------------------------------------------------------------
 A. How do you think about our webpage? suggestions?
 B. Describe a typical work day
