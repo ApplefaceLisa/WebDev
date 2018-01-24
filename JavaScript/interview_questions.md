@@ -104,7 +104,11 @@
 - [What are Cookies and What Do Cookies Do?](https://www.webopedia.com/DidYouKnow/Internet/all_about_cookies.asp)
 - [JS cookies](https://www.w3schools.com/js/js_cookies.asp)
 
-12. what is promise?   [ref](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)
+12. what is promise?   [ref](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)  
+  A promise is an object which can be returned synchronously from an asynchronous function, that may produce a single value some time in the future: either a resolved value, or a reason that it’s not resolved. A promise may be in one of 3 possible states: _**fulfilled**_, _**rejected**_, or _**pending**_(not yet fulfilled or rejected). Promise users can attach callbacks to handle the fulfilled value or the reason for rejection.  
+  A promise is _**settled**_ if it’s not pending (it has been resolved or rejected). Sometimes people use resolved and settled to mean the same thing: not pending.  
+  Once settled, a promise can not be resettled. Calling resolve() or reject() again will have no effect. The immutability of a settled promise is an important feature.
+
 13. event handling   [ref](https://javascript.info/bubbling-and-capturing)
 ------------------------------------------------------------------------------------------------------------------------------------
 A. How do you think about our webpage? suggestions?
