@@ -59,36 +59,52 @@
   ```
 7. [directive data binding](https://stackoverflow.com/questions/14115701/angularjs-create-a-directive-that-uses-ng-model?rq=1)
 ```
-// JS
-var app = angular.module('plunker', []);
+  // JS
+  var app = angular.module('plunker', []);
 
-app.controller('MainCtrl', function($scope) {
-  $scope.model = { name: 'World' };
-  $scope.name = "Felipe";
-});
+  app.controller('MainCtrl', function($scope) {
+    $scope.model = { name: 'World' };
+    $scope.name = "Felipe";
+  });
 
-app.directive('myDirective', function($compile) {
-  return {
-    restrict: 'AE', //attribute or element
-    scope: {
-      myDirectiveVar: '=',
-     //bindAttr: '='
-    },
-    template: '<div class="some">' +
-      '<input ng-model="myDirectiveVar"></div>',
-    replace: true,
-    //require: 'ngModel',
-    link: function($scope, elem, attr, ctrl) {
-      console.debug($scope);
-      //var textField = $('input', elem).attr('ng-model', 'myDirectiveVar');
-      // $compile(textField)($scope.$parent);
-    }
-  };
-});
+  app.directive('myDirective', function($compile) {
+    return {
+      restrict: 'AE', //attribute or element
+      scope: {
+        myDirectiveVar: '=',
+       //bindAttr: '='
+      },
+      template: '<div class="some">' +
+        '<input ng-model="myDirectiveVar"></div>',
+      replace: true,
+      //require: 'ngModel',
+      link: function($scope, elem, attr, ctrl) {
+        console.debug($scope);
+        //var textField = $('input', elem).attr('ng-model', 'myDirectiveVar');
+        // $compile(textField)($scope.$parent);
+      }
+    };
+  });
 
-// html
-<body ng-controller="MainCtrl">
-  This scope value <input ng-model="name">
-  <my-directive my-directive-var="name"></my-directive>
-</body>
+  // html
+  <body ng-controller="MainCtrl">
+    This scope value <input ng-model="name">
+    <my-directive my-directive-var="name"></my-directive>
+  </body>
 ```
+8. validate an email address in JavaScript  
+  [ref](https://stackoverflow.com/questions/46155/how-can-you-validate-an-email-address-in-javascript?rq=1)
+  [ref](http://www.regular-expressions.info/email.html)
+  ```
+  function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email.toLowerCase());
+  }
+  
+  // Here's the example of regular expresion that accepts unicode:
+  var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  
+  // here is the one based on RFC 2822, which is a standard ALL email addresses MUST adhere to
+  var re = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
+  re.test(email);
+  ```
