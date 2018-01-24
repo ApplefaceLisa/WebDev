@@ -3,6 +3,7 @@
 2.1 Different ways to create objects and the resulting prototype chain
 3. [10 Interview Questions Every JavaScript Developer Should Know](https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95)
 4. [Master the JavaScript Interview: Soft Skills](https://medium.com/javascript-scene/master-the-javascript-interview-soft-skills-a8a5fb02c466)
+5. [The Best Way to Learn to Code is to Code: Learn App Architecture by Building Apps](https://medium.com/javascript-scene/the-best-way-to-learn-to-code-is-to-code-learn-app-architecture-by-building-apps-7ec029db6e00)
 ----------------------------------------------------------------------------------------------------------------------------------------
 1. What is JavaScript?  
   JavaScript is a client-side as well as server side scripting language that can be inserted into HTML pages and is understood by web browsers. JavaScript is also an Object Oriented Programming language.
@@ -117,6 +118,9 @@
 16. [what's a pure function](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976)
 17. [What’s the Difference Between Class & Prototypal Inheritance?](https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9)
 18. [What is Function Composition?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0)
+19. MVC, MVP, MVVM design patterns  
+  [difference](https://www.quora.com/What-are-the-main-differences-between-MVC-MVP-and-MVVM-design-patterns-for-the-JavaScript-developer)  
+  [explore](https://www.infoworld.com/article/2926003/microsoft-net/exploring-the-mvc-mvp-and-mvvm-design-patterns.html)
 ------------------------------------------------------------------------------------------------------------------------------------
 A. How do you think about our webpage? suggestions?
 B. Describe a typical work day
