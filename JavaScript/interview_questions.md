@@ -105,6 +105,7 @@
 - [JS cookies](https://www.w3schools.com/js/js_cookies.asp)
 
 12. what is promise?   [ref](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)
+13. event handling   [ref](https://javascript.info/bubbling-and-capturing)
 ------------------------------------------------------------------------------------------------------------------------------------
 A. How do you think about our webpage? suggestions?
 B. Describe a typical work day
