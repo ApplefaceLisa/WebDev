@@ -108,3 +108,8 @@
   var re = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
   re.test(email);
   ```
+
+9. star rating system - html css and js
+- code [Pure CSS Star Rating Widget](https://codepen.io/jamesbarnett/pen/vlpkh)
+- article [Star Ratings With Very Little CSS](https://css-tricks.com/star-ratings/)
+- article [A Simple JavaScript Technique for Filling Star Ratings](https://webdesign.tutsplus.com/tutorials/a-simple-javascript-technique-for-filling-star-ratings--cms-29450)
