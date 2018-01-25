@@ -121,7 +121,67 @@
 19. MVC, MVP, MVVM design patterns  
   [difference](https://www.quora.com/What-are-the-main-differences-between-MVC-MVP-and-MVVM-design-patterns-for-the-JavaScript-developer)  
   [explore](https://www.infoworld.com/article/2926003/microsoft-net/exploring-the-mvc-mvp-and-mvvm-design-patterns.html)
-20. [Mixins](https://medium.com/javascript-scene/functional-mixins-composing-software-ffb66d5e731c)  
+20. [Mixins](https://medium.com/javascript-scene/functional-mixins-composing-software-ffb66d5e731c)  _**[ref](https://javascript.info/mixins)**_  
+  a mixin is a class that contains methods for use by other classes without having to be the parent class of those other classes.  
+  In other words, a mixin provides methods that implement a certain behavior, but we do not use it alone, we use it to add the behavior to other classes.  
+  ```
+  // mixin
+  let sayHiMixin = {
+    sayHi() {
+      alert(`Hello ${this.name}`);
+    },
+    sayBye() {
+      alert(`Bye ${this.name}`);
+    }
+  };
+
+  // usage:
+  class User {
+    constructor(name) {
+      this.name = name;
+    }
+  }
+
+  // copy the methods
+  Object.assign(User.prototype, sayHiMixin);
+
+  // now User can say hi
+  new User("Dude").sayHi(); // Hello Dude!  
+  ```
+  Mixins can make use of inheritance inside themselves. i.e. mixin can inherit another mixin.
+  ```
+  let sayMixin = {
+    say(phrase) {
+      alert(phrase);
+    }
+  };
+
+  let sayHiMixin = {
+    __proto__: sayMixin, // (or we could use Object.create to set the prototype here)
+
+    sayHi() {
+      // call parent method
+      super.say(`Hello ${this.name}`);
+    },
+    sayBye() {
+      super.say(`Bye ${this.name}`);
+    }
+  };
+
+  class User {
+    constructor(name) {
+      this.name = name;
+    }
+  }
+
+  // copy the methods
+  Object.assign(User.prototype, sayHiMixin);
+
+  // now User can say hi
+  new User("Dude").sayHi(); // Hello Dude!  
+  ```  
+  _**Note**_ that the call to the parent method super.say() from sayHiMixin looks for the method in the prototype of that mixin, not the class.
+  
 ------------------------------------------------------------------------------------------------------------------------------------
 A. How do you think about our webpage? suggestions?
 B. Describe a typical work day
