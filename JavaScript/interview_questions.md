@@ -118,9 +118,10 @@
 16. [what's a pure function](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976)
 17. [What’s the Difference Between Class & Prototypal Inheritance?](https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9)
 18. [What is Function Composition?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0)
-19. MVC, MVP, MVVM design patterns  
+19. MVC, MVP, MVVM design patterns
   [difference](https://www.quora.com/What-are-the-main-differences-between-MVC-MVP-and-MVVM-design-patterns-for-the-JavaScript-developer)  
   [explore](https://www.infoworld.com/article/2926003/microsoft-net/exploring-the-mvc-mvp-and-mvvm-design-patterns.html)
+- [Learning JavaScript Design Patterns, ](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)  
 20. [Mixins](https://medium.com/javascript-scene/functional-mixins-composing-software-ffb66d5e731c)  _**[ref](https://javascript.info/mixins)**_  
   a mixin is a class that contains methods for use by other classes without having to be the parent class of those other classes.  
   In other words, a mixin provides methods that implement a certain behavior, but we do not use it alone, we use it to add the behavior to other classes.  
