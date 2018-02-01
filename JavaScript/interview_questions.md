@@ -182,6 +182,8 @@
   ```  
   _**Note**_ that the call to the parent method super.say() from sayHiMixin looks for the method in the prototype of that mixin, not the class.
   
+21. Javascript gargage collection and memory leak
+- [4 Types of Memory Leaks in JavaScript and How to Get Rid Of Them](https://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/)
 ------------------------------------------------------------------------------------------------------------------------------------
 A. How do you think about our webpage? suggestions?
 B. Describe a typical work day
