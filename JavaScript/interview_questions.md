@@ -74,6 +74,8 @@
 - The value of this, when used in an object, is the object itself.  
 - The this keyword in an object constructor does not have a value. It is only a substitute for the new object.  
 - The value of this will become the new object when the constructor is used to create an object.
+- [Understand JavaScript’s “this” With Clarity, and Master It](http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/)
+- [JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/)
    
 9. [What Does JavaScript Void(0) Mean?](https://www.quackit.com/javascript/tutorial/javascript_void_0.cfm)  
   The JavaScript _**[void](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void)**_ operator evaluates the given expression and then returns a value of _undefined_.    
