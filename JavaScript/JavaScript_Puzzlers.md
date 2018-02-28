@@ -60,7 +60,7 @@ typeof null;     // returns object
 [].constructor             // Array
 ```
 
-3. array.reduce && Math.pow
+### 3. array.reduce && Math.pow
 ```
 What is the result of this expression? (or multiple ones)
           
@@ -79,4 +79,20 @@ Reason : reduce on an empty array without an initial value throws TypeError.
 `arr.reduce(callback(acc, curVal, curIndex, arr) [, initialValue])`. If no initialValue applied, first acc equals to arr[0], first curVal equals to arr[1]. And result becomes to next acc, and so on. If initialValue applied, first acc equals to initialValue, first curVal equals to arr[0].
 - [Math.pow](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow) : `Math.pow(base, exponent)`
 
-4. 
+### 4. [operator precedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
+```
+What is the result of this expression? (or multiple ones)
+          
+var val = 'smtg';
+console.log('Value is ' + (val === 'smtg') ? 'Something' : 'Nothing');
+        
+A. Value is Something
+B. Value is Nothing
+C. NaN
+D. other
+```
+Answer : D, it actually prints 'Something'.
+
+Reason : the '+' operator has higher precedence than the ternary one.
+
+### 5. 
