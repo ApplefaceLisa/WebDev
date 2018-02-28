@@ -24,3 +24,36 @@ Reason:
  parseInt("3", 2)   => NaN
 ]
 ```
+
+### 2. [typeof vs. instanceof vs. constructor](http://skilldrick.co.uk/2011/09/understanding-typeof-instanceof-and-constructor-in-javascript/)
+```
+What is the result of this expression? (or multiple ones)
+          
+[typeof null, null instanceof Object]
+        
+A. ["object", false]
+B. [null, false]
+C. ["object", true]
+D. other
+```
+
+Answer : A
+Reason : typeof will always return "object" for native non callable objects.
+- typeof : is mainly used for telling apart the different primitive types (undefined, null,  
+            boolean, number, string).
+- instanceof : inspects the object’s prototype chain.
+- constructor : is a reference to the constructor function used to create the object.
+```
+typeof 3;         // returns "number"
+typeof NaN;    // returns “number”
+typeof 'blah';   //returns "string"
+typeof true;    // returns “boolean”
+typeof undefined;     // returns undefined
+typeof function () {}; //returns "function"
+typeof {};         //returns "object"
+typeof [];         //returns "object"
+typeof null;     // returns object
+
+({}).constructor          // Object
+[].constructor             // Array
+```
