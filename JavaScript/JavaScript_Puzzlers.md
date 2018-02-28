@@ -13,7 +13,7 @@ C. [0, 1, 2]
 D. other
 ```
 
-Answer: D
+Answer: D, what you actually get is [1, NaN, NaN]
 
 Reason: 
 - [Array.map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) : `array.map(callback(curVal [, index [, array]])`
@@ -95,4 +95,42 @@ Answer : D, it actually prints 'Something'.
 
 Reason : the '+' operator has higher precedence than the ternary one.
 
-### 5. 
+### 5. hoisting
+```
+What is the result of this expression? (or multiple ones)
+          
+var name = 'World!';
+(function () {
+    if (typeof name === 'undefined') {
+        var name = 'Jack';
+        console.log('Goodbye ' + name);
+    } else {
+        console.log('Hello ' + name);
+    }
+})();
+        
+A. Goodbye Jack
+B. Hello Jack
+C. Hello undefined
+D. Hello World
+```
+Answer : A
+
+Reason : The var declaration is hoisted to the function scope, but the initialization is not. The original code equals to:
+```
+var name = 'World!';
+(function () {
+    var name;
+    if (typeof name === 'undefined') {
+        name = 'Jack';
+        console.log('Goodbye ' + name);
+    } else {
+        console.log('Hello ' + name);
+    }
+})();
+and
+var name;
+typeof name;  // results in undefined. undefined === undefined is true
+```
+
+### 6. 
