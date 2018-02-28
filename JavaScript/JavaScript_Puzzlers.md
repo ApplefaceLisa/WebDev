@@ -41,23 +41,22 @@ D. other
 Answer : A
 
 Reason : typeof will always return "object" for native non callable objects.
-- typeof : is mainly used for telling apart the different primitive types (undefined, null,  
-            boolean, number, string).
+- typeof : typeof is a unary operator, it returns a string representing the type of its operand. It is mainly used for telling apart the different primitive types (undefined, null, boolean, number, string).
 - instanceof : inspects the object’s prototype chain.
 - constructor : is a reference to the constructor function used to create the object.
 ```
 typeof 3;         // returns "number"
-typeof NaN;    // returns “number”
-typeof 'blah';   //returns "string"
-typeof true;    // returns “boolean”
-typeof undefined;     // returns undefined
+typeof NaN;       // returns “number”
+typeof 'blah';    //returns "string"
+typeof true;      // returns “boolean”
+typeof undefined; // returns undefined
 typeof function () {}; //returns "function"
 typeof {};         //returns "object"
 typeof [];         //returns "object"
-typeof null;     // returns object
+typeof null;       // returns object
 
-({}).constructor          // Object
-[].constructor             // Array
+({}).constructor   // Object
+[].constructor     // Array
 ```
 
 ### 3. array.reduce && Math.pow
@@ -130,7 +129,7 @@ var name = 'World!';
 })();
 and
 var name;
-typeof name;  // results in undefined. undefined === undefined is true
+typeof name;  // results in 'undefined'. typeof returns string.
 ```
 
 ### 6. 
