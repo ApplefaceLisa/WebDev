@@ -132,4 +132,26 @@ var name;
 typeof name;  // results in 'undefined'. typeof returns string.
 ```
 
-### 6. 
+### 6. JavaScript max value [Number.MAX_SAFE_INTEGER](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER)
+```
+What is the result of this expression? (or multiple ones)
+          
+var END = Math.pow(2, 53);
+var START = END - 100;
+var count = 0;
+for (var i = START; i <= END; i++) {
+    count++;
+}
+console.log(count);
+        
+A. 0
+B. 100
+C. 101
+D. other
+```
+Answer : D, it goes into an infinite loop
+
+Reason : JavaScript can only safely represent numbers between -(2^53 - 1) and 2^53 - 1. And 2^53 == 2^53+1 == 2^53+2...
+Number.MAX_SAFE_INTEGER = 2^53-1; Number.MIN_SAFE_INTEGER = -(2^53 - 1).
+
+[Whats the difference between JS Number.MAX_SAFE_INTEGER and MAX_VALUE?](https://stackoverflow.com/questions/34799226/whats-the-difference-between-js-number-max-safe-integer-and-max-value)
