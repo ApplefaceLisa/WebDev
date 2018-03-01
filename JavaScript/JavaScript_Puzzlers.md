@@ -1,5 +1,6 @@
 # JavaScript Puzzlers
 thanks for : http://javascript-puzzlers.herokuapp.com/
+[44个 Javascript 变态题解析 (上)](https://github.com/xiaoyu2er/blog/issues/1)
 
 ### 1. array.map && parseInt
 ```
@@ -319,7 +320,71 @@ D. other
 ```
 Answer : D. [empty x 3]
 
-Reason : map calls a provided callback function once for each element in an array, in order, and constructs a new array from the results. callback is invoked only for indexes of the array which have assigned values, including undefined. It is not called for missing elements of the array (that is, indexes that have never been set, which have been deleted or which have never been assigned a value).
+Reason : map calls a provided callback function once for each element in an array, in order, and constructs a new array from the results. _**Callback is invoked only for indexes of the array which have assigned values, including undefined. It is not called for missing elements of the array (that is, indexes that have never been set, which have been deleted or which have never been assigned a value).**_
 
 `var ary = Array(3);` generates an [empty x 3] array which has never been assigned a value. But if we do:
 `ary[0] = undefined, ary[1] = undefined, ary[2] = undefined`, then do `ary.map(function(elem) { return '1'; })`, we will get answer B.
+
+### 15. function arguments
+```
+What is the result of this expression? (or multiple ones)
+          
+function sidEffecting(ary) {
+  ary[0] = ary[2];
+}
+function bar(a,b,c) {
+  c = 10
+  sidEffecting(arguments);
+  return a + b + c;
+}
+bar(1,1,1)
+        
+A. 3
+B. 12
+C. error
+D. other
+```
+Answer : D, the result is 21.
+
+Reason : Variables a,b,c are tied to the _arguments_ object. So changing the variables changes arguments and changing arguments changes the local variables even when they are not in the same scope. `bar(1,1,1)` => a = 1, b = 1, c = 1. Inside function bar, c = 10. Inside sidEffecting, a = c = 10. So `return a + b + c` => `return 10 + 1 + 10`, ie 21.
+
+### 16. Number.MAX_SAFE_INTEGER
+```
+What is the result of this expression? (or multiple ones)
+          
+var a = 111111111111111110000,
+    b = 1111;
+a + b;
+        
+A. 111111111111111111111
+B. 111111111111111110000
+C. NaN
+D. Infinity
+```
+Answer : B
+
+Reason : JavaScript's highest integer value that a number can go to _**without losing precision**_ is Number.MAX_SAFE_INTEGER (2^53 - 1), or 9007199254740991. See [Working with large integers in JavaScript](http://2ality.com/2012/07/large-integers.html).
+
+### 17. +/-
+```
+What is the result of this expression? (or multiple ones)
+          
+1 + - + + + - + 1
+        
+A. 2
+B. 1
+C. error
+D. other
+```
+Answer : A. 2
+
+Reason : notice the whitespace between +/- sign.
+```
+1 + - + + + - + 1  ==>  1+(-(+(+(+(-(+1))))))
+```
+Furthermore, what's the result of "1" - - "1" ? It should be 2. Reason : The - operator casts the string "1" to a number.
+```
+"1" - - "1"  ==>  1 - (-1) => 2
+```
+
+### 18. 
