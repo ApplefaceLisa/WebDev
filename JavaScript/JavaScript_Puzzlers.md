@@ -387,4 +387,42 @@ Furthermore, what's the result of "1" - - "1" ? It should be 2. Reason : The - o
 "1" - - "1"  ==>  1 - (-1) => 2
 ```
 
-### 18. 
+### 18. [Number.MIN_VALUE](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_VALUE)
+```
+What is the result of this expression? (or multiple ones)
+          
+Number.MIN_VALUE > 0
+        
+A. false
+B. true
+C. error
+D. other
+```
+Answer : B
+
+Reason : 
+- The _**Number.MIN_VALUE**_ property represents the smallest positive numeric value representable in JavaScript.
+- The _**Number.MAX_VALUE**_ property represents the maximum numeric value representable in JavaScript.
+- The _**Number.MAX_SAFE_INTEGER**_ constant represents the maximum safe integer in JavaScript (253 - 1).
+- The _**Number.MIN_SAFE_INTEGER**_ constant represents the minimum safe integer in JavaScript (-(253 - 1)).
+
+### 19. continuous comparison
+```
+What is the result of this expression? (or multiple ones)
+          
+[1 < 2 < 3, 3 < 2 < 1]
+        
+A. [true, true]
+B. [true, false]
+C. error
+D. other
+```
+Answer : A
+
+Reason : 
+```
+1 < 2 < 3   ==>   (1 < 2) < 3 ==> true < 3  ==> 1 < 3 ==> true
+3 < 2 < 1   ==>   (3 < 2) < 1 ==> false < 1 ==> 0 < 1 ==> true
+```
+
+### 20. 
