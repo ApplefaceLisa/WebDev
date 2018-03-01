@@ -1,6 +1,7 @@
 # JavaScript Puzzlers
 thanks for : http://javascript-puzzlers.herokuapp.com/
 [44个 Javascript 变态题解析 (上)](https://github.com/xiaoyu2er/blog/issues/1)
+[44个 Javascript 变态题解析 (下)](https://github.com/xiaoyu2er/blog/issues/3)
 
 ### 1. array.map && parseInt
 ```
@@ -303,7 +304,12 @@ D. other
 ```
 Answer : B
 
-Reason : [0] is truthy, but when compare to `true`, it's false.
+Reason : Boolean([0]) is true, so if ([0]) => if (true).
+```
+[0] == true  ==>  [0] -> '0' -> 0, true -> 1  ==> 0 == 1  ==> false
+```
+- [JavaScript-Equality-Table](https://dorey.github.io/JavaScript-Equality-Table/)
+- [一张图彻底搞懂JavaScript的==运算](https://zhuanlan.zhihu.com/p/21650547)
 
 ### 14. [Array.map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 ```
@@ -425,4 +431,23 @@ Reason :
 3 < 2 < 1   ==>   (3 < 2) < 1 ==> false < 1 ==> 0 < 1 ==> true
 ```
 
-### 20. 
+### 20. ==
+```
+What is the result of this expression? (or multiple ones)
+          
+// the most classic wtf
+2 == [[[2]]]
+        
+A. true
+B. false
+C. undefined
+D. other
+```
+Answer : A
+
+Reason : [ref](https://stackoverflow.com/questions/1724255/why-does-2-2-in-javascript)
+```
+2 == [[[2]]]  ==>  2 === Number([[[2]]].valueOf().toString())   ==>  2 === 2
+```
+
+### 21. 
