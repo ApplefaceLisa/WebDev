@@ -284,4 +284,24 @@ Answer : A
 
 Reason : Array.prototype itself is an array.
 
-### 13. 
+### 13. [truthy and falsy](https://www.sitepoint.com/javascript-truthy-falsy/)
+```
+What is the result of this expression? (or multiple ones)
+          
+var a = [0];
+if ([0]) {
+  console.log(a == true);
+} else {
+  console.log("wut");
+}
+        
+A. true
+B. false
+C. "wut"
+D. other
+```
+Answer : B
+
+Reason : [0] is truthy, but when compare to `true`, it's false.
+
+### 14. 
