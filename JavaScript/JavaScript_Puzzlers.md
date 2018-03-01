@@ -268,3 +268,20 @@ D. other
 Answer : D. 3, NaN, 3
 
 Reason : 3 doesn't exist in base 2, so obviously that's a NaN, but what about 0? parseInt will consider a bogus radix and assume you meant 10, so it returns 3.
+
+### 12. [Array.isArray](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
+```
+What is the result of this expression? (or multiple ones)
+          
+Array.isArray( Array.prototype )
+        
+A. true
+B. false
+C. error
+D. other
+```
+Answer : A
+
+Reason : Array.prototype itself is an array.
+
+### 13. 
