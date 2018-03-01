@@ -252,4 +252,19 @@ Answer : C
 
 Reason : '13' % 2 == 1, -9 % 2 == -1, Infinity % 2 == NaN.
 
-### 11. 
+### 11. parseInt
+```
+What is the result of this expression? (or multiple ones)
+          
+parseInt(3, 8)
+parseInt(3, 2)
+parseInt(3, 0)
+        
+A. 3, 3, 3
+B. 3, 3, NaN
+C. 3, NaN, NaN
+D. other
+```
+Answer : D. 3, NaN, 3
+
+Reason : 3 doesn't exist in base 2, so obviously that's a NaN, but what about 0? parseInt will consider a bogus radix and assume you meant 10, so it returns 3.
