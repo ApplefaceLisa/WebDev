@@ -175,5 +175,53 @@ Reason : Array.prototype.filter callback is not invoked for the missing elements
 
 `var newArray = arr.filter(callback(element, index, arr) [, thisArg])`
 - filter() calls a provided callback function once for each element in an array, and constructs a new array of all the values for which callback returns a value that _coerces to true_. 
-- callback is invoked only for indexes of the array which have assigned values; it is not invoked for indexes which have been deleted or which have never been assigned values.
+- callback is invoked only for indexes of the array which have assigned values; _**it is not invoked for indexes which have been deleted or which have never been assigned values**_.
 
+### 8. JS floating point number (IEEE 754 double precision floating)
+```
+What is the result of this expression? (or multiple ones)
+          
+var two   = 0.2
+var one   = 0.1
+var eight = 0.8
+var six   = 0.6
+[two - one == one, eight - six == two]
+        
+A. [true, true]
+B. [false, false]
+C. [true, false]
+D. other
+```
+Answer : C
+
+Reason : JavaScript does not have precision math, even though sometimes it works correctly.
+
+### 9. switch-case
+```
+What is the result of this expression? (or multiple ones)
+          
+function showCase(value) {
+    switch(value) {
+    case 'A':
+        console.log('Case A');
+        break;
+    case 'B':
+        console.log('Case B');
+        break;
+    case undefined:
+        console.log('undefined');
+        break;
+    default:
+        console.log('Do not know!');
+    }
+}
+showCase(new String('A'));
+        
+A. Case A
+B. Case B
+C. Do not know!
+D. undefined
+```
+Answer : C
+
+Reason : switch uses `===` internally and new String(x) !== x
