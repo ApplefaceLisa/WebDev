@@ -304,4 +304,22 @@ Answer : B
 
 Reason : [0] is truthy, but when compare to `true`, it's false.
 
-### 14. 
+### 14. [Array.map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+```
+What is the result of this expression? (or multiple ones)
+          
+var ary = Array(3);
+ary[0]=2
+ary.map(function(elem) { return '1'; });
+        
+A. [2, 1, 1]
+B. ["1", "1", "1"]
+C. [2, "1", "1"]
+D. other
+```
+Answer : D. [empty x 3]
+
+Reason : map calls a provided callback function once for each element in an array, in order, and constructs a new array from the results. callback is invoked only for indexes of the array which have assigned values, including undefined. It is not called for missing elements of the array (that is, indexes that have never been set, which have been deleted or which have never been assigned a value).
+
+`var ary = Array(3);` generates an [empty x 3] array which has never been assigned a value. But if we do:
+`ary[0] = undefined, ary[1] = undefined, ary[2] = undefined`, then do `ary.map(function(elem) { return '1'; })`, we will get answer B.
