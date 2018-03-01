@@ -215,13 +215,41 @@ function showCase(value) {
         console.log('Do not know!');
     }
 }
-showCase(new String('A'));
+1) showCase(new String('A'));   
+2) showCase2(String('A'));        
         
 A. Case A
 B. Case B
 C. Do not know!
 D. undefined
 ```
+Answer : 1) C   2) A
+
+Reason : 1) switch uses `===` internally and new String(x) !== x;  2) String(x) does not create an object but does return a string, i.e. typeof String(1) === "string".
+
+### 10. modulo
+```
+What is the result of this expression? (or multiple ones)
+          
+function isOdd(num) {
+    return num % 2 == 1;
+}
+function isEven(num) {
+    return num % 2 == 0;
+}
+function isSane(num) {
+    return isEven(num) || isOdd(num);
+}
+var values = [7, 4, '13', -9, Infinity];
+values.map(isSane);
+        
+A. [true, true, true, true, true]
+B. [true, true, true, true, false]
+C. [true, true, true, false, false]
+D. [true, true, false, false, false]
+```
 Answer : C
 
-Reason : switch uses `===` internally and new String(x) !== x
+Reason : '13' % 2 == 1, -9 % 2 == -1, Infinity % 2 == NaN.
+
+### 11. 
