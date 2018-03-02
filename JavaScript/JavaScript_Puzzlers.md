@@ -450,4 +450,107 @@ Reason : [ref](https://stackoverflow.com/questions/1724255/why-does-2-2-in-javas
 2 == [[[2]]]  ==>  2 === Number([[[2]]].valueOf().toString())   ==>  2 === 2
 ```
 
-### 21. 
+### 21. +/- for string and number
+```
+What is the result of this expression? (or multiple ones)
+          
+'5' + 3
+'5' - 3
+        
+A. "53", 2
+B. 8, 2
+C. error
+D. other
+```
+Answer : A
+
+Reason :
+- `+` is concate if either operand is string; `+` is add if all operands are numbers.
+- `-` will try to convert both operands to number and do minus.
+
+### 22. period after number
+```
+What is the result of this expression? (or multiple ones)
+          
+3.toString()
+3..toString()
+3...toString()
+        
+A. "3", error, error
+B. "3", "3.0", error
+C. error, "3", error
+D. other
+```
+Answer : C
+
+Reason : Because a decimal point is a valid portion of a number, so the first dot is considered numeric, the second is for chaining.
+```
+3.toString()   ==>  (3.)toString()
+3..toString()  ==>  (3.).toString()  ==> (3).toString()
+3...toString() ==>  (3.)..toString()
+```
+
+### 23. scope
+```
+What is the result of this expression? (or multiple ones)
+          
+(function(){
+  var x = y = 1;
+})();
+console.log(y);
+console.log(x);
+        
+A. 1, 1
+B. error, error
+C. 1, error
+D. other
+```
+Answer : C
+
+Reason : `var x = y = 1;` => `y = 1; var x = 1;` which makes y a global variable, x is local variable of IIFE. 
+
+### 24. regex
+```
+What is the result of this expression? (or multiple ones)
+          
+var a = /123/,
+    b = /123/;
+a == b
+a === b
+        
+A. true, true
+B. true, false
+C. false, false
+D. other
+```
+Answer : C
+
+Reason : The regular expression literals are evaluated to regular expression objects. 
+```
+var a = /123/;
+typeof a      ==> "object"
+```
+So we don't do == or === comparison for regular expression literals.
+
+### 25. compare arrays
+```
+What is the result of this expression? (or multiple ones)
+          
+var a = [1, 2, 3],
+    b = [1, 2, 3],
+    c = [1, 2, 4]
+a ==  b
+a === b
+a >   c
+a <   c
+        
+A. false, false, false, true
+B. false, false, false, false
+C. true, true, false, true
+D. other
+```
+Answer : A
+
+Reason : Arrays are compared lexicographically with > and <, but not with == and ===.
+
+### 26. 
