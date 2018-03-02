@@ -570,3 +570,6 @@ Answer : A
 Reason : 
 - Functions have a prototype property but other objects don't, so `a.prototype` is `undefined`. 
 - Every Object instead has an internal property accessible via [Object.getPrototypeOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf).
+- [JavaScript Prototype in Plain Language](http://javascriptissexy.com/javascript-prototype-in-plain-detailed-language/)
+  - First, every JavaScript _**function**_ has a _**prototype property**_ (this property is empty by default), and you attach properties and methods on this prototype property when you want to implement inheritance.
+  - The second concept with prototype in JavaScript is the _**prototype attribute**_. Think of the prototype attribute as a characteristic of the object; this characteristic tells us the object’s “parent”. 
